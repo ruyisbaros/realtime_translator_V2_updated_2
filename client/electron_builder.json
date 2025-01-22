@@ -1,0 +1,16 @@
+{
+    "appId": "com.ahmet.electron-practices",
+    "files": ["dist", "dist-react"],
+    "extraResources": ["dist/preload.cjs", "src/assets/**"],
+    "icon": "./logo_3.jpeg",
+    "mac": {
+      "target": "dmg"
+    },
+    "linux": {
+      "target": "AppImage",
+      "category": "Utility"
+    },
+    "win": {
+      "target": ["portable", "msi"]
+    }
+  }

@@ -1,0 +1,258 @@
+/* /////CONTENT CENTER UP///////// */
+
+.source-options {
+  display: flex;
+  margin-bottom: 10px;
+}
+
+.source-option-button {
+  appearance: none;
+  background-color: hsl(224, 60%, 25%);
+  border: 1px solid hsl(224, 60%, 30%);
+  border-radius: 5px;
+  padding: 10px 15px;
+  cursor: pointer;
+  outline: none;
+  color: white;
+  transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out;
+  flex: 1;
+  text-align: center;
+}
+
+.source-option-button:first-child {
+  margin-right: 5px;
+}
+.source-option-button:last-child {
+  margin-left: 5px;
+}
+.source-option-button.active,
+.source-option-button:hover,
+.source-option-button:focus {
+  background-color: hsl(224, 60%, 30%);
+  border-color: hsl(200, 100%, 60%);
+}
+.source-input-container {
+  margin-bottom: 10px;
+}
+
+.source-input {
+  width: 100%;
+  padding: 10px 15px;
+  background-color: hsl(224, 60%, 20%);
+  border: 1px solid hsl(224, 60%, 30%);
+  color: white;
+  border-radius: 5px;
+  font-size: 16px;
+  outline: none;
+  box-sizing: border-box;
+  transition: border-color 0.2s ease-in-out;
+}
+.source-input:hover,
+.source-input:focus {
+  border-color: hsl(200, 100%, 60%);
+}
+
+.source-list-container {
+  width: 88%;
+  margin: auto;
+  border: 1px hsl(224, 60%, 30%);
+  border-radius: 5px;
+  padding: 15px;
+  overflow: auto; /*To handle long lists*/
+  background-color: hsl(224, 92%, 10%);
+  box-shadow: inset 0 4px 10px rgba(0, 0, 0, 0.7), 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.source-list {
+  width: 100%;
+  padding: 0px;
+  margin: 0px;
+  list-style: none;
+}
+
+.source-list li {
+  padding: 5px;
+  font-family: "Courier New", monospace;
+  font-weight: bold;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+  white-space: nowrap; /* Prevent text from wrapping to next line */
+  overflow: hidden; /* Hide overflowing text */
+  text-overflow: ellipsis; /* Show ellipsis (...) for long text */
+}
+
+.source-list li::before {
+  content: "> ";
+  color: hsl(200, 100%, 60%);
+}
+.source-list li:hover {
+  color: hsl(200, 100%, 60%);
+  font: italic;
+}
+.source-list-container::-webkit-scrollbar {
+  width: 8px; /* Width of the scrollbar */
+}
+
+.source-list-container::-webkit-scrollbar-track {
+  background: hsl(224, 60%, 20%); /* Color of the track */
+}
+
+.source-list-container::-webkit-scrollbar-thumb {
+  background: linear-gradient(
+    to bottom,
+    hsl(224, 70%, 50%),
+    hsl(224, 70%, 30%)
+  ); /* Color of the thumb */
+  border-radius: 5px;
+}
+
+.source-list-container::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(
+    to bottom,
+    hsl(224, 70%, 60%),
+    hsl(224, 70%, 40%)
+  ); /* Color of the thumb on hover */
+}
+
+/* For Firefox */
+.source-list-container {
+  scrollbar-width: thin;
+  scrollbar-color: hsl(224, 70%, 50%) hsl(224, 60%, 20%); /* [thumb color] [track color]*/
+}
+/* /////TRANSLATED TEXT DISPLAY/////// */
+.translation-output-container {
+  position: relative;
+  width: 100%; /* Make it fill the container */
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.translation-output-area {
+  background-color: hsl(224, 92%, 10%);
+  border: 1px solid hsl(224, 60%, 20%);
+  border-radius: 10px;
+  box-shadow: inset 0 4px 10px rgba(0, 0, 0, 0.7), 0 2px 4px rgba(0, 0, 0, 0.2);
+  position: relative;
+  padding: 10px;
+  height: 300px;
+  box-sizing: border-box;
+  overflow: hidden; /* Hide scrollbar */
+}
+
+.translation-output-content {
+  height: auto;
+  overflow-y: auto;
+  padding: 10px;
+  box-sizing: border-box;
+  margin-right: -10px; /* Make sure that scrollbar is hidden */
+  padding-bottom: 20px; /* Make sure that it has additional space */
+}
+
+.translation-output-content::-webkit-scrollbar {
+  width: 0px; /* Hide for webkit browsers */
+}
+
+.output-text_d {
+  white-space: pre-wrap;
+  font-family: "Courier New", monospace;
+  color: hsl(100, 100%, 60%);
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+  line-height: 1.6;
+  margin-bottom: 15px; /* Add space for each paragraph */
+}
+
+/* ///////FAKE SUBTITLE BOX///////////////// */
+/* VideoPlayer.module.css */
+
+.videoContainer {
+  position: relative; /* Make the container relative for absolute positioning */
+  display: inline-block;
+}
+
+.videoElement {
+  display: block; /* Ensure the video behaves as a block element */
+  max-width: 100%;
+  max-height: 500px;
+}
+/* /////Scan Btn//// */
+.scan_now {
+  box-shadow: inset 0 3px 2px rgba(0, 0, 0, 0.7),
+    inset -3px -3px 4px rgba(255, 255, 255, 0.2);
+}
+/* ///Matrix Box//////////////////////////////// */
+.loading-animation .dots::after {
+  content: "";
+  animation: dots 1.5s steps(3, end) infinite;
+}
+
+@keyframes dots {
+  0%,
+  20% {
+    content: "";
+  }
+  40% {
+    content: ".";
+  }
+  60% {
+    content: "..";
+  }
+  100% {
+    content: "...";
+  }
+}
+.translation-output-area::-webkit-scrollbar {
+  width: 8px; /* Width of the scrollbar */
+}
+
+.translation-output-area::-webkit-scrollbar-track {
+  background: hsl(224, 60%, 20%); /* Color of the track */
+}
+
+.translation-output-area::-webkit-scrollbar-thumb {
+  background: linear-gradient(
+    to bottom,
+    hsl(224, 70%, 50%),
+    hsl(224, 70%, 30%)
+  ); /* Color of the thumb */
+  border-radius: 5px;
+}
+
+.translation-output-area::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(
+    to bottom,
+    hsl(224, 70%, 60%),
+    hsl(224, 70%, 40%)
+  ); /* Color of the thumb on hover */
+}
+.output-text_o {
+  color: hsl(100, 100%, 60%);
+  font-family: "Courier New", monospace;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+}
+.output-text_o::before {
+  content: ">> ";
+  color: hsl(100, 100%, 60%);
+}
+.output-text_o:hover {
+  color: hsl(200, 100%, 60%);
+  font: italic;
+}
+
+/* ///RightSideBAR///////// */
+.warning-area {
+  background-color: #000000cb;
+  border: 1px solid #000;
+  border-radius: 10px;
+  box-shadow: inset 0 4px 10px rgba(0, 0, 0, 0.7), 0 2px 4px rgba(0, 0, 0, 0.2);
+  position: relative;
+  padding: 10px;
+  height: 200px;
+  width: 95%;
+  margin: auto;
+  box-sizing: border-box;
+  overflow: hidden; /* Hide scrollbar */
+  opacity: 0.8;
+}
+.warning-area h2 {
+  border-bottom: 1px dotted #db1102;
+  padding-bottom: 2px;
+}

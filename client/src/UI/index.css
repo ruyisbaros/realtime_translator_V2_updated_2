@@ -1,0 +1,163 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* -webkit-user-select: none; 
+  -ms-user-select: none;
+  user-select: none;  */
+:root {
+  --card: 223 59.6% 11.31%; /* This defines the variable */
+}
+body {
+  @apply font-montserrat;
+  pointer-events: auto !important;
+  user-select: none !important;
+  -webkit-user-select: auto !important;
+  box-sizing: border-box;
+}
+button {
+  cursor: pointer;
+}
+button:disabled {
+  cursor: not-allowed;
+}
+
+.header {
+  -webkit-app-region: drag;
+  border-bottom: 3px inset rgba(0, 0, 0, 0.2);
+  border-radius: 15px 15px 0 0;
+}
+
+.QPushButton {
+  background-color: hsl(224, 92%, 15%);
+  border: 1px solid hsl(224, 60%, 20%);
+  border-radius: 10px;
+  padding: 3px;
+  color: #30f4d6;
+
+  background: radial-gradient(
+    circle at 50% 50%,
+    hsl(224, 92%, 15%) 0%,
+    hsl(224, 92%, 15%) 100%
+  );
+
+  /* Simulate 3D effect using borders */
+  box-shadow: inset 0 3px 2px rgba(255, 255, 255, 0.2),
+    inset -3px -3px 4px rgba(0, 0, 0, 0.7);
+}
+
+.border_thin {
+  border: thin inset rgba(255, 255, 255, 0.384);
+  border-radius: 5px;
+}
+.border_thin_f {
+  border: thin solid rgba(255, 255, 255, 0.3);
+  border-radius: 0 0 5px 5px;
+}
+
+.shadow_for_boxes {
+  box-shadow: inset 1px 0px 3px 1px #d9d9d907, inset 1px 1px 3px 3px #d9d9d95e,
+    inset -1px 1px 3px 1px #d9d9d95e, inset 1px -1px 3px 3px #d9d9d95e;
+}
+.shadow_for_boxes_1 {
+  background-color: hsl(224, 92%, 15%);
+  border: 1px solid hsl(224, 60%, 20%);
+  border-radius: 10px;
+  box-shadow: inset 0 4px 10px rgba(0, 0, 0, 0.7), 0 2px 4px rgba(0, 0, 0, 0.2);
+  position: relative;
+  box-sizing: border-box;
+}
+.shadow_for_accessories {
+  box-shadow: 1px 0px 3px 1px #d9d9d907, 1px 1px 3px 3px #d9d9d907,
+    -1px 1px 3px 1px #d9d9d907, 1px -1px 3px 3px #d9d9d907;
+  border-radius: 20px;
+}
+/* ///FakeSubtitles////////// */
+.subtitle-container {
+  background: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
+  color: white;
+  font-size: 24px;
+  font-family: Arial, sans-serif;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.waiting-text {
+  animation: fade 2s infinite;
+}
+/* ///Move subtitle format span//// */
+.move_span {
+  display: inline-block;
+  transform: translateX(20px);
+}
+@keyframes fade {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+.selected_languages:disabled + label {
+  color: #ecec;
+  cursor: not-allowed;
+}
+@layer utilities {
+  .metallic-silver {
+    @apply bg-gradient-to-br from-[#f0f0f0] via-[#d0d0d0] to-[#e0e0e0];
+    box-shadow: inset 0px 0px 15px rgba(0, 0, 0, 0.1);
+  }
+
+  /* Metallic Gold */
+  .metallic-gold {
+    @apply bg-gradient-to-br from-[#FFD700] via-[#FFC000] to-[#FFD700];
+    box-shadow: inset 0px 0px 10px rgba(100, 100, 0, 0.1);
+  }
+
+  /* Metallic Bronze */
+  .metallic-bronze {
+    @apply bg-gradient-to-br from-[#CD7F32] via-[#D4A373] to-[#CD7F32];
+    box-shadow: inset 0px 0px 10px rgba(100, 60, 10, 0.1);
+  }
+
+  /* Metallic Dark Blue */
+  .metallic-dark-blue {
+    @apply bg-gradient-to-br from-[#1A237E] via-[#303F9F] to-[#283593];
+    box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0.2);
+  }
+
+  .metallic-text {
+    @apply text-white shadow-[0_0_4px_#fff];
+  }
+}
+
+/* Glassy Overlay */
+.glassy-overlay {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  background: rgba(255, 255, 255, 0.1); /* Transparent glass effect */
+  border-radius: 15px;
+  box-shadow: inset 5px 5px 5px #53fddf, inset -5px -5px 5px #53fddf;
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  z-index: 1;
+}
+
+.card-shine-effect-metal {
+  background: linear-gradient(
+    135deg,
+    #e6e6e6,
+    #d9d9d9,
+    #f2f2f2,
+    #bfbfbf,
+    #e6e6e6
+  );
+  box-shadow: inset 0 0 30px rgba(0, 0, 0, 0.2),
+    inset 0 0 10px rgba(255, 255, 255, 0.3);
+  border: 1px solid #d9d9d9;
+}

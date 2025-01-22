@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Subtitle Window</title>
+  <style>
+    body {
+      margin: 0;
+      background: rgba(0, 0, 0, 0.6); /* Semi-transparent black */
+      color: white;
+      font-size: 24px;
+      font-family: Arial, sans-serif;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      flex-direction: column;
+      height: 100vh;
+      -webkit-app-region: drag;
+    }
+    #subtitle-container {
+      width: 100%;
+      height: 100%;
+      overflow: hidden; /* No scrollbar */
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end; /* Align subtitles at the bottom */
+      padding: 10px;
+    }
+    .subtitle-line {
+      white-space: pre-wrap; /* Preserve line breaks */
+      word-wrap: break-word;
+      margin: 2px 0;
+      animation: fadeIn 0.5s ease-in-out;
+    }
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+   
+  </style>
+</head>
+<body>
+  <div id="subtitle-container">Waiting for transcription...</div>
+  <script>
+    const { ipcRenderer } = require("electron");
+
+   // Subtitle container element
+   const subtitleContainer = document.getElementById("subtitle-container");
+
+   // Append new text and manage scrolling
+   const addSubtitleLine = (text) => {
+     const line = document.createElement("div");
+     line.className = "subtitle-line";
+     line.textContent = text;
+
+     // Append the new line
+     subtitleContainer.appendChild(line);
+
+     // Scroll smoothly to the bottom
+     subtitleContainer.scrollTop = subtitleContainer.scrollHeight;
+   };
+
+   // Listen for subtitle updates
+   ipcRenderer.on("update-subtitle", (event, text) => {
+     addSubtitleLine(text);
+   });
+  </script>
+</body>
+</html>

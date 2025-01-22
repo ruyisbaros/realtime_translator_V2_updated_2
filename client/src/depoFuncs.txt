@@ -1,0 +1,11 @@
+
+  const handleNavigation = (page) => {
+    if (
+      window.electronAPI &&
+      typeof window.electronAPI.navigateToPage === "function"
+    ) {
+      window.electronAPI.navigateToPage(page);
+    } else {
+      console.error("Electron API is not available");
+    }
+  };

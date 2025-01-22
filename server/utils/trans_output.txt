@@ -1,0 +1,20 @@
+[
+    {
+        "start_time": "00:00:00",
+        "end_time": "00:00:05",
+        "text": "Hello, this is a test.",
+        "translations": {
+            "de": "Hallo, dies ist ein Test.",
+            "fr": "Bonjour, ceci est un test."
+        }
+    },
+    {
+        "start_time": "00:00:06",
+        "end_time": "00:00:12",
+        "text": "Let's see how translation works.",
+        "translations": {
+            "de": "Mal sehen, wie die Übersetzung funktioniert.",
+            "fr": "Voyons comment fonctionne la traduction."
+        }
+    }
+]
