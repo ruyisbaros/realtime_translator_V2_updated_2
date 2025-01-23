@@ -8,6 +8,7 @@ import {
   setTranslatedTextRdx,
   setVolumeDataRdx,
 } from "./redux/selectedAudioSrc";
+import { setProgressStateRdx } from "./redux/videoSubtitleSlice";
 
 // eslint-disable-next-line react/prop-types
 export const SocketProvider = ({ children, wsUrl }) => {
@@ -58,6 +59,12 @@ export const SocketProvider = ({ children, wsUrl }) => {
       const { waveform, rms } = data.graph_data;
       console.log("Received graph data:", data.graph_data);
       dispatch(setVolumeDataRdx({ waveform, rms }));
+    });
+    // Listen video-audio operations state
+    socketRef.current.on("process-state", (data) => {
+      const { stage, message, progress } = data;
+      console.log("Received new state:", data);
+      dispatch(setProgressStateRdx({ stage, message, progress }));
     });
 
     socketRef.current.on("disconnect", (reason) => {

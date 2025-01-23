@@ -27,11 +27,15 @@ async def upload_video(
     """
     print(selected_languages)
     try:
-        # Validate file type
-        time.sleep(5)
         whisper_model = request.app.state.whisper_model
         fb_model = request.app.state.fb_model
         fb_tokenizer = request.app.state.fb_tokenizer
+        socketio = request.app.state.socketio
+        await socketio.emit("process-state", {
+            "stage": "uploading",
+            "message": "Starting uploading...",
+            "progress": 0,
+        })
         if not whisper_model or not fb_model or not fb_tokenizer:
             raise HTTPException(
                 status_code=500, detail="Failed to load Whisper and/or Facebook models."
@@ -58,15 +62,15 @@ async def upload_video(
         with open(file_path, "wb") as buffer:
             for chunk in iter(lambda: file.file.read(1024 * 1024), b""):  # 1MB chunks
                 buffer.write(chunk)
+        await socketio.emit("process-state", {
+            "stage": "uploading",
+            "message": "File uploaded successfully",
+            "progress": 95,
+        })
         # Process the video and generate transcriptions and subtitles
-        result = process_video(file_path, whisper_model, fb_model,
-                               fb_tokenizer, selected_languages, action_type, subtitle_format)
-        return {
-            "message": "File uploaded successfully!",
-            "file_name": os.path.basename(file_path),
-            "file_size": os.path.getsize(file_path),
-        }
-
+        result = await process_video(file_path, whisper_model, fb_model,
+                                     fb_tokenizer, selected_languages, action_type, subtitle_format, socketio)
+        return result
     except HTTPException as e:
         raise e
 

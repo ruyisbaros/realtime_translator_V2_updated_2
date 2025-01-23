@@ -1,33 +1,17 @@
-from socketio import AsyncClient
+from fastapi import FastAPI
 from utils.audio_utils import save_as_wav, create_temp_audio_folder
 from dependencies.translations import transcribe_audio, translate_text
-# from dependencies.state_manager import StateManager
-import base64
+from socket_ops.socket_con import connect_to_socket_server
+from socketio import AsyncClient
 import asyncio
 import os
 import aiohttp
-import shutil
-
-socketio = AsyncClient(
-    reconnection=True, reconnection_attempts=5, reconnection_delay=2)
+import base64
 
 warning_sent = False  # Global flag to track warning
 
 
-async def is_socket_server_up(url):
-    """Checks if the Socket.IO server is up by sending a ping."""
-    try:
-        async with aiohttp.ClientSession() as session:
-            async with session.get(f"{url}/socket.io/?EIO=4&transport=polling") as response:
-                if response.status == 200:
-                    return True
-                else:
-                    return False
-    except Exception:
-        return False
-
-
-async def setup_socket_events(whisper_model, fb_model=None, fb_tokenizer=None):
+async def setup_socket_events(socketio, whisper_model, fb_model=None, fb_tokenizer=None):
     """
     Setup Socket.IO events and connect to the server.
 
@@ -39,25 +23,6 @@ async def setup_socket_events(whisper_model, fb_model=None, fb_tokenizer=None):
         fb_tokenizer: Tokenizer for Facebook model (optional).
     """
     temp_audio_folder = create_temp_audio_folder()
-
-    async def connect_to_socket_server():
-        try:
-            if socketio.connected:
-                print("Already connected. Disconnecting first...")
-                await socketio.disconnect()  # Close existing connection
-                await asyncio.sleep(1)
-            if await is_socket_server_up("http://localhost:9001"):
-                await socketio.connect("http://localhost:9001")
-                print("FastAPI connected to Socket.IO server")
-                await asyncio.sleep(5)
-                await socketio.emit("register", {"clientType": "fastapi", "id": "fastapi-client"})
-                print("Connected to Socket.IO server.")
-
-        except Exception as e:
-            print(f"Connection failed: {e}. Retrying in 5 seconds...")
-            await asyncio.sleep(5)
-
-    await connect_to_socket_server()
 
     @socketio.on("audio-chunk")
     async def handle_audio_chunk(data):
@@ -121,10 +86,10 @@ async def setup_socket_events(whisper_model, fb_model=None, fb_tokenizer=None):
         await asyncio.sleep(5)
         await connect_to_socket_server()
 
-    return temp_audio_folder
+    return temp_audio_folder, socketio
 
 
-async def shutdown_socket():
+async def shutdown_socket(socketio):
     """
     Disconnect from Socket.IO server during shutdown.
     """

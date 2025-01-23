@@ -73,6 +73,12 @@ io.on("connection", (socket) => {
       io.to(reactAPISocket.socketId).emit("graph-data", data);
     }
   });
+  socket.on("process-state", (data) => {
+    const reactAPISocket = clients.find((c) => c.clientType === "react");
+    if (reactAPISocket) {
+      io.to(reactAPISocket.socketId).emit("process-state", data);
+    }
+  });
 
   // Handle disconnections
   socket.on("disconnect", () => {

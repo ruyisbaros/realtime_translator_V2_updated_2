@@ -1,8 +1,9 @@
 from fastapi import FastAPI
 from dependencies.model_loaders import load_whisper_model, load_facebook_m2m100_local
 from dependencies.socket_events import setup_socket_events, shutdown_socket, shutdown_processes
+from socket_ops.socket_con import connect_to_socket_server
 from fastapi.middleware.cors import CORSMiddleware
-from fastapi.routing import APIRoute
+from socketio import AsyncClient
 from asyncio import Lock
 from routers import uploadVideos
 
@@ -62,9 +63,13 @@ async def lifespan(app: FastAPI):
         fb_model, fb_tokenizer = load_facebook_m2m100_local(fb_config["name"])
 
         print("Both Whisper and Facebook models loaded successfully.")
-
+        socketio = await connect_to_socket_server()
+        app.state.socketio = socketio
+        if not app.state.socketio:
+            print("Socket.IO initialization failed.")
+            return
         # Setup Socket.IO events
-        temp_audio_folder = await setup_socket_events(whisper_model, fb_model, fb_tokenizer)
+        temp_audio_folder = await setup_socket_events(socketio, whisper_model, fb_model, fb_tokenizer)
         print("Socket.IO events set up successfully.")
 
         app.state.whisper_model = whisper_model
@@ -79,7 +84,7 @@ async def lifespan(app: FastAPI):
 
     try:
         # Shutdown logic
-        await shutdown_socket()
+        await shutdown_socket(socketio)
         print("Socket.IO connection closed.")
 
         await shutdown_processes(temp_audio_folder)

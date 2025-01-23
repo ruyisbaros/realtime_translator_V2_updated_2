@@ -54,10 +54,15 @@ def create_subtitle_folder():
     return subtitle_folder
 
 
-def extract_audio_from_video(video_path: str, output_audio_path: str) -> None:
+async def extract_audio_from_video(video_path: str, output_audio_path: str, socketio) -> None:
     """
     Extract audio from the video using FFmpeg.
     """
+    await socketio.emit("process-state", {
+        "stage": "extracting",
+        "message": f"Extracting audio from {os.path.basename(video_path)}. This might take a few seconds...",
+        "progress": 0,
+    })
     command = [
         "ffmpeg",
         "-i", video_path,
@@ -70,5 +75,10 @@ def extract_audio_from_video(video_path: str, output_audio_path: str) -> None:
     try:
         subprocess.run(command, check=True,
                        stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+        await socketio.emit("process-state", {
+            "stage": "extracting",
+            "message": "Audio extraction complete.",
+            "progress": 100,
+        })
     except subprocess.CalledProcessError as e:
         raise RuntimeError(f"FFmpeg error: {e.stderr.decode('utf-8')}")

@@ -17,10 +17,7 @@ const UserOptions = () => {
   const [selectedLanguages, setSelectedLanguages] = useState([]);
   const [subtitleFormat, setSubtitleFormat] = useState("srt");
   const [isUploading, setIsUploading] = useState(false);
-  const [isCanceled] = useState(false);
-  const [uploadProgress, setUploadProgress] = useState(0);
 
-  let cancelToken;
   const handleFileUpload = async () => {
     if (selectedLanguages.length === 0) {
       toast.warning("Please select at least 1 target language!");
@@ -31,7 +28,6 @@ const UserOptions = () => {
       return;
     }
 
-    cancelToken = axios.CancelToken.source();
     const formData = new FormData();
     formData.append("file", selectedFile);
     formData.append("actionType", actionType); // Add actionType
@@ -42,7 +38,6 @@ const UserOptions = () => {
 
     try {
       setIsUploading(true);
-      setUploadProgress(0);
 
       const response = await axios.post(
         "http://localhost:8000/upload/",
@@ -52,13 +47,6 @@ const UserOptions = () => {
             "Content-Type": "multipart/form-data",
           },
           withCredentials: true,
-          onUploadProgress: (progressEvent) => {
-            const progress = Math.round(
-              (progressEvent.loaded / progressEvent.total) * 100
-            );
-            console.log("Progress:", progress); // Debugging
-            setUploadProgress(progress);
-          },
         }
       );
 
@@ -76,13 +64,6 @@ const UserOptions = () => {
     }
   };
 
-  const cancelUpload = () => {
-    if (cancelToken) {
-      cancelToken.cancel("Upload canceled by user.");
-    }
-    setIsUploading(false);
-    toast.info("Upload canceled");
-  };
   console.log(selectedLanguages, actionType, subtitleFormat);
   return (
     <div className="relative h-[55%] mb-2 bg-gradient-to-b from-gray-900 via-black to-gray-900 p-6 rounded-lg shadow-2xl text-gray-200 w-4/5 max-w-4xl mx-auto mt-6">
@@ -277,13 +258,7 @@ const UserOptions = () => {
           Cancel
         </button>
       </div>
-      {isUploading && (
-        <UploadVideoProgress
-          uploadProgress={uploadProgress}
-          cancelUpload={cancelUpload}
-          isCanceled={isCanceled}
-        />
-      )}
+      {isUploading && <UploadVideoProgress />}
     </div>
   );
 };

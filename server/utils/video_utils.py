@@ -1,12 +1,12 @@
 import os
-import subprocess
+import time
 from typing import List, Dict
 from pydub import AudioSegment
 from dependencies.transcribe_and_translate import transcribe_audio, translate_text
 from utils.audio_utils import create_subtitle_folder, extract_audio_from_video
 
 
-def batch_audio(audio_path: str, chunk_duration: int = 600) -> List[str]:
+async def batch_audio(socketio, audio_path: str, chunk_duration: int = 600) -> List[str]:
     """
     Split audio into smaller chunks for processing.
 
@@ -20,19 +20,28 @@ def batch_audio(audio_path: str, chunk_duration: int = 600) -> List[str]:
     audio = AudioSegment.from_wav(audio_path)
     duration_ms = len(audio)
     audio_chunks = []
-
+    chunk_number = 0
+    total_chunks = (duration_ms + (chunk_duration * 1000 - 1)
+                    ) // (chunk_duration * 1000)
     for start_ms in range(0, duration_ms, chunk_duration * 1000):
+        progress = ((chunk_number + 1) / total_chunks) * 100
+        await socketio.emit("process-state", {
+            "stage": "batching",
+            "message": f"Creating audio chunk {chunk_number + 1} of {total_chunks}.",
+            "progress": progress,
+        })
         end_ms = min(start_ms + chunk_duration * 1000, duration_ms)
         chunk = audio[start_ms:end_ms]
         chunk_path = f"{os.path.splitext(audio_path)[0]}_{
             start_ms // 1000}.wav"
         chunk.export(chunk_path, format="wav")
         audio_chunks.append(chunk_path)
+        chunk_number += 1
 
     return audio_chunks
 
 
-def process_video(
+async def process_video(
     file_path: str,
     whisper_model,
     fb_model,
@@ -40,6 +49,7 @@ def process_video(
     selected_languages: List[str],
     action_type: str,
     subtitle_format: str,
+    socketio
 
 ) -> List[Dict]:
     """
@@ -61,51 +71,102 @@ def process_video(
     detected_lang = None
     # Step 1: Extract audio
     temp_audio_path = os.path.splitext(file_path)[0] + ".wav"
-    extract_audio_from_video(file_path, temp_audio_path)
+    await extract_audio_from_video(file_path, temp_audio_path, socketio)
+
+    # Notify initial progress
+    await socketio.emit("process-state", {
+        "stage": "transcribing",
+        "message": "Starting transcription...",
+        "progress": 0,
+    })
 
     # Step 2: Batch processing for long audio
-    audio_chunks = batch_audio(temp_audio_path)
-
+    audio_chunks = await batch_audio(socketio, temp_audio_path)
+    total_chunks = len(audio_chunks)
     # Step 3: Transcription and Translation
-    for chunk_path in audio_chunks:
-        transcription = transcribe_audio(chunk_path,  whisper_model)
-        detected_lang = transcription["language"]
-        for segment in transcription["segments"]:
-            start_time = segment["start"]
-            end_time = segment["end"]
-            text = segment["text"]
+    for idx, chunk_path in enumerate(audio_chunks):
 
-            # Prepare segment result
-            segment_result = {
-                "start_time": start_time,
-                "end_time": end_time,
-                "text": text,
-            }
+        try:
+            progress = ((idx + 1) / total_chunks) * \
+                100  # First 50% of progress
+            await socketio.emit("process-state", {
+                "stage": "transcribing",
+                "message": f"Transcribing audio part {idx + 1} of {total_chunks}...",
+                "progress": progress,
+            })
+            transcription = transcribe_audio(chunk_path,  whisper_model)
+            detected_lang = transcription["language"]
+            for segment in transcription["segments"]:
+                start_time = segment["start"]
+                end_time = segment["end"]
+                text = segment["text"]
 
-            # Translate if required
-            if action_type == "translation" and selected_languages:
-                translations = {}
-                for lang in selected_languages:
-                    print(f"Translating from {detected_lang} to {
-                          lang}...")  # Debugging
-                    translations[lang] = translate_text(
-                        text,
-                        fb_model,
-                        fb_tokenizer,
-                        target_lang=lang,
-                        src_lang=transcription["language"],
-                    )
-                segment_result["translations"] = translations
-            # Append result
-            results.append(segment_result)
+                # Prepare segment result
+                segment_result = {
+                    "start_time": start_time,
+                    "end_time": end_time,
+                    "text": text,
+                }
+
+                # Translate if required
+                if action_type == "translation" and selected_languages:
+                    translations = {}
+                    for lang in selected_languages:
+                        progress = 50 + ((idx + 1) / total_chunks) * \
+                            50 / len(selected_languages)
+                        await socketio.emit("process-state", {
+                            "stage": "translating",
+                            "message": f"Translating from {detected_lang} to {lang.upper()} for audio part {idx + 1} of {total_chunks}.",
+                            "progress": progress,
+                        })
+                        print(f"Translating from {detected_lang} to {
+                            lang}...")  # Debugging
+                        translations[lang] = translate_text(
+                            text,
+                            fb_model,
+                            fb_tokenizer,
+                            target_lang=lang,
+                            src_lang=transcription["language"],
+                        )
+                    segment_result["translations"] = translations
+                # Append result
+                results.append(segment_result)
+        except Exception as e:
+            # Notify error for the current chunk
+            await socketio.emit("process-state", {
+                "stage": "transcribing",
+                "message": f"Error processing chunk {idx + 1}: {str(e)}",
+                "progress": ((idx + 1) / total_chunks) * 100,
+            })
+            continue
     subtitle_folder = create_subtitle_folder()
     # Step 4: Generate subtitles
     if subtitle_format == "srt":
+        await socketio.emit("process-state", {
+            "stage": "finalizing",
+            "message": "Creating subtitles in SRT format. Almost there...",
+            "progress": 95,
+        })
         output_path = os.path.join(subtitle_folder, "output.srt")
         generate_srt(results, output_path)
+        await socketio.emit("process-state", {
+            "stage": "finalizing",
+            "message": "Subtitle creation complete!",
+            "progress": 100,
+        })
     elif subtitle_format == "vtt":
+        await socketio.emit("process-state", {
+            "stage": "finalizing",
+            "message": "Creating subtitles in SRT format. Almost there...",
+            "progress": 95,
+        })
         output_path = os.path.join(subtitle_folder, "output.vtt")
         generate_vtt(results, output_path)
+        await socketio.emit("process-state", {
+            "stage": "finalizing",
+            "message": "Subtitle creation complete!",
+            "progress": 100,
+        })
 
     return {
         "message": "Processing completed successfully!",

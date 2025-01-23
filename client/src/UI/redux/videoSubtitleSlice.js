@@ -6,7 +6,7 @@ const initialState = {
   isVideoUploaded: false,
   previewUrl: "",
   isUploadFinished: false,
-  progress_state: "audio_extraction",
+  progress_state: { stage: "", message: "", progress: 0 },
   metadata: null,
   isPlaying: false,
 };
@@ -39,7 +39,9 @@ const videoSlice = createSlice({
       state.previewUrl = action.payload;
     },
     setProgressStateRdx: (state, action) => {
-      state.progress_state = action.payload;
+      if (action.payload) {
+        state.progress_state = { ...action.payload };
+      }
     },
   },
 });
