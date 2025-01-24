@@ -1,10 +1,10 @@
 from fastapi import FastAPI
 from dependencies.model_loaders import load_whisper_model, load_facebook_m2m100_local
-from dependencies.socket_events import setup_socket_events, shutdown_socket, shutdown_processes
+from socket_ops.socket_events import setup_socket_events_of_translator, shutdown_socket, shutdown_processes, setup_socket_events_of_subtitle_creator
 from socket_ops.socket_con import connect_to_socket_server
 from fastapi.middleware.cors import CORSMiddleware
 from socketio import AsyncClient
-from asyncio import Lock
+from contextlib import asynccontextmanager
 from routers import uploadVideos
 
 # Initialize FastAPI app
@@ -27,9 +27,9 @@ app.add_middleware(
 whisper_model = None  # Whisper model instance
 fb_model = None  # Facebook model instance
 fb_tokenizer = None  # Facebook tokenizer instance
-which_model = "whisper-medium"  # Default Whisper model
 
 
+@asynccontextmanager
 async def lifespan(app: FastAPI):
     """
     Lifespan for FastAPI to manage startup and shutdown events.
@@ -69,12 +69,9 @@ async def lifespan(app: FastAPI):
             print("Socket.IO initialization failed.")
             return
         # Setup Socket.IO events
-        temp_audio_folder = await setup_socket_events(socketio, whisper_model, fb_model, fb_tokenizer)
+        temp_audio_folder = await setup_socket_events_of_translator(socketio, whisper_model, fb_model, fb_tokenizer)
+        await setup_socket_events_of_subtitle_creator(socketio, whisper_model, fb_model, fb_tokenizer)
         print("Socket.IO events set up successfully.")
-
-        app.state.whisper_model = whisper_model
-        app.state.fb_model = fb_model
-        app.state.fb_tokenizer = fb_tokenizer
 
     except Exception as e:
         print(f"Error during startup: {e}")
@@ -84,8 +81,8 @@ async def lifespan(app: FastAPI):
 
     try:
         # Shutdown logic
-        await shutdown_socket(socketio)
-        print("Socket.IO connection closed.")
+        # await shutdown_socket(socketio)
+        # print("Socket.IO connection closed.")
 
         await shutdown_processes(temp_audio_folder)
         print("Application shutdown complete.")

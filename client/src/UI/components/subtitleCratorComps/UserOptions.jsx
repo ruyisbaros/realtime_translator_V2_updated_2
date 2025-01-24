@@ -7,11 +7,13 @@ import {
 } from "../../redux/videoSubtitleSlice";
 import { toast } from "react-toastify";
 import UploadVideoProgress from "../../accessories/subtitleCreatorAcs/uploadVideoProgress";
+import { useWebSocket } from "../../WebSocketContext";
+
 //import { uploadFileWithRetry } from "../../utils/uploader";
 
 const UserOptions = () => {
   const dispatch = useDispatch();
-
+  const { socket } = useWebSocket();
   const { selectedFile } = useSelector((store) => store.video_subtitles);
   const [actionType, setActionType] = useState("translation");
   const [selectedLanguages, setSelectedLanguages] = useState([]);
@@ -30,11 +32,11 @@ const UserOptions = () => {
 
     const formData = new FormData();
     formData.append("file", selectedFile);
-    formData.append("actionType", actionType); // Add actionType
+    /* formData.append("actionType", actionType); // Add actionType
     selectedLanguages.forEach((lang) => {
       formData.append("selectedLanguages", lang);
     });
-    formData.append("subtitleFormat", subtitleFormat); // Add subtitleFormat
+    formData.append("subtitleFormat", subtitleFormat); // Add subtitleFormat */
 
     try {
       setIsUploading(true);
@@ -52,15 +54,21 @@ const UserOptions = () => {
 
       if (response.status === 200) {
         console.log(response);
+        const { file_path } = response.data;
         toast.success("Audio extraction successful!");
+        // Emit the start-processing event via Socket.IO
+        socket.emit("start-processing", {
+          file_path,
+          actionType,
+          selectedLanguages,
+          subtitleFormat,
+        });
       } else {
         toast.warning("Audio extraction failed. Please try again.");
       }
     } catch (error) {
       console.error("Error during upload:", error);
       toast.warning("An error occurred while extracting audio.");
-    } finally {
-      setIsUploading(false);
     }
   };
 

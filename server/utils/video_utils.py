@@ -17,6 +17,7 @@ async def batch_audio(socketio, audio_path: str, chunk_duration: int = 600) -> L
     Returns:
         List[str]: List of paths to the audio chunks.
     """
+
     audio = AudioSegment.from_wav(audio_path)
     duration_ms = len(audio)
     audio_chunks = []
@@ -73,16 +74,15 @@ async def process_video(
     temp_audio_path = os.path.splitext(file_path)[0] + ".wav"
     await extract_audio_from_video(file_path, temp_audio_path, socketio)
 
+    # Step 2: Batch processing for long audio
+    audio_chunks = await batch_audio(socketio, temp_audio_path)
+    total_chunks = len(audio_chunks)
     # Notify initial progress
     await socketio.emit("process-state", {
         "stage": "transcribing",
         "message": "Starting transcription...",
         "progress": 0,
     })
-
-    # Step 2: Batch processing for long audio
-    audio_chunks = await batch_audio(socketio, temp_audio_path)
-    total_chunks = len(audio_chunks)
     # Step 3: Transcription and Translation
     for idx, chunk_path in enumerate(audio_chunks):
 

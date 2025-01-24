@@ -1,5 +1,6 @@
 from fastapi import FastAPI
-from utils.audio_utils import save_as_wav, create_temp_audio_folder
+from utils.audio_utils import save_as_wav, create_temp_audio_folder, create_temp_video_folder
+from utils.video_utils import process_video
 from dependencies.translations import transcribe_audio, translate_text
 from socket_ops.socket_con import connect_to_socket_server
 from socketio import AsyncClient
@@ -11,7 +12,7 @@ import base64
 warning_sent = False  # Global flag to track warning
 
 
-async def setup_socket_events(socketio, whisper_model, fb_model=None, fb_tokenizer=None):
+async def setup_socket_events_of_translator(socketio, whisper_model, fb_model=None, fb_tokenizer=None):
     """
     Setup Socket.IO events and connect to the server.
 
@@ -130,3 +131,48 @@ async def shutdown_processes(temp_audio_folder):
         print("Shutdown process complete.")
     except Exception as e:
         print(f"Error during shutdown: {e}")
+
+
+async def setup_socket_events_of_subtitle_creator(
+    socketio, whisper_model, fb_model, fb_tokenizer
+):
+    """
+    Setup Socket.IO events for subtitle creation.
+
+    Args:
+        app: FastAPI app instance.
+        whisper_model: Loaded Whisper model.
+        state_lock: Lock for managing application state.
+        fb_model: Loaded Facebook model (optional).
+        fb_tokenizer: Tokenizer for Facebook model (optional).
+    """
+    temp_video_folder = create_temp_video_folder()
+
+    @socketio.on("start-processing")
+    async def handle_start_processing(data):
+        """
+        Start processing the uploaded video file.
+        """
+        file_path = data.get("file_path")
+        selected_languages = data.get("selectedLanguages"),
+        action_type = data.get("actionType"),
+        subtitle_format = data.get("subtitleFormat"),
+        if not file_path or not os.path.exists(file_path):
+            await socketio.emit("process-state", {
+                "stage": "error",
+                "message": "File not found for processing.",
+                "progress": 0,
+            })
+            return
+
+        try:
+            print(f"Starting processing for file: {file_path}")
+            await process_video(file_path, whisper_model, fb_model, fb_tokenizer, selected_languages, action_type, subtitle_format, socketio)
+        except Exception as e:
+            await socketio.emit("process-state", {
+                "stage": "error",
+                "message": f"Error during processing: {str(e)}",
+                "progress": 0,
+            })
+
+    print("Subtitle creator Socket.IO events set up.")

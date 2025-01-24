@@ -61,7 +61,7 @@ export const SocketProvider = ({ children, wsUrl }) => {
       dispatch(setVolumeDataRdx({ waveform, rms }));
     });
     // Listen video-audio operations state
-    socketRef.current.on("process-state", (data) => {
+    socketRef.current.on("process-state-react", (data) => {
       const { stage, message, progress } = data;
       console.log("Received new state:", data);
       dispatch(setProgressStateRdx({ stage, message, progress }));

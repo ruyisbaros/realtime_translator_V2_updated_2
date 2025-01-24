@@ -21,15 +21,28 @@ io.on("connection", (socket) => {
   // Handle client registration
   socket.on("register", (data) => {
     const { clientType, id } = data;
-    const client = { id, socketId: socket.id, clientType };
-    clients.unshift(client);
-    console.log("Registered client:", client);
-    //io.emit("updateClients", clients); // Notify all clients of the update
+    const existingClient = clients.find((c) => c.id === id);
+    if (existingClient) {
+      existingClient.socketId = socket.id;
+      console.log("Client reconnected:", existingClient);
+    } else {
+      clients.push({ id, socketId: socket.id, clientType });
+      console.log("New client registered:", data);
+    }
   });
+
+  // Handle file upload complete from React.js
+  /*   socket.on("define-active-app", (data) => {
+    const fastAPISocket = clients.find((c) => c.clientType === "fastapi");
+    if (fastAPISocket) {
+      io.to(fastAPISocket.socketId).emit("define-active-app", data);
+    } else {
+      console.error("No FastAPI client connected");
+    }
+  }); */
 
   // Handle audio chunks from Node.js
   socket.on("audio-chunk", (data) => {
-    //console.log("Chunk received from Node.js ");
     const fastAPISocket = clients.find((c) => c.clientType === "fastapi");
     if (fastAPISocket) {
       io.to(fastAPISocket.socketId).emit("audio-chunk", data);
@@ -38,7 +51,46 @@ io.on("connection", (socket) => {
       console.error("No FastAPI client connected");
     }
   });
+  ////// UPLOADING VIDEO LOGIC STARTS//////////////
+  socket.on("start-processing", (data) => {
+    console.log("Fastapi started processing command received from React");
+    const fastAPISocket = clients.find((c) => c.clientType === "fastapi");
+    if (fastAPISocket) {
+      io.to(fastAPISocket.socketId).emit("start-processing", data);
+    } else {
+      console.error("No FastAPI client connected");
+    }
+  });
 
+  socket.on("process-state", (data) => {
+    console.log("Process state emit from nodejs to react", data);
+    const reactAPISocket = clients.find((c) => c.clientType === "react");
+    if (reactAPISocket) {
+      io.to(reactAPISocket.socketId).emit("process-state-react", data);
+    } else {
+      console.error("No FastAPI client connected");
+    }
+  });
+
+  // Handle processing complete from fastAPI
+  socket.on("processing-complete", (data) => {
+    const reactAPISocket = clients.find((c) => c.clientType === "react");
+    if (reactAPISocket) {
+      io.to(reactAPISocket.socketId).emit("processing-complete", data);
+    } else {
+      console.error("No FastAPI client connected");
+    }
+  });
+  // Handle processing complete from fastAPI
+  socket.on("upload-error", (data) => {
+    const reactAPISocket = clients.find((c) => c.clientType === "react");
+    if (reactAPISocket) {
+      io.to(reactAPISocket.socketId).emit("upload-error", data);
+    } else {
+      console.error("No FastAPI client connected");
+    }
+  });
+  ////// UPLOADING VIDEO LOGIC ENDS//////////////
   // Handle transcriptions from FastAPI
   socket.on("transcription", (data) => {
     const receivers = [];
@@ -73,19 +125,13 @@ io.on("connection", (socket) => {
       io.to(reactAPISocket.socketId).emit("graph-data", data);
     }
   });
-  socket.on("process-state", (data) => {
-    const reactAPISocket = clients.find((c) => c.clientType === "react");
-    if (reactAPISocket) {
-      io.to(reactAPISocket.socketId).emit("process-state", data);
-    }
-  });
 
   // Handle disconnections
   socket.on("disconnect", () => {
-    const index = clients.findIndex((client) => client.id === socket.id);
+    const index = clients.findIndex((client) => client.socketId === socket.id);
     if (index !== -1) {
       console.log("Client disconnected:", clients[index]);
-      clients.splice(index, 1); // Remove from list
+      clients.splice(index, 1); // Remove client
     }
   });
 });
