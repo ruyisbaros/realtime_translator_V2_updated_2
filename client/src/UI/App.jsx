@@ -1,6 +1,8 @@
 import { Routes, Route } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { Buffer } from "buffer";
+window.Buffer = Buffer;
 import { motion, AnimatePresence } from "framer-motion";
 import { useLocation } from "react-router-dom";
 import Home from "./pages/Home";

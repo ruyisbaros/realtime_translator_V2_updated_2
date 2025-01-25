@@ -15,8 +15,10 @@ const initialState = {
     finalizing: { progress: 0, message: "" },
   },
   isTranslationComplete: false,
+  translatedContent: null,
   metadata: null,
   isPlaying: false,
+  parsed_subtitles: [], // Parsed subtitles
 };
 
 const videoSlice = createSlice({
@@ -58,8 +60,23 @@ const videoSlice = createSlice({
         };
       }
     },
-    setTranslationCompleteRdx: (state, action) => {
+    setIsTranslationCompleteRdx: (state, action) => {
       state.isTranslationComplete = action.payload;
+    },
+    setTranslatedContentRdx: (state, action) => {
+      state.translatedContent = action.payload;
+    },
+    setParsedSubtitlesRdx: (state, action) => {
+      if (action.payload) {
+        // Assign parsed subtitles directly to the state
+        state.parsed_subtitles = action.payload.map((subtitle) => ({
+          start_time: subtitle.start_time,
+          end_time: subtitle.end_time,
+          text: subtitle.text,
+          translations: subtitle.translations, // Translations as object
+          language: subtitle.language, // Detected language
+        }));
+      }
     },
   },
 });
@@ -72,6 +89,8 @@ export const {
   resetSelectedFileRdx,
   setPreviewUrlRdx,
   setProgressStateRdx,
-  setTranslationCompleteRdx,
+  setIsTranslationCompleteRdx,
+  setTranslatedContentRdx,
+  setParsedSubtitlesRdx,
 } = videoSlice.actions;
 export default videoSlice.reducer;

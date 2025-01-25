@@ -4,6 +4,7 @@ from typing import List, Dict
 from pydub import AudioSegment
 from dependencies.transcribe_and_translate import transcribe_audio, translate_text
 from utils.audio_utils import generate_subtitles, extract_audio_from_video
+from utils.parsingoutputs import parse_subtitles
 
 
 async def batch_audio(socketio, audio_path: str, chunk_duration: int = 600) -> List[str]:
@@ -147,7 +148,8 @@ async def process_video(
     output_path = await generate_subtitles(subtitle_format, results, socketio)
     if output_path:
         print(f"Subtitles saved at {output_path}")
-
+    subtitles = await parse_subtitles(output_path, detected_lang)
+    print("Successfully parsed subtitles from: ", output_path)
     return {
         "message": "Processing completed successfully!",
         "output_file": output_path,
@@ -155,5 +157,6 @@ async def process_video(
             "language_detected": detected_lang,
             "segments_processed": len(results),
             "format": subtitle_format,
+            "parsed_subtitles": subtitles,
         }
     }

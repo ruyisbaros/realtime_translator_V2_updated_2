@@ -132,7 +132,8 @@ def setup_socket_events(sio: AsyncServer, client_manager: ClientManager, app: Fa
 
         try:
             print(f"Starting processing for file: {file_path}")
-            await process_video(file_path, whisper_model, fb_model, fb_tokenizer, selected_languages, action_type, subtitle_format, sio)
+            result = await process_video(file_path, whisper_model, fb_model, fb_tokenizer, selected_languages, action_type, subtitle_format, sio)
+            await sio.emit("processing-complete", result)
         except Exception as e:
             await sio.emit("process-state", {
                 "stage": "error",

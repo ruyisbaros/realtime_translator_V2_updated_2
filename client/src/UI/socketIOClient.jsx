@@ -8,7 +8,12 @@ import {
   setTranslatedTextRdx,
   setVolumeDataRdx,
 } from "./redux/selectedAudioSrc";
-import { setProgressStateRdx } from "./redux/videoSubtitleSlice";
+import {
+  setIsTranslationCompleteRdx,
+  setParsedSubtitlesRdx,
+  setProgressStateRdx,
+  setTranslatedContentRdx,
+} from "./redux/videoSubtitleSlice";
 
 // eslint-disable-next-line react/prop-types
 export const SocketProvider = ({ children, wsUrl }) => {
@@ -67,6 +72,19 @@ export const SocketProvider = ({ children, wsUrl }) => {
       dispatch(setProgressStateRdx({ stage, message, progress }));
     });
 
+    // Listen translation complete state
+    socketRef.current.on("processing-complete", async (data) => {
+      console.log("Received translation complete state:", data);
+      const { details } = data;
+      const { parsed_subtitles } = details;
+
+      dispatch(setParsedSubtitlesRdx(parsed_subtitles));
+      dispatch(setTranslatedContentRdx(data));
+      setTimeout(() => {
+        dispatch(setIsTranslationCompleteRdx(true));
+      }, 2000);
+    });
+
     socketRef.current.on("disconnect", (reason) => {
       console.log("React disconnected:", reason);
       setConnectionStatus("disconnected");
@@ -76,11 +94,6 @@ export const SocketProvider = ({ children, wsUrl }) => {
       console.error("Connection error:", error);
       setConnectionStatus("error");
     });
-
-    // Log all incoming events for debugging
-    /*   socketRef.current.onAny((event, data) => {
-      console.log(`Event received: ${event}`, data);
-    }); */
   };
 
   useEffect(() => {

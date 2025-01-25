@@ -1,6 +1,7 @@
 import wave
 import os
 import subprocess
+import datetime
 
 
 def save_as_wav(audio_data, file_path):
@@ -49,7 +50,9 @@ def create_subtitle_folder():
     Ensure the 'subtitles' folder exists in the project's temp directory.
     """
     base_dir = os.path.dirname(os.path.abspath(__file__))
-    subtitle_folder = os.path.join(base_dir, "../temp_video/subtitles")
+    subtitle_folder = os.path.normpath(
+        os.path.join(base_dir, "../temp_video/subtitles"))
+    print(f"Resolved subtitle folder: {subtitle_folder}")
     os.makedirs(subtitle_folder, exist_ok=True)
     return subtitle_folder
 
@@ -127,28 +130,56 @@ async def extract_audio_from_video(video_path: str, output_audio_path: str, sock
         raise RuntimeError(f"FFmpeg error: {e.stderr.decode('utf-8')}")
 
 
+def format_time(seconds):
+    """
+    Format time in seconds to SRT timestamp format.
+    """
+    time_delta = datetime.timedelta(seconds=seconds)
+    hours, rem = divmod(time_delta.seconds, 3600)
+    minutes, seconds = divmod(rem, 60)
+    milliseconds = int(time_delta.microseconds / 1000)
+
+    return f"{hours:02}:{minutes:02}:{seconds:02},{milliseconds:03}"
+
+
 def generate_srt(subtitle_segments, output_path):
     """
     Generate an SRT file from subtitle segments.
     """
     srt_content = ""
     for idx, segment in enumerate(subtitle_segments, start=1):
-        # Ensure start_time and end_time are converted to formatted strings
-        start_time = f"{segment['start_time']:.3f}".replace(".", ",")
-        end_time = f"{segment['end_time']:.3f}".replace(".", ",")
+        # Format start and end times
+        start_time = format_time(
+            segment['start_time'] / 1000)  # convert to seconds
+        # convert to seconds
+        end_time = format_time(segment['end_time'] / 1000)
 
         # Add main text
         text = segment.get("text", "")
-        srt_content += f"{idx}\n{start_time} --> {end_time}\n{text}\n\n"
+        srt_content += f"{idx}\n{start_time} --> {end_time}\n{text}\n"
 
         # Add translations if they exist
         if "translations" in segment:
             for lang, translation in segment["translations"].items():
                 srt_content += f"[{lang.upper()}] {translation}\n"
 
+        srt_content += "\n"  # Added a blank line after each subtitle entry.
+
     # Write the SRT content to the specified file
     with open(output_path, "w", encoding="utf-8") as f:
         f.write(srt_content)
+
+
+def format_time_vtt(seconds):
+    """
+    Format time in seconds to VTT timestamp format.
+    """
+    time_delta = datetime.timedelta(seconds=seconds)
+    hours, rem = divmod(time_delta.seconds, 3600)
+    minutes, seconds = divmod(rem, 60)
+    milliseconds = int(time_delta.microseconds / 1000)
+
+    return f"{hours:02}:{minutes:02}:{seconds:02}.{milliseconds:03}"
 
 
 def generate_vtt(subtitle_segments, output_path):
@@ -156,17 +187,21 @@ def generate_vtt(subtitle_segments, output_path):
     Generate a VTT file from subtitle segments.
     """
     vtt_content = "WEBVTT\n\n"
-    for segment in subtitle_segments:
-        start_time = segment["start_time"]
-        end_time = segment["end_time"]
-        text = segment["text"]
+    for idx, segment in enumerate(subtitle_segments, start=1):
+        # Format start and end times
+        start_time = format_time_vtt(segment['start_time'] / 1000)
+        end_time = format_time_vtt(segment['end_time'] / 1000)
 
-        vtt_content += f"{start_time} --> {end_time}\n{text}\n\n"
+        # Add main text
+        text = segment.get("text", "")
+        vtt_content += f"{start_time} --> {end_time}\n{text}\n"
 
         # Add translations if they exist
         if "translations" in segment:
             for lang, translation in segment["translations"].items():
                 vtt_content += f"[{lang.upper()}] {translation}\n"
+
+        vtt_content += "\n"  # Add blank lines after translations.
 
     with open(output_path, "w", encoding="utf-8") as f:
         f.write(vtt_content)

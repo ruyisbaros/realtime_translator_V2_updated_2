@@ -22,8 +22,15 @@ const VideoSubtitleCreator = () => {
   }, [dispatch, active_app, socket]);
   return (
     <div className="h-[640px]">
-      {selectedFile && isUploadFinished ? <VideoDetails /> : <UploadPopup />}
-      {isTranslationComplete && <VideoEditor />}
+      {!isTranslationComplete ? (
+        selectedFile && isUploadFinished ? (
+          <VideoDetails />
+        ) : (
+          <UploadPopup />
+        )
+      ) : (
+        <VideoEditor />
+      )}
     </div>
   );
 };

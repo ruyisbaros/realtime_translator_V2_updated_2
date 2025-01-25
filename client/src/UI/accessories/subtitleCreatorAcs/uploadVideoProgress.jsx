@@ -75,9 +75,9 @@ const UploadVideoProgress = () => {
         <div className="flex justify-center items-center h-[300px]">
           {currentStage ? (
             <img
-              src={GIF_PATHS[currentStage]}
+              src="/assets/general.gif"
               alt={`${currentStage}...`}
-              className="w-[250px]"
+              className="w-[350px]"
               onError={(e) => {
                 e.target.onerror = null;
                 e.target.src = "/assets/transcription.gif";
