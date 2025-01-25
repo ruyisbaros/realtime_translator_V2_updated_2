@@ -14,6 +14,7 @@ const initialState = {
     translating: { progress: 0, message: "" },
     finalizing: { progress: 0, message: "" },
   },
+  activeMessages: [],
   isTranslationComplete: false,
   translatedContent: null,
   metadata: null,
@@ -58,6 +59,7 @@ const videoSlice = createSlice({
             message: message, // Directly update message
           },
         };
+        state.activeMessages = [...state.activeMessages, message];
       }
     },
     setIsTranslationCompleteRdx: (state, action) => {

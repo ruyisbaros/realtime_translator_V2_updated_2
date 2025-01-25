@@ -18,7 +18,7 @@ async def parse_subtitles(file_path, language_detected):
         parsed = []
 
         for entry in subtitles:
-            print("Parsed SRT Entry", entry)
+            # print("Parsed SRT Entry", entry)
             if not entry or not entry.text:
                 print("skipping invalid entry")
                 continue  # Skip invalid entries

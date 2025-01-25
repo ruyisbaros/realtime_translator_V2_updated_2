@@ -122,7 +122,7 @@ async def process_video(
                                          total_translations) * 50
                         await socketio.emit("process-state", {
                             "stage": "translating",
-                            "message": f"Translating from {detected_lang} to {lang.upper()} for audio part {idx + 1} of {total_chunks}.",
+                            "message": f"Translating from [{detected_lang.upper()}] to [{lang.upper()}] for audio part {idx + 1} of {total_chunks}.",
                             "progress": progress,
                         })
                         print(f"Translating from {detected_lang} to {
@@ -149,7 +149,7 @@ async def process_video(
     if output_path:
         print(f"Subtitles saved at {output_path}")
     subtitles = await parse_subtitles(output_path, detected_lang)
-    print("Successfully parsed subtitles from: ", output_path)
+
     return {
         "message": "Processing completed successfully!",
         "output_file": output_path,

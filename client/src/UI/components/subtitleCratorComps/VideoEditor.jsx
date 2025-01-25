@@ -1,26 +1,21 @@
-import { useSelector } from "react-redux";
+import TranscriptEditor from "./TranscriptEditor";
+import PlayVideoEditor from "./PlayVideoEditor";
+import { useState } from "react";
 const VideoEditor = () => {
-  // eslint-disable-next-line no-unused-vars
-  const { selectedFile, translatedContent, parsed_subtitles } = useSelector(
-    (store) => store.video_subtitles
-  );
-  console.log(parsed_subtitles);
+  const [currentTime, setCurrentTime] = useState(0); // Current time in milliseconds
 
+  const handleTimeUpdate = (time) => {
+    setCurrentTime(time); // Update current time from video player
+  };
   return (
     <div className="h-screen bg-gradient-to-br from-gray-900 to-gray-800 text-gray-200">
       <div className="flex flex-col h-full">
         {/* Top Section */}
-        <div className="flex flex-1 border-b border-gray-700">
+        <div className="flex h-[60%] border-b border-gray-700">
           {/* Left: Editable Transcription */}
-          <div className="w-1/2 p-4 border-r border-gray-700">
-            <h2 className="text-lg font-semibold">Editable Transcription</h2>
-            <div className="mt-4">[Transcription Placeholder]</div>
-          </div>
+          <TranscriptEditor currentTime={currentTime} />
           {/* Right: Video Player */}
-          <div className="w-1/2 p-4">
-            <h2 className="text-lg font-semibold">Video Player</h2>
-            <div className="mt-4">[Video Placeholder]</div>
-          </div>
+          <PlayVideoEditor onTimeUpdate={handleTimeUpdate} />
         </div>
 
         {/* Bottom Section */}

@@ -14,12 +14,12 @@ const VideoSubtitleCreator = () => {
     (store) => store.video_subtitles
   );
 
-  useEffect(() => {
+  /*   useEffect(() => {
     if (active_app !== "subtitle-creator") {
       dispatch(setActiveAppRdx("subtitle-creator"));
     }
     socket.emit("define-active-app", { active_app: "subtitle-creator" });
-  }, [dispatch, active_app, socket]);
+  }, [dispatch, active_app, socket]); */
   return (
     <div className="h-[640px]">
       {!isTranslationComplete ? (

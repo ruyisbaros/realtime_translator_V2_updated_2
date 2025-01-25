@@ -1,3 +1,4 @@
+import { useEffect, useRef } from "react";
 import { useSelector } from "react-redux";
 
 const STEPS = [
@@ -9,17 +10,11 @@ const STEPS = [
   "finalizing",
 ];
 
-const GIF_PATHS = {
-  uploading: "/assets/uploading.gif",
-  extracting: "/assets/extracting.gif",
-  batching: "/assets/extracting.gif", // Placeholder for batching GIF
-  transcribing: "/assets/transcribing.gif",
-  translating: "/assets/translating.gif",
-  finalizing: "/assets/subtitle.gif",
-};
-
 const UploadVideoProgress = () => {
-  const { progress_state } = useSelector((store) => store.video_subtitles);
+  const messagesEndRef = useRef(null);
+  const { progress_state, activeMessages } = useSelector(
+    (store) => store.video_subtitles
+  );
 
   // Find the current stage
   const currentStage = STEPS.find(
@@ -27,8 +22,14 @@ const UploadVideoProgress = () => {
   );
   const currentStageData = currentStage ? progress_state[currentStage] : null;
 
+  useEffect(() => {
+    if (messagesEndRef.current) {
+      messagesEndRef.current.scrollIntoView({ behavior: "smooth" });
+    }
+  }, [activeMessages]);
+
   return (
-    <div className="fixed inset-0 bg-black bg-opacity-60 flex justify-center items-center z-50 backdrop-blur-sm">
+    <div className="fixed max-h[800px] overflow-hidden inset-0 bg-black bg-opacity-60 flex justify-center items-center z-50 backdrop-blur-sm">
       <div className="bg-gradient-to-br from-gray-800 via-gray-900 to-gray-800 text-gray-200 rounded-2xl p-8 w-3/4 max-w-[800px] h-[600px] shadow-2xl border border-gray-700 relative">
         {/* Progress Tracker */}
         <div className="mb-8 flex items-center justify-between w-full">
@@ -58,7 +59,23 @@ const UploadVideoProgress = () => {
                   style={{
                     width: `${progress_state[stage]?.progress || 0}%`,
                   }}
-                ></div>
+                >
+                  {progress_state[stage]?.progress < 100 && (
+                    <span
+                      className={`absolute top-[.7rem]  text-[10px] font-semibold ${
+                        progress_state[stage]?.progress === 100
+                          ? "text-[#db1102]"
+                          : "text-teal-400"
+                      }`}
+                      style={{
+                        left: `${progress_state[stage]?.progress || 0}%`,
+                        transform: "translateX(-50%)",
+                      }}
+                    >
+                      {Math.floor(progress_state[stage]?.progress || 0)}%
+                    </span>
+                  )}
+                </div>
               </div>
             </div>
           ))}
@@ -77,7 +94,7 @@ const UploadVideoProgress = () => {
             <img
               src="/assets/general.gif"
               alt={`${currentStage}...`}
-              className="w-[350px]"
+              className="w-[300px] rounded-xl shadow-2xl"
               onError={(e) => {
                 e.target.onerror = null;
                 e.target.src = "/assets/transcription.gif";
@@ -88,6 +105,19 @@ const UploadVideoProgress = () => {
               All stages completed!
             </p>
           )}
+        </div>
+        {/* Matrix-Style Message Box */}
+        <div className="bg-gray-900 rounded-xl p-4 shadow-md h-[100px] overflow-hidden relative mt-6">
+          <div className="absolute inset-0 overflow-y-auto">
+            <ul className="space-y-1 text-teal-400 text-sm font-mono">
+              {activeMessages.map((msg, idx) => (
+                <li key={idx} className="animate-fade text-center">
+                  {msg}
+                </li>
+              ))}
+              <div ref={messagesEndRef} />
+            </ul>
+          </div>
         </div>
       </div>
     </div>
