@@ -36,15 +36,15 @@ export const SocketProvider = ({ children, wsUrl }) => {
         clientType: "react",
         id: "react-client",
       });
-
+      socketRef.current.on("register_ack", (data) => {
+        console.log("Server acknowledgment:", data);
+      });
       // Listen for new translated text messages
-      socketRef.current.on("transcription-to-clients", (message) => {
-        if (message.target === "react") {
-          console.log("Received translated text:", message.data.text);
-          // Handle the translated text here
-          dispatch(setTranslatedTextRdx(message.data.text));
-          dispatch(setIsLoadingRdx(false));
-        }
+      socketRef.current.on("transcription", (data) => {
+        console.log("Received translated text (React):", data.text);
+        // Handle the translated text here
+        dispatch(setTranslatedTextRdx(data.text));
+        dispatch(setIsLoadingRdx(false));
       });
 
       // Listen for new translated text messages
@@ -61,7 +61,7 @@ export const SocketProvider = ({ children, wsUrl }) => {
       dispatch(setVolumeDataRdx({ waveform, rms }));
     });
     // Listen video-audio operations state
-    socketRef.current.on("process-state-react", (data) => {
+    socketRef.current.on("process-state", (data) => {
       const { stage, message, progress } = data;
       console.log("Received new state:", data);
       dispatch(setProgressStateRdx({ stage, message, progress }));

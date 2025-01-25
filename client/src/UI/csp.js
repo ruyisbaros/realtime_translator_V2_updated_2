@@ -17,7 +17,8 @@ export const setDynamicCSP = () => {
       "'self'",
       "http://localhost:8000",
       "http://localhost:9001",
-      "ws://localhost:9001",
+      "ws://localhost:8000",
+      "ws://127.0.0.1:8000",
       "https://cdnjs.cloudflare.com",
       "https://fonts.googleapis.com",
       "https://fonts.gstatic.com",
@@ -31,7 +32,7 @@ export const setDynamicCSP = () => {
     "connect-src": [
       "'self'",
       "https://deployed_domain.com",
-      "ws://localhost:9001",
+      "ws://localhost:8000",
     ],
   };
 

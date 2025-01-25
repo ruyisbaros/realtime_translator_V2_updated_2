@@ -4,6 +4,7 @@ import axios from "axios";
 import {
   resetSelectedFileRdx,
   setIsUploadFinishedRdx,
+  setProgressStateRdx,
 } from "../../redux/videoSubtitleSlice";
 import { toast } from "react-toastify";
 import UploadVideoProgress from "../../accessories/subtitleCreatorAcs/uploadVideoProgress";
@@ -63,6 +64,13 @@ const UserOptions = () => {
           selectedLanguages,
           subtitleFormat,
         });
+        dispatch(
+          setProgressStateRdx({
+            stage: "uploading",
+            message: "Uploading completed!",
+            progress: 100,
+          })
+        );
       } else {
         toast.warning("Audio extraction failed. Please try again.");
       }

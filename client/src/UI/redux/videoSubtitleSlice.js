@@ -6,7 +6,15 @@ const initialState = {
   isVideoUploaded: false,
   previewUrl: "",
   isUploadFinished: false,
-  progress_state: { stage: "", message: "", progress: 0 },
+  progress_state: {
+    uploading: { progress: 0, message: "" },
+    extracting: { progress: 0, message: "" },
+    batching: { progress: 0, message: "" },
+    transcribing: { progress: 0, message: "" },
+    translating: { progress: 0, message: "" },
+    finalizing: { progress: 0, message: "" },
+  },
+  isTranslationComplete: false,
   metadata: null,
   isPlaying: false,
 };
@@ -40,8 +48,18 @@ const videoSlice = createSlice({
     },
     setProgressStateRdx: (state, action) => {
       if (action.payload) {
-        state.progress_state = { ...action.payload };
+        const { stage, progress, message } = action.payload;
+        state.progress_state = {
+          ...state.progress_state,
+          [stage]: {
+            progress: progress, // Directly update progress
+            message: message, // Directly update message
+          },
+        };
       }
+    },
+    setTranslationCompleteRdx: (state, action) => {
+      state.isTranslationComplete = action.payload;
     },
   },
 });
@@ -54,5 +72,6 @@ export const {
   resetSelectedFileRdx,
   setPreviewUrlRdx,
   setProgressStateRdx,
+  setTranslationCompleteRdx,
 } = videoSlice.actions;
 export default videoSlice.reducer;

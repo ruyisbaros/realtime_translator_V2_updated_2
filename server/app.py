@@ -1,12 +1,16 @@
 from fastapi import FastAPI
 from dependencies.model_loaders import load_whisper_model, load_facebook_m2m100_local
-from socket_ops.socket_events import setup_socket_events_of_translator, shutdown_socket, shutdown_processes, setup_socket_events_of_subtitle_creator
-from socket_ops.socket_con import connect_to_socket_server
+# from socket_ops.socket_events import shutdown_processes
+from socket_ops.socketio_manager import create_sio_app, setup_socket_events
 from fastapi.middleware.cors import CORSMiddleware
-from socketio import AsyncClient
+from socketio import AsyncServer
 from contextlib import asynccontextmanager
+from socket_ops.client_manager import ClientManager
 from routers import uploadVideos
 
+client_manager = ClientManager()
+sio = AsyncServer(async_mode="asgi", cors_allowed_origins="*",  ping_timeout=6000,
+                  ping_interval=3000)
 # Initialize FastAPI app
 app = FastAPI()
 origins = [
@@ -57,21 +61,13 @@ async def lifespan(app: FastAPI):
         whisper_config = local_models.get(
             "whisper-medium")  # Default to medium
         whisper_model = load_whisper_model(whisper_config)
-
+        app.state.whisper_model = whisper_model
         # Load Facebook model and tokenizer for translation
         fb_config = local_models.get("facebook-medium")  # Default to medium
         fb_model, fb_tokenizer = load_facebook_m2m100_local(fb_config["name"])
-
+        app.state.fb_model = fb_model
+        app.state.fb_tokenizer = fb_tokenizer
         print("Both Whisper and Facebook models loaded successfully.")
-        socketio = await connect_to_socket_server()
-        app.state.socketio = socketio
-        if not app.state.socketio:
-            print("Socket.IO initialization failed.")
-            return
-        # Setup Socket.IO events
-        temp_audio_folder = await setup_socket_events_of_translator(socketio, whisper_model, fb_model, fb_tokenizer)
-        await setup_socket_events_of_subtitle_creator(socketio, whisper_model, fb_model, fb_tokenizer)
-        print("Socket.IO events set up successfully.")
 
     except Exception as e:
         print(f"Error during startup: {e}")
@@ -80,11 +76,7 @@ async def lifespan(app: FastAPI):
     yield  # Keeps the application running
 
     try:
-        # Shutdown logic
-        # await shutdown_socket(socketio)
-        # print("Socket.IO connection closed.")
-
-        await shutdown_processes(temp_audio_folder)
+        # await shutdown_processes(temp_audio_folder)
         print("Application shutdown complete.")
     except Exception as e:
         print(f"Error during shutdown: {e}")
@@ -95,3 +87,10 @@ app = FastAPI(lifespan=lifespan)
 
 
 app.include_router(uploadVideos.router)
+setup_socket_events(sio, client_manager, app)
+sio_asgi_app = create_sio_app(sio)
+app.mount("/", sio_asgi_app)
+
+if __name__ == "__main__":
+    import uvicorn
+    uvicorn.run("app:app", host="0.0.0.0", port=8000, reload=True)

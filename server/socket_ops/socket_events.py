@@ -31,6 +31,9 @@ async def setup_socket_events_of_translator(socketio, whisper_model, fb_model=No
         Handle incoming audio chunks and process them.
         """
         print("Chunk received")
+        if not whisper_model or fb_model or fb_tokenizer:
+            print("Models have not been loaded.")
+            return
         # current_state = await state_manager.get_state()
 
         global warning_sent

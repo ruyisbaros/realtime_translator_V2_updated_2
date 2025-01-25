@@ -62,25 +62,6 @@ io.on("connection", (socket) => {
     }
   });
 
-  socket.on("process-state", (data) => {
-    console.log("Process state emit from nodejs to react", data);
-    const reactAPISocket = clients.find((c) => c.clientType === "react");
-    if (reactAPISocket) {
-      io.to(reactAPISocket.socketId).emit("process-state-react", data);
-    } else {
-      console.error("No FastAPI client connected");
-    }
-  });
-
-  // Handle processing complete from fastAPI
-  socket.on("processing-complete", (data) => {
-    const reactAPISocket = clients.find((c) => c.clientType === "react");
-    if (reactAPISocket) {
-      io.to(reactAPISocket.socketId).emit("processing-complete", data);
-    } else {
-      console.error("No FastAPI client connected");
-    }
-  });
   // Handle processing complete from fastAPI
   socket.on("upload-error", (data) => {
     const reactAPISocket = clients.find((c) => c.clientType === "react");

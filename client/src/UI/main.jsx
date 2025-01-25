@@ -12,7 +12,7 @@ setDynamicCSP();
 createRoot(document.getElementById("root")).render(
   <BrowserRouter>
     <Provider store={store}>
-      <SocketProvider wsUrl="http://localhost:9001">
+      <SocketProvider wsUrl="http://127.0.0.1:8000">
         <App />
       </SocketProvider>
     </Provider>

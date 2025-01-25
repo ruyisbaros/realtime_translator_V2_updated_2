@@ -3,7 +3,7 @@ import time
 from typing import List, Dict
 from pydub import AudioSegment
 from dependencies.transcribe_and_translate import transcribe_audio, translate_text
-from utils.audio_utils import create_subtitle_folder, extract_audio_from_video
+from utils.audio_utils import generate_subtitles, extract_audio_from_video
 
 
 async def batch_audio(socketio, audio_path: str, chunk_duration: int = 600) -> List[str]:
@@ -26,11 +26,6 @@ async def batch_audio(socketio, audio_path: str, chunk_duration: int = 600) -> L
                     ) // (chunk_duration * 1000)
     for start_ms in range(0, duration_ms, chunk_duration * 1000):
         progress = ((chunk_number + 1) / total_chunks) * 100
-        await socketio.emit("process-state", {
-            "stage": "batching",
-            "message": f"Creating audio chunk {chunk_number + 1} of {total_chunks}.",
-            "progress": progress,
-        })
         end_ms = min(start_ms + chunk_duration * 1000, duration_ms)
         chunk = audio[start_ms:end_ms]
         chunk_path = f"{os.path.splitext(audio_path)[0]}_{
@@ -38,7 +33,11 @@ async def batch_audio(socketio, audio_path: str, chunk_duration: int = 600) -> L
         chunk.export(chunk_path, format="wav")
         audio_chunks.append(chunk_path)
         chunk_number += 1
-
+    await socketio.emit("process-state", {
+        "stage": "batching",
+        "message": "Batching complete",
+        "progress": 100,
+    })
     return audio_chunks
 
 
@@ -50,7 +49,8 @@ async def process_video(
     selected_languages: List[str],
     action_type: str,
     subtitle_format: str,
-    socketio
+    socketio,
+
 
 ) -> List[Dict]:
     """
@@ -88,7 +88,7 @@ async def process_video(
 
         try:
             progress = ((idx + 1) / total_chunks) * \
-                100  # First 50% of progress
+                100
             await socketio.emit("process-state", {
                 "stage": "transcribing",
                 "message": f"Transcribing audio part {idx + 1} of {total_chunks}...",
@@ -111,9 +111,14 @@ async def process_video(
                 # Translate if required
                 if action_type == "translation" and selected_languages:
                     translations = {}
-                    for lang in selected_languages:
-                        progress = 50 + ((idx + 1) / total_chunks) * \
-                            50 / len(selected_languages)
+                    for lang_idx, lang in enumerate(selected_languages):
+                        total_translations = total_chunks * \
+                            len(selected_languages)
+                        current_translation = idx * \
+                            len(selected_languages) + \
+                            lang_idx + 1  # Overall index
+                        progress = 50 + (current_translation /
+                                         total_translations) * 50
                         await socketio.emit("process-state", {
                             "stage": "translating",
                             "message": f"Translating from {detected_lang} to {lang.upper()} for audio part {idx + 1} of {total_chunks}.",
@@ -139,34 +144,9 @@ async def process_video(
                 "progress": ((idx + 1) / total_chunks) * 100,
             })
             continue
-    subtitle_folder = create_subtitle_folder()
-    # Step 4: Generate subtitles
-    if subtitle_format == "srt":
-        await socketio.emit("process-state", {
-            "stage": "finalizing",
-            "message": "Creating subtitles in SRT format. Almost there...",
-            "progress": 95,
-        })
-        output_path = os.path.join(subtitle_folder, "output.srt")
-        generate_srt(results, output_path)
-        await socketio.emit("process-state", {
-            "stage": "finalizing",
-            "message": "Subtitle creation complete!",
-            "progress": 100,
-        })
-    elif subtitle_format == "vtt":
-        await socketio.emit("process-state", {
-            "stage": "finalizing",
-            "message": "Creating subtitles in SRT format. Almost there...",
-            "progress": 95,
-        })
-        output_path = os.path.join(subtitle_folder, "output.vtt")
-        generate_vtt(results, output_path)
-        await socketio.emit("process-state", {
-            "stage": "finalizing",
-            "message": "Subtitle creation complete!",
-            "progress": 100,
-        })
+    output_path = await generate_subtitles(subtitle_format, results, socketio)
+    if output_path:
+        print(f"Subtitles saved at {output_path}")
 
     return {
         "message": "Processing completed successfully!",
@@ -177,48 +157,3 @@ async def process_video(
             "format": subtitle_format,
         }
     }
-
-
-def generate_srt(subtitle_segments, output_path):
-    """
-    Generate an SRT file from subtitle segments.
-    """
-    srt_content = ""
-    for idx, segment in enumerate(subtitle_segments, start=1):
-        # Ensure start_time and end_time are converted to formatted strings
-        start_time = f"{segment['start_time']:.3f}".replace(".", ",")
-        end_time = f"{segment['end_time']:.3f}".replace(".", ",")
-
-        # Add main text
-        text = segment.get("text", "")
-        srt_content += f"{idx}\n{start_time} --> {end_time}\n{text}\n\n"
-
-        # Add translations if they exist
-        if "translations" in segment:
-            for lang, translation in segment["translations"].items():
-                srt_content += f"[{lang.upper()}] {translation}\n"
-
-    # Write the SRT content to the specified file
-    with open(output_path, "w", encoding="utf-8") as f:
-        f.write(srt_content)
-
-
-def generate_vtt(subtitle_segments, output_path):
-    """
-    Generate a VTT file from subtitle segments.
-    """
-    vtt_content = "WEBVTT\n\n"
-    for segment in subtitle_segments:
-        start_time = segment["start_time"]
-        end_time = segment["end_time"]
-        text = segment["text"]
-
-        vtt_content += f"{start_time} --> {end_time}\n{text}\n\n"
-
-        # Add translations if they exist
-        if "translations" in segment:
-            for lang, translation in segment["translations"].items():
-                vtt_content += f"[{lang.upper()}] {translation}\n"
-
-    with open(output_path, "w", encoding="utf-8") as f:
-        f.write(vtt_content)

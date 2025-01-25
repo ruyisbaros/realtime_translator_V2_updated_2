@@ -4,12 +4,13 @@ import VideoDetails from "../components/subtitleCratorComps/VideoDetails";
 import { useEffect } from "react";
 import { setActiveAppRdx } from "../redux/activeAppSlicer";
 import { useWebSocket } from "../WebSocketContext";
+import VideoEditor from "../components/subtitleCratorComps/VideoEditor";
 
 const VideoSubtitleCreator = () => {
   const dispatch = useDispatch();
   const { active_app } = useSelector((store) => store.activeApp);
   const { socket } = useWebSocket();
-  const { selectedFile, isUploadFinished } = useSelector(
+  const { selectedFile, isUploadFinished, isTranslationComplete } = useSelector(
     (store) => store.video_subtitles
   );
 
@@ -22,6 +23,7 @@ const VideoSubtitleCreator = () => {
   return (
     <div className="h-[640px]">
       {selectedFile && isUploadFinished ? <VideoDetails /> : <UploadPopup />}
+      {isTranslationComplete && <VideoEditor />}
     </div>
   );
 };

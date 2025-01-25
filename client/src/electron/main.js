@@ -248,7 +248,7 @@ const CHANNELS = 2; // Stereo audio
 const CHUNK_SIZE =
   CHUNK_DURATION_SECONDS * SAMPLE_RATE * BYTES_PER_SAMPLE * CHANNELS;
 
-const socket = io("http://localhost:9001", {
+const socket = io("http://127.0.0.1:8000", {
   transports: ["websocket"], // Enforce WebSocket transport
 });
 
@@ -258,11 +258,11 @@ socket.on("connect", () => {
 });
 
 // Listen for new translated text messages
-socket.on("transcription-to-clients", (message) => {
-  if (message.target === "nodejs" && subtitleWindow) {
-    console.log("Received translated text:", message.data.text);
+socket.on("transcription", (data) => {
+  if (subtitleWindow) {
+    console.log("Received translated text (Node):", data.text);
     // Handle the translated text here
-    subtitleWindow.webContents.send("update-subtitle", message.data.text);
+    subtitleWindow.webContents.send("update-subtitle", data.text);
   }
 });
 socket.on("disconnect", () => {
