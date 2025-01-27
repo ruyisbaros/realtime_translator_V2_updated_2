@@ -29,7 +29,7 @@ const UploadVideoProgress = () => {
   }, [activeMessages]);
 
   return (
-    <div className="fixed max-h[800px] overflow-hidden inset-0 bg-black bg-opacity-60 flex justify-center items-center z-50 backdrop-blur-sm">
+    <div className="fixed max-h-full overflow-hidden inset-0 bg-black bg-opacity-60 flex justify-center items-center z-50 backdrop-blur-sm">
       <div className="bg-gradient-to-br from-gray-800 via-gray-900 to-gray-800 text-gray-200 rounded-2xl p-8 w-3/4 max-w-[800px] h-[600px] shadow-2xl border border-gray-700 relative">
         {/* Progress Tracker */}
         <div className="mb-8 flex items-center justify-between w-full">

@@ -1,21 +1,15 @@
 import TranscriptEditor from "./TranscriptEditor";
 import PlayVideoEditor from "./PlayVideoEditor";
-import { useState } from "react";
 const VideoEditor = () => {
-  const [currentTime, setCurrentTime] = useState(0); // Current time in milliseconds
-
-  const handleTimeUpdate = (time) => {
-    setCurrentTime(time); // Update current time from video player
-  };
   return (
     <div className="h-screen bg-gradient-to-br from-gray-900 to-gray-800 text-gray-200">
-      <div className="flex flex-col h-full">
+      <div className=" p-2 h-full">
         {/* Top Section */}
-        <div className="flex h-[60%] border-b border-gray-700">
+        <div className="flex gap-2 h-[60%] border-b border-gray-700">
           {/* Left: Editable Transcription */}
-          <TranscriptEditor currentTime={currentTime} />
+          <TranscriptEditor />
           {/* Right: Video Player */}
-          <PlayVideoEditor onTimeUpdate={handleTimeUpdate} />
+          <PlayVideoEditor />
         </div>
 
         {/* Bottom Section */}

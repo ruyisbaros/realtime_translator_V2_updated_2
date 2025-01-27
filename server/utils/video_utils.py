@@ -5,6 +5,7 @@ from pydub import AudioSegment
 from dependencies.transcribe_and_translate import transcribe_audio, translate_text
 from utils.audio_utils import generate_subtitles, extract_audio_from_video
 from utils.parsingoutputs import parse_subtitles
+from utils.file_handling import clean_temp_files
 
 
 async def batch_audio(socketio, audio_path: str, chunk_duration: int = 600) -> List[str]:
@@ -40,6 +41,9 @@ async def batch_audio(socketio, audio_path: str, chunk_duration: int = 600) -> L
         "progress": 100,
     })
     return audio_chunks
+""" 
+
+"""
 
 
 async def process_video(
@@ -51,8 +55,6 @@ async def process_video(
     action_type: str,
     subtitle_format: str,
     socketio,
-
-
 ) -> List[Dict]:
     """
     Process the video: extract audio, transcribe, and translate if needed.
@@ -68,6 +70,8 @@ async def process_video(
 
     Returns:
         List[Dict]: Transcription and translation results with timestamps.
+        Segment Result: {'start_time': 598.0, 'end_time': 600.0, 'text': ' Diese wollen wir jetzt natürlich noch über ein Webinar.', 
+        'translations': {'en': 'This is what we want to do through a webinar.'}}
     """
     results = []
     detected_lang = None
@@ -88,8 +92,7 @@ async def process_video(
     for idx, chunk_path in enumerate(audio_chunks):
 
         try:
-            progress = ((idx + 1) / total_chunks) * \
-                100
+            progress = ((idx + 1) / total_chunks) * 100
             await socketio.emit("process-state", {
                 "stage": "transcribing",
                 "message": f"Transcribing audio part {idx + 1} of {total_chunks}...",
@@ -97,9 +100,10 @@ async def process_video(
             })
             transcription = transcribe_audio(chunk_path,  whisper_model)
             detected_lang = transcription["language"]
+            chunk_offset = idx * 600
             for segment in transcription["segments"]:
-                start_time = segment["start"]
-                end_time = segment["end"]
+                start_time = segment["start"] + chunk_offset  # Add offset
+                end_time = segment["end"] + chunk_offset  # Add offset
                 text = segment["text"]
 
                 # Prepare segment result
@@ -119,12 +123,8 @@ async def process_video(
                             len(selected_languages) + \
                             lang_idx + 1  # Overall index
                         progress = 50 + (current_translation /
-                                         total_translations) * 50
-                        await socketio.emit("process-state", {
-                            "stage": "translating",
-                            "message": f"Translating from [{detected_lang.upper()}] to [{lang.upper()}] for audio part {idx + 1} of {total_chunks}.",
-                            "progress": progress,
-                        })
+                                         total_translations) * 50  #
+
                         print(f"Translating from {detected_lang} to {
                             lang}...")  # Debugging
                         translations[lang] = translate_text(
@@ -134,7 +134,14 @@ async def process_video(
                             target_lang=lang,
                             src_lang=transcription["language"],
                         )
+                        await socketio.emit("process-state", {
+                            "stage": "translating",
+                            "message": f"Translating from [{detected_lang.upper()}] to [{lang.upper()}] for audio part {idx + 1} of {total_chunks}.",
+                            "progress": progress,
+                        })
                     segment_result["translations"] = translations
+                    """  print(f"Segment Result: {
+                        segment_result}")  # Debugging """
                 # Append result
                 results.append(segment_result)
         except Exception as e:
@@ -145,18 +152,33 @@ async def process_video(
                 "progress": ((idx + 1) / total_chunks) * 100,
             })
             continue
-    output_path = await generate_subtitles(subtitle_format, results, socketio)
-    if output_path:
-        print(f"Subtitles saved at {output_path}")
-    subtitles = await parse_subtitles(output_path, detected_lang)
+    subtitles_output = await generate_subtitles(subtitle_format, results, socketio, selected_languages, detected_lang)
+    tracking_paths = []
+    if subtitles_output:
+        print(f"Subtitles saved at {subtitles_output}")
+    original_path = subtitles_output.get("original")
+    tracking_paths.append(original_path)
+    translation_paths = subtitles_output.get("translations", {})
+    parsed_subtitles = {
+        "original":  parse_subtitles(original_path),
+    }
+    print(f"Original subtitles parsed successfully: {original_path}")
+    if translation_paths:
+        for lang, path in translation_paths.items():
+            parsed_subtitles[lang] = parse_subtitles(path)
+            tracking_paths.append(path)
+            print(f"Translation parsed for {lang}: {path}")
 
+    # Clean up temporary files
+    clean_temp_files(os.path.dirname(file_path))
+    # Return results
     return {
         "message": "Processing completed successfully!",
-        "output_file": output_path,
         "details": {
             "language_detected": detected_lang,
             "segments_processed": len(results),
             "format": subtitle_format,
-            "parsed_subtitles": subtitles,
+            "parsed_paths": parsed_subtitles,  # Parsed subtitle data
+            "tracking_paths": tracking_paths,      # File paths for tracking
         }
     }

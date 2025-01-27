@@ -1,0 +1,1822 @@
+[
+    {
+        "start_time": 0,
+        "end_time": 6000,
+        "text": "[DE]  Hallo und herzlich willkommen zur zweiten Folge von Einführung in React mit dem Thema React Setup. "
+    },
+    {
+        "start_time": 6000,
+        "end_time": 15000,
+        "text": "[DE]  Noch einmal kurz zu mir, mein Name ist David Losart, ich bin Software Engineer und seit über 10 Jahren im Web unterwegs und arbeite nun auch bereits seit 4 Jahren mit React. "
+    },
+    {
+        "start_time": 15000,
+        "end_time": 24000,
+        "text": "[DE]  Neben React mag ich die Arbeit mit JavaScript, TypeScript, Node.js, Linux Servern, Docker und AWS. "
+    },
+    {
+        "start_time": 24000,
+        "end_time": 34000,
+        "text": "[DE]  Die heutige Folge dreht sich also nun komplett darum, eine Entwicklungsumgebung aufzusetzen und dort eine erste React Hello World App zu implementieren. "
+    },
+    {
+        "start_time": 34000,
+        "end_time": 45000,
+        "text": "[DE]  Wenn wir uns kurz erinnern, in der letzten Folge habe ich die Geschichte und Prinzipien von React kurz vorgestellt und einen ersten theoretischen Einblick in den Virtual Dom und in JSX gegeben. "
+    },
+    {
+        "start_time": 46000,
+        "end_time": 57000,
+        "text": "[DE]  Das habe ich an dieser Stelle auch einmal kurz visualisiert. Wir erinnern uns, der Virtual Dom ist eine Abstraktion, die React verwendet, um den Dom zu synchronisieren. "
+    },
+    {
+        "start_time": 57000,
+        "end_time": 65000,
+        "text": "[DE]  Und der Virtual Dom erlaubt uns zum einen das deklarative Programmieren und zum anderen gibt es uns einige Performance-Vorteile. "
+    },
+    {
+        "start_time": 65000,
+        "end_time": 73000,
+        "text": "[DE]  In dieser Folge wollen wir nun eben also eine Entwicklungsumgebung aufsetzen. Ich nutze dazu Visual Studio Code. "
+    },
+    {
+        "start_time": 73000,
+        "end_time": 81000,
+        "text": "[DE]  Wir werden uns ein erstes Toolset anschauen mit npm, npx und Babel, was uns bei der Entwicklung von React-Applikationen hilft. "
+    },
+    {
+        "start_time": 81000,
+        "end_time": 92000,
+        "text": "[DE]  Und wir werden natürlich eine erste React-Applikation implementieren und nutzen dazu das React Element, ein atomarer Bildung Block von React und JSX. "
+    },
+    {
+        "start_time": 92000,
+        "end_time": 99000,
+        "text": "[DE]  In dieser Stelle werdet ihr vielleicht kurz aufmerken, ich habe das letzte Mal viel von React Components gesprochen. "
+    },
+    {
+        "start_time": 99000,
+        "end_time": 112000,
+        "text": "[DE]  React Components sind nicht zu verwechseln mit React Element. Ich stelle nun aber in dieser Folge zuerst React Element vor, weil es sozusagen die Grundlage ist oder der atomare Baustein, der tatsächlich atomare Baustein von React. "
+    },
+    {
+        "start_time": 112000,
+        "end_time": 124000,
+        "text": "[DE]  Und React Element nimmt uns aus JSX auch so ein wenig die Magie. Denn wenn man JSX das erste Mal sieht, kann man sich schnell fragen, wie funktioniert das eigentlich hinter den Kulissen? "
+    },
+    {
+        "start_time": 124000,
+        "end_time": 131000,
+        "text": "[DE]  Und React Element ist letztendlich das, was hinter den Kulissen steckt. Das werden wir am Ende der Folge dann auch einfach sehen. "
+    },
+    {
+        "start_time": 131000,
+        "end_time": 141000,
+        "text": "[DE]  Bevor wir loslegen, möchte ich euch ermutigen, alle Code-Beispiele und praktischen Hands-on-Teile, die wir in dieser Folge machen, nachzuprogrammieren. "
+    },
+    {
+        "start_time": 141000,
+        "end_time": 146000,
+        "text": "[DE]  Der praktische Einsatz ist einfach der beste, um eine neue Technologie zu lernen. "
+    },
+    {
+        "start_time": 146000,
+        "end_time": 158000,
+        "text": "[DE]  Das könnt ihr entweder machen, indem ihr nebenher programmiert und die Folge immer wieder pausiert, oder aber ihr schaut euch die Folge einmal komplett an und programmiert das Beispiel im Nachhinein alleine. "
+    },
+    {
+        "start_time": 158000,
+        "end_time": 165000,
+        "text": "[DE]  Wir werden den gesamten Code auch auf GitHub zur Verfügung stellen. Das kann dann ein wenig als Orientierung dienen. "
+    },
+    {
+        "start_time": 165000,
+        "end_time": 172000,
+        "text": "[DE]  Dabei geht einfach auf GitHub und sucht dort nach tech-lounge-reject und ihr solltet das entsprechende Repository finden. "
+    },
+    {
+        "start_time": 172000,
+        "end_time": 177000,
+        "text": "[DE]  Das ist aktuell hier noch leer, weil ich den Code natürlich erst nach dieser Folge hochladen werde. "
+    },
+    {
+        "start_time": 177000,
+        "end_time": 184000,
+        "text": "[DE]  Und damit würde ich sagen, legen wir auch einfach schon mal los. "
+    },
+    {
+        "start_time": 184000,
+        "end_time": 191000,
+        "text": "[DE]  Um unsere Umgebung vorzubereiten, müssen ein paar Schritte unternommen werden. Die haben jetzt mit React erstmal noch nichts zu tun. "
+    },
+    {
+        "start_time": 191000,
+        "end_time": 199000,
+        "text": "[DE]  Zum einen müsst ihr euch Visual Studio Code installieren, oder müsst ihr nicht. Wenn ihr einen anderen Editor bevorzugt, ist das auch vollkommen okay. "
+    },
+    {
+        "start_time": 199000,
+        "end_time": 207000,
+        "text": "[DE]  Ich arbeite nur hier mit Visual Studio Code, weil ich diese Idee doch recht gerne habe. "
+    },
+    {
+        "start_time": 207000,
+        "end_time": 212000,
+        "text": "[DE]  Sie bittet mir einige Unterstützung, zum Beispiel Code-Vervollständigung, was wir nachher auch sehen werden. "
+    },
+    {
+        "start_time": 212000,
+        "end_time": 218000,
+        "text": "[DE]  Neben einer Entwicklungsumgebung Visual Studio Code brauchen wir Node.js und NPM. "
+    },
+    {
+        "start_time": 218000,
+        "end_time": 228000,
+        "text": "[DE]  Da erkläre ich auch gleich ein paar Worte dazu. Und wir müssen natürlich einen Projektordner anlegen und unsere Umgebung vorbereiten mit ein paar wenigen Commands in der Kommandozeile. "
+    },
+    {
+        "start_time": 228000,
+        "end_time": 233000,
+        "text": "[DE]  Ein paar Worte zu NPM, falls ihr das noch nicht gehört habt. "
+    },
+    {
+        "start_time": 233000,
+        "end_time": 246000,
+        "text": "[DE]  NPM ist ein Paketmanager für JavaScript Tools, Bibliotheken und Frameworks und erlaubt uns über eine einfache Command Line Interface das Installieren und Verpacken der NPM-Kommentare. "
+    },
+    {
+        "start_time": 246000,
+        "end_time": 255000,
+        "text": "[DE]  Das ist ein einfacher Befehl wie npm install babel, den wir heute auch noch ausführen werden, der uns Abhängigkeiten in unser Projekt installiert. "
+    },
+    {
+        "start_time": 255000,
+        "end_time": 264000,
+        "text": "[DE]  Bei NPM dreht sich eigentlich alles um die PackageJSON. PackageJSON ist eine Datei, die wir in unserem Projektordner, im Boot-Folder meistens erstellen werden. "
+    },
+    {
+        "start_time": 264000,
+        "end_time": 270000,
+        "text": "[DE]  Und in dieser PackageJSON sind Abhängigkeiten beschrieben, Skripte und auch Projektmetadaten. "
+    },
+    {
+        "start_time": 270000,
+        "end_time": 276000,
+        "text": "[DE]  Ein weiteres Tool, das NPM mitbringt, ist npx oder np execute. "
+    },
+    {
+        "start_time": 276000,
+        "end_time": 284000,
+        "text": "[DE]  Und das ermöglicht uns die Ausführung all dieser JavaScript Tools, Bibliotheken und Frameworks ohne eine Installation. "
+    },
+    {
+        "start_time": 284000,
+        "end_time": 290000,
+        "text": "[DE]  Und das können wir zum Beispiel nutzen, um einen lokalen Web-Server zu starten, der unser Testprojekt ausliefert. "
+    },
+    {
+        "start_time": 290000,
+        "end_time": 296000,
+        "text": "[DE]  Und das werden wir auch tun. Und wir werden dazu die NPM-Kommentare anbieten. "
+    },
+    {
+        "start_time": 296000,
+        "end_time": 300000,
+        "text": "[DE]  Das ist kein Schreibfehler. Dieses Paket heißt wirklich so. "
+    },
+    {
+        "start_time": 300000,
+        "end_time": 307000,
+        "text": "[DE]  npx server startet mit diesem Befehl einen lokalen Web-Server im aktuellen Verzeichnis. "
+    },
+    {
+        "start_time": 307000,
+        "end_time": 312000,
+        "text": "[DE]  Wir haben hier noch das Argument –reload. "
+    },
+    {
+        "start_time": 312000,
+        "end_time": 319000,
+        "text": "[DE]  Das erlaubt uns oder das erlaubt dem Server, alle Dateien, die in unserem Projekt sich tummeln, zu beobachten. "
+    },
+    {
+        "start_time": 319000,
+        "end_time": 322000,
+        "text": "[DE]  Und bei einer Änderung unseren Browser automatisch neu zu laden. "
+    },
+    {
+        "start_time": 322000,
+        "end_time": 327000,
+        "text": "[DE]  Das ist während der Entwicklung sehr bequem, weil es uns das Neuladen der Seite händisch erspart, "
+    },
+    {
+        "start_time": 327000,
+        "end_time": 333000,
+        "text": "[DE]  indem wir entweder F5 drücken oder hier über den Reload-Button die Seite neu laden. "
+    },
+    {
+        "start_time": 333000,
+        "end_time": 339000,
+        "text": "[DE]  Wenn wir diesen Befehl per Default ausführen, liefert er eine Index-HTML, welche wir auch gleich erstellen werden, "
+    },
+    {
+        "start_time": 339000,
+        "end_time": 345000,
+        "text": "[DE]  im aktuellen Ordner unter der Adresse http://local.html. "
+    },
+    {
+        "start_time": 345000,
+        "end_time": 350000,
+        "text": "[DE]  Und nun um euch auch mal zu zeigen, wie ein npm-Paket auf der Registry ausschaut, "
+    },
+    {
+        "start_time": 350000,
+        "end_time": 357000,
+        "text": "[DE]  hier unter npm.js.com habt ihr eine Suche, in der ihr alle Pakete, die es so gibt, suchen könnt. "
+    },
+    {
+        "start_time": 357000,
+        "end_time": 363000,
+        "text": "[DE]  Und für jedes Paket gibt es dann auch eine Seite mit einer Beschreibung und Installationsanweisungen. "
+    },
+    {
+        "start_time": 363000,
+        "end_time": 368000,
+        "text": "[DE]  Alles, was man halt zu diesem Paket wissen muss. "
+    },
+    {
+        "start_time": 369000,
+        "end_time": 372000,
+        "text": "[DE]  Wollen wir das Ganze einfach mal ausführen? "
+    },
+    {
+        "start_time": 372000,
+        "end_time": 380000,
+        "text": "[DE]  Dazu gehen wir also in unsere Commandline und legen uns erstmal einen Ordner an. "
+    },
+    {
+        "start_time": 380000,
+        "end_time": 384000,
+        "text": "[DE]  Den nenne ich hier einfach mal Einführung Reject. "
+    },
+    {
+        "start_time": 384000,
+        "end_time": 388000,
+        "text": "[DE]  Jetzt sieht man, dass ich den zuvor schon angelegt habe, deswegen bringt er mir hier einen Error. "
+    },
+    {
+        "start_time": 388000,
+        "end_time": 392000,
+        "text": "[DE]  Bei euch ist es ein Error, wenn ihr den zuvor schon angelegt habt. "
+    },
+    {
+        "start_time": 392000,
+        "end_time": 397000,
+        "text": "[DE]  Jetzt sieht man, dass ich den zuvor schon angelegt habe, deswegen bringt er mir hier einen Error. "
+    },
+    {
+        "start_time": 397000,
+        "end_time": 401000,
+        "text": "[DE]  Bei euch wird das dann funktionieren. Wir können einfach in diesen Ordner reinnamigieren "
+    },
+    {
+        "start_time": 401000,
+        "end_time": 405000,
+        "text": "[DE]  und wir werden den Befehl npm init ausführen. "
+    },
+    {
+        "start_time": 405000,
+        "end_time": 409000,
+        "text": "[DE]  npm init erzeugt uns eben eine Package JSON, eine Initialen. "
+    },
+    {
+        "start_time": 409000,
+        "end_time": 415000,
+        "text": "[DE]  Und das spart uns so ein wenig das von Hand zu tun, indem es uns über die Kommandozeile ein paar Fragen stellt. "
+    },
+    {
+        "start_time": 415000,
+        "end_time": 420000,
+        "text": "[DE]  Als allererstes will es den Package-Name von uns wissen, den es per Default aus dem aktuellen Ordner einfach herauszieht. "
+    },
+    {
+        "start_time": 420000,
+        "end_time": 424000,
+        "text": "[DE]  Einführung Reject ist in diesem Fall ok. "
+    },
+    {
+        "start_time": 424000,
+        "end_time": 427000,
+        "text": "[DE]  Die Version ist für uns jetzt auch erstmal ok. "
+    },
+    {
+        "start_time": 427000,
+        "end_time": 433000,
+        "text": "[DE]  Wir erinnern uns kurz an die letzte Folge. Semper, Semantic Version, kommt bei npm ganz stark zum Einsatz. "
+    },
+    {
+        "start_time": 433000,
+        "end_time": 439000,
+        "text": "[DE]  Eine Description, da können wir uns einfach irgendeinen Freitext überlegen. "
+    },
+    {
+        "start_time": 439000,
+        "end_time": 444000,
+        "text": "[DE]  Das ist eine Einführung in Reject zum Beispiel. "
+    },
+    {
+        "start_time": 444000,
+        "end_time": 450000,
+        "text": "[DE]  Der Entry Point werden wir nachher sehen, ist bei uns source-app.js. "
+    },
+    {
+        "start_time": 450000,
+        "end_time": 454000,
+        "text": "[DE]  Test-Command, wir haben keinen automatisierten Test, deswegen lassen wir das leer. "
+    },
+    {
+        "start_time": 454000,
+        "end_time": 458000,
+        "text": "[DE]  Wir haben auch noch kein Git Repository eingerichtet. Wir wollen auch erstmal keine Keywords vergeben. "
+    },
+    {
+        "start_time": 458000,
+        "end_time": 461000,
+        "text": "[DE]  Den Author, dort können wir uns selber reinschreiben. "
+    },
+    {
+        "start_time": 461000,
+        "end_time": 467000,
+        "text": "[DE]  Eine Lizenz ist bei privaten Testprojekten auch eher nicht ganz so wichtig. "
+    },
+    {
+        "start_time": 467000,
+        "end_time": 473000,
+        "text": "[DE]  Ich nehme hier in der Regel immer MIT, könnt ihr aber im Prinzip auch auf ILC lassen. "
+    },
+    {
+        "start_time": 473000,
+        "end_time": 481000,
+        "text": "[DE]  Npm fragt uns noch einmal, ob alle unsere Eingaben korrekt waren und wird uns eben diese JSON-Datei als Package JSON im aktuellen Verzeichnis anlegen. "
+    },
+    {
+        "start_time": 481000,
+        "end_time": 485000,
+        "text": "[DE]  In unserem Fall ist das jetzt ok, deswegen yes. "
+    },
+    {
+        "start_time": 485000,
+        "end_time": 490000,
+        "text": "[DE]  Als nächstes öffnen wir nun diesen Ordner in unserer Entwicklungsumgebung. "
+    },
+    {
+        "start_time": 490000,
+        "end_time": 493000,
+        "text": "[DE]  In meinem Fall ist das eben Bishow Studio Code. "
+    },
+    {
+        "start_time": 493000,
+        "end_time": 500000,
+        "text": "[DE]  Das können wir ganz einfach machen, indem wir hier auf File Open gehen, zum entsprechenden Ordner navigieren und dann auf Öffnen drücken. "
+    },
+    {
+        "start_time": 503000,
+        "end_time": 512000,
+        "text": "[DE]  Und jetzt sehen wir, dass uns eben eine Package JSON generiert wurde, in der all die Felder, die wir vorher per Frage beantwortet haben, entsprechend eingetragen sind. "
+    },
+    {
+        "start_time": 514000,
+        "end_time": 522000,
+        "text": "[DE]  Als nächsten Schritt wollen wir uns nun noch eine Index HTML anlegen, also eine initiale HTML-Seite, die ausgeliefert werden soll. "
+    },
+    {
+        "start_time": 522000,
+        "end_time": 526000,
+        "text": "[DE]  Das machen wir über New File, index.html. "
+    },
+    {
+        "start_time": 527000,
+        "end_time": 532000,
+        "text": "[DE]  Und dort schreiben wir einfach eine standardmäßige HTML-Datei, angefangen mit dem Doctype. "
+    },
+    {
+        "start_time": 532000,
+        "end_time": 537000,
+        "text": "[DE]  Und hier haben wir jetzt schon ein tolles Feature von Bishow Studio Code gesehen, die Autovervollständigung. "
+    },
+    {
+        "start_time": 537000,
+        "end_time": 538000,
+        "text": "[DE]  Ich lösche das nochmal. "
+    },
+    {
+        "start_time": 538000,
+        "end_time": 548000,
+        "text": "[DE]  Indem ich also nur die ersten paar Zeichen des Codes eingebe, den ich hier erzeugen will, bietet mir Bishow Studio Code schon eine Vorauswahl an. "
+    },
+    {
+        "start_time": 548000,
+        "end_time": 553000,
+        "text": "[DE]  Wenn ich diese bestätige, entweder über Enter oder indem ich draufklicke, füllt es mir das entsprechend aus. "
+    },
+    {
+        "start_time": 554000,
+        "end_time": 557000,
+        "text": "[DE]  Ein klassisches HTML-Dokument kommt als nächstes. "
+    },
+    {
+        "start_time": 557000,
+        "end_time": 563000,
+        "text": "[DE]  Wir brauchen einen Head oder einen Head Tag, in welchem wir dann einen Titel vergeben können. "
+    },
+    {
+        "start_time": 563000,
+        "end_time": 566000,
+        "text": "[DE]  Das nehmen wir mal einführen in Reakt. "
+    },
+    {
+        "start_time": 567000,
+        "end_time": 569000,
+        "text": "[DE]  Und wir brauchen einen Buddy. "
+    },
+    {
+        "start_time": 570000,
+        "end_time": 575000,
+        "text": "[DE]  Und da wollen wir jetzt einfach, wie das so üblich ist, bei einem Code Beispiel mit Hello World anfangen. "
+    },
+    {
+        "start_time": 576000,
+        "end_time": 579000,
+        "text": "[DE]  Nicht nur noch Speichern drücken, nicht wundern. "
+    },
+    {
+        "start_time": 579000,
+        "end_time": 582000,
+        "text": "[DE]  Das ist auch ein Feature von Bishow Studio Code. "
+    },
+    {
+        "start_time": 582000,
+        "end_time": 586000,
+        "text": "[DE]  Das ist mir automatisch mein Dokument nach gewissen Kriterien formatiert. "
+    },
+    {
+        "start_time": 587000,
+        "end_time": 590000,
+        "text": "[DE]  Dementsprechend kann es sein, dass hier manchmal ein Zeilenumbruch hinzugefügt wird. "
+    },
+    {
+        "start_time": 590000,
+        "end_time": 594000,
+        "text": "[DE]  Das ist einfach sehr bequem, dass es immer alles einheitlich formatiert wird. "
+    },
+    {
+        "start_time": 595000,
+        "end_time": 598000,
+        "text": "[DE]  So, nun haben wir eine Index-HTML erstellt. "
+    },
+    {
+        "start_time": 598000,
+        "end_time": 600000,
+        "text": "[DE]  Diese wollen wir jetzt natürlich noch über ein Webinar. "
+    },
+    {
+        "start_time": 600000,
+        "end_time": 606039,
+        "text": "[DE]  Server ausliefern, um unsere Entwicklungsumgebung zu vervollständigen. Und wie vorher besprochen, "
+    },
+    {
+        "start_time": 606039,
+        "end_time": 617759,
+        "text": "[DE]  nehmen wir dazu npx, geben ein npx server minus minus reload. Das dauert kurz und gibt uns dann "
+    },
+    {
+        "start_time": 617759,
+        "end_time": 624639,
+        "text": "[DE]  hier auch entsprechend zurück, dass nun unter htp localhost 8080 die aktuelle Website oder der "
+    },
+    {
+        "start_time": 624639,
+        "end_time": 631000,
+        "text": "[DE]  aktuelle Ordner ausgeliefert wird und standardmäßig eben diese index.html ausgeliefert wird. Und das "
+    },
+    {
+        "start_time": 631000,
+        "end_time": 637240,
+        "text": "[DE]  sehen wir auch, indem wir zum Browser navigieren und entsprechend diese URL eingeben. Und siehe da, "
+    },
+    {
+        "start_time": 637240,
+        "end_time": 644279,
+        "text": "[DE]  unsere Hello World index.html wird ausgeliefert. Eine kleine Unschönheit sehen wir hier noch, "
+    },
+    {
+        "start_time": 644279,
+        "end_time": 651399,
+        "text": "[DE]  Einführung in React, das Ü hat er irgendwie noch nicht erkannt. Dazu müssen wir in dem HTML im "
+    },
+    {
+        "start_time": 651399,
+        "end_time": 658799,
+        "text": "[DE]  Headteil noch das Charset auf UTF-8 setzen. Geht auch ganz einfach, indem wir hier neta charset "
+    },
+    {
+        "start_time": 658799,
+        "end_time": 668159,
+        "text": "[DE]  gleich UTF-8 eingeben. Wir drücken speichern und wenn wir nun zurück auf die Website navigieren, "
+    },
+    {
+        "start_time": 668159,
+        "end_time": 673080,
+        "text": "[DE]  sehen wir, dass das Reload Flag von Server schon seinen Job getan hat. Die Seite wurde automatisch "
+    },
+    {
+        "start_time": 673080,
+        "end_time": 679759,
+        "text": "[DE]  neu geladen und das Ü wird hier nun korrekt dargestellt. Und damit haben wir im Wesentlichen "
+    },
+    {
+        "start_time": 679759,
+        "end_time": 686200,
+        "text": "[DE]  schon eine laufende Entwicklungsumgebung, in der wir nun React entwickeln können. Dazu nun wieder "
+    },
+    {
+        "start_time": 686200,
+        "end_time": 693759,
+        "text": "[DE]  ein bisschen Theorie. Es gibt mehrere Methoden, wie wir React nun in unser Projekt installieren "
+    },
+    {
+        "start_time": 693759,
+        "end_time": 699680,
+        "text": "[DE]  können oder wie wir auch React aufsetzen können. Die einfachste Methode sind Online Playgrounds. "
+    },
+    {
+        "start_time": 699680,
+        "end_time": 706960,
+        "text": "[DE]  Online Playgrounds sind im Prinzip Entwicklungsumgebung direkt im Browser. Und React bietet selber auf "
+    },
+    {
+        "start_time": 706960,
+        "end_time": 711080,
+        "text": "[DE]  einer Seite Dokumentationen einen Online Playground an, zum Beispiel CodePen. Das können wir uns auch "
+    },
+    {
+        "start_time": 711080,
+        "end_time": 716879,
+        "text": "[DE]  mal ganz kurz anschauen indem wir auf Get Started drücken. Try React sehen wir hier die Online "
+    },
+    {
+        "start_time": 716879,
+        "end_time": 722440,
+        "text": "[DE]  Playgrounds. Wenn wir da zum Beispiel auf CodePen navigieren, werden wir gleich weitergeleitet. "
+    },
+    {
+        "start_time": 722440,
+        "end_time": 730759,
+        "text": "[DE]  Und haben nun hier ebenfalls eine Hello World Applikation von React, die wir entsprechend "
+    },
+    {
+        "start_time": 730759,
+        "end_time": 736679,
+        "text": "[DE]  auch bearbeiten können. Wir geben einfach ein U ein. Und über Command Enter wird die Seite nun "
+    },
+    {
+        "start_time": 736679,
+        "end_time": 743519,
+        "text": "[DE]  aktualisiert. Das ist wie gesagt super, um React auszuprobieren, um vielleicht auch mal, wenn "
+    },
+    {
+        "start_time": 743519,
+        "end_time": 749200,
+        "text": "[DE]  irgendwas bei euch lokal nicht funktioniert, nachzustellen. Aber wenn wir langfristig Projekte "
+    },
+    {
+        "start_time": 749200,
+        "end_time": 753000,
+        "text": "[DE]  entwickeln, wollen wir natürlich irgendwie den Code, den wir produzieren, auch richtig "
+    },
+    {
+        "start_time": 753000,
+        "end_time": 759079,
+        "text": "[DE]  abspeichern. Und das ist in diesen Online Playgrounds eher schwierig möglich. Dementsprechend wollen wir "
+    },
+    {
+        "start_time": 759080,
+        "end_time": 765639,
+        "text": "[DE]  den Code irgendwie lokal bei uns zur Verfügung haben. Eine zweite Methode wäre natürlich den "
+    },
+    {
+        "start_time": 765639,
+        "end_time": 773080,
+        "text": "[DE]  Quellcode von React runterzuladen. Könnten wir machen, ist heutzutage aber eher altmodisch. Ist "
+    },
+    {
+        "start_time": 773080,
+        "end_time": 777840,
+        "text": "[DE]  auch sehr aufwendig. Wenn wir zum Beispiel eine neue Version von React installieren wollen, müssten "
+    },
+    {
+        "start_time": 777840,
+        "end_time": 781799,
+        "text": "[DE]  wir wieder auf die React Website den Code herunterladen. Also das ist ein Vorgehen, "
+    },
+    {
+        "start_time": 781799,
+        "end_time": 787600,
+        "text": "[DE]  welches eher heutzutage nicht mehr zu empfehlen ist. Da gibt es höhere Methoden. Die eine ist, "
+    },
+    {
+        "start_time": 787600,
+        "end_time": 793600,
+        "text": "[DE]  die Nutzung einer sogenannten CDN-URL. CDN steht für Content Delivery Network. Das ist letztendlich "
+    },
+    {
+        "start_time": 793600,
+        "end_time": 799480,
+        "text": "[DE]  einfach eine Website, auf der React uns den Quellcode schon einmal hochgeladen hat und den "
+    },
+    {
+        "start_time": 799480,
+        "end_time": 805000,
+        "text": "[DE]  wir über die URL ganz einfach in unserer Index-HTML einbinden können. Und das ist ideal für schnelle "
+    },
+    {
+        "start_time": 805000,
+        "end_time": 810399,
+        "text": "[DE]  Tests oder auch für Lernprojekte, so wie dieses Jahr hier ein Lernprojekt ist. Und dementsprechend "
+    },
+    {
+        "start_time": 810399,
+        "end_time": 817519,
+        "text": "[DE]  werden wir auch heute auf diese Variante der Installation von React zurückgreifen. Die vierte "
+    },
+    {
+        "start_time": 817519,
+        "end_time": 823680,
+        "text": "[DE]  Variante, die es auch noch gibt, ist natürlich die Installation mit NPM. Denn React gibt es auch auf "
+    },
+    {
+        "start_time": 823680,
+        "end_time": 831799,
+        "text": "[DE]  NPM. Das zeige ich euch an dieser Stelle. Hüge nicht. React wurde auch auf NPM hochgeladen. "
+    },
+    {
+        "start_time": 831799,
+        "end_time": 841000,
+        "text": "[DE]  Es ist allerdings so, dass die Installation über NPM bzw. danach die Einbindung in eure Website "
+    },
+    {
+        "start_time": 841000,
+        "end_time": 847279,
+        "text": "[DE]  nicht ganz so leicht von da angeht. Da braucht es dann doch das ein oder andere Tool, was die "
+    },
+    {
+        "start_time": 847279,
+        "end_time": 853319,
+        "text": "[DE]  Sache initial sehr komplex macht. Das rentiert sich bei größeren Applikationen aber absolut, "
+    },
+    {
+        "start_time": 853319,
+        "end_time": 859120,
+        "text": "[DE]  denn dieser innoziell komplexe Aufwand wird dann amortisiert über viel Arbeit, die uns diese "
+    },
+    {
+        "start_time": 859120,
+        "end_time": 865519,
+        "text": "[DE]  Variante später erspart. Die Installation von React mit NPM werden wir in einer späteren "
+    },
+    {
+        "start_time": 865519,
+        "end_time": 870200,
+        "text": "[DE]  Folge dann auch noch vornehmen. Spätestens im zweiten Teil dieser Videoserie, wo sich ja alles "
+    },
+    {
+        "start_time": 870200,
+        "end_time": 878399,
+        "text": "[DE]  um das Tooling drehen wird. Für heute, wie gesagt, nutzen wir aber den CDL URL Link. Das Ganze sieht "
+    },
+    {
+        "start_time": 878399,
+        "end_time": 886639,
+        "text": "[DE]  dann so aus, dass wir in unserer Index HTML diese zwei Script Tags einführen und damit ist React "
+    },
+    {
+        "start_time": 886639,
+        "end_time": 892919,
+        "text": "[DE]  dann auf unserer Seite schon verfügbar. Diese zwei Script Tags findet ihr ebenfalls auf der "
+    },
+    {
+        "start_time": 892920,
+        "end_time": 900120,
+        "text": "[DE]  React.js.org auf der offiziellen Seite unter CDN Links. Ihr werdet ja sehen, dass es zwei "
+    },
+    {
+        "start_time": 900120,
+        "end_time": 904160,
+        "text": "[DE]  unterschiedliche Varianten gibt, die man in den Projekt einzubinden. Einmal im Development-Modus "
+    },
+    {
+        "start_time": 904160,
+        "end_time": 910759,
+        "text": "[DE]  und einmal im Production-Modus. Der Unterschied ist ganz einfach, dass der Development-Modus einige "
+    },
+    {
+        "start_time": 910759,
+        "end_time": 915400,
+        "text": "[DE]  bessere Fehlermeldungen zur Verfügung stellt und einige Tools uns zur Verfügung stellt, "
+    },
+    {
+        "start_time": 915400,
+        "end_time": 919480,
+        "text": "[DE]  die das Entwickeln von React leichter machen, die aber gleichzeitig diese JavaScript-Dateien "
+    },
+    {
+        "start_time": 919720,
+        "end_time": 925039,
+        "text": "[DE]  sehr aufplänen und sehr groß machen. Im produktiven Einsatz von React wollen wir natürlich so wenig "
+    },
+    {
+        "start_time": 925039,
+        "end_time": 929319,
+        "text": "[DE]  wie möglich Code auf der Seite, weil der ja auch heruntergeladen werden muss. Dementsprechend "
+    },
+    {
+        "start_time": 929319,
+        "end_time": 933319,
+        "text": "[DE]  hier diese Unterscheidungen. Da wir jetzt aber noch weit weg sind von einem produktiven Einsatz, "
+    },
+    {
+        "start_time": 933319,
+        "end_time": 938680,
+        "text": "[DE]  beschränken wir uns heute auf die Development-Sourcen, die ich hier einfach schon mal kopiere. "
+    },
+    {
+        "start_time": 938680,
+        "end_time": 947360,
+        "text": "[DE]  Wenn wir dann nachher die React-Sourcen in unserem Projekt eingebunden haben, "
+    },
+    {
+        "start_time": 947360,
+        "end_time": 954440,
+        "text": "[DE]  wollen wir React natürlich auch verwenden. Den ersten Code, den ersten Block mit React, "
+    },
+    {
+        "start_time": 954440,
+        "end_time": 958000,
+        "text": "[DE]  den wir verwenden werden, ist eben wie vorher angekündigt schon React Element. "
+    },
+    {
+        "start_time": 958000,
+        "end_time": 964039,
+        "text": "[DE]  React Element oder ein React Element erstellen wir über diesen Funktionsaufbruch. "
+    },
+    {
+        "start_time": 964039,
+        "end_time": 970039,
+        "text": "[DE]  React Create Element und der besteht aus drei Parametern. Der erste Parameter gibt das HTML-Tag "
+    },
+    {
+        "start_time": 970039,
+        "end_time": 974879,
+        "text": "[DE]  an, das wir generieren wollen. In diesem Fall zum Beispiel ein P-Tag. Der zweite Parameter "
+    },
+    {
+        "start_time": 974879,
+        "end_time": 979600,
+        "text": "[DE]  gibt an, welche Attribute wir diesem HTML-Tag mitgeben wollen. In diesem Fall jetzt eine "
+    },
+    {
+        "start_time": 979600,
+        "end_time": 986440,
+        "text": "[DE]  IT. Und der dritte Parameter gibt an, welchen Inhalt wir in dieses HTML-Tag reinstellen oder "
+    },
+    {
+        "start_time": 986440,
+        "end_time": 992720,
+        "text": "[DE]  reinschreiben wollen. In dem Fall hier jetzt My Content. Dieser Funktionsaufruf macht letztendlich "
+    },
+    {
+        "start_time": 992720,
+        "end_time": 999639,
+        "text": "[DE]  nichts anderes als ein simples JavaScript-Objekt zu erzeugen. Dieses JavaScript-Objekt wird aber "
+    },
+    {
+        "start_time": 999639,
+        "end_time": 1005599,
+        "text": "[DE]  von React verstanden und kann dann von React wiederum in den Virtual DOM von React implementiert "
+    },
+    {
+        "start_time": 1005599,
+        "end_time": 1010559,
+        "text": "[DE]  werden oder eingebunden werden. Sobald es im Virtual DOM eingebunden ist, wir erinnern uns, "
+    },
+    {
+        "start_time": 1010559,
+        "end_time": 1016759,
+        "text": "[DE]  React synchronisiert den Virtual DOM damit dem richtigen DOM, wird eben dieses Element zu einem "
+    },
+    {
+        "start_time": 1016759,
+        "end_time": 1020759,
+        "text": "[DE]  realen DOM-Objekt und dementsprechend dem Browser dargestellt. Man kann also sagen, "
+    },
+    {
+        "start_time": 1020759,
+        "end_time": 1028839,
+        "text": "[DE]  dass ein React Element ein reales DOM-Objekt repräsentiert. Wenn wir uns das Ganze auf der "
+    },
+    {
+        "start_time": 1028839,
+        "end_time": 1034839,
+        "text": "[DE]  Visualisierung noch einmal anschauen, haben wir nun also neben dem Virtual DOM von React in unseren "
+    },
+    {
+        "start_time": 1034839,
+        "end_time": 1040200,
+        "text": "[DE]  JavaScript-Dateien diesen Funktionsaufruf React Create Element, welcher dann eben hier im Virtual "
+    },
+    {
+        "start_time": 1040200,
+        "end_time": 1044920,
+        "text": "[DE]  DOM als einzelnen Element eingebunden wird, dann mit dem DOM synchronisiert und nachher in unserem "
+    },
+    {
+        "start_time": 1044920,
+        "end_time": 1051960,
+        "text": "[DE]  Browser dargestellt. Dieser Visualisierung habe ich ebenfalls npm hinzugefügt, welches eben über die "
+    },
+    {
+        "start_time": 1051960,
+        "end_time": 1057759,
+        "text": "[DE]  Package Chasing, die wir gerade schon gesehen haben, initialisiert und installiert wird. Und wir haben "
+    },
+    {
+        "start_time": 1057759,
+        "end_time": 1066639,
+        "text": "[DE]  NPX kennengelernt, was uns den Webserver startet. Nun wollen wir das Ganze noch einmal eben umsetzen. "
+    },
+    {
+        "start_time": 1066639,
+        "end_time": 1073159,
+        "text": "[DE]  Wir kopieren noch mal kurz die Sources, die brauchen wir jetzt als allererstes, gehen zurück in "
+    },
+    {
+        "start_time": 1073159,
+        "end_time": 1084000,
+        "text": "[DE]  unser Visual Studio und fügen nun React ganz einfach am Ende des BodyTags ein. An sich war es "
+    },
+    {
+        "start_time": 1084000,
+        "end_time": 1090720,
+        "text": "[DE]  schon. Jetzt haben wir React auf unserer Seite, wir tun aber natürlich noch nichts damit. Um nun etwas "
+    },
+    {
+        "start_time": 1090720,
+        "end_time": 1095039,
+        "text": "[DE]  damit zu tun, brauchen wir noch etwas eigenes JavaScript, das wir einbetten. Dementsprechend "
+    },
+    {
+        "start_time": 1095039,
+        "end_time": 1101839,
+        "text": "[DE]  fügen wir nun erstmal hier noch ein zweites oder ein drittes Script Tag hinzu, das bei uns auf "
+    },
+    {
+        "start_time": 1101839,
+        "end_time": 1114480,
+        "text": "[DE]  sourceapp.js zeigen wird. Dieser Datei legen wir dann noch an. Erstmal ein Ordner source, das ist einfach ein "
+    },
+    {
+        "start_time": 1114480,
+        "end_time": 1119880,
+        "text": "[DE]  gängiges Vorgehen. src steht eben für source, in dem alle Source Dateien eines Projektes abgelegt "
+    },
+    {
+        "start_time": 1119880,
+        "end_time": 1129319,
+        "text": "[DE]  werden. Dort legen wir dann die Datei an. App.js. Bevor wir nun JavaScript schreiben, bereiten wir in "
+    },
+    {
+        "start_time": 1129320,
+        "end_time": 1133880,
+        "text": "[DE]  der index.html noch eine weitere Sache vor. Wir erinnern uns vielleicht das letzte Mal an die "
+    },
+    {
+        "start_time": 1133880,
+        "end_time": 1139559,
+        "text": "[DE]  ReactDomRenderFunktion, der wir zum einen mitgeben, eine React Komponente, die wir gerendert haben "
+    },
+    {
+        "start_time": 1139559,
+        "end_time": 1144280,
+        "text": "[DE]  wollen, zum anderen aber auch angeben müssen, wohin in unserem HTML wir diese Komponente "
+    },
+    {
+        "start_time": 1144280,
+        "end_time": 1148960,
+        "text": "[DE]  gerendert haben wollen. Und dieses wohin erstellen wir jetzt hier. Wir machen uns ein einfaches "
+    },
+    {
+        "start_time": 1148960,
+        "end_time": 1155440,
+        "text": "[DE]  div und geben dem eine ID, anhand der wir es dann später identifizieren können. Und das nennen wir "
+    },
+    {
+        "start_time": 1155440,
+        "end_time": 1169240,
+        "text": "[DE]  dann einfach React.js. Wenn wir nochmal kurz auf die Seite schauen, es hat sich nichts verändert, "
+    },
+    {
+        "start_time": 1169240,
+        "end_time": 1173720,
+        "text": "[DE]  alles beim alten, weil wir noch kein React Element generiert haben, das wir hier einbinden. "
+    },
+    {
+        "start_time": 1173720,
+        "end_time": 1182599,
+        "text": "[DE]  Das tun wir jetzt. Zuerst generieren wir uns also ein React Element. Das speichern wir in "
+    },
+    {
+        "start_time": 1182599,
+        "end_time": 1191000,
+        "text": "[DE]  eine Variable, die wir jetzt einfach mal Element nennen, nutzen nun eben React.CreateElement. "
+    },
+    {
+        "start_time": 1191000,
+        "end_time": 1197240,
+        "text": "[DE]  React ist eine globale Variable, die uns jetzt eben zur Verfügung steht, weil wir ja hier "
+    },
+    {
+        "start_time": 1197240,
+        "end_time": 1199960,
+        "text": "[DE]  über dieses Script eingebunden haben. "
+    },
+    {
+        "start_time": 1200000,
+        "end_time": 1206240,
+        "text": "[DE]  macht letztendlich nichts anderes als die React-Sourcen unter dieser Variablen zur Verfügung zu stellen und so auch die CreateElement-Methode. "
+    },
+    {
+        "start_time": 1206240,
+        "end_time": 1212039,
+        "text": "[DE]  Als ersten Parameter eben das Tag, in dem Fall bleiben wir immer beim Ptag. "
+    },
+    {
+        "start_time": 1212039,
+        "end_time": 1216440,
+        "text": "[DE]  Als zweitem Parameter die Attribute, das lassen wir erstmal leer. "
+    },
+    {
+        "start_time": 1216440,
+        "end_time": 1222359,
+        "text": "[DE]  Und als dritten Parameter den Content, hier schreiben wir jetzt einfach rein, "
+    },
+    {
+        "start_time": 1222359,
+        "end_time": 1230359,
+        "text": "[DE]  das ist mein erstes React Element. "
+    },
+    {
+        "start_time": 1230359,
+        "end_time": 1232359,
+        "text": "[DE]  Richtiger. "
+    },
+    {
+        "start_time": 1234359,
+        "end_time": 1239960,
+        "text": "[DE]  Wie nur angesprochen, React-Create-Element generiert erstmal nur ein simples JavaScript-Objekt. "
+    },
+    {
+        "start_time": 1239960,
+        "end_time": 1250359,
+        "text": "[DE]  Mit diesem Objekt müssen wir jetzt noch etwas tun, wir müssen React zeigen, wohin es uns dieses JavaScript-Objekt oder dieses React-Element nachher im Browser rendern soll. "
+    },
+    {
+        "start_time": 1250359,
+        "end_time": 1253359,
+        "text": "[DE]  Und dazu nutzen wir React-DOM. "
+    },
+    {
+        "start_time": 1253359,
+        "end_time": 1261359,
+        "text": "[DE]  Das ist ebenfalls eine globale Variable, die uns zur Verfügung steht, weil wir hier dieses zweite Script eingebunden haben für React-DOM. "
+    },
+    {
+        "start_time": 1261359,
+        "end_time": 1269359,
+        "text": "[DE]  Das liefert uns eben die Render-Funktion, in die wir nun zuerst unser Element reingeben. "
+    },
+    {
+        "start_time": 1269359,
+        "end_time": 1273359,
+        "text": "[DE]  Und nun sagen müssen, wohin wir das gewendet haben wollen. "
+    },
+    {
+        "start_time": 1273359,
+        "end_time": 1277359,
+        "text": "[DE]  Und hierzu haben wir uns ja vorher das DIV angelegt und eine ID verpasst. "
+    },
+    {
+        "start_time": 1277359,
+        "end_time": 1287359,
+        "text": "[DE]  Und das können wir hier nun mit einem Selektor herausfinden oder herausfiltern, indem wir sagen, Document, Get Element by ID. "
+    },
+    {
+        "start_time": 1287359,
+        "end_time": 1294359,
+        "text": "[DE]  Und hier die ID, die wir vorher vergeben haben, in dem Fall Reakt App, kopieren und einfügen. "
+    },
+    {
+        "start_time": 1296359,
+        "end_time": 1305359,
+        "text": "[DE]  Und wenn wir das ganze speichern und auf die Website gehen, dann sehen wir, juhu, wir haben unsere erste Reakt Komponente, "
+    },
+    {
+        "start_time": 1305359,
+        "end_time": 1309359,
+        "text": "[DE]  nein, unser erstes React-Element auf der Website gerendert. "
+    },
+    {
+        "start_time": 1309359,
+        "end_time": 1313359,
+        "text": "[DE]  Wir haben zum allerersten Mal React eingesetzt, um unseren DOM zu manipulieren. "
+    },
+    {
+        "start_time": 1313359,
+        "end_time": 1320359,
+        "text": "[DE]  Das ist natürlich jetzt noch etwas statisch, aber ist doch immerhin schon mal ein toller erster Schritt. "
+    },
+    {
+        "start_time": 1322359,
+        "end_time": 1327359,
+        "text": "[DE]  Jetzt werdet ihr euch fragen, ich habe das letzte Mal erzählt von deklarativen Programmieren und von JSX, "
+    },
+    {
+        "start_time": 1327359,
+        "end_time": 1332360,
+        "text": "[DE]  dass es uns erlaubt, HTML in JavaScript-Dateien zu schreiben. "
+    },
+    {
+        "start_time": 1332360,
+        "end_time": 1338360,
+        "text": "[DE]  Ihr würdet nun erwarten, dass wir eigentlich das Ganze nicht hier mit dem Reaktory Element Aufruf machen, "
+    },
+    {
+        "start_time": 1338360,
+        "end_time": 1348360,
+        "text": "[DE]  sondern eher so etwas schreiben können wie so, also ein HTML Element mit der ID, direkt in der JavaScript-Datei. "
+    },
+    {
+        "start_time": 1354360,
+        "end_time": 1359360,
+        "text": "[DE]  Wenn wir das nun machen, werden wir einen Fehler bekommen. "
+    },
+    {
+        "start_time": 1359360,
+        "end_time": 1366360,
+        "text": "[DE]  Wenn wir zurück navigieren in den Browser, sehen wir zum einen, dass unser Element nicht mehr gerendert wurde. "
+    },
+    {
+        "start_time": 1366360,
+        "end_time": 1373360,
+        "text": "[DE]  Um herauszufinden, was hier gerade schief gelaufen ist, können wir die Entwicklertools von Chrome oder auch von jedem anderen Browser, "
+    },
+    {
+        "start_time": 1373360,
+        "end_time": 1376360,
+        "text": "[DE]  jeder Browser bringt Entwicklertools mit, uns zur Hand nehmen. "
+    },
+    {
+        "start_time": 1376360,
+        "end_time": 1381360,
+        "text": "[DE]  Das können wir entweder über die Taste F12 machen oder indem wir rechtsklick Untersuchen machen. "
+    },
+    {
+        "start_time": 1382360,
+        "end_time": 1390360,
+        "text": "[DE]  In diesen Untersuchen sehen wir dann unseren aktuellen DOM oder unser HTML, das wir auch hier durch navigieren können, "
+    },
+    {
+        "start_time": 1390360,
+        "end_time": 1394360,
+        "text": "[DE]  unser Title, unser Meta-Char-Set, eben der Buddy. "
+    },
+    {
+        "start_time": 1400360,
+        "end_time": 1403360,
+        "text": "[DE]  Und wir haben auch die Konsole, die uns Fehler ausspuckt. "
+    },
+    {
+        "start_time": 1403360,
+        "end_time": 1410360,
+        "text": "[DE]  Und in diesem Fall sehen wir jetzt, wir haben einen Synthax-Fehler, ein unerwartetes Zeichen, Unexpected Token, eine geöffnete Klammer. "
+    },
+    {
+        "start_time": 1410360,
+        "end_time": 1412360,
+        "text": "[DE]  Und das ist genau dieses Zeichen. "
+    },
+    {
+        "start_time": 1413360,
+        "end_time": 1419360,
+        "text": "[DE]  Es liegt daran, dass ein Browser heutzutage zumindest noch nicht JSX versteht. "
+    },
+    {
+        "start_time": 1419360,
+        "end_time": 1424360,
+        "text": "[DE]  Ein Browser versteht nur natives JavaScript und das hier ist nun mal kein natives JavaScript. "
+    },
+    {
+        "start_time": 1424360,
+        "end_time": 1429360,
+        "text": "[DE]  Dementsprechend kann der Browser diesen Codesnippel einfach auch nicht verstehen. "
+    },
+    {
+        "start_time": 1429360,
+        "end_time": 1432360,
+        "text": "[DE]  Und wir müssen erst etwas tun, damit er das kann. "
+    },
+    {
+        "start_time": 1432360,
+        "end_time": 1437360,
+        "text": "[DE]  Wir müssen nämlich diesen Codesnippet zurück umwandeln in ganz normales JavaScript. "
+    },
+    {
+        "start_time": 1437360,
+        "end_time": 1439360,
+        "text": "[DE]  Und an dieser Stelle schon ein kleiner Hint. "
+    },
+    {
+        "start_time": 1439360,
+        "end_time": 1442360,
+        "text": "[DE]  React-Create-Element ist ganz normales JavaScript. "
+    },
+    {
+        "start_time": 1442360,
+        "end_time": 1444360,
+        "text": "[DE]  Das haben wir gerade gesehen, dass das funktioniert. "
+    },
+    {
+        "start_time": 1445360,
+        "end_time": 1451360,
+        "text": "[DE]  Um das nun zu ermöglichen und um diese Übersetzung vorzunehmen, das müssen wir natürlich nicht händisch machen. "
+    },
+    {
+        "start_time": 1451360,
+        "end_time": 1455360,
+        "text": "[DE]  Das wäre sehr aufwendig, sondern da gibt es Tools. "
+    },
+    {
+        "start_time": 1455360,
+        "end_time": 1459360,
+        "text": "[DE]  Und eines dieser Tools, wir gehen zurück zur Theorie, ist Babel. "
+    },
+    {
+        "start_time": 1460360,
+        "end_time": 1471360,
+        "text": "[DE]  Babel ist eben so eine Art Helferin oder eine Übersetzerin, die uns Features und Funktionen, so wie JSX, zurück übersetzt in natives JavaScript, das der Browser versteht. "
+    },
+    {
+        "start_time": 1472360,
+        "end_time": 1477360,
+        "text": "[DE]  Babel besteht im Wesentlichen aus drei Kernkomponenten, die wir auch heute einsetzen werden. "
+    },
+    {
+        "start_time": 1477360,
+        "end_time": 1479360,
+        "text": "[DE]  Das ist einmal der Core. "
+    },
+    {
+        "start_time": 1479360,
+        "end_time": 1481360,
+        "text": "[DE]  Das ist die gesamte Übersetzungslogik. "
+    },
+    {
+        "start_time": 1481360,
+        "end_time": 1484360,
+        "text": "[DE]  Das Command Line Interface oder kurz CLI. "
+    },
+    {
+        "start_time": 1484360,
+        "end_time": 1490360,
+        "text": "[DE]  Das lässt uns mit Babel kommunizieren und sprechen und Babel mitteilen, was wir eigentlich übersetzt haben wollen. "
+    },
+    {
+        "start_time": 1490360,
+        "end_time": 1492360,
+        "text": "[DE]  Und es gibt Presets. "
+    },
+    {
+        "start_time": 1492360,
+        "end_time": 1500360,
+        "text": "[DE]  Presets könnt ihr euch vorstellen als Wörterbücher, die wir Babel mitgeben, um Babel zu ermöglichen, beispielsweise JSX in normales JavaScript zu übersetzen. "
+    },
+    {
+        "start_time": 1501360,
+        "end_time": 1503360,
+        "text": "[DE]  Und wir setzen heute Preset React ein. "
+    },
+    {
+        "start_time": 1503360,
+        "end_time": 1508360,
+        "text": "[DE]  Preset React ist eben genau dieses Wörterbuch, das den Einsatz von JSX in unseren Dateien erlaubt. "
+    },
+    {
+        "start_time": 1508360,
+        "end_time": 1513360,
+        "text": "[DE]  Und Babel wird dieses JSX dann umwandeln in ganz normales JavaScript. "
+    },
+    {
+        "start_time": 1514360,
+        "end_time": 1517360,
+        "text": "[DE]  Wenn wir uns das an unserer Visualisierung anschauen. "
+    },
+    {
+        "start_time": 1517360,
+        "end_time": 1519360,
+        "text": "[DE]  Aktuell standen wir hier. "
+    },
+    {
+        "start_time": 1519360,
+        "end_time": 1522360,
+        "text": "[DE]  Wir haben mit JavaScript React und Create Element ausgeführt. "
+    },
+    {
+        "start_time": 1522360,
+        "end_time": 1525360,
+        "text": "[DE]  Das hat funktioniert, haben jetzt aber JSX mit reingebracht. "
+    },
+    {
+        "start_time": 1525360,
+        "end_time": 1527360,
+        "text": "[DE]  Das hat nicht mehr funktioniert. "
+    },
+    {
+        "start_time": 1527360,
+        "end_time": 1537360,
+        "text": "[DE]  JSX müssen wir also nun erst durch Babel schleifen, um das in normales JavaScript umzuwandeln, das dann wiederum von React bzw. von unseren Browsern auch verstanden werden kann. "
+    },
+    {
+        "start_time": 1537360,
+        "end_time": 1542360,
+        "text": "[DE]  Und an dieser Stelle wird es vielleicht schon langsam bewusst. "
+    },
+    {
+        "start_time": 1542360,
+        "end_time": 1555360,
+        "text": "[DE]  Babel macht nichts anderes als aus diesen JSX Snippets oder aus den HTML-Teilen in JavaScript, die wir in JSX schreiben, React.CreateElement-Funktionsaufrufe zu machen. "
+    },
+    {
+        "start_time": 1556360,
+        "end_time": 1558360,
+        "text": "[DE]  Das ist die ganze Magie, die dahinter steckt. "
+    },
+    {
+        "start_time": 1558360,
+        "end_time": 1561360,
+        "text": "[DE]  Und das zeige ich euch auch gleich hands-on. "
+    },
+    {
+        "start_time": 1561360,
+        "end_time": 1564360,
+        "text": "[DE]  Aber zuerst, wie installieren wir Babel? "
+    },
+    {
+        "start_time": 1564360,
+        "end_time": 1572360,
+        "text": "[DE]  Dazu nutzen wir nun eben npm und wir werden Babel Core, Babel CLI und das Preset React in unserem Projekt installieren. "
+    },
+    {
+        "start_time": 1573360,
+        "end_time": 1575360,
+        "text": "[DE]  Und das machen wir jetzt. "
+    },
+    {
+        "start_time": 1576360,
+        "end_time": 1578360,
+        "text": "[DE]  Zurück also in die Command Line. "
+    },
+    {
+        "start_time": 1578360,
+        "end_time": 1581360,
+        "text": "[DE]  Wir beenden mal kurz unseren Web Server an dieser Stelle. "
+    },
+    {
+        "start_time": 1581360,
+        "end_time": 1583360,
+        "text": "[DE]  Und wir führen nun das Command aus. "
+    },
+    {
+        "start_time": 1583360,
+        "end_time": 1594360,
+        "text": "[DE]  npm install add babel core add babel cli und add babel reset react "
+    },
+    {
+        "start_time": 1595360,
+        "end_time": 1600360,
+        "text": "[DE]  Wir fügen hier noch einen kleinen weiteren Parameter hinzu, nämlich –save-def. "
+    },
+    {
+        "start_time": 1600360,
+        "end_time": 1602360,
+        "text": "[DE]  Warum wir das tun, erkläre ich dann gleich. "
+    },
+    {
+        "start_time": 1604360,
+        "end_time": 1606360,
+        "text": "[DE]  Drücken wir Enter. "
+    },
+    {
+        "start_time": 1607360,
+        "end_time": 1611360,
+        "text": "[DE]  Das dauert ein wenig, weil er die ganzen Pakete natürlich erst runterladen muss. "
+    },
+    {
+        "start_time": 1612360,
+        "end_time": 1614360,
+        "text": "[DE]  Jetzt seht ihr hier ein Error. "
+    },
+    {
+        "start_time": 1614360,
+        "end_time": 1615360,
+        "text": "[DE]  Das passiert auf Mac. "
+    },
+    {
+        "start_time": 1615360,
+        "end_time": 1617360,
+        "text": "[DE]  Nicht wundern, wenn ihr diesen Error seht. "
+    },
+    {
+        "start_time": 1617360,
+        "end_time": 1621360,
+        "text": "[DE]  Und auch keine Sorge, das spielt für uns erstmal keine Rolle. "
+    },
+    {
+        "start_time": 1621360,
+        "end_time": 1624360,
+        "text": "[DE]  Ein paar Features von Babel werden wegen diesen Errors nicht funktionieren. "
+    },
+    {
+        "start_time": 1624360,
+        "end_time": 1627360,
+        "text": "[DE]  Das sind aber keine Features, die wir jetzt gerade benötigen. "
+    },
+    {
+        "start_time": 1627360,
+        "end_time": 1630360,
+        "text": "[DE]  Von dem her können wir diesen Error einfach getrost ignorieren. "
+    },
+    {
+        "start_time": 1630360,
+        "end_time": 1632360,
+        "text": "[DE]  Die Installation ist nun abgeschlossen. "
+    },
+    {
+        "start_time": 1632360,
+        "end_time": 1634360,
+        "text": "[DE]  Gehen wir zurück in Visual Studio Code. "
+    },
+    {
+        "start_time": 1634360,
+        "end_time": 1636360,
+        "text": "[DE]  Schauen wir mal kurz, hier hat sich etwas verändert. "
+    },
+    {
+        "start_time": 1637360,
+        "end_time": 1643360,
+        "text": "[DE]  Zum einen wurden in unserer Package Chasen ein neues Feld hinzugefügt, nämlich diese Def-Dependencies. "
+    },
+    {
+        "start_time": 1643360,
+        "end_time": 1648360,
+        "text": "[DE]  Das ist das, was ich mit dem Befehl –save-def veranlasst habe. "
+    },
+    {
+        "start_time": 1648360,
+        "end_time": 1656360,
+        "text": "[DE]  Und das beschreibt letztendlich einfach alle Abhängigkeiten unseres Projekts oder Entwicklungsabhängigkeiten hier in diese Package Chasen. "
+    },
+    {
+        "start_time": 1657360,
+        "end_time": 1661360,
+        "text": "[DE]  Ich will jetzt nicht zu sehr ins Detail gehen, weil das ist ja ein Kurs über React und nicht über npm. "
+    },
+    {
+        "start_time": 1661360,
+        "end_time": 1663360,
+        "text": "[DE]  Aber einfach, dass ihr versteht, warum ich diesen Error angegeben habe. "
+    },
+    {
+        "start_time": 1664360,
+        "end_time": 1667360,
+        "text": "[DE]  Es ist auch eine Package Log Chasen generiert worden. "
+    },
+    {
+        "start_time": 1667360,
+        "end_time": 1672360,
+        "text": "[DE]  Das ist sozusagen ein Logbuch aller derer Pakete, die wir installiert haben mit genauen Funktionen. "
+    },
+    {
+        "start_time": 1672360,
+        "end_time": 1675360,
+        "text": "[DE]  Und zu guter Letzt wurde hier Node Modules angelegt. "
+    },
+    {
+        "start_time": 1675360,
+        "end_time": 1680360,
+        "text": "[DE]  Das ist der Ordner, in dem die Pakete, die wir installiert haben, tatsächlich heruntergeladen wurden. "
+    },
+    {
+        "start_time": 1680360,
+        "end_time": 1686360,
+        "text": "[DE]  Wenn wir das mal kurz aufmachen, sehen wir hier natürlich deutlich mehr als wir installiert haben. "
+    },
+    {
+        "start_time": 1686360,
+        "end_time": 1692360,
+        "text": "[DE]  Das liegt einfach daran, dass Babel selbst ja auch Abhängigkeiten hat, die es wiederum über eine Package Chasen definiert. "
+    },
+    {
+        "start_time": 1692360,
+        "end_time": 1699360,
+        "text": "[DE]  Und alle diese Abhängigkeiten installiert Babel oder npm für uns dann gleich mit, dass wir das nicht händisch machen müssen. "
+    },
+    {
+        "start_time": 1700360,
+        "end_time": 1710360,
+        "text": "[DE]  Aber wir sehen auch, add-babel-cli wurde installiert, add-babel-core wurde installiert und weiter unten add-babel-preset-react ist nun auch in unserem Projekt vorhanden. "
+    },
+    {
+        "start_time": 1717360,
+        "end_time": 1722360,
+        "text": "[DE]  Nun müssen wir Babel noch entsprechend ein wenig konfigurieren bzw. auch ausführen. "
+    },
+    {
+        "start_time": 1722360,
+        "end_time": 1726360,
+        "text": "[DE]  Denn aktuell wüsste Babel ja noch nicht, was es tun soll. "
+    },
+    {
+        "start_time": 1726360,
+        "end_time": 1729360,
+        "text": "[DE]  Und Babel weiß aktuell auch noch nicht, welche Wörterbücher es einsetzen soll. "
+    },
+    {
+        "start_time": 1729360,
+        "end_time": 1731360,
+        "text": "[DE]  Fangen wir mal mit dem Wörterbuch an. "
+    },
+    {
+        "start_time": 1731360,
+        "end_time": 1738360,
+        "text": "[DE]  Wir können Babel ganz einfach konfigurieren, indem wir nochmal eine neue Datei anlegen, die sich .babel-rc nennt. "
+    },
+    {
+        "start_time": 1739360,
+        "end_time": 1743360,
+        "text": "[DE]  In dieser Datei können wir valides Chasen schreiben. "
+    },
+    {
+        "start_time": 1743360,
+        "end_time": 1746360,
+        "text": "[DE]  Das ist eigentlich nur eine Chasen-Datei, auch wenn sie nicht auf Chasen endet. "
+    },
+    {
+        "start_time": 1746360,
+        "end_time": 1751360,
+        "text": "[DE]  Wir können dort ein Objekt anlegen und das Feld Presets befüllen. "
+    },
+    {
+        "start_time": 1751360,
+        "end_time": 1756360,
+        "text": "[DE]  Und dort nun in einem Array alle die Presets reinschreiben, die Babel für uns verwendet. "
+    },
+    {
+        "start_time": 1756360,
+        "end_time": 1759360,
+        "text": "[DE]  Also sprich alle diese Wörterbücher, die wir übersetzen wollen. "
+    },
+    {
+        "start_time": 1759360,
+        "end_time": 1764360,
+        "text": "[DE]  In unserem Fall ist das nur eines, nämlich babel-preset-react. "
+    },
+    {
+        "start_time": 1764360,
+        "end_time": 1766360,
+        "text": "[DE]  Das ist der erste Schritt. "
+    },
+    {
+        "start_time": 1766360,
+        "end_time": 1773360,
+        "text": "[DE]  Im zweiten Schritt müssen wir nun aus dieser App.js eine App.jsx-Datei machen. "
+    },
+    {
+        "start_time": 1773360,
+        "end_time": 1777360,
+        "text": "[DE]  Denn wir haben hier ja tatsächlich nicht mehr valides Chavascript stehen. "
+    },
+    {
+        "start_time": 1777360,
+        "end_time": 1784360,
+        "text": "[DE]  Deswegen ist das auch keine Chavascript-Datei mehr, sondern es ist jetzt eine .jsx-Datei, weil wir hier .jsx eingefügt haben. "
+    },
+    {
+        "start_time": 1784360,
+        "end_time": 1788360,
+        "text": "[DE]  Und nun müssen wir Babel diese Datei für uns übersetzen lassen. "
+    },
+    {
+        "start_time": 1788360,
+        "end_time": 1791360,
+        "text": "[DE]  Das können wir nun eben mit Babel-City-Events machen. "
+    },
+    {
+        "start_time": 1791360,
+        "end_time": 1793360,
+        "text": "[DE]  Jetzt machen wir kurz den Error weg. "
+    },
+    {
+        "start_time": 1800000,
+        "end_time": 1805720,
+        "text": "[DE]  Es gibt nun zwei Möglichkeiten. Wir könnten hier auch wieder NPX einsetzen, "
+    },
+    {
+        "start_time": 1805720,
+        "end_time": 1810680,
+        "text": "[DE]  um quasi Babel direkt auszuführen. Wir haben aber die Babel-CLI ja auch bei uns "
+    },
+    {
+        "start_time": 1810680,
+        "end_time": 1816319,
+        "text": "[DE]  installiert und das Ganze nämlich in Node Modules, dem sogenannten Bin- oder Binary-Folder, "
+    },
+    {
+        "start_time": 1816319,
+        "end_time": 1824400,
+        "text": "[DE]  gibt es den Befehl Babel. Dieser Befehl erwartet drei Parameter. Zum einen das "
+    },
+    {
+        "start_time": 1824400,
+        "end_time": 1828240,
+        "text": "[DE]  Source-Verzeichnis oder das Verzeichnis, das Babel für uns übersetzen soll. In unserem "
+    },
+    {
+        "start_time": 1828240,
+        "end_time": 1833519,
+        "text": "[DE]  Fall ist das tatsächlich Sus. Es erwartet den Parameter minus minus out hier. Das ist die "
+    },
+    {
+        "start_time": 1833519,
+        "end_time": 1839279,
+        "text": "[DE]  Stelle, wo Babel die kompilierten oder die übersetzten Dateien hinschreiben soll. Und das machen wir "
+    },
+    {
+        "start_time": 1839279,
+        "end_time": 1844720,
+        "text": "[DE]  bei uns jetzt einfach mal in ein Verzeichnis, das wir lib nennen. Wenn wir diesen Befehl nun ausführen, "
+    },
+    {
+        "start_time": 1844720,
+        "end_time": 1851799,
+        "text": "[DE]  quittiert uns Babel das mit einer erfolgreichen Meldung, dass es uns eine Datei erfolgreich "
+    },
+    {
+        "start_time": 1851799,
+        "end_time": 1857599,
+        "text": "[DE]  kompiliert hat oder übersetzt hat. Wenn wir zurück ins Projektverzeichnis springen, sehen wir auch, "
+    },
+    {
+        "start_time": 1857599,
+        "end_time": 1862279,
+        "text": "[DE]  dass der lib-Folder angelegt wurde und hier entsprechend, analog zu unserer App.js, "
+    },
+    {
+        "start_time": 1862279,
+        "end_time": 1868200,
+        "text": "[DE]  eine App.js-Datei angelegt wurde. Und die können wir uns auch anschauen. Und siehe da, "
+    },
+    {
+        "start_time": 1868200,
+        "end_time": 1876039,
+        "text": "[DE]  aus unserem JSX ist nichts anderes geworden als ein React-Create-Element-Aufruf, der relativ oder "
+    },
+    {
+        "start_time": 1876039,
+        "end_time": 1880480,
+        "text": "[DE]  nicht noch relativ, sondern ziemlich gleich aussieht, wie das, was wir davor händisch eingegeben haben. "
+    },
+    {
+        "start_time": 1880480,
+        "end_time": 1887240,
+        "text": "[DE]  Das ist tatsächlich die gesamte Magie hinter JSX und Babel. Es macht nichts anderes, als die Teile, "
+    },
+    {
+        "start_time": 1887240,
+        "end_time": 1891200,
+        "text": "[DE]  die HTML und unserem JSX sind, in ein React.Create-Element zu übersetzen. "
+    },
+    {
+        "start_time": 1891200,
+        "end_time": 1899119,
+        "text": "[DE]  Nun müssen wir, damit das auch funktioniert, noch eine kleine Änderung in unserer Index-HTML "
+    },
+    {
+        "start_time": 1899119,
+        "end_time": 1904160,
+        "text": "[DE]  vornehmen, weil wir jetzt nicht mehr die App.js aus unserem Source ausliefern oder die App.jsx, "
+    },
+    {
+        "start_time": 1904160,
+        "end_time": 1910240,
+        "text": "[DE]  sondern wir müssen hier die übersetzte Variante unserer App ausliefern. Dementsprechend ändern "
+    },
+    {
+        "start_time": 1910240,
+        "end_time": 1921079,
+        "text": "[DE]  wir das hier einfach auf lib. Und wenn wir nun nochmal einen Web-Server starten und zurück auf "
+    },
+    {
+        "start_time": 1921079,
+        "end_time": 1932960,
+        "text": "[DE]  unsere Website navigieren, sehen wir, wir haben noch das alte Element. Ich weiß auch warum. Weil "
+    },
+    {
+        "start_time": 1932960,
+        "end_time": 1936279,
+        "text": "[DE]  wir hier noch das alte Element auch eingebunden haben. Wir wollen jetzt aber eigentlich hier, "
+    },
+    {
+        "start_time": 1936279,
+        "end_time": 1940360,
+        "text": "[DE]  dass die ersten JSX-Komponente einbinden. Dementsprechend müssen wir das hier ersetzen. "
+    },
+    {
+        "start_time": 1940360,
+        "end_time": 1947920,
+        "text": "[DE]  Wir wollen nun my.jsx-Element rendern. Wir müssen das Ganze jetzt natürlich von Babel "
+    },
+    {
+        "start_time": 1947920,
+        "end_time": 1956079,
+        "text": "[DE]  nochmal neu übersetzen lassen. Wenn wir jetzt den Web-Server starten, sollten wir tatsächlich sehen, "
+    },
+    {
+        "start_time": 1956079,
+        "end_time": 1964599,
+        "text": "[DE]  dass wir unsere ersten JSX-Komponente erfolgreich im Browser gewendet haben. Das ist super! "
+    },
+    {
+        "start_time": 1966759,
+        "end_time": 1972200,
+        "text": "[DE]  Bevor wir nun zum Abschluss kommen, möchte ich euch noch einen kleinen Tipp mitgeben, "
+    },
+    {
+        "start_time": 1972200,
+        "end_time": 1978480,
+        "text": "[DE]  denn diesen Befehl, den wir hier gerade gesehen haben, not modules bin Babel-Source, ist schwer "
+    },
+    {
+        "start_time": 1978480,
+        "end_time": 1983240,
+        "text": "[DE]  zu merken und ist auch nicht sonderlich schön einzutippen. Da können wir uns mit npm und mit "
+    },
+    {
+        "start_time": 1983240,
+        "end_time": 1990079,
+        "text": "[DE]  npm-scripts ein wenig Abfehlung verschaffen. Scripts erlaubt uns es nämlich, Skripte unter einem "
+    },
+    {
+        "start_time": 1990079,
+        "end_time": 1994480,
+        "text": "[DE]  sogenannten Alias oder unter einem anderen Namen vorzudefinieren. Wenn wir jetzt also hier so was "
+    },
+    {
+        "start_time": 1994480,
+        "end_time": 2003799,
+        "text": "[DE]  wie compile schreiben und dort den Befehl Babel-Source minus minus out here lip, "
+    },
+    {
+        "start_time": 2003799,
+        "end_time": 2010759,
+        "text": "[DE]  gefolgt von einem Komma reinschreiben, können wir diesen sehr aufwendigen Befehl deutlich leichter "
+    },
+    {
+        "start_time": 2010759,
+        "end_time": 2015480,
+        "text": "[DE]  in unserer Command Line ausführen. Ganz kurz, wir können uns hier das not modules bin sparen, "
+    },
+    {
+        "start_time": 2015480,
+        "end_time": 2021319,
+        "text": "[DE]  weil die Scripts von npm per Default dieses Binary-Verzeichnis einbinden. Das heißt, "
+    },
+    {
+        "start_time": 2021319,
+        "end_time": 2025639,
+        "text": "[DE]  hier können wir auf diesen ganzen vorherigen Pfad verzichten und einfach Babel direkt ausführen. "
+    },
+    {
+        "start_time": 2025639,
+        "end_time": 2032480,
+        "text": "[DE]  Nun können wir einfach über den Befehl in unserem aktuellen Verzeichnis npm run jedes "
+    },
+    {
+        "start_time": 2032480,
+        "end_time": 2037960,
+        "text": "[DE]  Script, das wir definiert haben, ausführen. In unserem Fall nur compile. Wie wir sehen, "
+    },
+    {
+        "start_time": 2037960,
+        "end_time": 2043000,
+        "text": "[DE]  wurde Babel wieder ausgeführt, um uns unsere JSX-Dateien zu übersetzen. "
+    },
+    {
+        "start_time": 2045480,
+        "end_time": 2052320,
+        "text": "[DE]  Letztendlich kann hier in Scripts jedes valide CLI-Command eingefügt werden und wir können so die "
+    },
+    {
+        "start_time": 2052320,
+        "end_time": 2058239,
+        "text": "[DE]  für unser Projekt relevanten CLI-Commands sehr sehr einfach und sehr sehr übersichtlich in der "
+    },
+    {
+        "start_time": 2058239,
+        "end_time": 2063518,
+        "text": "[DE]  Package-Chase belegen. Das ist ein kleiner Trick, der in vielen Projekten auch sehr massiv eingesetzt "
+    },
+    {
+        "start_time": 2063518,
+        "end_time": 2072480,
+        "text": "[DE]  wird. Das können wir zum Beispiel als letztes noch erweitern, indem wir hier ntx-server eintragen und "
+    },
+    {
+        "start_time": 2072480,
+        "end_time": 2076400,
+        "text": "[DE]  wir uns nicht mehr ntx-server eintippen müssen, sondern nun um unseren Webserver zu starten und "
+    },
+    {
+        "start_time": 2076400,
+        "end_time": 2083599,
+        "text": "[DE]  die Website auszuliefern, npm run start eingeben können. Und nun ist unser Webserver wieder verfügbar. "
+    },
+    {
+        "start_time": 2083599,
+        "end_time": 2094559,
+        "text": "[DE]  Und das war es auch schon zur heutigen Folge. Nochmal ein kurzes Review. Was haben wir gemacht? "
+    },
+    {
+        "start_time": 2094559,
+        "end_time": 2099840,
+        "text": "[DE]  Wir haben das lokale Setup mit Visual Studio Code und npm vorbereitet. Ich habe einen ersten "
+    },
+    {
+        "start_time": 2100000,
+        "end_time": 2105440,
+        "text": "[DE]  Einblick in die Tools npm, npx und babel gegeben und wir haben diese auch schon live eingesetzt. "
+    },
+    {
+        "start_time": 2105440,
+        "end_time": 2112400,
+        "text": "[DE]  Wir haben React eingebunden mit der Variante cdn oder Content Delivery Network URL und wir haben "
+    },
+    {
+        "start_time": 2112400,
+        "end_time": 2118559,
+        "text": "[DE]  mit React Element und JSX eine erste Hello World Applikation von React implementiert. Da haben wir "
+    },
+    {
+        "start_time": 2118559,
+        "end_time": 2122719,
+        "text": "[DE]  schon einen großen Schritt gemacht. Das nächste Mal wird es noch spannender. Da werden wir nämlich "
+    },
+    {
+        "start_time": 2122719,
+        "end_time": 2128199,
+        "text": "[DE]  React Components vorstellen und einsetzen und mit den React Components die Renderfunktion, "
+    },
+    {
+        "start_time": 2128199,
+        "end_time": 2135639,
+        "text": "[DE]  Props und dann noch ein paar Besonderheiten von JSX kennenlernen. An dieser Stelle bedanke ich "
+    },
+    {
+        "start_time": 2135639,
+        "end_time": 2140199,
+        "text": "[DE]  mich recht herzlich, dass ihr dieses Video angesehen habt. Ich hoffe ihr konntet etwas lernen. "
+    },
+    {
+        "start_time": 2140199,
+        "end_time": 2146119,
+        "text": "[DE]  Bei Fragen, Feedback oder sonstigen Wünschen und Anregungen meldet euch gerne bei uns über diese "
+    },
+    {
+        "start_time": 2146119,
+        "end_time": 2151760,
+        "text": "[DE]  Kanäle hello at thenativefab.io per E-Mail oder auch auf Twitter und GitHub und ich wünsche euch "
+    },
+    {
+        "start_time": 2151760,
+        "end_time": 2155440,
+        "text": "[DE]  jetzt noch einen schönen Tag und bis zur nächsten Folge. Ciao! "
+    }
+]

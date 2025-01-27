@@ -1,150 +1,84 @@
 import pysrt
-import re
+import webvtt
 import os
+import re
+import json
 
 
-async def parse_subtitles(file_path, language_detected):
+def parse_subtitles(file_path):
     """
-    Parse the subtitles and extract translations if present.
-    """
-    try:
-        if not os.path.exists(file_path):
-            raise FileNotFoundError(f"File not found: {file_path}")
-
-        with open(file_path, 'r', encoding='utf-8') as f:
-            content = f.read().replace('\r\n', '\n')  # Normalize line endings
-
-        subtitles = pysrt.from_string(content)  # Parse the string
-        parsed = []
-
-        for entry in subtitles:
-            # print("Parsed SRT Entry", entry)
-            if not entry or not entry.text:
-                print("skipping invalid entry")
-                continue  # Skip invalid entries
-
-            # Split subtitle text into lines
-            lines = entry.text.split("\n")
-            # First line is the original transcription
-            original_text = lines[0].strip()
-
-            # Extract translations (if present)
-            translations = {}
-            for line in lines[1:]:  # Remaining lines are translations
-                line = line.strip()
-                if line.startswith("[") and "]" in line:
-                    try:
-                        lang_code = line[1:line.index("]")].upper()
-                        translations[lang_code] = line[line.index(
-                            "]") + 1:].strip()
-                    except:
-                        print(f"Could not parse translation line {line}")
-
-            # Append the parsed subtitle entry
-            parsed.append({
-                "start_time": entry.start.ordinal,  # Convert to milliseconds
-                "end_time": entry.end.ordinal,      # Convert to milliseconds
-                "text": original_text,             # Original transcription
-                "translations": translations,      # Extracted translations
-                "language": language_detected,     # Detected language
-            })
-        if not parsed:
-            print(f"No valid subtitles parsed from: {file_path}")
-        return parsed
-
-    except FileNotFoundError as e:
-        print(f"File Error: {e}")
-        return []
-    except Exception as e:
-        print(f"Error parsing subtitles: {e}")
-        return []
-
-""" 
-SubRipItem(
-    index=1,
-    start=SubRipTime(0, 0, 6, 0),  # Represents 00:00:06,000
-    end=SubRipTime(0, 0, 15, 0),   # Represents 00:00:15,000
-    text="Noch einmal kurz zu mir, mein Name ist David Losart.\n[EN] My name is David Losart.\n[ES] Mi nombre es David Losart."
-)
-
-"""
-
-
-async def parse_vtt(file_path, language_detected):
-    """
-    Parse a VTT file and extract subtitles and translations.
+    Parse subtitles from an SRT or VTT file and save the parsed output as a JSON file.
+    Parameters:
+        file_path (str): Path to the subtitle file (.srt or .vtt).
+    Returns:
+        str: Path to the generated JSON file.
     """
     try:
-        if not os.path.exists(file_path):
-            raise FileNotFoundError(f"File not found: {file_path}")
+        # Infer subtitle format from file extension
+        file_format = os.path.splitext(file_path)[1].lower()
 
-        with open(file_path, "r", encoding="utf-8") as f:
-            vtt_content = f.read()
+        # Ensure the format is supported
+        if file_format not in [".srt", ".vtt"]:
+            raise ValueError(f"Unsupported subtitle format: {file_format}")
 
-        # Remove WEBVTT header
-        vtt_content = vtt_content.replace("WEBVTT\n\n", "")
+        # Parse the subtitles
+        if file_format == ".srt":
+            subtitles = pysrt.open(file_path)
+            parsed_subtitles = []
 
-        # Split content into cues based on blank lines
-        cues = vtt_content.strip().split("\n\n")
-        parsed = []
-        for cue in cues:
-            # Split lines of cue
-            lines = cue.strip().split("\n")
+            for entry in subtitles:
+                parsed_subtitles.append({
+                    "start_time": entry.start.ordinal,  # In milliseconds
+                    "end_time": entry.end.ordinal,      # In milliseconds
+                    "text": entry.text.strip(),         # Single line of text
+                })
 
-            if not lines or len(lines) < 2:
-                print(f"skipping: {cue}")
-                continue  # skip invalid cues
+        elif file_format == ".vtt":
+            with open(file_path, "r", encoding="utf-8") as f:
+                lines = f.readlines()
+            parsed_subtitles = []
+            i = 0
+            while i < len(lines):
+                line = lines[i].strip()
+                # Regex to detect the time block
+                timecode_match = re.match(
+                    r"(\d{2}:\d{2}:\d{2}\.\d{3}) --> (\d{2}:\d{2}:\d{2}\.\d{3})", line)
 
-            # First line is the timing
-            time_line = lines[0]
+                if timecode_match:
+                    start_time, end_time = timecode_match.groups()
+                    i += 1  # go to text line
+                    text_lines = []
 
-            # check for valid timing lines
-            match = re.match(
-                r'(\d{2}:\d{2}:\d{2}\.\d{3}) --> (\d{2}:\d{2}:\d{2}\.\d{3})', time_line)
-            if not match:
-                print("Invalid time format, skipping : ", time_line)
-                continue
+                    while i < len(lines) and not re.match(r"(\d{2}:\d{2}:\d{2}\.\d{3}) --> (\d{2}:\d{2}:\d{2}\.\d{3})", lines[i].strip()):
+                        text_lines.append(lines[i].strip())
+                        i += 1
+                    text = " ".join(text_lines)
 
-            start_time_str, end_time_str = match.groups()
+                    parsed_subtitles.append({
+                        "start_time": format_time_to_ms(start_time),
+                        "end_time": format_time_to_ms(end_time),
+                        "text": text,
+                    })
+                else:
+                    i += 1  # skip line
+        else:
+            raise ValueError(f"Unsupported subtitle format: {file_format}")
 
-            # Extracting the time to milliseconds
-            start_time = time_to_milliseconds(start_time_str)
-            end_time = time_to_milliseconds(end_time_str)
+        # Save as JSON
+        output_path = os.path.splitext(file_path)[0] + ".json"
+        with open(output_path, "w", encoding="utf-8") as f:
+            json.dump(parsed_subtitles, f, ensure_ascii=False, indent=4)
+        return output_path
 
-            # Second line onwards is the text content. The first line is the original
-            original_text = lines[1]
-
-            translations = {}
-            for line in lines[2:]:
-                if line.startswith("[") and "]" in line:
-                    lang_code = line[1:line.index("]")].upper()
-                    translations[lang_code] = line[line.index(
-                        "]") + 1:].strip()
-
-            # Append the parsed subtitle entry
-            parsed.append({
-                "start_time": start_time,  # Convert to milliseconds
-                "end_time": end_time,      # Convert to milliseconds
-                "text": original_text,             # Original transcription
-                "translations": translations,      # Extracted translations
-                "language": language_detected,     # Detected language
-            })
-
-        if not parsed:
-            print(f"No VTT subtitles parsed from: {file_path}")
-
-        return parsed
-
-    except FileNotFoundError as e:
-        print(f"File Error: {e}")
-        return []
     except Exception as e:
         print(f"Error parsing subtitles: {e}")
-        return []
+        return None
 
 
-def time_to_milliseconds(time_str):
-    """Convert VTT time format to milliseconds"""
-    hours, minutes, seconds = map(float, re.split(r'[:.]', time_str))
-    total_milliseconds = int((hours * 3600 + minutes * 60 + seconds) * 1000)
-    return total_milliseconds
+def format_time_to_ms(time_string):
+    """
+    Convert a VTT timestamp to milliseconds.
+    """
+    hours, minutes, seconds = map(
+        float, time_string.replace(",", ".").split(":"))
+    return int((hours * 3600 + minutes * 60 + seconds) * 1000)

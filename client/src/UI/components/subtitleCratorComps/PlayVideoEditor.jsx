@@ -1,63 +1,80 @@
-import { useRef, useState } from "react";
-import { useSelector } from "react-redux";
+import { useEffect, useRef, useState } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { setCurrentTimeRdx } from "../../redux/videoSubtitleSlice";
+import { convertPathsToUrls } from "../../utils/read_json";
+import "./subtitleStyles.css";
 
-// eslint-disable-next-line react/prop-types, no-unused-vars
-const PlayVideoEditor = ({ onTimeUpdate }) => {
+const PlayVideoEditor = () => {
   const videoRef = useRef();
-  const { parsed_subtitles, previewUrl } = useSelector(
+  const dispatch = useDispatch();
+
+  // Redux state
+  // eslint-disable-next-line no-unused-vars
+  const { previewUrl, currentTime, tracking_paths } = useSelector(
     (store) => store.video_subtitles
   );
-  console.log(previewUrl);
-  const [selectedLanguage, setSelectedLanguage] = useState("Original"); // Default to original subtitles
-  const [currentTime, setCurrentTime] = useState(0);
+
+  // Local state
+  const [subtitleTracks, setSubtitleTracks] = useState([]);
+
   const handleTimeUpdate = () => {
     if (videoRef.current) {
-      setCurrentTime(Math.floor(videoRef.current.currentTime * 1000)); // Convert to milliseconds
+      const currentTimeInMs = Math.floor(videoRef.current.currentTime * 1000); // Convert to milliseconds
+      dispatch(setCurrentTimeRdx(currentTimeInMs));
     }
   };
 
+  useEffect(() => {
+    const videoElement = videoRef.current;
+
+    if (videoElement) {
+      videoElement.addEventListener("timeupdate", handleTimeUpdate);
+    }
+
+    return () => {
+      if (videoElement) {
+        videoElement.removeEventListener("timeupdate", handleTimeUpdate);
+      }
+    };
+  }, []);
+
+  useEffect(() => {
+    if (tracking_paths && tracking_paths.length > 0) {
+      const urls = convertPathsToUrls(tracking_paths);
+      setSubtitleTracks(urls); // Update state with converted URLs
+    }
+  }, [tracking_paths]);
+  console.log(subtitleTracks);
+
   return (
-    <div className="bg-gray-800 w-[50%] rounded-xl p-6 shadow-md max-h-full overflow-hidden flex flex-col">
-      <video
-        ref={videoRef}
-        src={previewUrl || ""}
-        controls
-        onTimeUpdate={handleTimeUpdate} // Track time
-        className="w-full h-3/4 rounded-lg"
-      ></video>
-
-      {/* Subtitle Display */}
-      <div className="bg-gray-900 text-teal-400 p-4 mt-4 rounded-lg">
-        {parsed_subtitles
-          .filter(
-            (subtitle) =>
-              currentTime >= subtitle.start_time &&
-              currentTime < subtitle.end_time
-          )
-          .map((subtitle, index) => (
-            <div key={index} className="text-center">
-              {selectedLanguage === "Original"
-                ? subtitle.text
-                : subtitle.translations[selectedLanguage]}
-            </div>
-          ))}
-      </div>
-
-      {/* Language Selector */}
-      <div className="flex justify-end mt-4">
-        <select
-          value={selectedLanguage}
-          onChange={(e) => setSelectedLanguage(e.target.value)}
-          className="bg-gray-700 text-gray-200 p-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-400"
+    <div className="bg-gray-800 w-[49%] rounded-xl p-4 shadow-md h-full overflow-hidden relative">
+      {/* Video Player */}
+      <div className="h-full relative">
+        <video
+          ref={videoRef}
+          src={previewUrl || ""}
+          controls
+          className="w-full h-full rounded-lg object-cover"
         >
-          <option value="Original">Original</option>
-          {parsed_subtitles[0]?.translations &&
-            Object.keys(parsed_subtitles[0].translations).map((lang) => (
-              <option key={lang} value={lang}>
-                {lang.toUpperCase()}
-              </option>
-            ))}
-        </select>
+          {/* Add subtitle tracks */}
+          {subtitleTracks.map((track, index) => {
+            // Determine language code and label
+            const lang = track.includes("original")
+              ? "de" // Original language
+              : track.split("-").pop().split(".")[0]; // Extract language code from file name
+
+            return (
+              <track
+                key={index}
+                src={track}
+                kind="subtitles"
+                srcLang={lang}
+                label={lang === "de" ? "Original" : lang.toUpperCase()}
+                default={lang === "de"} // Set the original language as default
+              />
+            );
+          })}
+        </video>
       </div>
     </div>
   );

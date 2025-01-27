@@ -1,0 +1,94 @@
+1-) Transcribe and Translations format:
+    [{
+        "start_time": 0,
+        "end_time": 2000,
+        "text": "Wie geht's dir?",
+        "translations": {
+        "EN": "How are you?",
+        "SE": "Hur mår du?"
+        }
+    }]
+2-) generate_subtitles:
+    a-) Original so only transcriptions are generated
+        sample output:
+        00:00:00.000 --> 00:00:02.000
+        [DE] Wie geht's dir?
+
+        Saving as:
+        "temp_video/subtitles-DE.vtt"
+    b-) Plus translations generated:
+        sample output:
+        00:00:00.000 --> 00:00:02.000
+        How are you?
+
+        Saving as:
+        "temp_video/subtitles-EN.vtt"
+
+        sample output:
+        00:00:00.000 --> 00:00:02.000
+        Hur mår du?
+
+        Saving as:
+        "temp_video/subtitles-SE.vtt"
+    c-) Function return as:
+        {
+            "original": "temp_video/subtitles-DE.vtt",
+            "translations": {
+                "EN": "temp_video/subtitles-EN.vtt",
+                "SE": "temp_video/subtitles-SE.vtt"
+        }
+        }
+2-) generate_subtitles:
+    a-) File Paths:
+        temp_video/subtitles-DE.vtt
+        temp_video/subtitles-EN.vtt
+        temp_video/subtitles-SE.vtt
+    b-) output for transcriptions:
+        [{
+            "start_time": 0,
+            "end_time": 2000,
+            "text": "Wie geht's dir?",
+            "language": "DE"
+        }]
+    c-) Output for Translated languages:
+        [{
+            "start_time": 0,
+            "end_time": 2000,
+            "text": "How are you?",
+            "language": "EN"
+        }]
+        [{
+            "start_time": 0,
+            "end_time": 2000,
+            "text": "Hur mår du?",
+            "language": "SE"
+        }]
+    c-) Function Return as:
+        {
+        "original": [
+            {
+            "start_time": 0,
+            "end_time": 2000,
+            "text": "Wie geht's dir?",
+            "language": "DE"
+            }
+        ],
+        "translations": {
+            "EN": [
+            {
+                "start_time": 0,
+                "end_time": 2000,
+                "text": "How are you?",
+                "language": "EN"
+            }
+            ],
+            "SE": [
+            {
+                "start_time": 0,
+                "end_time": 2000,
+                "text": "Hur mår du?",
+                "language": "SE"
+            }
+            ]
+        }
+        }

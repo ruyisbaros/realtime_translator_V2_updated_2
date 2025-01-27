@@ -1,0 +1,1094 @@
+WEBVTT
+
+00:00:00.000 --> 00:00:06.000
+Hello and welcome to the second episode of the introduction in React with the theme React Setup.
+
+00:00:06.000 --> 00:00:15.000
+My name is David Losart, I’m a software engineer and I’ve been on the web for more than 10 years and I’ve been working with React for 4 years.
+
+00:00:15.000 --> 00:00:24.000
+In addition to React I like working with JavaScript, TypeScript, Node.js, Linux servers, Docker and AWS.
+
+00:00:24.000 --> 00:00:34.000
+Today’s result is to create a development environment and implement a first React Hello World App.
+
+00:00:34.000 --> 00:00:45.000
+If we remember briefly, in the last edition I briefly presented the story and principles of React and gave a first theoretical insight into the Virtual Dom and in JSX.
+
+00:00:46.000 --> 00:00:57.000
+We remember that the Virtual Dom is an abstraction that React uses to synchronize the Dom.
+
+00:00:57.000 --> 00:01:05.000
+And the Virtual Dom allows us to declare programming on the one hand and on the other, it gives us some performance advantages.
+
+00:01:05.000 --> 00:01:13.000
+In this context, we want to set up a development environment.I use Visual Studio Code for this.
+
+00:01:13.000 --> 00:01:21.000
+We will look at a first toolkit with npm, npx and Babel, which will help us develop React applications.
+
+00:01:21.000 --> 00:01:32.000
+And, of course, we will implement a first React application and use the React element, a nuclear formation block of React and JSX.
+
+00:01:32.000 --> 00:01:39.000
+At this point you may notice briefly, the last time I talked a lot about React Components.
+
+00:01:39.000 --> 00:01:52.000
+React components are not to be confused with React element. But now I first present React element, because it is, so to say, the foundation or the atomic building element, which is actually the atomic building element of React.
+
+00:01:52.000 --> 00:02:04.000
+And React Element takes us from JSX also a bit of magic. For when you see JSX for the first time, you can quickly wonder how it actually works behind the scenes?
+
+00:02:04.000 --> 00:02:11.000
+And React Element is ultimately what’s behind the scenes. that’s what we’ll just see at the end of the sequence.
+
+00:02:11.000 --> 00:02:21.000
+Before we start, I would like to encourage you to reprogram all the code examples and hands-on practical parts we make in this sequence.
+
+00:02:21.000 --> 00:02:26.000
+The practical application is simply the best to learn a new technology.
+
+00:02:26.000 --> 00:02:38.000
+You can do this either by programming the next side and slowing the sequence again and again, or you look at the sequence once and again and programming the example in the next one alone.
+
+00:02:38.000 --> 00:02:45.000
+We will also provide the entire code on GitHub. That can then serve a little as a guidance.
+
+00:02:45.000 --> 00:02:52.000
+Just go to GitHub and look for tech-lounge-reject there and you should find the corresponding repository.
+
+00:02:52.000 --> 00:02:57.000
+This is still empty here, because I will, of course, upload the code only after this sequence.
+
+00:02:57.000 --> 00:03:04.000
+And I would say, let’s just go away.
+
+00:03:04.000 --> 00:03:11.000
+To prepare our environment, we need to take a few steps. They now have nothing to do with React for the first time.
+
+00:03:11.000 --> 00:03:19.000
+First, you have to install Visual Studio Code, or you don’t have to. If you prefer another editor, it’s okay.
+
+00:03:19.000 --> 00:03:27.000
+I only work here with Visual Studio Code because I really like this idea.
+
+00:03:27.000 --> 00:03:32.000
+She asks me for some support, for example, code completion, which we will see later.
+
+00:03:32.000 --> 00:03:38.000
+In addition to a development environment for Visual Studio Code, we need Node.js and NPM.
+
+00:03:38.000 --> 00:03:48.000
+And, of course, we have to set up a project order and prepare our environment with a few commands in the command line.
+
+00:03:48.000 --> 00:03:53.000
+A few words about NPM, if you haven’t heard it yet.
+
+00:03:53.000 --> 00:04:06.000
+NPM is a package manager for JavaScript tools, libraries and frameworks and allows us to install and pack NPM comments through a simple Command Line interface.
+
+00:04:06.000 --> 00:04:15.000
+This is a simple command like npm install babel, which we will still run today, which installs us dependencies in our project.
+
+00:04:15.000 --> 00:04:24.000
+PackageJSON is a file that we will generally create in our project order, in the boot folder.
+
+00:04:24.000 --> 00:04:30.000
+And in this packageJSON are dependencies described, scripts and also project metadata.
+
+00:04:30.000 --> 00:04:36.000
+Another tool that NPM brings is npx or np execute.
+
+00:04:36.000 --> 00:04:44.000
+And this allows us to run all of these JavaScript tools, libraries and frameworks without any installation.
+
+00:04:44.000 --> 00:04:50.000
+And we can use this, for example, to launch a local web server that provides our test project.
+
+00:04:50.000 --> 00:04:56.000
+And we will do that, and we will offer the NPM comments.
+
+00:04:56.000 --> 00:05:00.000
+This is not a writing error. this package is really so.
+
+00:05:00.000 --> 00:05:07.000
+npx server starts with this command a local web server in the current directory.
+
+00:05:07.000 --> 00:05:12.000
+We have the argument – reload.
+
+00:05:12.000 --> 00:05:19.000
+This allows us or that allows the server to monitor all the files that are immersed in our project.
+
+00:05:19.000 --> 00:05:22.000
+And in case of a change our browser automatically recharge.
+
+00:05:22.000 --> 00:05:27.000
+This is very convenient during the development because it saves us the re-loading of the page handfully,
+
+00:05:27.000 --> 00:05:33.000
+by either pressing F5 or recharge the page here via the Reload button.
+
+00:05:33.000 --> 00:05:39.000
+If we execute this command by default, it will provide an index HTML that we will also create at the same time.
+
+00:05:39.000 --> 00:05:45.000
+in the current folder under the address http://local.html.
+
+00:05:45.000 --> 00:05:50.000
+And now to show you how a npm package looks on the registry,
+
+00:05:50.000 --> 00:05:57.000
+here at npm.js.com you have a search in which you can search for all the packages that there are.
+
+00:05:57.000 --> 00:06:03.000
+And for each package there is also a page with a description and installation instructions.
+
+00:06:03.000 --> 00:06:08.000
+Everything you need to know about this package.
+
+00:06:09.000 --> 00:06:12.000
+Do we just want to do it all?
+
+00:06:12.000 --> 00:06:20.000
+So we go to our commandline and put a folder first.
+
+00:06:20.000 --> 00:06:24.000
+I call it introduction reject.
+
+00:06:24.000 --> 00:06:28.000
+Now you see that I’ve already set it before, so it makes me a mistake here.
+
+00:06:28.000 --> 00:06:32.000
+It is a mistake for you if you have already set it before.
+
+00:06:32.000 --> 00:06:37.000
+Now you see that I’ve already set it before, so it makes me a mistake here.
+
+00:06:37.000 --> 00:06:41.000
+This will work with you. we can simply reimigate into this folder.
+
+00:06:41.000 --> 00:06:45.000
+And we will execute the command npm init.
+
+00:06:45.000 --> 00:06:49.000
+NPM init generates a JSON package, an initial.
+
+00:06:49.000 --> 00:06:55.000
+And that saves us so a little to do that by hand by asking us a few questions over the command line.
+
+00:06:55.000 --> 00:07:00.000
+First of all, it wants to know the package name from us, which it simply extract from the current folder by default.
+
+00:07:00.000 --> 00:07:04.000
+Introduction Reject is OK in this case.
+
+00:07:04.000 --> 00:07:07.000
+The version is OK for us for the first time.
+
+00:07:07.000 --> 00:07:13.000
+Semper, semantic version, comes very strongly in use at npm.
+
+00:07:13.000 --> 00:07:19.000
+A description, then we can simply consider some free text.
+
+00:07:19.000 --> 00:07:24.000
+This is an introduction in Reject for example.
+
+00:07:24.000 --> 00:07:30.000
+The entry point we will see later is at us source-app.js.
+
+00:07:30.000 --> 00:07:34.000
+Test command, we have no automated test, so we leave it empty.
+
+00:07:34.000 --> 00:07:38.000
+We have also not set up a Git repository. we also don’t want to give keywords first.
+
+00:07:38.000 --> 00:07:41.000
+The author, there we can rewrite ourselves.
+
+00:07:41.000 --> 00:07:47.000
+A license is not as important for private testing projects as well.
+
+00:07:47.000 --> 00:07:53.000
+I usually take here with me, but you can also leave it on ILC in principle.
+
+00:07:53.000 --> 00:08:01.000
+Npm asks us again if all our entries were correct and will just put this JSON file as a JSON package in the current directory.
+
+00:08:01.000 --> 00:08:05.000
+In our case, it is OK, so yes.
+
+00:08:05.000 --> 00:08:10.000
+Next, we will now open this folder in our development environment.
+
+00:08:10.000 --> 00:08:13.000
+In my case, it is Bishow Studio Code.
+
+00:08:13.000 --> 00:08:20.000
+We can do this very easily by going to File Open here, navigating to the corresponding folder and then pressing Open.
+
+00:08:23.000 --> 00:08:32.000
+And now we see that we have just generated a JSON package in which all the fields we have answered by question before are recorded accordingly.
+
+00:08:34.000 --> 00:08:42.000
+The next step is to create an index of HTML, which is an initial HTML page to be delivered.
+
+00:08:42.000 --> 00:08:46.000
+This is done through the new file, index.html.
+
+00:08:47.000 --> 00:08:52.000
+And there we simply write a standard HTML file, starting with the Doctype.
+
+00:08:52.000 --> 00:08:57.000
+And here we have already seen a great feature of Bishow Studio Code, the car completion.
+
+00:08:57.000 --> 00:08:58.000
+I will delete it again.
+
+00:08:58.000 --> 00:09:08.000
+So by entering only the first few characters of the code that I want to create here, Bishow Studio Code offers me a pre-selection.
+
+00:09:08.000 --> 00:09:13.000
+If I confirm this, either through Enter or by clicking on it, it fills me accordingly.
+
+00:09:14.000 --> 00:09:17.000
+A classic HTML document comes next.
+
+00:09:17.000 --> 00:09:23.000
+We need a head or a head day in which we can then give a title.
+
+00:09:23.000 --> 00:09:26.000
+Let’s put it in react.
+
+00:09:27.000 --> 00:09:29.000
+We need a Buddy.
+
+00:09:30.000 --> 00:09:35.000
+And then we just want to start, as it is so usual, with a code example with Hello World.
+
+00:09:36.000 --> 00:09:39.000
+Not just save, not surprise.
+
+00:09:39.000 --> 00:09:42.000
+This is also a feature of Bishow Studio Code.
+
+00:09:42.000 --> 00:09:46.000
+This is automatically formated for me according to certain criteria.
+
+00:09:47.000 --> 00:09:50.000
+Consequently, it may be that there is sometimes a line break added here.
+
+00:09:50.000 --> 00:09:54.000
+This is simply very convenient that everything is always uniformly formated.
+
+00:09:55.000 --> 00:09:58.000
+So, now we have created an index HTML.
+
+00:09:58.000 --> 00:10:00.000
+This is what we want to do through a webinar.
+
+00:10:00.000 --> 00:10:06.039
+deliver servers to complete our development environment. and as previously discussed,
+
+00:10:06.039 --> 00:10:17.759
+We take npx, give a npx server minus reload. This takes a short time and then gives us
+
+00:10:17.759 --> 00:10:24.639
+here also accordingly back that now under htp localhost 8080 the current website or the
+
+00:10:24.639 --> 00:10:31.000
+The current folder is delivered and standardly this index.html is delivered.
+
+00:10:31.000 --> 00:10:37.240
+We also see by navigating to the browser and entering this URL accordingly.
+
+00:10:37.240 --> 00:10:44.279
+Our Hello World index.html is delivered. A small discomfort we see here still,
+
+00:10:44.279 --> 00:10:51.399
+Introduction to React, the U has somehow not recognized yet. for this we need in the HTML
+
+00:10:51.399 --> 00:10:58.799
+Headpart still put the charset on UTF-8. It's also very easy by making neta charset here
+
+00:10:58.799 --> 00:11:08.159
+We press save and when we now navigate back to the site,
+
+00:11:08.159 --> 00:11:13.080
+we see that the Reload Flag of Server has already done its job.
+
+00:11:13.080 --> 00:11:19.759
+It is now re-loaded and the U is presented correctly here. and thus we have essentially
+
+00:11:19.759 --> 00:11:26.200
+This is an ongoing development environment in which we can now develop React.
+
+00:11:26.200 --> 00:11:33.759
+There are several methods to install React now in our project
+
+00:11:33.759 --> 00:11:39.680
+The simplest method is online playgrounds.
+
+00:11:39.680 --> 00:11:46.960
+Online playgrounds are in principle a development environment directly in the browser. and React offers itself
+
+00:11:46.960 --> 00:11:51.080
+one page documentation to an online playground, for example CodePen.
+
+00:11:51.080 --> 00:11:56.879
+Let’s look at it by pressing on Get Started. Try React we’ll see online.
+
+00:11:56.879 --> 00:12:02.440
+If, for example, we navigate on CodePen, we will be directed immediately.
+
+00:12:02.440 --> 00:12:10.759
+And now there is also a Hello World application from React, which we accordingly
+
+00:12:10.759 --> 00:12:16.679
+can also edit. we simply enter a U. And through Command Enter the page is now
+
+00:12:16.679 --> 00:12:23.519
+It’s great, as I said, to try React, so maybe even when
+
+00:12:23.519 --> 00:12:29.200
+Something with you locally doesn’t work to restore. but if we long-term projects
+
+00:12:29.200 --> 00:12:33.000
+To develop, of course, we want somehow the code we produce, also correctly.
+
+00:12:33.000 --> 00:12:39.079
+and that is rather difficult possible in these online playgrounds. accordingly we want to
+
+00:12:39.080 --> 00:12:45.639
+The code is somehow available at us. A second method would, of course, be the
+
+00:12:45.639 --> 00:12:53.080
+Source code from React download. if we could do, it is nowadays rather old fashion.
+
+00:12:53.080 --> 00:12:57.840
+For example, if we want to install a new version of React, we need to
+
+00:12:57.840 --> 00:13:01.799
+We download the code back to the React website. so this is an action,
+
+00:13:01.799 --> 00:13:07.600
+It is not recommended today. there are higher methods. the one is
+
+00:13:07.600 --> 00:13:13.600
+the use of a so-called CDN URL. CDN means Content Delivery Network.
+
+00:13:13.600 --> 00:13:19.480
+just a website on which React has already uploaded the source code and
+
+00:13:19.480 --> 00:13:25.000
+We can easily link through the URL into our index HTML. And this is ideal for fast
+
+00:13:25.000 --> 00:13:30.399
+Tests or even for learning projects, as this year here is a learning project.
+
+00:13:30.399 --> 00:13:37.519
+We will also use this variant of the installation of React today.
+
+00:13:37.519 --> 00:13:43.680
+The variant that still exists, of course, is the installation with NPM. Because React is also available on
+
+00:13:43.680 --> 00:13:51.799
+NPM. I'm showing you here. no. React was also uploaded to NPM.
+
+00:13:51.799 --> 00:14:01.000
+It is, however, that the installation through NPM or then the integration into your website
+
+00:14:01.000 --> 00:14:07.279
+It’s not easy to do so, but it’s a tool that you need to do.
+
+00:14:07.279 --> 00:14:13.319
+It makes the initial thing very complex. This runs in larger applications but absolutely,
+
+00:14:13.319 --> 00:14:19.120
+Because this innocently complex effort is then amortized over a lot of work that we have done.
+
+00:14:19.120 --> 00:14:25.519
+The installation of React with NPM we will be in a later
+
+00:14:25.519 --> 00:14:30.200
+This is the second part of this video series, where everything will be done.
+
+00:14:30.200 --> 00:14:38.399
+For today, as I said, but we use the CDL URL link.
+
+00:14:38.399 --> 00:14:46.639
+Then we enter these two Script tags in our HTML index and thus React.
+
+00:14:46.639 --> 00:14:52.919
+You can also find these two scripts on our page.
+
+00:14:52.920 --> 00:15:00.120
+React.js.org on the official site under CDN links. you will see that there are two
+
+00:15:00.120 --> 00:15:04.160
+There are different variants that can be incorporated into the project. once in the development mode
+
+00:15:04.160 --> 00:15:10.759
+The difference is quite simple that the development mode some
+
+00:15:10.759 --> 00:15:15.400
+providing better errors and providing us with some tools,
+
+00:15:15.400 --> 00:15:19.480
+which make the development of React easier, but which at the same time make these JavaScript files
+
+00:15:19.720 --> 00:15:25.039
+We have a lot of work and we have a lot of work and we have a lot of work and we have a lot of work and we have a lot of work.
+
+00:15:25.039 --> 00:15:29.319
+as possible code on the page, because it must also be downloaded.
+
+00:15:29.319 --> 00:15:33.319
+But since we are still far away from a productive effort,
+
+00:15:33.319 --> 00:15:38.680
+Today we’re limiting ourselves to the development sources that I’m just copying here.
+
+00:15:38.680 --> 00:15:47.360
+If we then incorporate the React sources into our project,
+
+00:15:47.360 --> 00:15:54.440
+The first code, the first block with React,
+
+00:15:54.440 --> 00:15:58.000
+The product that we are going to use is, as previously announced, React Element.
+
+00:15:58.000 --> 00:16:04.039
+We create a React element or a React element through this function breakdown.
+
+00:16:04.039 --> 00:16:10.039
+React Create Element and it consists of three parameters. The first parameter gives the HTML tag
+
+00:16:10.039 --> 00:16:14.879
+to what we want to generate. in this case, for example, a P-day. the second parameter
+
+00:16:14.879 --> 00:16:19.600
+indicate what attributes we want to provide to this HTML tag. In this case, now a
+
+00:16:19.600 --> 00:16:26.440
+And the third parameter indicates which content we reinstall in this HTML tag or
+
+00:16:26.440 --> 00:16:32.720
+In this case here is my content. This function call ultimately makes
+
+00:16:32.720 --> 00:16:39.639
+to create a simple JavaScript object, but this JavaScript object is
+
+00:16:39.639 --> 00:16:45.599
+React is understood and can then be implemented by React again in the Virtual DOM of React.
+
+00:16:45.599 --> 00:16:50.559
+Once it is embedded in the Virtual DOM, we remember,
+
+00:16:50.559 --> 00:16:56.759
+React synchronizes the Virtual DOM so that the correct DOM, just this element becomes a
+
+00:16:56.759 --> 00:17:00.759
+real DOM object and accordingly the browser. so you can say,
+
+00:17:00.759 --> 00:17:08.839
+that a React element represents a real DOM object.
+
+00:17:08.839 --> 00:17:14.839
+Visualization again, so now we have next to the Virtual DOM of React in our
+
+00:17:14.839 --> 00:17:20.200
+JavaScript files this function call React Create Element, which is then here in the virtual
+
+00:17:20.200 --> 00:17:24.920
+DOM is embedded as an individual element, then synchronized with the DOM and then in our
+
+00:17:24.920 --> 00:17:31.960
+I also added this visualization to npm, which is just over the
+
+00:17:31.960 --> 00:17:37.759
+Package Chasing, which we have just seen, is initialized and installed.
+
+00:17:37.759 --> 00:17:46.639
+NPX knows what the web server starts with us. Now we want to implement it again.
+
+00:17:46.639 --> 00:17:53.159
+We will copy the sources we need now as the first, go back to
+
+00:17:53.159 --> 00:18:04.000
+our Visual Studio and now simply add React at the end of the BodyTags.
+
+00:18:04.000 --> 00:18:10.720
+Now we have React on our side, but of course we do nothing with it.
+
+00:18:10.720 --> 00:18:15.039
+To do so, we still need some own JavaScript that we insert.
+
+00:18:15.039 --> 00:18:21.839
+Let us first add a second or a third script day to us.
+
+00:18:21.839 --> 00:18:34.480
+sourceapp.js will show. this file we then put on. first a folder source, which is simply a
+
+00:18:34.480 --> 00:18:39.880
+src is the source in which all the source files of a project are deposited.
+
+00:18:39.880 --> 00:18:49.319
+There we then place the file. App.js. Before we write JavaScript, we prepare to
+
+00:18:49.320 --> 00:18:53.880
+the index.html is another thing before. we may remember the last time
+
+00:18:53.880 --> 00:18:59.559
+ReactDomRenderFunction that we provide, on the one hand, a React component that we have reduced
+
+00:18:59.559 --> 00:19:04.280
+I want, but on the other hand, to indicate where in our HTML we have this component.
+
+00:19:04.280 --> 00:19:08.960
+We want to have reduced. and this where we create now here. we make ourselves a simple
+
+00:19:08.960 --> 00:19:15.440
+Div and give it an ID, by means of which we can then identify it later.
+
+00:19:15.440 --> 00:19:29.240
+then just React.js. if we look short again on the page, it has nothing changed,
+
+00:19:29.240 --> 00:19:33.720
+All with the old, because we have not yet generated the React element that we incorporate here.
+
+00:19:33.720 --> 00:19:42.599
+We do this now. first we generate a React element.
+
+00:19:42.599 --> 00:19:51.000
+A variable, which we now simply call element, is now using React.CreateElement.
+
+00:19:51.000 --> 00:19:57.240
+React is a global variable that is now available to us because we are here.
+
+00:19:57.240 --> 00:19:59.960
+In this script.
+
+00:20:00.000 --> 00:20:06.240
+ultimately does nothing but provide the React sources under these variables and thus the CreateElement method.
+
+00:20:06.240 --> 00:20:12.039
+As the first parameter is the day, in that case we always stay at the ptag.
+
+00:20:12.039 --> 00:20:16.440
+As the second parameter the attributes, we leave it empty first.
+
+00:20:16.440 --> 00:20:22.359
+And as the third parameter of the content, here we just write in,
+
+00:20:22.359 --> 00:20:30.359
+This is my first reaction element.
+
+00:20:30.359 --> 00:20:32.359
+more correct.
+
+00:20:34.359 --> 00:20:39.960
+As mentioned, React-Create element generates for the first time only a simple JavaScript object.
+
+00:20:39.960 --> 00:20:50.359
+With this object we have to do something now, we have to show React where it is going to send us this JavaScript object or this React element later in the browser.
+
+00:20:50.359 --> 00:20:53.359
+We use React-DOM.
+
+00:20:53.359 --> 00:21:01.359
+This is also a global variable that is available to us because we have embedded this second script for React-DOM here.
+
+00:21:01.359 --> 00:21:09.359
+This provides us with the render function, in which we first put our element into.
+
+00:21:09.359 --> 00:21:13.359
+And now we have to say where we wanted to move it.
+
+00:21:13.359 --> 00:21:17.359
+And for this we started the DIV before and missed an ID.
+
+00:21:17.359 --> 00:21:27.359
+And that we can now find out or filter out here with a selector, saying, Document, Get Element by ID.
+
+00:21:27.359 --> 00:21:34.359
+And here the ID we have given before, in the case Reakt App, copy and insert.
+
+00:21:36.359 --> 00:21:45.359
+And if we save it all and go to the site, then we see, juhu, we have our first reakt component,
+
+00:21:45.359 --> 00:21:49.359
+No, our first React element on the website.
+
+00:21:49.359 --> 00:21:53.359
+We used React for the first time to manipulate our DOM.
+
+00:21:53.359 --> 00:22:00.359
+This is still a bit statistic, but it’s a great first step.
+
+00:22:02.359 --> 00:22:07.359
+Now you’ll ask yourself, I’ve told you last time about declarative programming and JSX,
+
+00:22:07.359 --> 00:22:12.360
+that it allows us to write HTML in JavaScript files.
+
+00:22:12.360 --> 00:22:18.360
+You would now expect that we do not actually make the whole call here with the reactory element,
+
+00:22:18.360 --> 00:22:28.360
+But rather you can write something like that, i.e. a HTML element with the ID, directly in the JavaScript file.
+
+00:22:34.360 --> 00:22:39.360
+If we do that, we will get a mistake.
+
+00:22:39.360 --> 00:22:46.360
+When we navigate back into the browser, on the one hand, we see that our item has not been reduced anymore.
+
+00:22:46.360 --> 00:22:53.360
+To find out what's just going wrong here, we can develop the tools from Chrome or even from any other browser,
+
+00:22:53.360 --> 00:22:56.360
+Every browser brings developer tools with us, take us to hand.
+
+00:22:56.360 --> 00:23:01.360
+We can do this either through the F12 button or by right-click investigation.
+
+00:23:02.360 --> 00:23:10.360
+In these surveys we then see our current DOM or our HTML, which we can navigate through here,
+
+00:23:10.360 --> 00:23:14.360
+Our title, our Meta-Char set, just the Buddy.
+
+00:23:20.360 --> 00:23:23.360
+And we also have the console that expects errors to us.
+
+00:23:23.360 --> 00:23:30.360
+And in this case we see now, we have a Synthax error, an unexpected sign, Unexpected token, an open clamer.
+
+00:23:30.360 --> 00:23:32.360
+That is exactly that sign.
+
+00:23:33.360 --> 00:23:39.360
+It’s because a browser at least doesn’t understand JSX today.
+
+00:23:39.360 --> 00:23:44.360
+A browser only understands native JavaScript and this is not native JavaScript.
+
+00:23:44.360 --> 00:23:49.360
+Consequently, the browser can simply not understand this code split either.
+
+00:23:49.360 --> 00:23:52.360
+First we have to do something so that he can.
+
+00:23:52.360 --> 00:23:57.360
+We need to convert this codesnippet back to a normal JavaScript.
+
+00:23:57.360 --> 00:23:59.360
+Now there is a small clue.
+
+00:23:59.360 --> 00:24:02.360
+React-Create element is a very normal JavaScript.
+
+00:24:02.360 --> 00:24:04.360
+We just saw that it works.
+
+00:24:05.360 --> 00:24:11.360
+To make this possible and to make this translation, we do not need to do that handy.
+
+00:24:11.360 --> 00:24:15.360
+It would be hard, but there are tools.
+
+00:24:15.360 --> 00:24:19.360
+And one of these tools, we go back to the theory, is Babel.
+
+00:24:20.360 --> 00:24:31.360
+Babel is just a kind of assistant or a translator that translates features and features, such as JSX, back into native JavaScript that the browser understands.
+
+00:24:32.360 --> 00:24:37.360
+Babylon is essentially made up of three core components that we will use today.
+
+00:24:37.360 --> 00:24:39.360
+This is the core.
+
+00:24:39.360 --> 00:24:41.360
+This is the whole logic of translation.
+
+00:24:41.360 --> 00:24:44.360
+The Command Line Interface or short CLI.
+
+00:24:44.360 --> 00:24:50.360
+This allows us to communicate and speak with Babel and communicate with Babel what we actually wanted to translate.
+
+00:24:50.360 --> 00:24:52.360
+There are presets.
+
+00:24:52.360 --> 00:25:00.360
+Presets can be imagined as words that we bring to Babel to allow Babel to translate JSX, for example, into normal JavaScript.
+
+00:25:01.360 --> 00:25:03.360
+Today we are using Preset React.
+
+00:25:03.360 --> 00:25:08.360
+Preset React is exactly this dictionary that allows the use of JSX in our files.
+
+00:25:08.360 --> 00:25:13.360
+And Babel will then convert this JSX to a completely normal JavaScript.
+
+00:25:14.360 --> 00:25:17.360
+Let’s look at this in our visualization.
+
+00:25:17.360 --> 00:25:19.360
+Currently we were here.
+
+00:25:19.360 --> 00:25:22.360
+We use JavaScript React and Create Element.
+
+00:25:22.360 --> 00:25:25.360
+It worked, but now JSX has brought it with.
+
+00:25:25.360 --> 00:25:27.360
+This has no longer worked.
+
+00:25:27.360 --> 00:25:37.360
+JSX, therefore, we must first go through Babel to convert it to a normal JavaScript, which can then be understood by React or our browsers.
+
+00:25:37.360 --> 00:25:42.360
+And at this point, it may already become aware slowly.
+
+00:25:42.360 --> 00:25:55.360
+Babel does nothing but from these JSX Snippets or from the HTML parts in JavaScript that we write in JSX to make React.CreateElement function requests.
+
+00:25:56.360 --> 00:25:58.360
+That’s all the magic behind it.
+
+00:25:58.360 --> 00:26:01.360
+I will also show you hands-on.
+
+00:26:01.360 --> 00:26:04.360
+But first, how do we install Babylon?
+
+00:26:04.360 --> 00:26:12.360
+We are now using npm and we will install Babel Core, Babel CLI and Preset React in our project.
+
+00:26:13.360 --> 00:26:15.360
+And that we do now.
+
+00:26:16.360 --> 00:26:18.360
+Back to the Command Line.
+
+00:26:18.360 --> 00:26:21.360
+We will close our web server here.
+
+00:26:21.360 --> 00:26:23.360
+Now we are carrying out the command.
+
+00:26:23.360 --> 00:26:34.360
+npm install add babel core add babel cli and add babel reset react
+
+00:26:35.360 --> 00:26:40.360
+We add another small parameter here, namely –save-def.
+
+00:26:40.360 --> 00:26:42.360
+Why we do this, I will explain.
+
+00:26:44.360 --> 00:26:46.360
+Then press Enter.
+
+00:26:47.360 --> 00:26:51.360
+This takes a little time, because he must first download the whole packages.
+
+00:26:52.360 --> 00:26:54.360
+You see an error here.
+
+00:26:54.360 --> 00:26:55.360
+This happens on Mac.
+
+00:26:55.360 --> 00:26:57.360
+Don’t be surprised if you see this mistake.
+
+00:26:57.360 --> 00:27:01.360
+Don’t worry, it doesn’t matter for us first.
+
+00:27:01.360 --> 00:27:04.360
+A few features of Babel will not work due to these errors.
+
+00:27:04.360 --> 00:27:07.360
+But these are not the features we need now.
+
+00:27:07.360 --> 00:27:10.360
+From that way, we can easily ignore this error.
+
+00:27:10.360 --> 00:27:12.360
+Installation is now completed.
+
+00:27:12.360 --> 00:27:14.360
+Let’s go back to Visual Studio Code.
+
+00:27:14.360 --> 00:27:16.360
+Let’s look shortly, something has changed.
+
+00:27:17.360 --> 00:27:23.360
+First, a new field has been added to our package chases, namely these def dependencies.
+
+00:27:23.360 --> 00:27:28.360
+That’s what I’ve caused with the command –save-def.
+
+00:27:28.360 --> 00:27:36.360
+And that ultimately simply describes all the dependencies of our project or development dependencies here in these package chases.
+
+00:27:37.360 --> 00:27:41.360
+I don’t want to go too much into the details now because this is a course about React and not about NPM.
+
+00:27:41.360 --> 00:27:43.360
+But just that you understand why I pointed out this error.
+
+00:27:44.360 --> 00:27:47.360
+It has also been generated a package log chases.
+
+00:27:47.360 --> 00:27:52.360
+This is, to say, a logbook of all of those packages that we have installed with accurate features.
+
+00:27:52.360 --> 00:27:55.360
+And finally, Node modules were created here.
+
+00:27:55.360 --> 00:28:00.360
+This is the folder in which the packages we installed were actually downloaded.
+
+00:28:00.360 --> 00:28:06.360
+If we open this shortly, we will, of course, see much more here than we have installed.
+
+00:28:06.360 --> 00:28:12.360
+This is simply because Babel itself also has dependencies, which it defines through a package of chases.
+
+00:28:12.360 --> 00:28:19.360
+And all these dependencies installed Babel or npm for us then just with that we don’t have to do it handy.
+
+00:28:20.360 --> 00:28:30.360
+But we also see, add-babel-cli has been installed, add-babel-core has been installed and further below add-babel-preset-react is now also present in our project.
+
+00:28:37.360 --> 00:28:42.360
+Now we have to configure or execute Babel a little more accordingly.
+
+00:28:42.360 --> 00:28:46.360
+But Babel still doesn’t know what to do.
+
+00:28:46.360 --> 00:28:49.360
+But Babel still doesn’t know which vocabulary it should use.
+
+00:28:49.360 --> 00:28:51.360
+Let’s start with the dictionary.
+
+00:28:51.360 --> 00:28:58.360
+We can easily configure Babel by creating a new file called .babel-rc.
+
+00:28:59.360 --> 00:29:03.360
+In this file we can write valid chases.
+
+00:29:03.360 --> 00:29:06.360
+This is actually just a chase file, even if it does not end on chase.
+
+00:29:06.360 --> 00:29:11.360
+We can set up an object there and fill the field Presets.
+
+00:29:11.360 --> 00:29:16.360
+And there now in one array all the presets that Babylon uses for us.
+
+00:29:16.360 --> 00:29:19.360
+So speak all these words that we want to translate.
+
+00:29:19.360 --> 00:29:24.360
+In our case, this is just one, namely Babel-Preset-react.
+
+00:29:24.360 --> 00:29:26.360
+This is the first step.
+
+00:29:26.360 --> 00:29:33.360
+In the second step, we now have to make this App.js a App.jsx file.
+
+00:29:33.360 --> 00:29:37.360
+We have no more valid chavascript.
+
+00:29:37.360 --> 00:29:44.360
+That’s why it’s no longer a Chavascript file, but it’s now a .jsx file because we’ve inserted .jsx here.
+
+00:29:44.360 --> 00:29:48.360
+And now we have to let Babel translate this file for us.
+
+00:29:48.360 --> 00:29:51.360
+We can do this with Babel City events.
+
+00:29:51.360 --> 00:29:53.360
+Let’s get rid of the error shortly.
+
+00:30:00.000 --> 00:30:05.720
+Now there are two options. we could also use NPX here again,
+
+00:30:05.720 --> 00:30:10.680
+We have the Babel CLI, but we have the Babel CLI with us.
+
+00:30:10.680 --> 00:30:16.319
+installed and all in node modules, the so-called binary or binary folder,
+
+00:30:16.319 --> 00:30:24.400
+There is the command of Babylon.This command expects three parameters.
+
+00:30:24.400 --> 00:30:28.240
+Source directory or the directory that Babel is to translate for us.
+
+00:30:28.240 --> 00:30:33.519
+It expects the parameter minus minus out here.
+
+00:30:33.519 --> 00:30:39.279
+Place where Babel is to write the compiled or translated files.
+
+00:30:39.279 --> 00:30:44.720
+Now we just go to a directory that we call lib. If we do this command now,
+
+00:30:44.720 --> 00:30:51.799
+Babel quotes us that with a successful message that it makes us a file successful
+
+00:30:51.799 --> 00:30:57.599
+compiled or translated.When we jump back to the project directory, we also see,
+
+00:30:57.599 --> 00:31:02.279
+that the lib folder has been created and here accordingly, analogous to our App.js,
+
+00:31:02.279 --> 00:31:08.200
+a app.js file has been created. and that we can also look at. and see there,
+
+00:31:08.200 --> 00:31:16.039
+from our JSX has become nothing more than a React-Create element call, which is relative or
+
+00:31:16.039 --> 00:31:20.480
+Not relatively yet, but it looks quite the same as what we have handmade before.
+
+00:31:20.480 --> 00:31:27.240
+This is actually the whole magic behind JSX and Babel. It does nothing but the parts,
+
+00:31:27.240 --> 00:31:31.200
+The HTML and our JSX are to translate into a React.Create element.
+
+00:31:31.200 --> 00:31:39.119
+Now we need to make a small change in our index HTML.
+
+00:31:39.119 --> 00:31:44.160
+do because we no longer deliver the App.js from our source or the App.jsx,
+
+00:31:44.160 --> 00:31:50.240
+but we have to deliver the translated version of our app here.
+
+00:31:50.240 --> 00:32:01.079
+We’re going to start a web server again and then we’re going to start a web server again.
+
+00:32:01.079 --> 00:32:12.960
+navigate our site, we see, we still have the old element. I also know why.
+
+00:32:12.960 --> 00:32:16.279
+We’ve got the old element here, but we’re really here.
+
+00:32:16.279 --> 00:32:20.360
+that the first JSX components are connected. therefore we have to replace it here.
+
+00:32:20.360 --> 00:32:27.920
+We now want to return my.jsx element. we need everything now of course from Babel
+
+00:32:27.920 --> 00:32:36.079
+If we start the web server now, we should actually see,
+
+00:32:36.079 --> 00:32:44.599
+that we have successfully returned our first JSX components in the browser.
+
+00:32:46.759 --> 00:32:52.200
+Before we get to the end, I would like to give you a little bit.
+
+00:32:52.200 --> 00:32:58.480
+For this command, which we have just seen here, not modules is Babel source, is difficult.
+
+00:32:58.480 --> 00:33:03.240
+I think it’s not a good thing to do, but it’s not a good thing to do, it’s a good thing to do, it’s a good thing to do, it’s a good thing to do, it’s a good thing to do.
+
+00:33:03.240 --> 00:33:10.079
+npm-scripts provide a bit of failure. Scripts allow us to write script under a
+
+00:33:10.079 --> 00:33:14.480
+so called Alias or under another name to predefinish. so if we now here such a thing
+
+00:33:14.480 --> 00:33:23.799
+How to compile and there the command Babel source minus out here lip,
+
+00:33:23.799 --> 00:33:30.759
+followed by a comma rewrite, we can make this very expensive command significantly easier
+
+00:33:30.759 --> 00:33:35.480
+In short, we can save ourselves here the not modules are,
+
+00:33:35.480 --> 00:33:41.319
+because the scripts of npm by default connect this binary directory.
+
+00:33:41.319 --> 00:33:45.639
+Here we can give up all this previous path and simply run Babel directly.
+
+00:33:45.639 --> 00:33:52.480
+Now we can simply run through the command in our current directory npm every
+
+00:33:52.480 --> 00:33:57.960
+Script that we have defined. in our case only compile. as we see,
+
+00:33:57.960 --> 00:34:03.000
+Babel was executed again to translate our JSX files.
+
+00:34:05.480 --> 00:34:12.320
+Finally, here in Scripts any valid CLI command can be inserted and we can
+
+00:34:12.320 --> 00:34:18.239
+for our project relevant CLI commands very simple and very transparent in the
+
+00:34:18.239 --> 00:34:23.519
+This is a small trick that is also used very massively in many projects.
+
+00:34:23.519 --> 00:34:32.480
+This can be extended, for example, as the last by registering the ntx server here and
+
+00:34:32.480 --> 00:34:36.400
+We no longer need to enter the ntx server, but now to start our web server and
+
+00:34:36.400 --> 00:34:43.599
+To deliver the site, you can enter npm run start. And now our web server is available again.
+
+00:34:43.599 --> 00:34:54.559
+And that's what we've done today. again a short review.
+
+00:34:54.559 --> 00:34:59.840
+We have prepared the local setup with Visual Studio Code and npm. I have a first
+
+00:35:00.000 --> 00:35:05.440
+We have given insight into the tools npm, npx and babel and we have already used them live.
+
+00:35:05.440 --> 00:35:12.400
+We have React embedded with the CDN or Content Delivery Network URL and we have
+
+00:35:12.400 --> 00:35:18.559
+With React Element and JSX implemented a first Hello World application from React.
+
+00:35:18.559 --> 00:35:22.719
+We’ve made a big step. the next time it’s going to be even more exciting.
+
+00:35:22.719 --> 00:35:28.199
+React Components present and use and with the React Components the render function,
+
+00:35:28.199 --> 00:35:35.639
+Props and then some more details of JSX. here I thank you
+
+00:35:35.639 --> 00:35:40.199
+I am very happy that you have watched this video.I hope you could learn something.
+
+00:35:40.199 --> 00:35:46.119
+For questions, feedback or other wishes and suggestions please contact us through this
+
+00:35:46.119 --> 00:35:51.760
+Channels hello at thenativefab.io by email or also on Twitter and GitHub and I wish you
+
+00:35:51.760 --> 00:35:55.440
+A good day and until the next episode.
+

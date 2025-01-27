@@ -19,7 +19,10 @@ const initialState = {
   translatedContent: null,
   metadata: null,
   isPlaying: false,
-  parsed_subtitles: [], // Parsed subtitles
+  parsed_paths: [], // Parsed subtitles
+  tracking_paths: [], // Tracking paths for parsed subtitles
+  currentTime: 0,
+  language_detected: "",
 };
 
 const videoSlice = createSlice({
@@ -70,15 +73,13 @@ const videoSlice = createSlice({
     },
     setParsedSubtitlesRdx: (state, action) => {
       if (action.payload) {
-        // Assign parsed subtitles directly to the state
-        state.parsed_subtitles = action.payload.map((subtitle) => ({
-          start_time: subtitle.start_time,
-          end_time: subtitle.end_time,
-          text: subtitle.text,
-          translations: subtitle.translations, // Translations as object
-          language: subtitle.language, // Detected language
-        }));
+        state.parsed_paths = action.payload.parsed_paths;
+        state.tracking_paths = action.payload.tracking_paths;
+        state.language_detected = action.payload.language_detected;
       }
+    },
+    setCurrentTimeRdx: (state, action) => {
+      state.currentTime = action.payload;
     },
   },
 });
@@ -94,5 +95,6 @@ export const {
   setIsTranslationCompleteRdx,
   setTranslatedContentRdx,
   setParsedSubtitlesRdx,
+  setCurrentTimeRdx,
 } = videoSlice.actions;
 export default videoSlice.reducer;

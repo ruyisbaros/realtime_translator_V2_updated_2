@@ -76,9 +76,15 @@ export const SocketProvider = ({ children, wsUrl }) => {
     socketRef.current.on("processing-complete", async (data) => {
       console.log("Received translation complete state:", data);
       const { details } = data;
-      const { parsed_subtitles } = details;
+      const { parsed_paths, tracking_paths, language_detected } = details;
 
-      dispatch(setParsedSubtitlesRdx(parsed_subtitles));
+      dispatch(
+        setParsedSubtitlesRdx({
+          parsed_paths,
+          tracking_paths,
+          language_detected,
+        })
+      );
       dispatch(setTranslatedContentRdx(data));
       setTimeout(() => {
         dispatch(setIsTranslationCompleteRdx(true));

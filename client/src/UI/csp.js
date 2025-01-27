@@ -25,6 +25,7 @@ export const setDynamicCSP = () => {
     ],
     "style-src": ["'self'", "'unsafe-inline'", "https://fonts.googleapis.com"],
     "script-src": ["'self'", "'unsafe-eval'", "'unsafe-inline'"],
+    "media-src": ["'self'", "blob:", "data:", "http://localhost:8000"],
   };
 
   // Production-specific CSP directives
@@ -34,6 +35,7 @@ export const setDynamicCSP = () => {
       "https://deployed_domain.com",
       "ws://localhost:8000",
     ],
+    "media-src": ["'self'", "blob:", "data:", "http://localhost:8000"],
   };
 
   // Merge base CSP with environment-specific CSP

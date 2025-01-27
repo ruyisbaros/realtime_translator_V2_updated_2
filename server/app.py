@@ -1,4 +1,5 @@
 from fastapi import FastAPI
+from fastapi.staticfiles import StaticFiles
 from dependencies.model_loaders import load_whisper_model, load_facebook_m2m100_local
 # from socket_ops.socket_events import shutdown_processes
 from socket_ops.socketio_manager import create_sio_app, setup_socket_events
@@ -7,6 +8,7 @@ from socketio import AsyncServer
 from contextlib import asynccontextmanager
 from socket_ops.client_manager import ClientManager
 from routers import uploadVideos
+import os
 
 client_manager = ClientManager()
 sio = AsyncServer(async_mode="asgi", cors_allowed_origins="*",  ping_timeout=6000,
@@ -87,8 +89,15 @@ app = FastAPI(lifespan=lifespan)
 
 
 app.include_router(uploadVideos.router)
+# Construct the absolute path to the temp_video directory
+# returns /home/ahmet/my_projects/realtime_translator_V2_updated/server
+base_dir = os.path.dirname(os.path.abspath(__file__))
+temp_video_path = os.path.join(base_dir, "temp_video")
+app.mount("/temp_video", StaticFiles(directory=temp_video_path), name="temp_video")
+temp_video_path = os.path.join(base_dir, "temp_video")
 setup_socket_events(sio, client_manager, app)
 sio_asgi_app = create_sio_app(sio)
+
 app.mount("/", sio_asgi_app)
 
 if __name__ == "__main__":
