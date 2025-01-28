@@ -131,7 +131,7 @@ async def extract_audio_from_video(video_path: str, output_audio_path: str, sock
         raise RuntimeError(f"FFmpeg error: {e.stderr.decode('utf-8')}")
 
 
-def format_time(seconds):
+def format_time_srt(seconds):
     """
     Convert time in seconds to SRT timestamp format (HH:MM:SS,mmm).
     """
@@ -161,8 +161,8 @@ def generate_srt(subtitle_segments, output_folder, selected_languages, detected_
     # Generate SRT for original transcription
     original_srt_content = ""
     for idx, segment in enumerate(subtitle_segments, start=1):
-        start_time = format_time(segment['start_time'])
-        end_time = format_time(segment['end_time'])
+        start_time = format_time_srt(segment['start_time'])
+        end_time = format_time_srt(segment['end_time'])
         text = segment.get("text", "")
 
         original_srt_content += f"{idx}\n{
@@ -183,8 +183,8 @@ def generate_srt(subtitle_segments, output_folder, selected_languages, detected_
             for idx, segment in enumerate(subtitle_segments, start=1):
                 print(f"Segment {idx} translations: {
                       segment.get('translations', {})}")
-                start_time = format_time(segment['start_time'])
-                end_time = format_time(segment['end_time'])
+                start_time = format_time_srt(segment['start_time'])
+                end_time = format_time_srt(segment['end_time'])
                 translated_text = segment.get("translations", {}).get(lang_code.upper(), "") or \
                     segment.get("translations", {}).get(lang_code.lower(), "")
                 if translated_text:

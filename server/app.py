@@ -7,7 +7,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from socketio import AsyncServer
 from contextlib import asynccontextmanager
 from socket_ops.client_manager import ClientManager
-from routers import uploadVideos
+from routers import uploadVideos, subtitleRoutes
 import os
 
 client_manager = ClientManager()
@@ -15,6 +15,10 @@ sio = AsyncServer(async_mode="asgi", cors_allowed_origins="*",  ping_timeout=600
                   ping_interval=3000)
 # Initialize FastAPI app
 app = FastAPI()
+# DB connection
+
+
+# CORSMiddleware
 origins = [
 
     "https://localhost:5123"
@@ -26,7 +30,6 @@ app.add_middleware(
     allow_methods=["GET", "POST", "PUT", "DELETE", "OPTIONS"],
     allow_headers=["Content-Type", "Authorization"],
 )
-# CORSMiddleware
 
 
 # state_manager = StateManager()
@@ -70,7 +73,6 @@ async def lifespan(app: FastAPI):
         app.state.fb_model = fb_model
         app.state.fb_tokenizer = fb_tokenizer
         print("Both Whisper and Facebook models loaded successfully.")
-
     except Exception as e:
         print(f"Error during startup: {e}")
         raise e  # Ensure the application fails fast if critical setup fails
@@ -89,6 +91,7 @@ app = FastAPI(lifespan=lifespan)
 
 
 app.include_router(uploadVideos.router)
+app.include_router(subtitleRoutes.router)
 # Construct the absolute path to the temp_video directory
 # returns /home/ahmet/my_projects/realtime_translator_V2_updated/server
 base_dir = os.path.dirname(os.path.abspath(__file__))

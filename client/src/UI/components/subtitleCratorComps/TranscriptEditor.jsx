@@ -157,3 +157,6 @@ const TranscriptEditor = () => {
 };
 
 export default TranscriptEditor;
+/* yes I agree.
+Ok I am going another chat with you which we have been developing Microsoft Apple level api. 
+But I will definetely come back this chat page and we will develop with you  */
