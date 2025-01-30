@@ -1,0 +1,1822 @@
+[
+    {
+        "start_time": 0,
+        "end_time": 6000,
+        "text": "Merhaba ve React Setup konusundaki ikinci bölümün tanıtımına hoşgeldiniz. "
+    },
+    {
+        "start_time": 6000,
+        "end_time": 15000,
+        "text": "Benim adım David Losart, yazılım mühendisi ve 10 yılı aşkın bir süredir internette seyahat ediyorum ve şimdi de 4 yıldır React ile çalışıyorum. "
+    },
+    {
+        "start_time": 15000,
+        "end_time": 24000,
+        "text": "React'ın yanı sıra JavaScript, TypeScript, Node.js, Linux sunucuları, Docker ve AWS ile çalışmayı seviyorum. "
+    },
+    {
+        "start_time": 24000,
+        "end_time": 34000,
+        "text": "Bu nedenle, bugünkü sonuç tamamen bir gelişme ortamı kurmak ve orada ilk React Hello World uygulamasını uygulamakla ilgilidir. "
+    },
+    {
+        "start_time": 34000,
+        "end_time": 45000,
+        "text": "Kısa bir şekilde hatırladığımızda, son bölümde React'in hikayesini ve ilkelerini kısa bir şekilde tanıttım ve sanal dom ve JSX'e ilk teorik bir bakış açısı verdim. "
+    },
+    {
+        "start_time": 46000,
+        "end_time": 57000,
+        "text": "Biz sanal dom bir abstraksiyon olduğunu hatırlıyoruz, React dom senkronize etmek için kullanılır. "
+    },
+    {
+        "start_time": 57000,
+        "end_time": 65000,
+        "text": "Ve sanal dom, bir yandan deklaratif programlama yapmamıza izin verir ve diğer yandan bazı performans avantajları sunar. "
+    },
+    {
+        "start_time": 65000,
+        "end_time": 73000,
+        "text": "Bu nedenle, şu anda bir geliştirme ortamı oluşturmak istiyoruz. ben Visual Studio Code kullanıyorum. "
+    },
+    {
+        "start_time": 73000,
+        "end_time": 81000,
+        "text": "Npm, npx ve Babel ile ilk bir araç kümesi inceleyeceğiz, bu da React uygulamalarını geliştirmemize yardımcı olacaktır. "
+    },
+    {
+        "start_time": 81000,
+        "end_time": 92000,
+        "text": "Ve elbette ilk React uygulamasını uygulayacağız ve React Element'i, React ve JSX'in nükleer oluşum blokunu kullanacağız. "
+    },
+    {
+        "start_time": 92000,
+        "end_time": 99000,
+        "text": "Bu noktada belki kısa bir şekilde fark edeceksiniz, son kez React Components hakkında çok şey söyledim. "
+    },
+    {
+        "start_time": 99000,
+        "end_time": 112000,
+        "text": "React bileşenleri React Element ile karıştırılmamalıdır.Ama şimdi bu bölümde ilk olarak React Element'i sunuyorum, çünkü react'in aslında atom yapısı olan temel veya atom yapısıdır. "
+    },
+    {
+        "start_time": 112000,
+        "end_time": 124000,
+        "text": "Ve React Element, JSX'den biraz da büyüyü alır. çünkü ilk kez JSX'i gördüğünüzde, sahnelerin arkasında nasıl çalıştığını hızlı bir şekilde merak edebilirsiniz. "
+    },
+    {
+        "start_time": 124000,
+        "end_time": 131000,
+        "text": "Ve React Element nihayetinde sahnelerin arkasındaki şeydir. bu bölümün sonunda da kolayca göreceğiz. "
+    },
+    {
+        "start_time": 131000,
+        "end_time": 141000,
+        "text": "Başlamadan önce, bu bölümde yaptığımız tüm kod örnekleri ve pratik el-on parçaları yeniden programlamaya teşvik etmek istiyorum. "
+    },
+    {
+        "start_time": 141000,
+        "end_time": 146000,
+        "text": "Uygulama sadece yeni bir teknoloji öğrenmek için en iyisidir. "
+    },
+    {
+        "start_time": 146000,
+        "end_time": 158000,
+        "text": "Bunu ya programlayarak yapabilirsin ve devamını tekrar tekrar durdurabilirsin, ya da devamını bir kez daha tam olarak inceleyebilirsin ve sonradan örnekleri tek başına programlayabilirsin. "
+    },
+    {
+        "start_time": 158000,
+        "end_time": 165000,
+        "text": "Tüm kodları GitHub'da da sunacağız. o zaman biraz yönlendirme olarak hizmet edebilir. "
+    },
+    {
+        "start_time": 165000,
+        "end_time": 172000,
+        "text": "Sadece GitHub'a gidin ve orada tech-lounge-reject'i arayın ve uygun depolama alanını bulmalısınız. "
+    },
+    {
+        "start_time": 172000,
+        "end_time": 177000,
+        "text": "Şu an burası boş, çünkü tabii ki sadece bu bölümden sonra kodu yükleyeceğim. "
+    },
+    {
+        "start_time": 177000,
+        "end_time": 184000,
+        "text": "Ben de söyleyeceğim, bir kere bırakalım. "
+    },
+    {
+        "start_time": 184000,
+        "end_time": 191000,
+        "text": "Çevremizi hazırlamak için birkaç adım atılması gerekiyor. şimdi React ile ilk kez hiçbir ilgisi yok. "
+    },
+    {
+        "start_time": 191000,
+        "end_time": 199000,
+        "text": "Birincisi, Visual Studio Code'u yüklemeniz gerekiyor, ya da yapmanız gerekmiyor. Başka bir editörü tercih ederseniz, bu da tamamen iyidir. "
+    },
+    {
+        "start_time": 199000,
+        "end_time": 207000,
+        "text": "Sadece Visual Studio Code ile çalışıyorum çünkü bu fikri çok seviyorum. "
+    },
+    {
+        "start_time": 207000,
+        "end_time": 212000,
+        "text": "Bana bazı destek isteyin, örneğin kod doldurma, daha sonra da göreceğiz. "
+    },
+    {
+        "start_time": 212000,
+        "end_time": 218000,
+        "text": "Visual Studio kodu geliştirme ortamının yanı sıra Node.js ve NPM'ye ihtiyacımız var. "
+    },
+    {
+        "start_time": 218000,
+        "end_time": 228000,
+        "text": "Ve elbette bir proje düzenini oluşturmalı ve çevremizi komut çizgisinde birkaç komut ile hazırlamalıyız. "
+    },
+    {
+        "start_time": 228000,
+        "end_time": 233000,
+        "text": "Birkaç kelime NPM hakkında, eğer daha önce duymamışsanız. "
+    },
+    {
+        "start_time": 233000,
+        "end_time": 246000,
+        "text": "NPM, JavaScript araçları, kütüphaneler ve çerçeve işleri için bir paket yöneticisidir ve basit bir komut hattı arayüzü aracılığıyla NPM yorumlarını yükleme ve paketlemeyi sağlar. "
+    },
+    {
+        "start_time": 246000,
+        "end_time": 255000,
+        "text": "Bu, npm install babel gibi basit bir komut, bugün de yürüteceğiz ve projeye bağımlılıklar kuracağız. "
+    },
+    {
+        "start_time": 255000,
+        "end_time": 264000,
+        "text": "NPM'de aslında her şey PackageJSON'un etrafında dönüyor. PackageJSON, çoğunlukla proje düzenimizde, Boot klasöründe oluşturacağımız bir dosyadır. "
+    },
+    {
+        "start_time": 264000,
+        "end_time": 270000,
+        "text": "Ve bu paketJSON bağımlılıklar, senaryolar ve ayrıca proje metadata açıklanır. "
+    },
+    {
+        "start_time": 270000,
+        "end_time": 276000,
+        "text": "NPM'nin getirdiği başka bir araç npx veya np execute'dır. "
+    },
+    {
+        "start_time": 276000,
+        "end_time": 284000,
+        "text": "Ve bu, tüm bu JavaScript araçlarını, kütüphaneleri ve çerçeveleri bir yükleme olmadan çalıştırmamıza olanak tanır. "
+    },
+    {
+        "start_time": 284000,
+        "end_time": 290000,
+        "text": "Örneğin, test projemizi sağlayan yerel bir web sunucusu başlatmak için kullanabiliriz. "
+    },
+    {
+        "start_time": 290000,
+        "end_time": 296000,
+        "text": "Bunu da yapacağız. ve bu konuda NPM yorumları sunacağız. "
+    },
+    {
+        "start_time": 296000,
+        "end_time": 300000,
+        "text": "Bu bir yazma hatası değil. bu paket gerçekten böyle adlandırılır. "
+    },
+    {
+        "start_time": 300000,
+        "end_time": 307000,
+        "text": "npx server bu komutu ile güncel dizide yerel bir web sunucusu başlatır. "
+    },
+    {
+        "start_time": 307000,
+        "end_time": 312000,
+        "text": "Yine de bu argümanı yeniden yüklüyoruz. "
+    },
+    {
+        "start_time": 312000,
+        "end_time": 319000,
+        "text": "Bu bize veya sunucunun projemize giren tüm dosyaları izlemesine olanak tanır. "
+    },
+    {
+        "start_time": 319000,
+        "end_time": 322000,
+        "text": "Ve bir değişiklik olduğunda, tarayıcımız otomatik olarak yeniden yüklenir. "
+    },
+    {
+        "start_time": 322000,
+        "end_time": 327000,
+        "text": "Bu, geliştirme sırasında çok rahattır, çünkü sayfanın yeniden yüklenmesini elimizden kurtarır, "
+    },
+    {
+        "start_time": 327000,
+        "end_time": 333000,
+        "text": "F5 tuşuna basarak ya da Reload düğmesi aracılığıyla sayfayı yeniden yüklemek. "
+    },
+    {
+        "start_time": 333000,
+        "end_time": 339000,
+        "text": "Bu komutu varsayılan olarak çalıştırırsak, aynı anda oluşturacağımız bir indeksleme HTML'i sağlar. "
+    },
+    {
+        "start_time": 339000,
+        "end_time": 345000,
+        "text": "Şu anki dosyada http://local.html adresinde. "
+    },
+    {
+        "start_time": 345000,
+        "end_time": 350000,
+        "text": "Ve şimdi size bir npm paketinin kayıtta nasıl göründüğünü göstermek için, "
+    },
+    {
+        "start_time": 350000,
+        "end_time": 357000,
+        "text": "npm.js.com adresinde bulabileceğiniz tüm paketleri bulabileceğiniz bir arama bulabilirsiniz. "
+    },
+    {
+        "start_time": 357000,
+        "end_time": 363000,
+        "text": "Ve her paket için ayrıca bir açıklama ve kurulum talimatları ile bir sayfa vardır. "
+    },
+    {
+        "start_time": 363000,
+        "end_time": 368000,
+        "text": "Bu paketle ilgili bilmeniz gereken her şey. "
+    },
+    {
+        "start_time": 369000,
+        "end_time": 372000,
+        "text": "Biz bunların hepsini yapmalı mıyız? "
+    },
+    {
+        "start_time": 372000,
+        "end_time": 380000,
+        "text": "Bunun için komut çizgisine gidelim ve öncelikle bir dosya koyacağız. "
+    },
+    {
+        "start_time": 380000,
+        "end_time": 384000,
+        "text": "Bunları başlangıç reddetme olarak adlandırıyorum. "
+    },
+    {
+        "start_time": 384000,
+        "end_time": 388000,
+        "text": "Şimdi görüyorum ki daha önce yapmıştım, bu yüzden bana bir hata getiriyor. "
+    },
+    {
+        "start_time": 388000,
+        "end_time": 392000,
+        "text": "Önceden yapmış olsaydınız bir hata olurdu. "
+    },
+    {
+        "start_time": 392000,
+        "end_time": 397000,
+        "text": "Şimdi görüyorum ki daha önce yapmıştım, bu yüzden bana bir hata getiriyor. "
+    },
+    {
+        "start_time": 397000,
+        "end_time": 401000,
+        "text": "Sizin için bu işe yarayacak. biz sadece bu dosyaya geri dönüş yapabiliriz "
+    },
+    {
+        "start_time": 401000,
+        "end_time": 405000,
+        "text": "Biz npm init komutunu uygulayacağız. "
+    },
+    {
+        "start_time": 405000,
+        "end_time": 409000,
+        "text": "npm init bize bir paket JSON, bir başlangıç oluşturur. "
+    },
+    {
+        "start_time": 409000,
+        "end_time": 415000,
+        "text": "Ve bu bize bu şekilde el ile yapmak biraz tasarruf, bize komut çizgisi üzerinden birkaç soru sorarak. "
+    },
+    {
+        "start_time": 415000,
+        "end_time": 420000,
+        "text": "Öncelikle, varsayılan olarak mevcut klasörden kolayca çıkarılan paketin adını bilmek istiyor. "
+    },
+    {
+        "start_time": 420000,
+        "end_time": 424000,
+        "text": "Giriş reddetme bu durumda ok. "
+    },
+    {
+        "start_time": 424000,
+        "end_time": 427000,
+        "text": "Bu versiyonu da ilk kez iyi görüyoruz. "
+    },
+    {
+        "start_time": 427000,
+        "end_time": 433000,
+        "text": "Semper, Semantic versiyonu, npm'de çok güçlü bir şekilde kullanılmaktadır. "
+    },
+    {
+        "start_time": 433000,
+        "end_time": 439000,
+        "text": "Bir açıklama, o zaman biz sadece bir özgür metin düşünmek olabilir. "
+    },
+    {
+        "start_time": 439000,
+        "end_time": 444000,
+        "text": "Örneğin, bu bir reddetme girişidir. "
+    },
+    {
+        "start_time": 444000,
+        "end_time": 450000,
+        "text": "Giriş noktası biz daha sonra göreceğiz, bizim için source-app.js. "
+    },
+    {
+        "start_time": 450000,
+        "end_time": 454000,
+        "text": "Test komutu, biz otomatik test yok, bu yüzden boş bırakıyoruz. "
+    },
+    {
+        "start_time": 454000,
+        "end_time": 458000,
+        "text": "Biz de Git Repository'yi kurmadık. biz de ilk defa anahtar kelimeleri bırakmak istemiyoruz. "
+    },
+    {
+        "start_time": 458000,
+        "end_time": 461000,
+        "text": "Bu yazıyı kendimiz yazabiliriz. "
+    },
+    {
+        "start_time": 461000,
+        "end_time": 467000,
+        "text": "Bir lisans, özel test projelerinde de çok önemli değildir. "
+    },
+    {
+        "start_time": 467000,
+        "end_time": 473000,
+        "text": "Ben genellikle burada her zaman ile alıyorum, ama ilke de ILC'ye bırakabilirsiniz. "
+    },
+    {
+        "start_time": 473000,
+        "end_time": 481000,
+        "text": "Npm, tüm girişlerimizin doğru olup olmadığını bir kez daha sorar ve bu JSON dosyasını güncel dizinimizde JSON paketleri olarak bize yerleştirir. "
+    },
+    {
+        "start_time": 481000,
+        "end_time": 485000,
+        "text": "Bizim durumumuzda her şey yolunda, bu yüzden evet. "
+    },
+    {
+        "start_time": 485000,
+        "end_time": 490000,
+        "text": "Şimdi bu dosyayı geliştirme ortamımızda açacağız. "
+    },
+    {
+        "start_time": 490000,
+        "end_time": 493000,
+        "text": "Benim durumum Bishow Studio Code'dur. "
+    },
+    {
+        "start_time": 493000,
+        "end_time": 500000,
+        "text": "Bunu kolayca yapabiliriz, burada File Open'a gidip, ilgili klasöre gidip Open'ı tıklayarak yapabiliriz. "
+    },
+    {
+        "start_time": 503000,
+        "end_time": 512000,
+        "text": "Ve şimdi görüyoruz ki, önceden soruya cevap verdiğimiz tüm alanların uygun şekilde kaydedildiği bir JSON paketi oluşturuldu. "
+    },
+    {
+        "start_time": 514000,
+        "end_time": 522000,
+        "text": "Bir sonraki adım olarak, bir HTML endeksi oluşturmak istiyoruz, yani iletilmesi gereken bir başlangıç HTML sayfası. "
+    },
+    {
+        "start_time": 522000,
+        "end_time": 526000,
+        "text": "Yeni dosya, index.html ile yapıyoruz. "
+    },
+    {
+        "start_time": 527000,
+        "end_time": 532000,
+        "text": "Ve orada, dokuma tipi ile başlayan standart bir HTML dosyasını yazıyoruz. "
+    },
+    {
+        "start_time": 532000,
+        "end_time": 537000,
+        "text": "Ve burada Bishow Studio Code'un muhteşem bir özelliğini gördük. "
+    },
+    {
+        "start_time": 537000,
+        "end_time": 538000,
+        "text": "Bunu yine sileceğim. "
+    },
+    {
+        "start_time": 538000,
+        "end_time": 548000,
+        "text": "Bu nedenle, burada oluşturmak istediğim kodun ilk birkaç karakterini girerek, Bishow Studio Code bana bir ön seçenek sunuyor. "
+    },
+    {
+        "start_time": 548000,
+        "end_time": 553000,
+        "text": "Bunu doğruladığımda, ya Enter aracılığıyla ya da üzerine tıklayarak, buna göre dolduruyorum. "
+    },
+    {
+        "start_time": 554000,
+        "end_time": 557000,
+        "text": "Klasik bir HTML belgesi bir sonraki gelir. "
+    },
+    {
+        "start_time": 557000,
+        "end_time": 563000,
+        "text": "Bir başlık ya da bir başlık gününe ihtiyacımız var, o zaman bir başlık verebiliriz. "
+    },
+    {
+        "start_time": 563000,
+        "end_time": 566000,
+        "text": "Bunu gerçekte uygulayalım. "
+    },
+    {
+        "start_time": 567000,
+        "end_time": 569000,
+        "text": "Bir Buddy’ye ihtiyacımız var. "
+    },
+    {
+        "start_time": 570000,
+        "end_time": 575000,
+        "text": "Şimdi, her zaman olduğu gibi, Hello World ile bir kod örneği ile başlayalım. "
+    },
+    {
+        "start_time": 576000,
+        "end_time": 579000,
+        "text": "Sadece kaydetme baskı değil, şaşırmayın. "
+    },
+    {
+        "start_time": 579000,
+        "end_time": 582000,
+        "text": "Bu da Bishow Studio Code'un bir özelliği. "
+    },
+    {
+        "start_time": 582000,
+        "end_time": 586000,
+        "text": "Belirli kriterlere göre otomatik olarak biçimlendirilmiştir. "
+    },
+    {
+        "start_time": 587000,
+        "end_time": 590000,
+        "text": "Bu nedenle, burada bazen bir çizgi kırışıklığı eklenebilir. "
+    },
+    {
+        "start_time": 590000,
+        "end_time": 594000,
+        "text": "Bu, her zaman her şeyin birleşik biçimde biçimlendirilmesi için çok rahattır. "
+    },
+    {
+        "start_time": 595000,
+        "end_time": 598000,
+        "text": "Yani, şimdi bir indeksleme HTML oluşturduk. "
+    },
+    {
+        "start_time": 598000,
+        "end_time": 600000,
+        "text": "Şimdilerde bir webinar ile görüşmek istiyoruz. "
+    },
+    {
+        "start_time": 600000,
+        "end_time": 606039,
+        "text": "Geliştirme ortamımızı tamamlamak için sunucular sağlar. ve daha önce tartışıldığı gibi, "
+    },
+    {
+        "start_time": 606039,
+        "end_time": 617759,
+        "text": "bu ilanı beğen Eki 14 Npx server minus reload. bu ilanı gizle geri yükle bu ilanı geri yükle "
+    },
+    {
+        "start_time": 617759,
+        "end_time": 624639,
+        "text": "Htp localhost 8080'in şu anki web sitesi veya "
+    },
+    {
+        "start_time": 624639,
+        "end_time": 631000,
+        "text": "güncel klasörler teslim edilir ve standart olarak bu index.html teslim edilir. "
+    },
+    {
+        "start_time": 631000,
+        "end_time": 637240,
+        "text": "Biz de görüyoruz, tarayıcıya tırmanarak ve buna göre bu URL girerek. "
+    },
+    {
+        "start_time": 637240,
+        "end_time": 644279,
+        "text": "bu ilanı beğen Eki 14 Hello World index.html resim bu ilanı gizle geri yükle bu ilanı geri yükle "
+    },
+    {
+        "start_time": 644279,
+        "end_time": 651399,
+        "text": "bu ilanı gizle geri yükle bu ilanı gizle geri yükle bu ilanı geri yükle "
+    },
+    {
+        "start_time": 651399,
+        "end_time": 658799,
+        "text": "Şarkı Sözleri - Şarkı Sözleri - Şarkı Sözleri - Şarkı Sözleri - Şarkı Sözleri - Şarkı Sözleri - Şarkı Sözleri "
+    },
+    {
+        "start_time": 658799,
+        "end_time": 668159,
+        "text": "Sadece UTF-8 girin. biz kaydet'e basıyoruz ve şimdi siteye geri gezinirken, "
+    },
+    {
+        "start_time": 668159,
+        "end_time": 673080,
+        "text": "Reload bayrağının zaten işini yaptığını görüyoruz. sayfa otomatik olarak "
+    },
+    {
+        "start_time": 673080,
+        "end_time": 679759,
+        "text": "bu ilanı beğen Eki 14 I'm doing it right now. bu ilanı gizle geri yükle bu ilanı geri yükle "
+    },
+    {
+        "start_time": 679759,
+        "end_time": 686200,
+        "text": "Gelişmekte olan bir ortamda, artık React'i geliştirebiliriz. "
+    },
+    {
+        "start_time": 686200,
+        "end_time": 693759,
+        "text": "Biraz teorisi. şimdi projeye React yüklemek için çeşitli yöntemler var "
+    },
+    {
+        "start_time": 693759,
+        "end_time": 699680,
+        "text": "React'i nasıl veya nasıl ayarlayabiliriz. en kolay yöntem online oyun alanlarıdır. "
+    },
+    {
+        "start_time": 699680,
+        "end_time": 706960,
+        "text": "Online oyun alanları prensip olarak doğrudan tarayıcıda geliştirme ortamıdır. ve React kendisi sunar "
+    },
+    {
+        "start_time": 706960,
+        "end_time": 711080,
+        "text": "bir sayfa belgeler bir çevrimiçi oyun alanı, örneğin CodePen. "
+    },
+    {
+        "start_time": 711080,
+        "end_time": 716879,
+        "text": "İnternetten başlangıç yapmayı deneyin, online başlangıç yapmayı deneyin. "
+    },
+    {
+        "start_time": 716879,
+        "end_time": 722440,
+        "text": "Oyun alanları. örneğin CodePen'e girdiğimizde, hemen iletileceğiz. "
+    },
+    {
+        "start_time": 722440,
+        "end_time": 730759,
+        "text": "Şimdi de burada bir Hello World uygulaması var React, biz buna göre "
+    },
+    {
+        "start_time": 730759,
+        "end_time": 736679,
+        "text": "Biz sadece bir U giriyoruz. ve Command Enter aracılığıyla sayfa şimdi "
+    },
+    {
+        "start_time": 736679,
+        "end_time": 743519,
+        "text": "Güncellenmiş. bu söylendiği gibi, React denemek için harika, belki de bazen "
+    },
+    {
+        "start_time": 743519,
+        "end_time": 749200,
+        "text": "yerel olarak işe yaramaz bir şey, yeniden düzenlemek. ama biz uzun vadeli projeler "
+    },
+    {
+        "start_time": 749200,
+        "end_time": 753000,
+        "text": "Doğal olarak, ürettiğimiz kodu bir şekilde geliştirmek istiyoruz. "
+    },
+    {
+        "start_time": 753000,
+        "end_time": 759079,
+        "text": "ve bu çevrimiçi oyun alanlarında oldukça zor mümkün. bu nedenle biz "
+    },
+    {
+        "start_time": 759080,
+        "end_time": 765639,
+        "text": "bu ilanı gizle geri yükle bu ilanı geri yükle bu ilanı geri yükle "
+    },
+    {
+        "start_time": 765639,
+        "end_time": 773080,
+        "text": "React'tan kaynak kodu indirin. yapabilseydik, ama günümüzde oldukça eski moda. "
+    },
+    {
+        "start_time": 773080,
+        "end_time": 777840,
+        "text": "Örneğin, React'in yeni bir versiyonunu yüklemek istiyorsak, "
+    },
+    {
+        "start_time": 777840,
+        "end_time": 781799,
+        "text": "WEB WEB WEB WEB WEB WEB WEB WEB WEB WEB WEB WEB WEB WEB WEB WEB WEB WEB "
+    },
+    {
+        "start_time": 781799,
+        "end_time": 787600,
+        "text": "Günümüzde en çok tercih edilen yöntemlerden biri, daha yüksek yöntemlerden biri. "
+    },
+    {
+        "start_time": 787600,
+        "end_time": 793600,
+        "text": "CDN (Content Delivery Network) olarak adlandırılan bir CDN URL’dir. "
+    },
+    {
+        "start_time": 793600,
+        "end_time": 799480,
+        "text": "Sadece React'ın kaynak kodunu bir kez yüklediği bir web sitesi ve "
+    },
+    {
+        "start_time": 799480,
+        "end_time": 805000,
+        "text": "URL aracılığıyla indeksleme HTML'imize kolayca bağlanabiliriz. ve bu hızlı için idealdir "
+    },
+    {
+        "start_time": 805000,
+        "end_time": 810399,
+        "text": "Sınavlar ya da öğrenme projeleri için, bu yıl burada bir öğrenme projesi gibi. ve buna göre "
+    },
+    {
+        "start_time": 810399,
+        "end_time": 817519,
+        "text": "Biz de bugün React'in kurulumunun bu varyantını kullanacağız. "
+    },
+    {
+        "start_time": 817519,
+        "end_time": 823680,
+        "text": "Bir başka seçenek de var, tabii ki NPM ile yükleme. çünkü React da var "
+    },
+    {
+        "start_time": 823680,
+        "end_time": 831799,
+        "text": "bu ilanı beğen Eki 14 React has been uploaded to NPM. bu ilanı gizle geri yükle bu ilanı geri yükle "
+    },
+    {
+        "start_time": 831799,
+        "end_time": 841000,
+        "text": "Bununla birlikte, NPM aracılığıyla veya daha sonra web sitenize giriş yapmanız gerekir. "
+    },
+    {
+        "start_time": 841000,
+        "end_time": 847279,
+        "text": "Bu kadar kolay değil, bir ya da başka bir alet gerektirir. "
+    },
+    {
+        "start_time": 847279,
+        "end_time": 853319,
+        "text": "Başlangıç işleri çok karmaşık yapar. Bu, daha büyük uygulamalarda kesinlikle, "
+    },
+    {
+        "start_time": 853319,
+        "end_time": 859120,
+        "text": "Çünkü bu haksız karmaşık çaba o zaman biz bu "
+    },
+    {
+        "start_time": 859120,
+        "end_time": 865519,
+        "text": "Daha sonra varyant tasarruf. React ile NPM ile kurulum daha sonra "
+    },
+    {
+        "start_time": 865519,
+        "end_time": 870200,
+        "text": "Sonraki YazıSonraki YazıSonraki YazıSonraki YazıSonraki YazıSonraki YazıSonraki YazıSonraki YazıSonraki YazıSonraki YazıSonraki YazıSonraki YazıSonraki YazıSonraki YazıSonraki YazıSonraki Yazı "
+    },
+    {
+        "start_time": 870200,
+        "end_time": 878399,
+        "text": "Bugün için, dediğimiz gibi, ancak CDL URL bağlantısı kullanıyoruz. "
+    },
+    {
+        "start_time": 878399,
+        "end_time": 886639,
+        "text": "HTML indekslerimizde bu iki Script etiketini giriyoruz ve böylece React "
+    },
+    {
+        "start_time": 886639,
+        "end_time": 892919,
+        "text": "Bu yazıyı okuduğunuzda, bu yazıyı okuduğunuzda, bu yazıyı okuduğunuzda, bu yazıyı okuduğunuzda, bu yazıyı okuduğunuzda, bu yazıyı okuduğunuzda, bu yazıyı okuduğunuzda. "
+    },
+    {
+        "start_time": 892920,
+        "end_time": 900120,
+        "text": "React.js.org resmi web sitesinde CDN bağlantıları altında. o iki olduğunu göreceksiniz "
+    },
+    {
+        "start_time": 900120,
+        "end_time": 904160,
+        "text": "Projeye katılmak için çeşitli seçenekler vardır. bir kez geliştirme modunda "
+    },
+    {
+        "start_time": 904160,
+        "end_time": 910759,
+        "text": "ve bir kez üretim modunda. fark oldukça basittir, gelişme modunda bazı "
+    },
+    {
+        "start_time": 910759,
+        "end_time": 915400,
+        "text": "Daha iyi hata mesajları sağlar ve bazı araçları sağlar, "
+    },
+    {
+        "start_time": 915400,
+        "end_time": 919480,
+        "text": "React'ın geliştirilmesini kolaylaştıran ama aynı zamanda bu JavaScript dosyalarını "
+    },
+    {
+        "start_time": 919720,
+        "end_time": 925039,
+        "text": "çok planlı ve çok büyük yapmak. React'in üretken kullanımında elbette çok az istiyoruz "
+    },
+    {
+        "start_time": 925039,
+        "end_time": 929319,
+        "text": "Mümkün olduğunca kod sayfasında, çünkü o da indirmek gerekir. "
+    },
+    {
+        "start_time": 929319,
+        "end_time": 933319,
+        "text": "Ancak, şimdi bu farklılıklara rağmen, üretici bir şekilde çalışmaktan çok uzakta olduğumuz için, "
+    },
+    {
+        "start_time": 933319,
+        "end_time": 938680,
+        "text": "Bugün, sadece burada kopyalamış olduğum gelişme kaynaklarına sınırlayalım. "
+    },
+    {
+        "start_time": 938680,
+        "end_time": 947360,
+        "text": "Daha sonra React kaynaklarını projemize dahil edersek, "
+    },
+    {
+        "start_time": 947360,
+        "end_time": 954440,
+        "text": "İlk kod, ilk blok React ile, "
+    },
+    {
+        "start_time": 954440,
+        "end_time": 958000,
+        "text": "Önceden duyurduğumuz gibi kullanacağımız React Element. "
+    },
+    {
+        "start_time": 958000,
+        "end_time": 964039,
+        "text": "React Element veya React Element bu fonksiyonu kullanarak oluşturur. "
+    },
+    {
+        "start_time": 964039,
+        "end_time": 970039,
+        "text": "React Create Element ve üç parametreden oluşur. ilk parametreler HTML etiketini verir "
+    },
+    {
+        "start_time": 970039,
+        "end_time": 974879,
+        "text": "Bu durumda, örneğin, bir P-gün. ikinci parametre "
+    },
+    {
+        "start_time": 974879,
+        "end_time": 979600,
+        "text": "Hangi özellikleri bu HTML etiketine eklemek istiyoruz. bu durumda şimdi bir "
+    },
+    {
+        "start_time": 979600,
+        "end_time": 986440,
+        "text": "Üçüncü parametre, bu HTML etiketine hangi içeriği yeniden ayarladığımızı veya "
+    },
+    {
+        "start_time": 986440,
+        "end_time": 992720,
+        "text": "bu ilanı beğen Eki 14 I want to re-enroll. in this case here my content. this function call ultimately makes "
+    },
+    {
+        "start_time": 992720,
+        "end_time": 999639,
+        "text": "Sadece bir JavaScript nesnesi oluşturmak için başka bir şey değil. ancak bu JavaScript nesnesi "
+    },
+    {
+        "start_time": 999639,
+        "end_time": 1005599,
+        "text": "React tarafından anlaşılır ve daha sonra React tarafından yeniden React'in sanal DOM'una uygulanabilir "
+    },
+    {
+        "start_time": 1005599,
+        "end_time": 1010559,
+        "text": "Bir kez sanal DOM'da birleştirildiğinde, hatırlıyoruz, "
+    },
+    {
+        "start_time": 1010559,
+        "end_time": 1016759,
+        "text": "React, sanal DOM'u doğru DOM'a senkronize eder, bu öğe bir "
+    },
+    {
+        "start_time": 1016759,
+        "end_time": 1020759,
+        "text": "Gerçek DOM nesne ve buna göre tarayıcıya gösterilmiştir. bu yüzden söyleyebiliriz, "
+    },
+    {
+        "start_time": 1020759,
+        "end_time": 1028839,
+        "text": "bir react elemanı gerçek bir DOM nesnesini temsil eder. "
+    },
+    {
+        "start_time": 1028839,
+        "end_time": 1034839,
+        "text": "Görüntülemeye bir kez daha bakın, bu yüzden şimdi React'in Virtual DOM'unun yanı sıra bizim "
+    },
+    {
+        "start_time": 1034839,
+        "end_time": 1040200,
+        "text": "JavaScript dosyaları bu fonksiyon çağrısı React Create Element, o zaman burada sanal "
+    },
+    {
+        "start_time": 1040200,
+        "end_time": 1044920,
+        "text": "DOM tek bir öğe olarak bağlanır, sonra DOM ile senkronize edilir ve daha sonra bizim "
+    },
+    {
+        "start_time": 1044920,
+        "end_time": 1051960,
+        "text": "bu ilanı beğen Eki 14 I've also added this image, which "
+    },
+    {
+        "start_time": 1051960,
+        "end_time": 1057759,
+        "text": "Biz sadece gördük paket avlanma başlatılır ve kurulur. ve biz "
+    },
+    {
+        "start_time": 1057759,
+        "end_time": 1066639,
+        "text": "NPX, web sunucusunun bize ne başladığını öğreniyor. şimdi her şeyi bir kez daha uygulamak istiyoruz. "
+    },
+    {
+        "start_time": 1066639,
+        "end_time": 1073159,
+        "text": "İhtiyacımız olan kaynakları bir kez daha kısaca kopyalayacağız, öncelikle geri dönelim. "
+    },
+    {
+        "start_time": 1073159,
+        "end_time": 1084000,
+        "text": "Bizim Visual Studio ve şimdi sadece BodyTags sonunda React eklemek. "
+    },
+    {
+        "start_time": 1084000,
+        "end_time": 1090720,
+        "text": "Şimdilerde react yapıyoruz ama elbette hiçbir şey yapmıyoruz. "
+    },
+    {
+        "start_time": 1090720,
+        "end_time": 1095039,
+        "text": "Bunu yapmak için, kendi JavaScript'e ihtiyacımız var. "
+    },
+    {
+        "start_time": 1095039,
+        "end_time": 1101839,
+        "text": "İkinci ya da üçüncü günün bir kısmını da ekleyeceğiz. "
+    },
+    {
+        "start_time": 1101839,
+        "end_time": 1114480,
+        "text": "sourceapp.js gösterilecektir. bu dosyayı daha sonra ekleyeceğiz. ilk önce bir dosya kaynağı, bu sadece bir "
+    },
+    {
+        "start_time": 1114480,
+        "end_time": 1119880,
+        "text": "src, bir projenin tüm kaynak dosyalarının yerleştirildiği kaynak anlamına gelir. "
+    },
+    {
+        "start_time": 1119880,
+        "end_time": 1129319,
+        "text": "O zaman dosyayı koyacağız. app.js. şimdi JavaScript yazmadan önce, "
+    },
+    {
+        "start_time": 1129320,
+        "end_time": 1133880,
+        "text": "index.html'de bir şey daha var. belki de son kez hatırlıyoruz "
+    },
+    {
+        "start_time": 1133880,
+        "end_time": 1139559,
+        "text": "ReactDomRenderFonksiyonu, birincisi, react bir bileşeni getirdiğimiz "
+    },
+    {
+        "start_time": 1139559,
+        "end_time": 1144280,
+        "text": "Bu yazıyı okuduğumuzda, HTML’de bu bileşenin nerede olduğunu da belirtmek zorundayız. "
+    },
+    {
+        "start_time": 1144280,
+        "end_time": 1148960,
+        "text": "bu ilanı gizle geri yükle bu ilanı geri yükle bu ilanı geri yükle "
+    },
+    {
+        "start_time": 1148960,
+        "end_time": 1155440,
+        "text": "bu ilanı gizle geri yükle bu ilanı gizle geri yükle bu ilanı geri yükle "
+    },
+    {
+        "start_time": 1155440,
+        "end_time": 1169240,
+        "text": "o zaman sadece React.js. bir kez daha kısa sayfa bakınca, hiçbir şey değişmedi, "
+    },
+    {
+        "start_time": 1169240,
+        "end_time": 1173720,
+        "text": "Her şey eski, çünkü henüz burada bağladığımız React elemanı oluşturmadık. "
+    },
+    {
+        "start_time": 1173720,
+        "end_time": 1182599,
+        "text": "Şimdi bunu yapıyoruz.Öncelikle bir react elemanı oluşturuyoruz. "
+    },
+    {
+        "start_time": 1182599,
+        "end_time": 1191000,
+        "text": "Bir değişken, şimdi sadece element olarak adlandırıyoruz, şimdi React.CreateElement kullanıyor. "
+    },
+    {
+        "start_time": 1191000,
+        "end_time": 1197240,
+        "text": "React, şu anda mevcut olan küresel bir değişkentir, çünkü biz burada "
+    },
+    {
+        "start_time": 1197240,
+        "end_time": 1199960,
+        "text": "Bu yazıyı yazdığım için. "
+    },
+    {
+        "start_time": 1200000,
+        "end_time": 1206240,
+        "text": "Sonuçta, React kaynakları bu değişkenler altında ve böylece CreateElement yöntemi sunmaktan başka bir şey yapmaz. "
+    },
+    {
+        "start_time": 1206240,
+        "end_time": 1212039,
+        "text": "İlk parametreler tam olarak gün, bu durumda biz her zaman Ptag kalır. "
+    },
+    {
+        "start_time": 1212039,
+        "end_time": 1216440,
+        "text": "İkinci parametreler olarak atribütler, biz ilk boş bırakın. "
+    },
+    {
+        "start_time": 1216440,
+        "end_time": 1222359,
+        "text": "Üçüncü parametre olarak içeriği, burada şimdi sadece içeriği yazıyoruz, "
+    },
+    {
+        "start_time": 1222359,
+        "end_time": 1230359,
+        "text": "Bu benim ilk react elementim. "
+    },
+    {
+        "start_time": 1230359,
+        "end_time": 1232359,
+        "text": "Daha doğru . "
+    },
+    {
+        "start_time": 1234359,
+        "end_time": 1239960,
+        "text": "Sadece bahsettiğimiz gibi, React-Create elemanı ilk kez sadece basit bir JavaScript nesne oluşturur. "
+    },
+    {
+        "start_time": 1239960,
+        "end_time": 1250359,
+        "text": "Bu nesneyle bir şeyler yapmamız gerekiyor, React'a bu JavaScript nesnesinin ya da React elemanının daha sonra tarayıcımızda nereye gideceğini göstermemiz gerekiyor. "
+    },
+    {
+        "start_time": 1250359,
+        "end_time": 1253359,
+        "text": "Bunun için React-DOM kullanıyoruz. "
+    },
+    {
+        "start_time": 1253359,
+        "end_time": 1261359,
+        "text": "Bu da mevcut olan küresel bir değişkentir, çünkü burada React-DOM için bu ikinci senaryoyu birleştirdik. "
+    },
+    {
+        "start_time": 1261359,
+        "end_time": 1269359,
+        "text": "Bu, öncelikle elemanımızı girdiğimiz Render fonksiyonuna sahiptir. "
+    },
+    {
+        "start_time": 1269359,
+        "end_time": 1273359,
+        "text": "Şimdi bunu nereye yönlendirmek istediğimizi söylemeliyiz. "
+    },
+    {
+        "start_time": 1273359,
+        "end_time": 1277359,
+        "text": "Önceki İçerikDIV’yi açtık ve bir ID’yi kaybettik "
+    },
+    {
+        "start_time": 1277359,
+        "end_time": 1287359,
+        "text": "Ve bunu burada bir selektörle bulabilir veya filtre edebiliriz, yani Document, Get Element by ID. "
+    },
+    {
+        "start_time": 1287359,
+        "end_time": 1294359,
+        "text": "Ve burada daha önce verdiğimiz kimliği, Reakt uygulama durumunda kopyalayın ve ekleyin. "
+    },
+    {
+        "start_time": 1296359,
+        "end_time": 1305359,
+        "text": "Ve biz her şeyi kaydetmek ve web sitesine gitmek, o zaman biz görmek, juhu, biz bizim ilk reakt bileşeni var, "
+    },
+    {
+        "start_time": 1305359,
+        "end_time": 1309359,
+        "text": "Hayır, web sitesinde ilk React elemanı indirildi. "
+    },
+    {
+        "start_time": 1309359,
+        "end_time": 1313359,
+        "text": "DOM'larımızı manipüle etmek için React'i ilk kez kullandık. "
+    },
+    {
+        "start_time": 1313359,
+        "end_time": 1320359,
+        "text": "Biraz istikrarlı ama yine de harika bir ilk adım. "
+    },
+    {
+        "start_time": 1322359,
+        "end_time": 1327359,
+        "text": "Şimdi kendinize soracaksınız, son kez açıklayıcı programlama ve JSX hakkında söyledim, "
+    },
+    {
+        "start_time": 1327359,
+        "end_time": 1332360,
+        "text": "HTML'i JavaScript dosyalarında yazmamıza izin verir. "
+    },
+    {
+        "start_time": 1332360,
+        "end_time": 1338360,
+        "text": "Artık her şeyi Reaktory Elemanı ile aramayı yapmayacağımızı bekleyeceksiniz. "
+    },
+    {
+        "start_time": 1338360,
+        "end_time": 1348360,
+        "text": "Daha doğrusu böyle bir şey yazabilir, yani doğrudan JavaScript dosyasında kimlik ile bir HTML öğesi. "
+    },
+    {
+        "start_time": 1354360,
+        "end_time": 1359360,
+        "text": "Bunu yaparsak bir hata yapacağız. "
+    },
+    {
+        "start_time": 1359360,
+        "end_time": 1366360,
+        "text": "Birincisi, tarayıcıya geri döndüğümüzde, öğemizin artık indirilmediğini görüyoruz. "
+    },
+    {
+        "start_time": 1366360,
+        "end_time": 1373360,
+        "text": "Burada neyin yanlış gittiğini bulmak için, Chrome'un veya diğer tarayıcıların geliştiricileri alabiliriz, "
+    },
+    {
+        "start_time": 1373360,
+        "end_time": 1376360,
+        "text": "Her tarayıcı geliştiricilerin araçlarını getirir, elimizde tutar. "
+    },
+    {
+        "start_time": 1376360,
+        "end_time": 1381360,
+        "text": "Bunu ya F12 tuşuna göre yapabiliriz ya da sağ tıklayarak araştırma yapabiliriz. "
+    },
+    {
+        "start_time": 1382360,
+        "end_time": 1390360,
+        "text": "Bu araştırmalarda, güncel DOM'larımızı ya da HTML'imizi görüyoruz, burada da gezinebiliriz. "
+    },
+    {
+        "start_time": 1390360,
+        "end_time": 1394360,
+        "text": "Bizim meta-Char setimiz, tam olarak Buddy. "
+    },
+    {
+        "start_time": 1400360,
+        "end_time": 1403360,
+        "text": "Biz de yanıltmamızı sağlayan bir konsol var. "
+    },
+    {
+        "start_time": 1403360,
+        "end_time": 1410360,
+        "text": "Ve bu durumda şimdi görüyoruz, bir Synthax hatası var, beklenmedik bir işaret, beklenmedik token, açık bir klavye. "
+    },
+    {
+        "start_time": 1410360,
+        "end_time": 1412360,
+        "text": "İşte tam da bu işaret. "
+    },
+    {
+        "start_time": 1413360,
+        "end_time": 1419360,
+        "text": "Çünkü günümüzde bir tarayıcı en azından JSX'i anlamıyor. "
+    },
+    {
+        "start_time": 1419360,
+        "end_time": 1424360,
+        "text": "Bir tarayıcı sadece native JavaScript'i anlıyor ve bu sadece native JavaScript'i anlamıyor. "
+    },
+    {
+        "start_time": 1424360,
+        "end_time": 1429360,
+        "text": "Bu nedenle, tarayıcı bu kod parçası bile anlayamaz. "
+    },
+    {
+        "start_time": 1429360,
+        "end_time": 1432360,
+        "text": "Bunu yapabilmek için bir şeyler yapmamız gerekiyor. "
+    },
+    {
+        "start_time": 1432360,
+        "end_time": 1437360,
+        "text": "Bu kodu normal bir JavaScript’e dönüştürmek zorundayız. "
+    },
+    {
+        "start_time": 1437360,
+        "end_time": 1439360,
+        "text": "Bu noktada küçük bir ipucu var. "
+    },
+    {
+        "start_time": 1439360,
+        "end_time": 1442360,
+        "text": "React-Create elemanı oldukça normal JavaScript'tir. "
+    },
+    {
+        "start_time": 1442360,
+        "end_time": 1444360,
+        "text": "Bu işin işe yaradığını gördük. "
+    },
+    {
+        "start_time": 1445360,
+        "end_time": 1451360,
+        "text": "Bunu yapabilmek ve bu çeviri yapabilmek için elbette bu işin yapılması gerekmez. "
+    },
+    {
+        "start_time": 1451360,
+        "end_time": 1455360,
+        "text": "Bu çok zor, ama araçlar var. "
+    },
+    {
+        "start_time": 1455360,
+        "end_time": 1459360,
+        "text": "Ve bu araçlardan biri, teoriye geri dönüyoruz, Babel'dir. "
+    },
+    {
+        "start_time": 1460360,
+        "end_time": 1471360,
+        "text": "Babel, JSX gibi özellikleri ve fonksiyonları, tarayıcının anladığı yerel JavaScript'e çeviren bir yardımcı ya da çevirmen türüdür. "
+    },
+    {
+        "start_time": 1472360,
+        "end_time": 1477360,
+        "text": "Babel temel olarak, bugün de kullanacağımız üç çekirdek bileşenten oluşur. "
+    },
+    {
+        "start_time": 1477360,
+        "end_time": 1479360,
+        "text": "Bir zamanlar bu bir çekirdek. "
+    },
+    {
+        "start_time": 1479360,
+        "end_time": 1481360,
+        "text": "Tüm çeviri mantığı budur. "
+    },
+    {
+        "start_time": 1481360,
+        "end_time": 1484360,
+        "text": "Command Line Interface veya kısaca CLI. "
+    },
+    {
+        "start_time": 1484360,
+        "end_time": 1490360,
+        "text": "Bu, Babel’le iletişim kurmamıza ve konuşmamıza ve Babel’e gerçekten neyi tercüme etmek istediğimizi anlatmamıza izin verir. "
+    },
+    {
+        "start_time": 1490360,
+        "end_time": 1492360,
+        "text": "Presetler de var. "
+    },
+    {
+        "start_time": 1492360,
+        "end_time": 1500360,
+        "text": "Presets'i, örneğin JSX'i normal JavaScript'e çevirmek için Babel'e gönderdiğimiz sözlükler olarak hayal edebilirsiniz. "
+    },
+    {
+        "start_time": 1501360,
+        "end_time": 1503360,
+        "text": "Ve bugün Preset React'i kullanıyoruz. "
+    },
+    {
+        "start_time": 1503360,
+        "end_time": 1508360,
+        "text": "Preset React, dosyalarımızda JSX'in kullanılmasını sağlayan tam olarak bu sözlüktir. "
+    },
+    {
+        "start_time": 1508360,
+        "end_time": 1513360,
+        "text": "Babel bu JSX'i normal bir JavaScript'e dönüştürür. "
+    },
+    {
+        "start_time": 1514360,
+        "end_time": 1517360,
+        "text": "Görüntülemeye baktığımızda bunu yapalım. "
+    },
+    {
+        "start_time": 1517360,
+        "end_time": 1519360,
+        "text": "Şu anda burada duruyoruz. "
+    },
+    {
+        "start_time": 1519360,
+        "end_time": 1522360,
+        "text": "JavaScript React ve Create Element ile çalıştırdık. "
+    },
+    {
+        "start_time": 1522360,
+        "end_time": 1525360,
+        "text": "Bu işe yarıyor, ama şimdi JSX ile getirdik. "
+    },
+    {
+        "start_time": 1525360,
+        "end_time": 1527360,
+        "text": "Bu artık işe yaramadı. "
+    },
+    {
+        "start_time": 1527360,
+        "end_time": 1537360,
+        "text": "Bu yüzden JSX'i Babel'e geçmemiz gerekiyor, böylece normal bir JavaScript'e dönüştürüyoruz, bu da React veya tarayıcılarımız tarafından anlaşılabilir. "
+    },
+    {
+        "start_time": 1537360,
+        "end_time": 1542360,
+        "text": "Bu noktada yavaş yavaş farkına varılabilir. "
+    },
+    {
+        "start_time": 1542360,
+        "end_time": 1555360,
+        "text": "Babel, bu JSX Snippets'ten veya JSX'te yazdığımız JavaScript'teki HTML parçalarından React.CreateElement fonksiyonu arama yapmaktan başka bir şey yapmaz. "
+    },
+    {
+        "start_time": 1556360,
+        "end_time": 1558360,
+        "text": "Bunun arkasında yer alan tüm sihir. "
+    },
+    {
+        "start_time": 1558360,
+        "end_time": 1561360,
+        "text": "Bunu da sizlere göstereceğim. "
+    },
+    {
+        "start_time": 1561360,
+        "end_time": 1564360,
+        "text": "Ama öncelikle, Babel'i nasıl kuracağız? "
+    },
+    {
+        "start_time": 1564360,
+        "end_time": 1572360,
+        "text": "Bunun için şimdi npm kullanıyoruz ve Babel Core, Babel CLI ve Preset React'i projemize yerleştireceğiz. "
+    },
+    {
+        "start_time": 1573360,
+        "end_time": 1575360,
+        "text": "Ve şimdi bunu yapıyoruz. "
+    },
+    {
+        "start_time": 1576360,
+        "end_time": 1578360,
+        "text": "Şimdi komut hattına geri dönelim. "
+    },
+    {
+        "start_time": 1578360,
+        "end_time": 1581360,
+        "text": "İnternet sitemizi bu noktada bitirelim. "
+    },
+    {
+        "start_time": 1581360,
+        "end_time": 1583360,
+        "text": "Biz komutanlık yapıyoruz. "
+    },
+    {
+        "start_time": 1583360,
+        "end_time": 1594360,
+        "text": "npm install add babel core add babel cli ve add babel reset react "
+    },
+    {
+        "start_time": 1595360,
+        "end_time": 1600360,
+        "text": "Burada biraz daha parametreler ekliyoruz, yani –save-def. "
+    },
+    {
+        "start_time": 1600360,
+        "end_time": 1602360,
+        "text": "Neden böyle bir şey yapıyoruz, o zaman açıklayacağım. "
+    },
+    {
+        "start_time": 1604360,
+        "end_time": 1606360,
+        "text": "Enter tuşuna basalım. "
+    },
+    {
+        "start_time": 1607360,
+        "end_time": 1611360,
+        "text": "Bu biraz zaman alır, çünkü elbette tüm paketleri indirmek zorunda. "
+    },
+    {
+        "start_time": 1612360,
+        "end_time": 1614360,
+        "text": "Şimdi burada bir hata görüyorsunuz. "
+    },
+    {
+        "start_time": 1614360,
+        "end_time": 1615360,
+        "text": "Mac’te böyle bir şey oluyor. "
+    },
+    {
+        "start_time": 1615360,
+        "end_time": 1617360,
+        "text": "Bu hatayı gördüğünüzde şaşırmayın. "
+    },
+    {
+        "start_time": 1617360,
+        "end_time": 1621360,
+        "text": "En azından endişelenmeyin, bu bizim için önemli değil. "
+    },
+    {
+        "start_time": 1621360,
+        "end_time": 1624360,
+        "text": "Babel'in bazı özellikleri bu hatalar nedeniyle işe yaramaz. "
+    },
+    {
+        "start_time": 1624360,
+        "end_time": 1627360,
+        "text": "Ama bunlar şu anda ihtiyacımız olan özellikler değildir. "
+    },
+    {
+        "start_time": 1627360,
+        "end_time": 1630360,
+        "text": "Bu hatayı rahatlıkla görmezden gelebiliriz. "
+    },
+    {
+        "start_time": 1630360,
+        "end_time": 1632360,
+        "text": "Şimdi kurulum tamamlanmıştır. "
+    },
+    {
+        "start_time": 1632360,
+        "end_time": 1634360,
+        "text": "Visual Studio Code’a geri dönelim. "
+    },
+    {
+        "start_time": 1634360,
+        "end_time": 1636360,
+        "text": "Biraz bakalım, bir şey değişti. "
+    },
+    {
+        "start_time": 1637360,
+        "end_time": 1643360,
+        "text": "Birincisi, paketimizde bir yeni alan eklendi, yani bu def bağımlılıklar. "
+    },
+    {
+        "start_time": 1643360,
+        "end_time": 1648360,
+        "text": "İşte bu yüzden “Save-Def” komutunu kullandım. "
+    },
+    {
+        "start_time": 1648360,
+        "end_time": 1656360,
+        "text": "Ve bu, nihayetinde, projemizin ya da gelişme bağımlılıklarının tüm bağımlılıklarını burada bu paket şasaya anlatıyor. "
+    },
+    {
+        "start_time": 1657360,
+        "end_time": 1661360,
+        "text": "Şimdi çok fazla ayrıntıya gitmek istemiyorum, çünkü bu React ve npm hakkında bir ders değil. "
+    },
+    {
+        "start_time": 1661360,
+        "end_time": 1663360,
+        "text": "Neden bu hatayı belirttiğimi anlıyorsunuz. "
+    },
+    {
+        "start_time": 1664360,
+        "end_time": 1667360,
+        "text": "Ayrıca bir paket Log Chasen oluşturulmuştur. "
+    },
+    {
+        "start_time": 1667360,
+        "end_time": 1672360,
+        "text": "Bu, tam özellikleri ile yüklediğimiz tüm paketlerin bir günlüğüdür. "
+    },
+    {
+        "start_time": 1672360,
+        "end_time": 1675360,
+        "text": "Ve son olarak, burada Node modülleri kuruldu. "
+    },
+    {
+        "start_time": 1675360,
+        "end_time": 1680360,
+        "text": "Bu, yüklediğimiz paketlerin aslında indirdiği klasördür. "
+    },
+    {
+        "start_time": 1680360,
+        "end_time": 1686360,
+        "text": "Bunu kısa bir süre açtığımızda, elbette burada yüklediğimizden çok daha fazlasını görüyoruz. "
+    },
+    {
+        "start_time": 1686360,
+        "end_time": 1692360,
+        "text": "Bunun nedeni, Babel’in kendisinin de bağımlılıkları olduğu ve bu bağımlılıkları bir paket şasayla tanımladığıdır. "
+    },
+    {
+        "start_time": 1692360,
+        "end_time": 1699360,
+        "text": "Ve tüm bu bağımlılıklar Babel veya npm bizim için yüklü o zaman eşit olarak biz bunu yapmamız gerekmez. "
+    },
+    {
+        "start_time": 1700360,
+        "end_time": 1710360,
+        "text": "Ama biz de görüyoruz, add-babel-cli yüklendi, add-babel-core yüklendi ve aşağıda add-babel-preset-react şimdi de projemizde mevcuttur. "
+    },
+    {
+        "start_time": 1717360,
+        "end_time": 1722360,
+        "text": "Şimdi Babel'i biraz daha yapılandırmalıyız ya da yapmalıyız. "
+    },
+    {
+        "start_time": 1722360,
+        "end_time": 1726360,
+        "text": "Babel ne yapacağını henüz bilmiyordu. "
+    },
+    {
+        "start_time": 1726360,
+        "end_time": 1729360,
+        "text": "Babel’in hangi sözcükleri kullanması gerektiğini henüz bilmiyor. "
+    },
+    {
+        "start_time": 1729360,
+        "end_time": 1731360,
+        "text": "Öncelikle sözlükle başlayalım. "
+    },
+    {
+        "start_time": 1731360,
+        "end_time": 1738360,
+        "text": "Babel'i yeniden yapılandırarak, .babel-rc olarak adlandırılan yeni bir dosya oluşturarak kolayca yapılandırabiliriz. "
+    },
+    {
+        "start_time": 1739360,
+        "end_time": 1743360,
+        "text": "Bu dosyada geçerli şasalar yazabiliriz. "
+    },
+    {
+        "start_time": 1743360,
+        "end_time": 1746360,
+        "text": "Bu aslında sadece bir Chase dosyası olsa bile, Chase ile sona ermez. "
+    },
+    {
+        "start_time": 1746360,
+        "end_time": 1751360,
+        "text": "Orada bir nesne kurabilir ve Presets alanını doldurabiliriz. "
+    },
+    {
+        "start_time": 1751360,
+        "end_time": 1756360,
+        "text": "Ve orada bir array içinde hepimiz Babel'in bizim için kullandığı Presets'i yazıyoruz. "
+    },
+    {
+        "start_time": 1756360,
+        "end_time": 1759360,
+        "text": "Bu yüzden tercüme etmek istediğimiz tüm kelimeleri söyleyin. "
+    },
+    {
+        "start_time": 1759360,
+        "end_time": 1764360,
+        "text": "Bizim durumumuzda bu sadece bir şey, yani babel-preset-react. "
+    },
+    {
+        "start_time": 1764360,
+        "end_time": 1766360,
+        "text": "Bu ilk adım. "
+    },
+    {
+        "start_time": 1766360,
+        "end_time": 1773360,
+        "text": "İkinci adımda, bu App.js'ten bir App.jsx dosyası yapmamız gerekiyor. "
+    },
+    {
+        "start_time": 1773360,
+        "end_time": 1777360,
+        "text": "Gerçekten de burada geçerli bir çavaz yazısı yok. "
+    },
+    {
+        "start_time": 1777360,
+        "end_time": 1784360,
+        "text": "Bu nedenle, bu da artık bir Chavascript dosyası değil, şimdi bir .jsx dosyasıdır, çünkü burada .jsx ekledik. "
+    },
+    {
+        "start_time": 1784360,
+        "end_time": 1788360,
+        "text": "Ve şimdi Babel bu dosyayı bizim için tercüme etmeliyiz. "
+    },
+    {
+        "start_time": 1788360,
+        "end_time": 1791360,
+        "text": "Şimdilerde Babel-City etkinlikleri ile yapabiliyoruz. "
+    },
+    {
+        "start_time": 1791360,
+        "end_time": 1793360,
+        "text": "Şimdi bu hatayı kısa sürede ortadan kaldıralım. "
+    },
+    {
+        "start_time": 1800000,
+        "end_time": 1805720,
+        "text": "Şimdi iki seçenek var. burada da NPX kullanabiliriz, "
+    },
+    {
+        "start_time": 1805720,
+        "end_time": 1810680,
+        "text": "Babel’e gidiyoruz ama biz de Babel’e gidiyoruz. "
+    },
+    {
+        "start_time": 1810680,
+        "end_time": 1816319,
+        "text": "Node modülleri, bin veya binary dosyaları olarak adlandırılan düğüm modülleri, "
+    },
+    {
+        "start_time": 1816319,
+        "end_time": 1824400,
+        "text": "Bu komut üç parametreyi bekliyor. birincisi, "
+    },
+    {
+        "start_time": 1824400,
+        "end_time": 1828240,
+        "text": "Kaynak listesi veya Babel'in bizim için tercüme edilmesi gereken listesi. "
+    },
+    {
+        "start_time": 1828240,
+        "end_time": 1833519,
+        "text": "bu ilanı beğen Eki 14 It's waiting for the parameter minus out here. "
+    },
+    {
+        "start_time": 1833519,
+        "end_time": 1839279,
+        "text": "Babel'in kopyalanmış veya tercüme edilen dosyaları yazması gereken yer. "
+    },
+    {
+        "start_time": 1839279,
+        "end_time": 1844720,
+        "text": "bu ilanı gizle geri yükle bu ilanı geri yükle bu ilanı geri yükle "
+    },
+    {
+        "start_time": 1844720,
+        "end_time": 1851799,
+        "text": "Babel bize başarılı bir mesaj ile biz bir dosya başarılı "
+    },
+    {
+        "start_time": 1851799,
+        "end_time": 1857599,
+        "text": "kopyalanmış veya tercüme edilmiştir. proje dizinine geri atladığımızda, biz de görüyoruz, "
+    },
+    {
+        "start_time": 1857599,
+        "end_time": 1862279,
+        "text": "bu lib dosyası oluşturuldu ve burada buna göre, App.js ile analog olarak, "
+    },
+    {
+        "start_time": 1862279,
+        "end_time": 1868200,
+        "text": "bir App.js dosyası oluşturulmuştur. ve biz de görebilirsiniz. ve bakın, "
+    },
+    {
+        "start_time": 1868200,
+        "end_time": 1876039,
+        "text": "JSX'imizden bir React-Create Element çağrısı, nispeten veya "
+    },
+    {
+        "start_time": 1876039,
+        "end_time": 1880480,
+        "text": "Ancak, henüz nispeten değil, daha önceden bahsettiğimiz gibi oldukça benzer görünüyor. "
+    },
+    {
+        "start_time": 1880480,
+        "end_time": 1887240,
+        "text": "Bu aslında JSX ve Babel arkasındaki tüm sihirdir. "
+    },
+    {
+        "start_time": 1887240,
+        "end_time": 1891200,
+        "text": "HTML ve bizim JSX bir React.Create eleman çevirmek için. "
+    },
+    {
+        "start_time": 1891200,
+        "end_time": 1899119,
+        "text": "Şimdi, işe yaramak için, indeks HTML'imizde küçük bir değişiklik yapmamız gerekiyor. "
+    },
+    {
+        "start_time": 1899119,
+        "end_time": 1904160,
+        "text": "Çünkü artık kaynağımızdan App.js'i veya App.jsx'i teslim etmiyoruz. "
+    },
+    {
+        "start_time": 1904160,
+        "end_time": 1910240,
+        "text": "Ancak burada uygulamanızın çevirilen versiyonunu yayınlamalıyız. "
+    },
+    {
+        "start_time": 1910240,
+        "end_time": 1921079,
+        "text": "Yine bir web sunucusu açtığımızda ve tekrar bir web sunucusu açtığımızda "
+    },
+    {
+        "start_time": 1921079,
+        "end_time": 1932960,
+        "text": "web sitemizi gezinmek, biz görüyoruz, biz hala eski öğe var. ben de neden biliyorum. çünkü "
+    },
+    {
+        "start_time": 1932960,
+        "end_time": 1936279,
+        "text": "Biz de buraya gelmiştik ama biz de buraya gelmek istiyoruz. "
+    },
+    {
+        "start_time": 1936279,
+        "end_time": 1940360,
+        "text": "ilk JSX bileşenleri birleştirmek. bu nedenle burada değiştirmemiz gerekir. "
+    },
+    {
+        "start_time": 1940360,
+        "end_time": 1947920,
+        "text": "Biz şimdi my.jsx eleman iade etmek istiyoruz. biz şimdi Babel'den her şeyi elbette "
+    },
+    {
+        "start_time": 1947920,
+        "end_time": 1956079,
+        "text": "Şimdi web sunucusunu başlatırsak, aslında görmeliyiz, "
+    },
+    {
+        "start_time": 1956079,
+        "end_time": 1964599,
+        "text": "İlk JSX bileşenlerimizi başarılı bir şekilde tarayıcıya yönlendirdik. "
+    },
+    {
+        "start_time": 1966759,
+        "end_time": 1972200,
+        "text": "Sonuna gelmeden önce, size küçük bir ipucu vermek istiyorum. "
+    },
+    {
+        "start_time": 1972200,
+        "end_time": 1978480,
+        "text": "Çünkü biz burada sadece gördüğümüz bu emir, not modules ben Babel kaynağı, zor "
+    },
+    {
+        "start_time": 1978480,
+        "end_time": 1983240,
+        "text": "bu ilanı gizle geri yükle bu ilanı geri yükle bu ilanı geri yükle "
+    },
+    {
+        "start_time": 1983240,
+        "end_time": 1990079,
+        "text": "npm-scripts biraz eksiklik sağlar. Scripts bize izin verir çünkü bir "
+    },
+    {
+        "start_time": 1990079,
+        "end_time": 1994480,
+        "text": "Alias ya da başka bir isimle önceden tanımlayın. bu yüzden şimdi burada böyle bir şey "
+    },
+    {
+        "start_time": 1994480,
+        "end_time": 2003799,
+        "text": "bu ilanı beğen Eki 14 How to compile and there the command Babel source minus out here lip, "
+    },
+    {
+        "start_time": 2003799,
+        "end_time": 2010759,
+        "text": "Bir komma ile takip ederek, biz bu çok zor komut önemli ölçüde daha kolay yazabiliriz "
+    },
+    {
+        "start_time": 2010759,
+        "end_time": 2015480,
+        "text": "biz komut çizgisi çalıştırmak. kısaca, biz burada not modules olduğunu kurtarabiliriz, "
+    },
+    {
+        "start_time": 2015480,
+        "end_time": 2021319,
+        "text": "Çünkü npm'in senaryoları varsayılan olarak bu ikili dizine bağlanır. yani, "
+    },
+    {
+        "start_time": 2021319,
+        "end_time": 2025639,
+        "text": "Burada tüm bu önceki yoldan vazgeçebilir ve sadece Babel'i doğrudan yapabiliriz. "
+    },
+    {
+        "start_time": 2025639,
+        "end_time": 2032480,
+        "text": "Şimdi biz sadece mevcut listemizdeki komutu üzerinden npm her çalıştırmak mümkün "
+    },
+    {
+        "start_time": 2032480,
+        "end_time": 2037960,
+        "text": "Script biz tanımladık yürütmek. bizim durumumuzda sadece kopyalamak. gördüğümüz gibi, "
+    },
+    {
+        "start_time": 2037960,
+        "end_time": 2043000,
+        "text": "Babel, JSX dosyalarımızı bize çevirmek için yeniden çalıştırıldı. "
+    },
+    {
+        "start_time": 2045480,
+        "end_time": 2052320,
+        "text": "Sonuç olarak, burada Scripts'ta herhangi bir geçerli CLI komutu yerleştirilebilir ve böylece "
+    },
+    {
+        "start_time": 2052320,
+        "end_time": 2058239,
+        "text": "Projelerimiz için ilgili CLI komutları çok basit ve çok açık "
+    },
+    {
+        "start_time": 2058239,
+        "end_time": 2063518,
+        "text": "Bu, birçok projede de çok büyük ölçüde kullanılan küçük bir ipucu "
+    },
+    {
+        "start_time": 2063518,
+        "end_time": 2072480,
+        "text": "Örneğin, NTX sunucularını burada kaydederek son olarak bunu genişletebiliriz ve "
+    },
+    {
+        "start_time": 2072480,
+        "end_time": 2076400,
+        "text": "Artık NTX sunucularına giriş yapmamız gerekmiyor, web sunucularımızı başlatmak için ve "
+    },
+    {
+        "start_time": 2076400,
+        "end_time": 2083599,
+        "text": "Web sitesi teslim, npm çalıştırma başlangıç giriş yapabilirsiniz. ve şimdi web sunucusu yeniden kullanılabilir. "
+    },
+    {
+        "start_time": 2083599,
+        "end_time": 2094559,
+        "text": "Sonraki YazıSonraki YazıSonraki YazıSonraki YazıSonraki YazıSonraki YazıSonraki YazıSonraki YazıSonraki YazıSonraki YazıSonraki YazıSonraki YazıSonraki YazıSonraki YazıSonraki Yazı "
+    },
+    {
+        "start_time": 2094559,
+        "end_time": 2099840,
+        "text": "Biz Visual Studio kodu ve npm ile yerel ayar hazırladık. "
+    },
+    {
+        "start_time": 2100000,
+        "end_time": 2105440,
+        "text": "Npm, Npx ve Babel araçlarına bakış açısı verildi ve biz de bunları canlı olarak kullandık. "
+    },
+    {
+        "start_time": 2105440,
+        "end_time": 2112400,
+        "text": "CDN veya Content Delivery Network URL varyantı ile React'i birleştirdik ve "
+    },
+    {
+        "start_time": 2112400,
+        "end_time": 2118559,
+        "text": "React Element ve JSX ile React'tan ilk Hello World uygulaması uygulandı. "
+    },
+    {
+        "start_time": 2118559,
+        "end_time": 2122719,
+        "text": "Bir dahaki sefere daha heyecanlı olacağız, bir dahaki sefere daha heyecanlı olacağız "
+    },
+    {
+        "start_time": 2122719,
+        "end_time": 2128199,
+        "text": "React bileşenleri temsil eder ve kullanır ve React bileşenleri ile Render fonksiyonu, "
+    },
+    {
+        "start_time": 2128199,
+        "end_time": 2135639,
+        "text": "Props ve daha sonra JSX'in bazı özellikleri ile tanışın. "
+    },
+    {
+        "start_time": 2135639,
+        "end_time": 2140199,
+        "text": "Bu videoyu izlediğiniz için çok mutluyum umarım bir şeyler öğreneceksiniz. "
+    },
+    {
+        "start_time": 2140199,
+        "end_time": 2146119,
+        "text": "Sorularınız, geribildirimleriniz veya diğer isteğiniz ve önerileriniz varsa lütfen bizimle iletişime geçin. "
+    },
+    {
+        "start_time": 2146119,
+        "end_time": 2151760,
+        "text": "Kanal hello at thenativefab.io e-posta yoluyla ya da Twitter ve GitHub ve ben size diliyorum "
+    },
+    {
+        "start_time": 2151760,
+        "end_time": 2155440,
+        "text": "Güzel bir gün geçirelim ve bir sonraki günün sonuna kadar. "
+    }
+]

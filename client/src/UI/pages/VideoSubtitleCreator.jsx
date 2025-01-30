@@ -1,18 +1,19 @@
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import UploadPopup from "../components/subtitleCratorComps/UploadPopup_2";
 import VideoDetails from "../components/subtitleCratorComps/VideoDetails";
-import { useEffect } from "react";
-import { setActiveAppRdx } from "../redux/activeAppSlicer";
-import { useWebSocket } from "../WebSocketContext";
+//import { useEffect } from "react";
+//import { setActiveAppRdx } from "../redux/activeAppSlicer";
+//import { useWebSocket } from "../WebSocketContext";
 import VideoEditor from "../components/subtitleCratorComps/VideoEditor";
+import TimestampProgress from "../accessories/subtitleCreatorAcs/TimestampProgress";
 
 const VideoSubtitleCreator = () => {
-  const dispatch = useDispatch();
-  const { active_app } = useSelector((store) => store.activeApp);
-  const { socket } = useWebSocket();
-  const { selectedFile, isUploadFinished, isTranslationComplete } = useSelector(
-    (store) => store.video_subtitles
-  );
+  const {
+    selectedFile,
+    isUploadFinished,
+    isTranslationComplete,
+    isTimestampsCreated,
+  } = useSelector((store) => store.video_subtitles);
 
   /*   useEffect(() => {
     if (active_app !== "subtitle-creator") {
@@ -31,6 +32,8 @@ const VideoSubtitleCreator = () => {
       ) : (
         <VideoEditor />
       )}
+      {/* ✅ Timestamp Popup (Glassy Overlay) */}
+      {isTimestampsCreated && <TimestampProgress />}
     </div>
   );
 };

@@ -1,32 +1,29 @@
 WEBVTT
 
 00:00:00 --> 00:03:04
-Einführung in die zweite Folge von React: Setup der Entwicklungsumgebung und erste Hello World App.
+Einführung in die Folge und Überblick über die Themen: React Setup und Entwicklungsumgebung.
 
-00:03:04 --> 00:05:07
-Vorbereitung der Entwicklungsumgebung mit Visual Studio Code, Node.js und NPM.
-
-00:05:07 --> 00:08:10
-Einführung in NPM und npx, sowie das Erstellen einer Package JSON und einer Index HTML.
+00:03:04 --> 00:08:10
+Vorbereitung der Entwicklungsumgebung mit Visual Studio Code, Node.js und NPM; Erklärung von NPM und npx.
 
 00:08:10 --> 00:10:31
-Erstellung und Auslieferung der Index HTML über einen lokalen Web-Server.
+Erstellung einer Index-HTML-Datei und Auslieferung über einen lokalen Web-Server.
 
 00:10:31 --> 00:14:38
-Methoden zur Installation von React: Online Playgrounds, CDN-URLs und NPM.
+Vorstellung von Installationsmethoden für React, einschließlich Online Playgrounds und CDN-URLs.
 
-00:14:38 --> 00:17:53
-Erstellung und Verwendung von React Elementen sowie deren Integration in die HTML-Seite.
+00:14:38 --> 00:19:42
+Einführung in React Elements und deren Erstellung mit React.createElement.
 
-00:17:53 --> 00:22:02
-Einführung in JSX und die Notwendigkeit von Babel zur Umwandlung in natives JavaScript.
+00:19:42 --> 00:24:32
+Erklärung von JSX und der Notwendigkeit, Babel zur Übersetzung von JSX in JavaScript zu verwenden.
 
-00:22:02 --> 00:26:01
-Installation und Konfiguration von Babel für die Übersetzung von JSX.
+00:24:32 --> 00:28:06
+Installation und Konfiguration von Babel sowie Erstellung einer Babel-Konfigurationsdatei.
 
-00:26:01 --> 00:30:51
-Erstellung einer App.jsx-Datei und Übersetzung durch Babel, um JSX in React-Elemente umzuwandeln.
+00:28:06 --> 00:34:43
+Übersetzung von JSX-Dateien mit Babel und Verwendung von npm-Skripten zur Vereinfachung der Befehle.
 
-00:30:51 --> 00:34:54
-Nutzung von npm-Skripten zur Vereinfachung von Kommandos und Zusammenfassung der Folge.
+00:34:43 --> 00:35:55
+Zusammenfassung der Folge, Ausblick auf die nächste Episode zu React Components und deren Verwendung.
 

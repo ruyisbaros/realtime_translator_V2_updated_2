@@ -33,11 +33,6 @@ const UserOptions = () => {
 
     const formData = new FormData();
     formData.append("file", selectedFile);
-    /* formData.append("actionType", actionType); // Add actionType
-    selectedLanguages.forEach((lang) => {
-      formData.append("selectedLanguages", lang);
-    });
-    formData.append("subtitleFormat", subtitleFormat); // Add subtitleFormat */
 
     try {
       setIsUploading(true);

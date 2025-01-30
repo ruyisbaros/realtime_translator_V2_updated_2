@@ -41,3 +41,12 @@ video::cue {
     Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   -webkit-box-decoration-break: clone;
 }
+.line_circle {
+  width: 12px;
+  height: 12px;
+  transform: translate(-50%, -30%);
+}
+.timeline:hover .line_circle {
+  width: 16px;
+  height: 16px;
+}

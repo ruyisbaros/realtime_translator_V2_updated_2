@@ -7,8 +7,9 @@ import "./subtitleStyles.css";
 
 const TranscriptEditor = () => {
   const dispatch = useDispatch();
-  const { parsed_paths, currentTime, tracking_paths, language_detected } =
-    useSelector((store) => store.video_subtitles);
+  const { parsed_paths, currentTime, language_detected } = useSelector(
+    (store) => store.video_subtitles
+  );
   const [editableSubtitles, setEditableSubtitles] = useState([]);
   //const [subtitles, setSubtitles] = useState({});
 
@@ -32,7 +33,8 @@ const TranscriptEditor = () => {
     if (editableSubtitles && editableSubtitles.length > 0) {
       const activeIndex = editableSubtitles.findIndex(
         (subtitle) =>
-          currentTime >= subtitle.start_time && currentTime <= subtitle.end_time
+          currentTime * 1000 >= subtitle.start_time &&
+          currentTime * 1000 <= subtitle.end_time
       );
       if (activeIndex !== -1) {
         const activeElement = document.getElementById(
@@ -82,7 +84,7 @@ const TranscriptEditor = () => {
       loadSubtitles();
     }
   }, [parsed_paths]);
-  console.log(parsed_paths, tracking_paths);
+  //console.log(parsed_paths, tracking_paths);
 
   return (
     <div className="w-[50%] h-full bg-gray-800 rounded-xl p-6 shadow-md overflow-hidden">
@@ -94,8 +96,8 @@ const TranscriptEditor = () => {
         {editableSubtitles && editableSubtitles.length > 0 ? (
           editableSubtitles.map((subtitle, index) => {
             const isActive =
-              currentTime >= subtitle.start_time &&
-              currentTime <= subtitle.end_time;
+              currentTime * 1000 >= subtitle.start_time &&
+              currentTime * 1000 <= subtitle.end_time;
 
             return (
               <div
@@ -157,6 +159,3 @@ const TranscriptEditor = () => {
 };
 
 export default TranscriptEditor;
-/* yes I agree.
-Ok I am going another chat with you which we have been developing Microsoft Apple level api. 
-But I will definetely come back this chat page and we will develop with you  */

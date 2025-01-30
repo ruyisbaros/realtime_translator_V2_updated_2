@@ -135,6 +135,23 @@ button:disabled {
 .bg-gray-900::-webkit-scrollbar-track {
   background: #374151; /* Dark gray background for the track */
 }
+.fadeInOutAnimation {
+  animation: fadeInOut 3s infinite;
+}
+@keyframes fadeInOut {
+  0% {
+    opacity: 0;
+  }
+  30% {
+    opacity: 1;
+  }
+  70% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
 @layer utilities {
   .metallic-silver {
     @apply bg-gradient-to-br from-[#f0f0f0] via-[#d0d0d0] to-[#e0e0e0];
