@@ -85,7 +85,7 @@ const TranscriptEditor = () => {
   console.log(parsed_paths, tracking_paths);
 
   return (
-    <div className="w-[50%] bg-gray-800 rounded-xl p-6 shadow-md overflow-hidden">
+    <div className="w-[50%] h-full bg-gray-800 rounded-xl p-6 shadow-md overflow-hidden">
       <h2 className="text-teal-400 text-xl font-semibold mb-4">
         Transcription & Translation Editor
       </h2>

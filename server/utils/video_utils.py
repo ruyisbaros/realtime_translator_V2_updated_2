@@ -4,7 +4,7 @@ from typing import List, Dict
 from pydub import AudioSegment
 from dependencies.transcribe_and_translate import transcribe_audio, translate_text
 from utils.audio_utils import generate_subtitles, extract_audio_from_video
-from utils.parsingoutputs import parse_subtitles
+from utils.parsingOutputs import parse_subtitles
 from utils.file_handling import clean_temp_files
 
 
@@ -122,8 +122,8 @@ async def process_video(
                         current_translation = idx * \
                             len(selected_languages) + \
                             lang_idx + 1  # Overall index
-                        progress = 50 + (current_translation /
-                                         total_translations) * 50  #
+                        progress = (current_translation /
+                                    total_translations) * 100  #
 
                         print(f"Translating from {detected_lang} to {
                             lang}...")  # Debugging

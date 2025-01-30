@@ -7,7 +7,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from socketio import AsyncServer
 from contextlib import asynccontextmanager
 from socket_ops.client_manager import ClientManager
-from routers import uploadVideos, subtitleRoutes
+from routers import uploadVideos
 import os
 
 client_manager = ClientManager()
@@ -91,7 +91,6 @@ app = FastAPI(lifespan=lifespan)
 
 
 app.include_router(uploadVideos.router)
-app.include_router(subtitleRoutes.router)
 # Construct the absolute path to the temp_video directory
 # returns /home/ahmet/my_projects/realtime_translator_V2_updated/server
 base_dir = os.path.dirname(os.path.abspath(__file__))

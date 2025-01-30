@@ -18,7 +18,7 @@ const UserOptions = () => {
   const { selectedFile } = useSelector((store) => store.video_subtitles);
   const [actionType, setActionType] = useState("translation");
   const [selectedLanguages, setSelectedLanguages] = useState([]);
-  const [subtitleFormat, setSubtitleFormat] = useState("srt");
+  const [subtitleFormat, setSubtitleFormat] = useState("vtt");
   const [isUploading, setIsUploading] = useState(false);
 
   const handleFileUpload = async () => {
@@ -43,7 +43,7 @@ const UserOptions = () => {
       setIsUploading(true);
 
       const response = await axios.post(
-        "http://localhost:8000/upload/",
+        "http://localhost:8000/upload/upload_video",
         formData,
         {
           headers: {
@@ -234,21 +234,22 @@ const UserOptions = () => {
               <input
                 type="radio"
                 name="subtitleFormat"
-                value="srt"
+                value="vtt"
                 className="mr-2 cursor-pointer"
-                onChange={() => setSubtitleFormat("srt")}
+                onChange={() => setSubtitleFormat("vtt")}
+                defaultChecked={true}
               />
-              Export as .SRT
+              .VTT <span className="text-[12px]">(recommended)</span>
             </label>
             <label className="ml-2 text-[14px] cursor-pointer hover:text-[#30f4d6] transition-all duration-200">
               <input
                 type="radio"
                 name="subtitleFormat"
-                value="vtt"
+                value="srt"
                 className="mr-2 cursor-pointer"
-                onChange={() => setSubtitleFormat("vtt")}
+                onChange={() => setSubtitleFormat("srt")}
               />
-              Export as .VTT
+              .SRT
             </label>
           </div>
         </div>

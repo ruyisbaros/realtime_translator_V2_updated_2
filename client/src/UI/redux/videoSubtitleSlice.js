@@ -21,6 +21,8 @@ const initialState = {
   isPlaying: false,
   parsed_paths: [], // Parsed subtitles
   tracking_paths: [], // Tracking paths for parsed subtitles
+  timestamps_path: "", // Tracking paths for
+  isTimestampsCreated: false, //
   currentTime: 0,
   language_detected: "",
 };
@@ -81,6 +83,12 @@ const videoSlice = createSlice({
     setCurrentTimeRdx: (state, action) => {
       state.currentTime = action.payload;
     },
+    setTimeStampPathRdx: (state, action) => {
+      state.timestamps_path = action.payload;
+    },
+    setIsTimestampsCreatedRdx: (state, action) => {
+      state.isTimestampsCreated = action.payload;
+    },
   },
 });
 
@@ -96,5 +104,7 @@ export const {
   setTranslatedContentRdx,
   setParsedSubtitlesRdx,
   setCurrentTimeRdx,
+  setTimeStampPathRdx,
+  setIsTimestampsCreatedRdx,
 } = videoSlice.actions;
 export default videoSlice.reducer;
