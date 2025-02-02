@@ -33,3 +33,6 @@ env
 *.wav
 *.mp4
 *.mp3
+ailabs_dts
+m_ailabs_transcriptions_with_speakers.json
+m_ailabs_temp

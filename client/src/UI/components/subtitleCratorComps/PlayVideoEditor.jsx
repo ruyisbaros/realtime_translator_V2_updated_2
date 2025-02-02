@@ -27,7 +27,6 @@ const PlayVideoEditor = () => {
   const [subtitleTracks, setSubtitleTracks] = useState([]);
   const [timestampData, setTimestampData] = useState([]);
   const [showTimestamp, setShowTimestamp] = useState(false);
-  const [showCircle, setShowCircle] = useState(false);
 
   const handleTimeUpdate = () => {
     if (videoRef.current) {
