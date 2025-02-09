@@ -36,3 +36,12 @@ env
 ailabs_dts
 m_ailabs_transcriptions_with_speakers.json
 m_ailabs_temp
+m_ailabs_dataset.json
+flagged_transcriptions_de.json
+flagged_transcriptions_en.json
+~
+lookup.json
+dataset
+transcrips
+wavs
+MyTTSDataset
