@@ -1,0 +1,225 @@
+segment_000|Hallo und herzlich willkommen zur zweiten Folge von Einführung in React mit dem Thema React Setup. Noch einmal kurz zu mir, mein Name ist David Losert.
+segment_001|Ich bin Software Engineer und seit über zehn Jahren im Web unterwegs und arbeite nun auch bereits seit vier Jahren mit React. Neben React mag ich die Arbeit mit Chubbys.
+segment_002|TypeScript, Node.js, Linux-Servern, Docker und AWS. Die heutige Folge dreht sich also nun komplett darum, eine
+segment_003|Entwicklungsumgebung aufzusetzen und dort eine erste React Hello World Applikation zu implementieren. Wenn wir uns kurz erinnern, in der letzten Folge habe ich die Geschichte
+segment_004|und Prinzipien von React kurz vorgestellt und einen ersten theoretischen Einblick in den Virtual Dom und in JSX gegeben. Das habe ich an dieser Stelle auch einbezogen.
+segment_005|einmal kurz visualisiert. Wir erinnern uns, der Virtual DOM ist eine Abstraktion, die React verwendet, um den DOM zu synchronisieren.
+segment_006|Der Virtual Dong erlaubt uns zum einen das deklarative Programmieren und zum anderen gibt es uns einige Performance Vorteile.
+segment_007|In dieser Folge wollen wir nun eben also eine Entwicklungsumgebung aufsetzen. Ich nutze dazu Visual Studio Code. Wir werden uns ein erstes Video zeigen.
+segment_008|Toolset anschauen mit npm, nbx und Babel, was uns bei der Entwicklung von React-Applikationen hilft. Und wir werden natürlich eine erste React-Applikation implementieren und nutzen
+segment_009|dazu das React Element, ein atomarer Bildung Block von React und JSX. In dieser Stelle werdet ihr vielleicht kurz aufmerksam machen.
+segment_010|Ich habe das letzte Mal viel von React Components gesprochen. React Components sind nicht zu verwechseln mit React Element. Ich stelle nun aber in dieser Folge zu...
+segment_011|erst React Element vor, weil es sozusagen die Grundlage ist, oder der atomare Baustein, der tatsächlich atomare Baustein von React.
+segment_012|nimmt uns aus GSX auch so ein wenig die Magie. Denn wenn man GSX das erste Ball sieht, kann man sich schnell fragen, wie funktioniert das eigentlich hinter den Kulissen?
+segment_013|Und Viect Element ist letztendlich das, was hinter den Kulissen steckt. Das werden wir am Ende der Folge dann auch einfach sehen. Bevor wir loslegen...
+segment_014|möchte ich euch ermutigen, alle Code-Beispiele und praktischen Hands-on-Teile, die wir in dieser Folge machen, nachzuprogrammieren. Der praktische Einsatz ist
+segment_015|einfach der beste, um eine neue Technologie zu lernen. Das könnt ihr entweder machen, indem ihr nebenher programmiert und die Folge immer wieder pausiert oder aber
+segment_016|Ihr schaut euch die Folge einmal komplett an und programmiert das Beispiel im Nachhinein alleine. Wir werden den gesamten Code auch auf GitHub verwendet.
+segment_017|zur Verfügung stellen. Das kann dann ein wenig als Orientierung dienen. Dabei geht einfach auf GitHub und sucht dort nach tech-lounge-sylject und ihr solltet das entsprechende Repost machen.
+segment_018|Tutorial finden. Das ist aktuell hier noch leer, weil ich den Code natürlich erst nach dieser Folge hochladen werde.
+segment_019|Und damit würde ich sagen, legen wir auch einfach schon mal los. Um unsere Umgebung vorzubereiten, müssen ein paar Schritte unternommen werden.
+segment_020|mit React erstmal noch nichts zu tun. Zum einen müsst ihr euch Visual Studio Code installieren, oder müsst ihr nicht. Wenn ihr einen anderen Editor bevorzugt, ist das auch
+segment_021|vollkommen okay. Ich arbeite nur hier mit Visual Studio Code, weil ich diese Idee doch recht gerne habe. Sie bittet mir einige Unwahrheiten.
+segment_022|z.B. Codevervollständigung, was wir nachher auch sehen werden. Neben einer Entwicklungsumgebung Visual Studio Code brauchen wir Node.js und NPM.
+segment_023|Da erkläre ich auch gleich ein paar Worte dazu. Und wir müssen natürlich einen Projektordner anlegen und unsere Umgebung vorbereiten mit ein paar wenigen Commands in der Kommandozeile.
+segment_024|Ein paar Worte zu NPM, falls ihr das noch nicht gehört habt. NPM ist ein Paketmanager.
+segment_025|für JavaScript Tools, Bibliotheken und Frameworks und erlaubt uns über eine einfache Command Line Interface, das installieren und verwalten eben dieser Tools Bibliothek.
+segment_026|und Frameworks. Das ist ein einfacher Befehl wie npm install babel, den wir heute auch noch ausführen werden, der uns Abhängigkeiten macht.
+segment_027|unser Projekt installiert. Und bei npm dreht sich eigentlich alles um die Package.json. Package.json ist eine Datei, die wir in unserem Projektordner im Bootfolder meistens
+segment_028|erstellen werden und in dieser Package JSON List sind Abhängigkeiten beschrieben, Skripte und auch Projektmetadaten.
+segment_029|Tool, das npm mitbringt, ist npx oder np execute. Und das ermöglicht uns die Ausführung all dieser JavaScript Tools biblik.
+segment_030|und frameworks ohne eine Installation. Und das können wir zum Beispiel nutzen, um einen lokalen Websever zu starten, der unser Testprojekt ausliefert.
+segment_031|werden wir auch tun und wir werden dazu den Web-Server Servo verwenden. Das ist kein Schreibfehler. Dieses Paket heißt wirklich so.
+segment_032|startet mit diesem Befehl einen lokalen Webserver im aktuellen Verzeichnis. Wir haben hier noch das Argument "-reload".
+segment_033|Das erlaubt uns oder das erlaubt dem Server alle Dateien, die in unserem Projekt sich tummeln, zu beobachten und bei einer Änderung unseres
+segment_034|Browser automatisch neu zu laden. Das ist während der Entwicklung sehr bequem, weil es uns das Neuladen der Seite händisch erspart, indem wir entweder F5 drücken oder hier über den
+segment_035|Reload-Button die Seite neu laden. Wenn wir diesen Befehl per Default ausführen, liefert er eine Index-HTML, welche wir auch gleich erstellen werden.
+segment_036|im aktuellen Ordner unter der Adresse htdp localhost 8080 aus. Und nun um euch auch mal zu zeigen,
+segment_037|NPM Paket auf der Registry ausschaut. Hier unter npm.js.com habt ihr eine Suche, in der ihr alle Pakete, die es so gibt, suchen könnt.
+segment_038|Für jedes Paket gibt es dann auch eine Seite mit einer Beschreibung und Installationsanweisungen. Alles, was man zu diesem Paket wissen muss.
+segment_039|Wollen wir das Ganze einfach mal ausführen? Dazu gehen wir also in unserer Command Line.
+segment_040|und legen uns erstmal einen Ordner an. Den nenne ich hier einfach mal Einführung Reakt.
+segment_041|Jetzt sieht man, dass ich den zuvor schon angelegt habe, deswegen bringt er mir hier einen Error. Bei euch wird das dann funktionieren. Wir können einfach in diesem Ordner reinnamigieren und wir werden den Befehl ändern.
+segment_042|NPM Init ausführen. NPM Init erzeugt uns eben eine Package JSON, eine Initialen. Und das spart uns so ein wenig, das von Hand zu tun, indem es uns
+segment_043|über die Kommandozeile ein paar Fragen stellt. Als allererstes will es den Package-Namen von uns wissen, den es per Default aus dem aktuellen Ordner einfach herauszieht. Einfach umgelegt ist in diesem Fall ok.
+segment_044|Die Version ist für uns jetzt auch erstmal ok. Wir erinnern uns kurz an die letzte Folge. Semper, Symantec Version, kommt bei NPM.
+segment_045|stark zum Einsatz. Eine Description, da können wir uns einfach irgendeinen Freitext überlegen.
+segment_046|Das ist eine einfache Reaktion zum Beispiel. Der Entry Point werden wir nachher sehen. Das ist bei uns source.app.js. Test Command. Wir haben.
+segment_047|keine automatisierten Tests, deswegen lassen wir das leer. Wir haben auch noch kein Git Repository eingerichtet. Wir wollen auch erstmal keine Keywords vergeben. Den Author können wir uns selber reinschreiben.
+segment_048|Und eine Lizenz ist bei privaten Testprojekten auch eher nicht ganz so wichtig. Ich nehme hier in der Regel MIT. Könnt ihr aber im Prinzip nicht.
+segment_049|auch auf ISC lassen. NPM fragt uns das nochmal, ob alle unsere Eingaben korrekt waren und wird uns eben diese JSON-Datei als Package JSON im aktuellen Moment zeigen.
+segment_050|ein Zeichniss anlegen. In unserem Fall ist das jetzt okay. Deswegen, yes. Als nächstes öffnen wir nun diesen Ordner in unserer Entwicklungsumgebung.
+segment_051|In meinem Fall ist das eben Bisholz Studio Code. Das können wir ganz einfach machen, indem wir hier auf File Open gehen, zum entsprechenden Ordner navigieren und dann auf Öffnen.
+segment_052|drücken. Und jetzt sehen wir, dass uns eben eine Package JSON generiert wurde, in der all die Feller, die wir vorher verwendet haben, verwendet haben.
+segment_053|Frage beantwortet haben, entsprechend eingetragen sind. Als nächsten Schritt wollen wir uns nun also noch eine Index-HTML anlegen.
+segment_054|initiale HTML-Seite, die ausgeliefert werden soll. Das machen wir über new file index.html.
+segment_055|einfach eine standardmäßige HTML-Datei, angefangen mit dem DocType. Und hier haben wir jetzt schon ein tolles Feature von Visual Studio Code gesehen, die Autovervollständigung.
+segment_056|Ich werde das nochmal, indem ich also nur die ersten paar Zeichen des Codes eingebe, den ich hier erzeugen will, bietet mir Visual Studio Code schon eine
+segment_057|Vorauswahl an. Wenn ich diese bestätige, entweder über Enter oder indem ich draufklicke, füllt es mir das entsprechend aus.
+segment_058|HTML. Wir brauchen einen Het oder einen Het-Tag, in welchem wir dann einen Titel vergeben können. Das nennen wir mal Einführung in React.
+segment_059|Und wir brauchen einen Buddy. Und da wollen wir jetzt einfach, wie das so üblich ist, bei einem Code Beispiel mit HelloWorld anfangen.
+segment_060|Wenn ich nur noch Speichern drücke, nicht wundern, das ist auch ein Feature von Visual Studio Code, das ist mir automatisch mein Dokument nach gewissen
+segment_061|Kriterien formatiert. Dementsprechend kann es sein, dass hier manchmal ein Zeilenumbruch hinzugeführt wird. Das ist einfach sehr bequem, dass es immer alles einheitlich formatiert wird.
+segment_062|So, nun haben wir eine Index-HTML erstellt. Diese wollen wir jetzt natürlich noch über einen Webserver ausliefern, um unsere Entwicklungsumgebung zu vervollständigen.
+segment_063|Und wie vorher besprochen, nehmen wir dazu npx, geben ein npx, servo, minus minus reload, enter.
+segment_064|Das dauert kurz und gibt uns dann hier auch entsprechend zurück, dass nun unter adp localhost 8080 die aktuelle Web-Partei
+segment_065|Website oder der aktuelle Ordner ausgeliefert wird und standardmäßig eben diese Index HTML ausgeliefert wird. Und das sehen wir auch, indem wir zum Browser navigieren.
+segment_066|und entsprechend diese URL eingeben. Und siehe da, unsere Hello World Index HTML wird ausgeliefert. Eine kleine Unschönheit.
+segment_067|sehen wir hier noch Einführung in React. Das Ü hat er irgendwie noch nicht erkannt. Dazu müssen wir in dem HTML im Het-Teil noch
+segment_068|das Charset auf UTF-8 setzen. Geht auch ganz einfach in die Variante UTF-8
+segment_069|wir drücken speichern und wenn wir nun zurück auf die website navigieren sehen wir dass das Reload Flag von Server schon seinen Job getan hat.
+segment_070|Die Seite wurde automatisch neu geladen und das Ü wird hier nun korrekt dargestellt. Und damit haben wir im Wesentlichen schon eine laufende Entwicklung.
+segment_071|Umgebung, in der wir nun React entwickeln können. Dazu nun wieder ein bisschen Theorie. Es gibt mehrere Methoden.
+segment_072|wir React nun in unser Projekt installieren können oder wie wir auch React aufsetzen können. Die einfachste Methode sind Online Playgrounds.
+segment_073|im Prinzip Entwicklungsumgebung direkt im Browser. React bietet selber auf seiner Seite Dokumentationen, einen Online-Project-Content an, zum Beispiel CodePen.
+segment_074|Das können wir uns auch mal ganz kurz anschauen. Wenn wir hier auf Get Started drücken, Try React, sehen wir hier die Online-Breakdowns. Wenn wir da zum Beispiel auf CodePen navigieren,
+segment_075|werden wir gleich weitergeleitet und haben nun hier ebenfalls eine Hello World Applikation von React.
+segment_076|Die wir entsprechend auch bearbeiten können, geben wir hier noch ein U ein, über Command Enter wird die Seite nun aktualisiert.
+segment_077|wie gesagt super, um React auszuprobieren, um vielleicht auch mal, wenn irgendwas bei euch lokal nicht funktioniert, nachzustellen. Aber wenn wir langfristig
+segment_078|Projekte entwickeln, wollen wir natürlich irgendwie den Code, den wir produzieren, auch richtig abspeichern und das ist in diesen Online-Playgrounds eher schwierig möglich.
+segment_079|Dementsprechend wollen wir den Code irgendwie lokal bei uns zur Verfügung haben. Eine zweite Minute wäre natürlich, den Quellcode von React runterzuladen.
+segment_080|könnten wir machen, ist heutzutage aber eher altmutig. Ist auch sehr aufwendig, wenn wir zum Beispiel eine neue Version von Vect installieren wollen.
+segment_081|müssten wir wieder auf die React-Webseite den Code herunterladen. Also das ist ein Vorgehen, welches eher heutzutage nicht mehr zu empfehlen ist. Da gibt es höhere Methoden.
+segment_082|Eine ist die Nutzung einer sogenannten CDN URL. CDN steht für Content Delivery Network. Das ist letztendlich einfach eine Website, auf der React uns
+segment_083|den Quellcode schon einmal hochgeladen hat und den wir über die URL ganz einfach in unserer index.html einbinden können. Und das ist ideal für schnelle Tests oder auch für Lernprozesse.
+segment_084|so wie dieses Jahr hier ein Lernprojekt ist. Und dementsprechend werden wir auch heute auf diese Variante der Installation von Reaktor greifen.
+segment_085|Die vierte Variante, die es auch noch gibt, ist natürlich die Installation mit NPM. Denn React gibt es auch auf NPM.
+segment_086|Stelle. Ügen nicht. Project wurde auch auf NPM hochgeladen.
+segment_087|dass die Installation über NPM bzw. danach die Einbindung in eure Website nicht ganz so leicht von da angeht. Da braucht es dann doch
+segment_088|das ein oder andere Tool, was die Sache initial sehr komplex macht. Das rentiert sich bei größeren
+segment_089|komplexer Aufwand wird dann amortisiert über viel Arbeit, die uns diese Variante später erspart. Die Installation von React mit NPM
+segment_090|werden wir in einer späteren Folge dann auch noch vornehmen, spätestens im zweiten Teil dieser Videoserie, wo sich ja alles um das Tooling drehen wird. Für heute wie gesagt
+segment_091|nutzen wir aber den CDL URL Link. Das Ganze sieht dann so aus, dass wir in unserer index.html diese zwei Script Tags einstellen.
+segment_092|führen und damit ist React dann auf unserer Seite schon verfügbar. Diese zwei Script Tags findet ihr ebenfalls auf
+segment_093|reactjs.org auf der offiziellen Seite unter CDN links. Ihr werdet hier sehen, dass es zwei unterschiedliche Varianten gibt, die Projekt einzubinden.
+segment_094|einmal im Development Modus und einmal im Production Modus. Der Unterschied ist ganz einfach, dass der Development Modus einige bessere Fehler meldet.
+segment_095|zur Verfügung stellt und einige Tools uns zur Verfügung stellt, die das Entwickeln von React leichter machen, die aber gleichzeitig diese JavaScript-Dateien sehr aufplänen und sehr groß machen.
+segment_096|Im produktiven Einsatz von React wollen wir natürlich so wenig wie möglich Code auf der Seite, weil der ja auch heruntergeladen werden muss. Dementsprechend hier diese Unterscheidung.
+segment_097|jetzt aber noch weit weg sind von einem produktiven Einsatz, beschränken wir uns heute auf die Development-Sourcen, die ich hier einfach schon mal kopiere.
+segment_098|Wenn wir dann nachher die Reakt-Sourcen in unserem Projekt eingebunden haben, wollen wir Reakt natürlich auch verwenden.
+segment_099|Der ist den ersten Code oder das erste, den ersten Block mit React, den wir verwenden werden, ist eben, wie vorher angekündigt schon, React Element. React Element
+segment_100|oder ein Reakt-Element erstellen wir über diesen Funktionsauffruch ReaktCreateElement und der besteht aus drei Parametern. Der erste Parameter gibt das HTML.
+segment_101|html-Tag an, das wir generieren wollen. In diesem Fall zum Beispiel ein p-Tag. Der zweite Parameter gibt an, welche Attribute wir diesem html-Tag mitgeben wollen.
+segment_102|und der dritte Parameter gibt an, welchen Inhalt wir in dieses HTML-Tech reinschreiben wollen.
+segment_103|Dieser Funktionsaufruf macht letztendlich nichts anderes als ein simples JavaScript-Objekt zu erzeugen.
+segment_104|JavaScript-Objekt wird aber von React verstanden und kann dann von React wiederum in den Virtual DOM von React implementiert werden oder eingebunden werden.
+segment_105|Sobald es im Virtual Dom eingebunden ist, wir erinnern uns, React synchronisiert den Virtual Dom damit im richtigen Dom, wird eben dieses Element zu einem realen Dom.
+segment_106|Dom-Objekt und dementsprechend im Browser dargestellt. Man kann also sagen, dass ein Reakt-Element ein reales Dom-Objekt repräsentiert.
+segment_107|Wenn wir uns das Ganze auf der Visualisierung noch einmal anschauen, haben wir nun also neben dem Virtual Dumpf Reakt in unseren JavaScript-Dateien diesen Funktionsaufruf.
+segment_108|React-Create-Element, welcher dann eben hier im Virtual Dom als einzelnen Element eingebunden wird, dann mit dem Dom synchronisiert und nachher in unserem Browser dargestellt.
+segment_109|Dieser Visualisierung habe ich ebenfalls npm hinzugefügt, welches eben über die Package Chasing, die wir gerade schon gesehen haben, initiiert wird.
+segment_110|und installiert wird. Und wir haben NPX kennengelernt, was uns den Webseller startet. Nun wollen wir das Ganze noch einmal.
+segment_111|eben umsetzen. Wir kopieren nochmal kurz die Sources, die brauchen wir jetzt als allererstes. Gehen zurück in unser Visual Studio.
+segment_112|und fügen nun React ganz einfach am Ende des BodyTags ein. An sich war es das schon.
+segment_113|Jetzt haben wir Reakt auf unserer Seite. Wir tun aber natürlich noch nichts damit. Um noch etwas damit zu tun, brauchen wir noch etwas eigenes JavaScript, das wir einbinden.
+segment_114|Dementsprechend fügen wir nun erstmal hier noch ein zweites oder ein drittes Script Tag hinzu. Das bei uns auf.
+segment_115|sourceapp.js zeigen wird. Diese Totei legen wir dann noch an. Erstmal ein Ordner source.
+segment_116|Das ist einfach ein gängiges Vorgehen. SRC steht eben für Source, in dem alle Source-Dateien eines Projektes abgelegt werden. Dort legen wir dann die Datei an.
+segment_117|beobachten. Bevor wir nun JavaScript schreiben, bereiten wir in der Index.html noch eine weitere Sache vor. Wir erinnern uns
+segment_118|vielleicht das letzte Mal an die React DOM Render Funktion, der wir zum einen mitgeben, eine React Komponente, die wir gerendert haben wollen, zum anderen aber auch angeben müssen, wohin in unserer
+segment_119|HTML wir diese Komponente gelündert haben wollen. Und dieses wohin erstellen wir jetzt hier. Wir machen uns ein einfaches div und geben dem eine id.
+segment_120|anhand der wir es dann später identifizieren können und das nehmen wir dann einfach React.
+segment_121|Wenn wir nochmal kurz auf die Seite schauen, es hat sich nichts verändert. Alles beim alten.
+segment_122|noch kein Vierktelement generiert haben, das wir hier einbinden. Das tun wir jetzt. Zuerst generieren wir uns also ein Vierktelement.
+segment_123|Das speichern wir in eine Variable, in die wir jetzt einfach mal Element nennen, nutzen nun eben Reakt.Create.
+segment_124|Element. React ist eine globale Variable, die uns jetzt eben zur Verfügung steht, weil wir hier diese über dieses Script eingebunden haben.
+segment_125|macht letztendlich nichts anderes als die Reaktionshosen unter dieser Variablen zur Verfügung zu stellen und so auch die CreateElement Methode. Als ersten Parameter eben das
+segment_126|Tag, in dem Fall bleiben wir immer beim P tag. Als zweiter Parameter die Attribute. Das lassen wir erstmal leer.
+segment_127|Dritten Parameter den Content. Hier schreiben wir jetzt einfach rein, das ist mein erstes React.
+segment_128|Element. Richtiger. Wie nur angesprochen, React-Trade Element generiert erst einmal nur ein ...
+segment_129|Simples JavaScript-Objekt. Mit diesem Objekt müssen wir jetzt noch etwas tun. Wir müssen ein React zeigen, wohin es uns dieses JavaScript-Objekt oder dieses React-Element...
+segment_130|nachher im Browser rendern soll. Und dazu nutzen wir react-dom. Das ist ebenfalls eine globale Variable, die uns zur Verfügung steht.
+segment_131|wir hier dieses zweite Skript eingebunden haben für React Dom. Das liefert uns eben die Wenderfunktion.
+segment_132|Wir müssen erst unser Element reingeben. High Element. Und nun sagen müssen, wohin wir das geländert haben wollen. Und hierzu haben wir uns ja vorher das Diff angelegt. Und eine Edifier-Partei.
+segment_133|und das können wir hier nun mit einem Selektor herausfinden oder herausfiltern, indem wir sagen document getElementBy
+segment_134|Und hier die ID, die wir vorher vergeben haben, in dem Fall React App, kopieren und einfügen.
+segment_135|Wenn wir das ganze speichern und auf die Website gehen, dann sehen wir, juhu, wir haben unsere erste Reakt Komponente.
+segment_136|unser erstes React Element auf der Website gerendert. Wir haben zum allerersten Mal React eingesetzt, um unseren Dom zu manipulieren. Das ist natürlich jetzt noch etwas...
+segment_137|statisch, aber ist doch immerhin schon mal ein toller erster Schritt. Jetzt werdet ihr euch fragen, ich habe das letzte mal erzählt.
+segment_138|von Deklarativen programmieren und von JSX, dass es uns erlaubt, HTML in JavaScript-Dateien zu schreiben. Ihr würdet nun erwarten, dass wir...
+segment_139|eigentlich das ganze nicht hier mit dem Reactory Element Aufruf machen, sondern eher sowas schreiben können wie so also ein HTML Element
+segment_140|mit der ID direkt in der JavaScript-Datei.
+segment_141|Wenn wir das machen, werden wir einen Fehler bekommen. Wenn wir zurück navigieren in den Browser, sehen wir zum einen
+segment_142|dass unser Element nicht mehr gerendert wurde. Um herauszufinden, was hier gerade schiefgelaufen ist, können wir die Entwicklertools von Chrome oder ...
+segment_143|von jedem anderen Browser, jeder Browser bringt Entwicklertools mit, uns zur Hand nehmen. Das können wir entweder über die Taste F12 machen oder indem wir rechtsklick untersuchen machen.
+segment_144|In diesen Untersuchen sehen wir dann unseren aktuellen DOM oder unser HTML, das wir auch hier durch navigieren können. Unser Title, unser Meta-Characters.
+segment_145|eben der Buddy. Wenn ich es auch schaffe, da mal hinzukicken. So, perfekt. Und wir haben auch die Konsolen.
+segment_146|die uns Fehler ausspuckt. Und in diesem Fall sehen wir jetzt, wir haben einen Sündungsfehler, ein unerwartetes Zeichen, Unexpected Token, eine geöffnete Klammer.
+segment_147|Und das ist genau dieses Zeichen. Blick daran, dass ein Browser heutzutage zumindest noch nicht JSX versteht.
+segment_148|natives JavaScript und das hier ist nun mal kein natives JavaScript. Dementsprechend kann der Browser diesen Code-Schnippel einfach auch nicht verstehen.
+segment_149|Und wir müssen erst etwas tun, damit er das kann. Wir müssen nämlich diesen Code Snippet zurück umwandeln in ganz normales JavaScript. Und an dieser Stelle schon ein kleiner Hint.
+segment_150|React Create Element ist ganz normales JavaScript. Das haben wir gerade gesehen, dass das funktioniert. Um das nun zu ermöglichen und um diese Übersetzung vorzunehmen,
+segment_151|Das müssen wir natürlich nicht händisch machen, das wäre sehr aufwendig, sondern da gibt es Tools. Und eines dieser Tools, wir gehen zurück zur Theorie,
+segment_152|Babel. Babel ist eben so eine Art Helferin oder eine Übersetzerin, die uns Features und Funktionen sowie GSX zur Verfügung stellt.
+segment_153|und zurück übersetzt in natives JavaScript, dass der Browser versteht. Babel besteht im Wesentlichen aus drei Kernkomponenten, die wir auch heute einsetzen werden.
+segment_154|Das ist einmal der Core. Das ist die gesamte Übersetzungslogik. Das Command Line Interface, oder kurz CLI, das lässt uns mit Babel kommunizieren und sprechen.
+segment_155|und Babel mitteilen, was wir eigentlich übersetzt haben wollen. Und es gibt Presets. Presets könnt ihr euch vorstellen als Wörterbücher, die wir Babel mitgeben, um Babel zu ermitteln.
+segment_156|beispielsweise GSX, den normalen JavaScript zu übersetzen. Und wir setzen heute Preset React ein. Preset React ist eben genau dieses Wörterbuch, das den Einsatz
+segment_157|JSX in unseren Dateien erlaubt und Babel wird dieses JSX dann umwandeln in ganz normales JavaScript.
+segment_158|aktuell standen wir hier, wir haben mit JavaScript React und Create Element ausgeführt, das hat funktioniert, haben jetzt aber JSX mit reingebracht.
+segment_159|mehr funktioniert. JSX müssen wir also nun erst durch Babel schleifen, um das in normales JavaScript umzuwandeln, das dann wiederum von React bzw. von unseren Browsern aufwacht.
+segment_160|verstanden werden kann. Und an dieser Stelle wird es vielleicht schon langsam bewusst, Babel macht nichts anderes als aus diesen JSXs
+segment_161|oder aus den HTML-Teilen in JavaScript, die wir in JSX schreiben, react.createElement-Funktionsaufrufe zu machen.
+segment_162|Das ist die ganze Magie, die dahinter steckt und das zeige ich euch auch gleich hands-on. Aber zuerst, wie installieren wir Babel?
+segment_163|Dazu nutzen wir nun eben NPM und wir werden den Babel Core, die Babel CLI und das Preset React in unserem Projekt installieren.
+segment_164|machen wir jetzt. Zurück also in die Command Line. Wir beenden mal kurz unseren Web Server an dieser Stelle und führen nun das Command aus.
+segment_165|install add-barbel-core, add-barbel-cli und add-barbel-reset
+segment_166|Wir fügen hier noch einen kleinen weiteren Parameter hinzu, nämlich "-save-def". Warum wir das tun, erkläre ich dann gleich.
+segment_167|Das dauert ein wenig, weil er die ganzen Pakete natürlich erst runterladen muss.
+segment_168|Jetzt seht ihr hier ein Error, das passiert auf Mac. Nicht wundern, wenn ihr diesen Error seht und auch keine Sorge, das spielt für uns erstmal keine Rolle.
+segment_169|Die Features von Babel werden wegen dieses Errors nicht funktionieren, das sind aber keine Features, die wir jetzt gerade benötigen. Von dem her können wir diesen Error einfach getrost ignorieren.
+segment_170|ist abgeschlossen. Gehen wir zurück in Visual Studio Code. Schauen wir mal kurz, hier hat sich etwas verändert. Zum einen wurden in unserer Package Chasen
+segment_171|ein neues Feld hinzugefügt, nämlich diese Dev-Dependencies. Das ist das, was ich mit dem Befehl "-save-dev veranlasst habe und das schreibt letztendlich
+segment_172|einfach alle Abhängigkeiten unseres Projekts oder alle Entwicklungsabhängigkeiten hier in diese Package chasen. Ich will jetzt nicht zu sehr ins Detail gehen, weil das
+segment_173|Das ist ja ein Kurs über React und nicht über NPM, aber einfach, dass ihr versteht, warum ich diesen Befehl angegeben habe. Es ist auch eine Package-Log-Json generiert worden. Das ist sozusagen ein Log-Json.
+segment_174|aller derer Pakete, die wir installiert haben mit genauen Funktionen. Und zu guter Letzt wurde hier Node Modules angelegt. Das ist der Ordner, in dem die Pakete, die wir installiert haben,
+segment_175|haben tatsächlich heruntergeladen wurden. Wenn wir das mal kurz aufmachen, sehen wir hier natürlich deutlich mehr als wir installiert haben. Das liegt einfach da.
+segment_176|dass Babel selbst ja auch Abhängigkeiten hat, die es wiederum über eine Package-JSON definiert und alle diese Abhängigkeiten installiert Babel oder NPM für uns dann gleich mit.
+segment_177|dass wir das nicht händisch machen müssen. Aber wir sehen auch, AdBabel CLI wurde installiert, AdBabel Core wurde installiert und weiter unten.
+segment_178|etwa mit Preset Reakt ist dann auch in unserem Projekt vorhanden. Nun müssen wir
+segment_179|Babel noch entsprechend ein wenig konfigurieren bzw. auch ausführen. Denn aktuell wüsste Babel ja noch nicht, was es tun soll und Babel weiß aktuell auch noch nicht.
+segment_180|welche Wörterbücher es einsetzen soll. Fangen wir mit dem Wörterbuch an. Wir können Babel ganz einfach konfigurieren, indem wir nochmal eine neue Datei anlegen, die sich Punkt Babel
+segment_181|RC nennt. In dieser Datei können wir valides Chasern schreiben. Also das ist eigentlich nur eine Chasen-Datei, auch wenn sie nicht auf Chasen-M sind.
+segment_182|Wir können dort ein Objekt anlegen und das Feld Presets befüllen und dort nun in einem Array alle die Presets reinschreiben, die ...
+segment_183|Babel für uns verwenden, also sprich alle diese Wörterbücher, die wir übersetzen wollen. In unserem Fall ist das nur eines, nämlich Babel preset react.
+segment_184|Das ist der erste Schritt. Im zweiten Schritt müssen wir nun aus dieser App.js eine App
+segment_185|JSX-Datei machen. Denn wir haben hier ja tatsächlich nicht mehr verlieh das JavaScript stehen, deswegen ist das auch keine JavaScript-Datei mehr, sondern es ist jetzt eine JSX-Datei.
+segment_186|wir hier JSX eingefügt haben. Und nun müssen wir Babel diese Datei für uns übersetzen lassen. Das können wir nun eben mit Babel CLI über die Command-Karte
+segment_187|Es gibt nun zwei Möglichkeiten.
+segment_188|einsetzen, um Babel direkt auszuführen. Wir haben aber die Babel CLI auch bei uns installiert. Das Ganze nehme ich in Node Modules.
+segment_189|bin oder binary folder gibt es den Befehl babel. Dieser Befehl erwartet drei Parameter. Zum einen
+segment_190|das Surs-Verzeichnis oder das Verzeichnis, das Babel für uns übersetzen soll. In unserem Fall ist das tatsächlich Surs. Es erwartet den Parameter minus minus out hier.
+segment_191|wo Babel die kombinierten oder die übersetzten Dateien hinschreiben soll. Und das machen wir bei uns jetzt einfach mal in ein Verzeichnis, das wir lib nennen.
+segment_192|Wenn wir mit diesen Befehlen nun ausführen, quittiert uns Babel das mit einer erfolgreichen Meldung, dass es uns eine Datei erfolgreich kompiliert hat.
+segment_193|oder übersetzt hat. Wenn wir zurück ins Projektverzeichnis springen, sehen wir auch, dass der Lipfolder angelegt wurde und hier entsprechend analog zu unserer App JSX.
+segment_194|eine App.js-Datei angelegt wurde. Und die können wir uns auch anschauen. Und siehe da. Aus unserem JSX ist nichts anderes.
+segment_195|geworden als ein React-Create-Element-Aufruf, der relativ oder nicht nur relativ, sondern ziemlich gleich aussieht, wie das, was wir davor händisch eingegeben haben.
+segment_196|Das ist tatsächlich die gesamte Magie hinter JSX und Babel. Das macht nichts anderes, als die Teile, die HTML und unserem JSX sind, in ein React.CreateElement zu übersetzen.
+segment_197|Nun müssen wir, damit das auch funktioniert, noch eine kleine Änderung in unserer Index-HTML vornehmen, weil wir jetzt
+segment_198|nicht mehr die App.js aus unseren Source ausliefern oder die App.js X, sondern wir müssen ja die übersetzte Variante unserer App ausliefern. Dementsprechend erinnern wir...
+segment_199|das hier einfach auf LIP. Und wenn wir nun nochmal einen LAP-Server starten.
+segment_200|und zurück auf unsere Website navigieren. Sehen wir, wir haben ein erstes, ups, nein, wir haben noch das Alchemy Element.
+segment_201|weiß auch warum. Weil wir hier noch das alte Element auch eingebunden haben. Wir wollen jetzt aber eigentlich hier das die erste ChessX Komponenta einbinden. Dementsprechend
+segment_202|müssen wir das hier ersetzen. Wir wollen nun My.js.x-Element rendern. Wir müssen das ganze jetzt natürlich von Babel nochmal neu überwinden.
+segment_203|setzen lassen. Wenn wir jetzt den Webserver starten sollten wir tatsächlich sehen, dass wir unsere erste CharsX Component
+segment_204|erfolgreich im Browser gewendet haben. Das ist super!
+segment_205|Zum Abschluss kommen möchte ich euch noch einen kleinen Tipp mitgeben, denn diesen Befehl, den wir hier gerade gesehen haben Not Modules Bin Babels Source
+segment_206|ist schwer zu merken und ist auch nicht sonderlich schön einzutippen. Da können wir uns mit npm und npm scripts ein wenig Abfehlung verschaffen.
+segment_207|Erlaubt uns es, nämlich Skripte unter einem sogenannten Alias oder einem anderen Namen vorzudefinieren. Wenn wir jetzt also hier sowas wie compile schreiben.
+segment_208|Dort den Befehl, WABEL, SUS, minus minus OUT, DIR, LIP, gefolgt von einem Komma reinschreiben.
+segment_209|können wir diesen sehr aufwendigen command line ausführen. ganz kurz wir können uns hier das noten module spin sparen, weil
+segment_210|die Scripts von npm per Default dieses Binary-Verzeichnis einbinden. Das heißt, hier können wir auf diesen ganzen vorherigen Pfad verzichten und einfach Babel direkt ausführen.
+segment_211|Und nun können wir einfach über den Befehl in unserem aktuellen Verzeichnis npm run jedes Script, das wir definiert haben, ausführen.
+segment_212|und wir sehen, wurde Babel wieder ausgeführt, um uns unsere JSX-Dateien zu übersetzen.
+segment_213|Letztendlich kann hier in scripts jedes valide CLI-Command eingefügt werden. Wir können so die für unser Projekt relevanten
+segment_214|die CLE-Commands sehr, sehr einfach und sehr, sehr übersichtlich in der Package-Chase zu pflegen. Das ist ein kleiner Trick, der in vielen Projekten auch sehr massiv eingesetzt wird.
+segment_215|Das können wir zum Beispiel als letztes noch erweitern, indem wir hier NPX Server eintragen.
+segment_216|ein tippen müssen, sondern nun um unseren Webserver zu starten und die Website auszuliefern, npm run start eingeben können. Und nun ist unser Webserver wieder.
+segment_217|verfügbar. Und das war es auch schon zur heutigen Folge.
+segment_218|Noch mal ein kurzes Review. Was haben wir gemacht? Wir haben das lokale Setup mit Visual Studio Code und NPM vorbereitet. Ich habe einen ersten Einblick in die Tools NPM, NPX und ...
+segment_219|und Babel gegeben und wir haben diese auch schon live eingesetzt. Wir haben React eingebunden mit der Variante CDN oder Content Delivery Network, URL.
+segment_220|wir haben mit React Element und JSX eine erste Hello World Applikation von React implementiert. Da haben wir schon einen großen Schritt gemacht. Das nächste Mal wird es noch spannender.
+segment_221|Da werden wir nämlich React Components vorstellen und einsetzen und mit den React Components die Renderfunktion, Props und dann noch ein paar Besonderheiten von JL.
+segment_222|an dieser Stelle bedanke ich mich recht herzlich, dass ihr dieses Video angesehen habt. Ich hoffe, ihr konntet etwas lernen.
+segment_223|Bei Fragen, Feedback oder sonstigen Wünschen und Anregungen meldet euch gerne bei uns über diese Kanäle. Hello at theNativeFab.io per E-Mail oder auch auf Twitter und Github.
+segment_224|und ich wünsche euch jetzt noch einen schönen Tag und bis zur nächsten Folge. Ciao!

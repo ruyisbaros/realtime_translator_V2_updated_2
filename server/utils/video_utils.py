@@ -170,7 +170,7 @@ async def process_video(
             print(f"Translation parsed for {lang}: {path}")
 
     # Clean up temporary files
-    clean_temp_files(os.path.dirname(file_path))
+    # clean_temp_files(os.path.dirname(file_path))
     # Return results
     return {
         "message": "Processing completed successfully!",

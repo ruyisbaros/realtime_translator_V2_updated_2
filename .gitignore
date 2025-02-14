@@ -45,3 +45,8 @@ dataset
 transcrips
 wavs
 MyTTSDataset
+MyTTSDataset_10
+audio_dataset
+fine_tuning_output
+xtts_checkpoints
+org.mp4
