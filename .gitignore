@@ -47,6 +47,8 @@ wavs
 MyTTSDataset
 MyTTSDataset_10
 audio_dataset
-fine_tuning_output
+audio_dataset_2
 xtts_checkpoints
+fine_tuning_output
+fine_tuning_output_3
 org.mp4
