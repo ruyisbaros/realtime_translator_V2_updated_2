@@ -1,1822 +1,3652 @@
 [
     {
         "start_time": 0,
-        "end_time": 6000,
-        "text": "Hello and welcome to the second episode of the introduction in React with the theme React Setup. "
+        "end_time": 4719,
+        "text": "In this video I will show you how you can develop your own apps and websites with React. "
     },
     {
-        "start_time": 6000,
-        "end_time": 15000,
-        "text": "My name is David Losart, I’m a software engineer and I’ve been on the web for more than 10 years and I’ve been working with React for 4 years. "
+        "start_time": 4719,
+        "end_time": 9240,
+        "text": "Even if you’re still at the very beginning and maybe you’ve never written a line of code. "
     },
     {
-        "start_time": 15000,
-        "end_time": 24000,
-        "text": "In addition to React I like working with JavaScript, TypeScript, Node.js, Linux servers, Docker and AWS. "
+        "start_time": 9240,
+        "end_time": 12560,
+        "text": "The website we are going to develop today is as follows. "
     },
     {
-        "start_time": 24000,
-        "end_time": 34000,
-        "text": "Today’s result is to create a development environment and implement a first React Hello World App. "
+        "start_time": 12560,
+        "end_time": 18800,
+        "text": "A online store where you can see different vegetables and fruits and add them to your shopping cart. "
     },
     {
-        "start_time": 34000,
-        "end_time": 45000,
-        "text": "If we remember briefly, in the last edition I briefly presented the story and principles of React and gave a first theoretical insight into the Virtual Dom and in JSX. "
+        "start_time": 18800,
+        "end_time": 23440,
+        "text": "So in this video you will learn very concrete how to get React on your computer to run, "
     },
     {
-        "start_time": 46000,
-        "end_time": 57000,
-        "text": "We remember that the Virtual Dom is an abstraction that React uses to synchronize the Dom. "
+        "start_time": 23440,
+        "end_time": 28400,
+        "text": "how you create an application with it and how you can use it all for you in the future "
     },
     {
-        "start_time": 57000,
-        "end_time": 65000,
-        "text": "And the Virtual Dom allows us to declare programming on the one hand and on the other, it gives us some performance advantages. "
+        "start_time": 28399,
+        "end_time": 30679,
+        "text": "To write different programs. "
     },
     {
-        "start_time": 65000,
-        "end_time": 73000,
-        "text": "In this context, we want to set up a development environment.I use Visual Studio Code for this. "
+        "start_time": 30679,
+        "end_time": 34879,
+        "text": "When I started using JavaScript, the language was not very comfortable yet. "
     },
     {
-        "start_time": 73000,
-        "end_time": 81000,
-        "text": "We will look at a first toolkit with npm, npx and Babel, which will help us develop React applications. "
+        "start_time": 34879,
+        "end_time": 38200,
+        "text": "There were just things that were very complicated to write. "
     },
     {
-        "start_time": 81000,
-        "end_time": 92000,
-        "text": "And, of course, we will implement a first React application and use the React element, a nuclear formation block of React and JSX. "
+        "start_time": 38200,
+        "end_time": 40960,
+        "text": "With React, this has changed fundamentally. "
     },
     {
-        "start_time": 92000,
-        "end_time": 99000,
-        "text": "At this point you may notice briefly, the last time I talked a lot about React Components. "
+        "start_time": 40960,
+        "end_time": 46359,
+        "text": "We can write things with much less code, much more efficient and at the same time much more understandable. "
     },
     {
-        "start_time": 99000,
-        "end_time": 112000,
-        "text": "React components are not to be confused with React element. But now I first present React element, because it is, so to say, the foundation or the atomic building element, which is actually the atomic building element of React. "
+        "start_time": 46359,
+        "end_time": 49320,
+        "text": "And you can even learn all this relatively quickly. "
     },
     {
-        "start_time": 112000,
-        "end_time": 124000,
-        "text": "And React Element takes us from JSX also a bit of magic. For when you see JSX for the first time, you can quickly wonder how it actually works behind the scenes? "
+        "start_time": 49320,
+        "end_time": 53159,
+        "text": "So I would say, let’s go straight to the computer and go off. "
     },
     {
-        "start_time": 124000,
-        "end_time": 131000,
-        "text": "And React Element is ultimately what’s behind the scenes. that’s what we’ll just see at the end of the sequence. "
+        "start_time": 53159,
+        "end_time": 60359,
+        "text": "Let us first explain the question, what is React? "
     },
     {
-        "start_time": 131000,
-        "end_time": 141000,
-        "text": "Before we start, I would like to encourage you to reprogram all the code examples and hands-on practical parts we make in this sequence. "
+        "start_time": 60359,
+        "end_time": 64679,
+        "text": "React is a JavaScript library developed by Facebook. "
     },
     {
-        "start_time": 141000,
-        "end_time": 146000,
-        "text": "The practical application is simply the best to learn a new technology. "
+        "start_time": 64679,
+        "end_time": 70799,
+        "text": "At that time, the goal was simply to find from Facebook a way to write JavaScript much more efficiently. "
     },
     {
-        "start_time": 146000,
-        "end_time": 158000,
-        "text": "You can do this either by programming the next side and slowing the sequence again and again, or you look at the sequence once and again and programming the example in the next one alone. "
+        "start_time": 70799,
+        "end_time": 74920,
+        "text": "React is not a framework, but a so-called library. "
     },
     {
-        "start_time": 158000,
-        "end_time": 165000,
-        "text": "We will also provide the entire code on GitHub. That can then serve a little as a guidance. "
+        "start_time": 74920,
+        "end_time": 79239,
+        "text": "So a library that provides us with different JavaScript functions. "
     },
     {
-        "start_time": 165000,
-        "end_time": 172000,
-        "text": "Just go to GitHub and look for tech-lounge-reject there and you should find the corresponding repository. "
+        "start_time": 79239,
+        "end_time": 82158,
+        "text": "React is based on components. "
     },
     {
-        "start_time": 172000,
-        "end_time": 177000,
-        "text": "This is still empty here, because I will, of course, upload the code only after this sequence. "
+        "start_time": 82399,
+        "end_time": 87079,
+        "text": "We have components that again have other subcomponents. "
     },
     {
-        "start_time": 177000,
-        "end_time": 184000,
-        "text": "And I would say, let’s just go away. "
+        "start_time": 87079,
+        "end_time": 91359,
+        "text": "A subcomponent is usually part of our software. "
     },
     {
-        "start_time": 184000,
-        "end_time": 191000,
-        "text": "To prepare our environment, we need to take a few steps. They now have nothing to do with React for the first time. "
+        "start_time": 91359,
+        "end_time": 96158,
+        "text": "That is, if, for example, we have such a website, then the header would be, "
     },
     {
-        "start_time": 191000,
-        "end_time": 199000,
-        "text": "First, you have to install Visual Studio Code, or you don’t have to. If you prefer another editor, it’s okay. "
+        "start_time": 96158,
+        "end_time": 100039,
+        "text": "So this navigation line there above, a component. "
     },
     {
-        "start_time": 199000,
-        "end_time": 207000,
-        "text": "I only work here with Visual Studio Code because I really like this idea. "
+        "start_time": 100039,
+        "end_time": 103959,
+        "text": "Similarly, we will also have a component to present the individual modules here. "
     },
     {
-        "start_time": 207000,
-        "end_time": 212000,
-        "text": "She asks me for some support, for example, code completion, which we will see later. "
+        "start_time": 103959,
+        "end_time": 106598,
+        "text": "Module 1, Module 2, Module 3 "
     },
     {
-        "start_time": 212000,
-        "end_time": 218000,
-        "text": "In addition to a development environment for Visual Studio Code, we need Node.js and NPM. "
+        "start_time": 106598,
+        "end_time": 111519,
+        "text": "This is all the same component, only with different parameters. "
     },
     {
-        "start_time": 218000,
-        "end_time": 228000,
-        "text": "And, of course, we have to set up a project order and prepare our environment with a few commands in the command line. "
+        "start_time": 111560,
+        "end_time": 114759,
+        "text": "It always has a different picture and a different text. "
     },
     {
-        "start_time": 228000,
-        "end_time": 233000,
-        "text": "A few words about NPM, if you haven’t heard it yet. "
+        "start_time": 114759,
+        "end_time": 116878,
+        "text": "The components are mostly packed. "
     },
     {
-        "start_time": 233000,
-        "end_time": 246000,
-        "text": "NPM is a package manager for JavaScript tools, libraries and frameworks and allows us to install and pack NPM comments through a simple Command Line interface. "
+        "start_time": 116878,
+        "end_time": 120280,
+        "text": "This means that at the top we have our app components. "
     },
     {
-        "start_time": 246000,
-        "end_time": 255000,
-        "text": "This is a simple command like npm install babel, which we will still run today, which installs us dependencies in our project. "
+        "start_time": 120280,
+        "end_time": 124479,
+        "text": "Our app consists of a navigation bar and a container. "
     },
     {
-        "start_time": 255000,
-        "end_time": 264000,
-        "text": "PackageJSON is a file that we will generally create in our project order, in the boot folder. "
+        "start_time": 124479,
+        "end_time": 128280,
+        "text": "There are other subcomponents, our modules. "
     },
     {
-        "start_time": 264000,
-        "end_time": 270000,
-        "text": "And in this packageJSON are dependencies described, scripts and also project metadata. "
+        "start_time": 128280,
+        "end_time": 133840,
+        "text": "Here a component is now multiplied, but always with different parameters. "
     },
     {
-        "start_time": 270000,
-        "end_time": 276000,
-        "text": "Another tool that NPM brings is npx or np execute. "
+        "start_time": 133840,
+        "end_time": 137079,
+        "text": "The modules are made up of other subcomponents. "
     },
     {
-        "start_time": 276000,
-        "end_time": 284000,
-        "text": "And this allows us to run all of these JavaScript tools, libraries and frameworks without any installation. "
+        "start_time": 137079,
+        "end_time": 142480,
+        "text": "For example, a head, that is, the upper part, and a body, that is, the lower part. "
     },
     {
-        "start_time": 284000,
-        "end_time": 290000,
-        "text": "And we can use this, for example, to launch a local web server that provides our test project. "
+        "start_time": 142480,
+        "end_time": 145920,
+        "text": "A React component usually has at least two elements. "
     },
     {
-        "start_time": 290000,
-        "end_time": 296000,
-        "text": "And we will do that, and we will offer the NPM comments. "
+        "start_time": 145920,
+        "end_time": 149680,
+        "text": "Once a state and once a render function. "
     },
     {
-        "start_time": 296000,
-        "end_time": 300000,
-        "text": "This is not a writing error. this package is really so. "
+        "start_time": 149680,
+        "end_time": 155160,
+        "text": "The state is ultimately the data we want to display when our component is reduced. "
     },
     {
-        "start_time": 300000,
-        "end_time": 307000,
-        "text": "npx server starts with this command a local web server in the current directory. "
+        "start_time": 155160,
+        "end_time": 158360,
+        "text": "And the render function, which is responsible for saying, "
     },
     {
-        "start_time": 307000,
-        "end_time": 312000,
-        "text": "We have the argument – reload. "
+        "start_time": 158360,
+        "end_time": 163160,
+        "text": "which UI elements are now to be displayed in the component. "
     },
     {
-        "start_time": 312000,
-        "end_time": 319000,
-        "text": "This allows us or that allows the server to monitor all the files that are immersed in our project. "
+        "start_time": 163160,
+        "end_time": 166400,
+        "text": "For example, a text, a button or a link. "
     },
     {
-        "start_time": 319000,
-        "end_time": 322000,
-        "text": "And in case of a change our browser automatically recharge. "
+        "start_time": 166439,
+        "end_time": 170159,
+        "text": "When we program object-oriented, the whole is mostly presented in this way. "
     },
     {
-        "start_time": 322000,
-        "end_time": 327000,
-        "text": "This is very convenient during the development because it saves us the re-loading of the page handfully, "
+        "start_time": 170159,
+        "end_time": 175400,
+        "text": "We have a class and this class is called as the component should be called. "
     },
     {
-        "start_time": 327000,
-        "end_time": 333000,
-        "text": "by either pressing F5 or recharge the page here via the Reload button. "
+        "start_time": 175400,
+        "end_time": 179319,
+        "text": "There are now two things inside, once the state, then the data are inside. "
     },
     {
-        "start_time": 333000,
-        "end_time": 339000,
-        "text": "If we execute this command by default, it will provide an index HTML that we will also create at the same time. "
+        "start_time": 179319,
+        "end_time": 181319,
+        "text": "and our Render function. "
     },
     {
-        "start_time": 339000,
-        "end_time": 345000,
-        "text": "in the current folder under the address http://local.html. "
+        "start_time": 181319,
+        "end_time": 185439,
+        "text": "Between these doubts comes the code that we need. "
     },
     {
-        "start_time": 345000,
-        "end_time": 350000,
-        "text": "And now to show you how a npm package looks on the registry, "
+        "start_time": 185439,
+        "end_time": 187920,
+        "text": "to create our UI elements. "
     },
     {
-        "start_time": 350000,
-        "end_time": 357000,
-        "text": "here at npm.js.com you have a search in which you can search for all the packages that there are. "
+        "start_time": 187920,
+        "end_time": 190920,
+        "text": "React means in German as much as reacting. "
     },
     {
-        "start_time": 357000,
-        "end_time": 363000,
-        "text": "And for each package there is also a page with a description and installation instructions. "
+        "start_time": 190920,
+        "end_time": 195800,
+        "text": "This is quite good because we are reacting to the changes. "
     },
     {
-        "start_time": 363000,
-        "end_time": 368000,
-        "text": "Everything you need to know about this package. "
+        "start_time": 195800,
+        "end_time": 199760,
+        "text": "This means, for example, if the data changes in our state, "
     },
     {
-        "start_time": 369000,
-        "end_time": 372000,
-        "text": "Do we just want to do it all? "
+        "start_time": 199760,
+        "end_time": 203320,
+        "text": "Then we want to respond to it and announce something new. "
     },
     {
-        "start_time": 372000,
-        "end_time": 380000,
-        "text": "So we go to our commandline and put a folder first. "
+        "start_time": 203320,
+        "end_time": 206320,
+        "text": "So, I would say we go straight away. "
     },
     {
-        "start_time": 380000,
-        "end_time": 384000,
-        "text": "I call it introduction reject. "
+        "start_time": 210400,
+        "end_time": 212960,
+        "text": "To be able to work with React, we must first "
     },
     {
-        "start_time": 384000,
-        "end_time": 388000,
-        "text": "Now you see that I’ve already set it before, so it makes me a mistake here. "
+        "start_time": 212960,
+        "end_time": 215920,
+        "text": "Install some software on our computer. "
     },
     {
-        "start_time": 388000,
-        "end_time": 392000,
-        "text": "It is a mistake for you if you have already set it before. "
+        "start_time": 215920,
+        "end_time": 218920,
+        "text": "The first thing we need is Node.js. "
     },
     {
-        "start_time": 392000,
-        "end_time": 397000,
-        "text": "Now you see that I’ve already set it before, so it makes me a mistake here. "
+        "start_time": 218920,
+        "end_time": 223240,
+        "text": "Node.js is a so-called work-time environment for JavaScript. "
     },
     {
-        "start_time": 397000,
-        "end_time": 401000,
-        "text": "This will work with you. we can simply reimigate into this folder. "
+        "start_time": 223280,
+        "end_time": 228280,
+        "text": "In other words, it means that we can run JavaScript on our computer. "
     },
     {
-        "start_time": 401000,
-        "end_time": 405000,
-        "text": "And we will execute the command npm init. "
+        "start_time": 228280,
+        "end_time": 232719,
+        "text": "This means you could, for example, create a backend or something or desktop programs. "
     },
     {
-        "start_time": 405000,
-        "end_time": 409000,
-        "text": "NPM init generates a JSON package, an initial. "
+        "start_time": 232719,
+        "end_time": 234040,
+        "text": "with JavaScript. "
     },
     {
-        "start_time": 409000,
-        "end_time": 415000,
-        "text": "And that saves us so a little to do that by hand by asking us a few questions over the command line. "
+        "start_time": 234040,
+        "end_time": 237640,
+        "text": "But we don’t need Node.js for this, because a React program is easy to do. "
     },
     {
-        "start_time": 415000,
-        "end_time": 420000,
-        "text": "First of all, it wants to know the package name from us, which it simply extract from the current folder by default. "
+        "start_time": 237640,
+        "end_time": 239159,
+        "text": "in our web browser. "
     },
     {
-        "start_time": 420000,
-        "end_time": 424000,
-        "text": "Introduction Reject is OK in this case. "
+        "start_time": 239159,
+        "end_time": 243640,
+        "text": "What Node.js still has is the so-called Node Package Manager. "
     },
     {
-        "start_time": 424000,
-        "end_time": 427000,
-        "text": "The version is OK for us for the first time. "
+        "start_time": 243640,
+        "end_time": 248080,
+        "text": "In addition, software can be used on our computer via the command line. "
     },
     {
-        "start_time": 427000,
-        "end_time": 433000,
-        "text": "Semper, semantic version, comes very strongly in use at npm. "
+        "start_time": 248080,
+        "end_time": 253200,
+        "text": "Install, such as React or programs that automatically install a React App "
     },
     {
-        "start_time": 433000,
-        "end_time": 439000,
-        "text": "A description, then we can simply consider some free text. "
+        "start_time": 253200,
+        "end_time": 254400,
+        "text": "to produce for us. "
     },
     {
-        "start_time": 439000,
-        "end_time": 444000,
-        "text": "This is an introduction in Reject for example. "
+        "start_time": 254400,
+        "end_time": 256680,
+        "text": "Therefore, we need to install Node.js. "
     },
     {
-        "start_time": 444000,
-        "end_time": 450000,
-        "text": "The entry point we will see later is at us source-app.js. "
+        "start_time": 256680,
+        "end_time": 261000,
+        "text": "Just go here to download and then stay here for Windows, Mac "
     },
     {
-        "start_time": 450000,
-        "end_time": 454000,
-        "text": "Test command, we have no automated test, so we leave it empty. "
+        "start_time": 261000,
+        "end_time": 264800,
+        "text": "or for the source code, for example, if you use Linux. "
     },
     {
-        "start_time": 454000,
-        "end_time": 458000,
-        "text": "We have also not set up a Git repository. we also don’t want to give keywords first. "
+        "start_time": 264800,
+        "end_time": 268199,
+        "text": "Then, of course, we also have to write our code somehow. "
     },
     {
-        "start_time": 458000,
-        "end_time": 461000,
-        "text": "The author, there we can rewrite ourselves. "
+        "start_time": 268199,
+        "end_time": 270160,
+        "text": "We need a code editor. "
     },
     {
-        "start_time": 461000,
-        "end_time": 467000,
-        "text": "A license is not as important for private testing projects as well. "
+        "start_time": 270160,
+        "end_time": 274400,
+        "text": "This is the standard that we always take, Visual Studio Code. "
     },
     {
-        "start_time": 467000,
-        "end_time": 473000,
-        "text": "I usually take here with me, but you can also leave it on ILC in principle. "
+        "start_time": 274400,
+        "end_time": 277800,
+        "text": "Just click here to download if you shouldn’t have it yet. "
     },
     {
-        "start_time": 473000,
-        "end_time": 481000,
-        "text": "Npm asks us again if all our entries were correct and will just put this JSON file as a JSON package in the current directory. "
+        "start_time": 277840,
+        "end_time": 281759,
+        "text": "After you have installed everything, you need to reboot your computer. "
     },
     {
-        "start_time": 481000,
-        "end_time": 485000,
-        "text": "In our case, it is OK, so yes. "
+        "start_time": 281759,
+        "end_time": 286159,
+        "text": "Then you open the Visual Studio Code and the whole looks like that. "
     },
     {
-        "start_time": 485000,
-        "end_time": 490000,
-        "text": "Next, we will now open this folder in our development environment. "
+        "start_time": 286159,
+        "end_time": 287400,
+        "text": "This is our base. "
     },
     {
-        "start_time": 490000,
-        "end_time": 493000,
-        "text": "In my case, it is Bishow Studio Code. "
+        "start_time": 287400,
+        "end_time": 288680,
+        "text": "Here we can start now. "
     },
     {
-        "start_time": 493000,
-        "end_time": 500000,
-        "text": "We can do this very easily by going to File Open here, navigating to the corresponding folder and then pressing Open. "
+        "start_time": 292520,
+        "end_time": 295720,
+        "text": "At the next step, we are now making our first project. "
     },
     {
-        "start_time": 503000,
-        "end_time": 512000,
-        "text": "And now we see that we have just generated a JSON package in which all the fields we have answered by question before are recorded accordingly. "
+        "start_time": 295720,
+        "end_time": 300960,
+        "text": "First we need to create a folder and then create it with Visual Studio. "
     },
     {
-        "start_time": 514000,
-        "end_time": 522000,
-        "text": "The next step is to create an index of HTML, which is an initial HTML page to be delivered. "
+        "start_time": 300960,
+        "end_time": 302160,
+        "text": "Open the code. "
     },
     {
-        "start_time": 522000,
-        "end_time": 526000,
-        "text": "This is done through the new file, index.html. "
+        "start_time": 302160,
+        "end_time": 306319,
+        "text": "For this, we can simply go to the top left to File and then to Open Folder. "
     },
     {
-        "start_time": 527000,
-        "end_time": 532000,
-        "text": "And there we simply write a standard HTML file, starting with the Doctype. "
+        "start_time": 306319,
+        "end_time": 311000,
+        "text": "After we have gone here, we can now go to the folder where your projects are located. "
     },
     {
-        "start_time": 532000,
-        "end_time": 537000,
-        "text": "And here we have already seen a great feature of Bishow Studio Code, the car completion. "
+        "start_time": 311000,
+        "end_time": 314839,
+        "text": "To keep everything clear, I don’t recommend it all on your desktop. "
     },
     {
-        "start_time": 537000,
-        "end_time": 538000,
-        "text": "I will delete it again. "
+        "start_time": 314839,
+        "end_time": 320079,
+        "text": "to place but I have everything, for example, here just on C slash Dev slash "
     },
     {
-        "start_time": 538000,
-        "end_time": 548000,
-        "text": "So by entering only the first few characters of the code that I want to create here, Bishow Studio Code offers me a pre-selection. "
+        "start_time": 320079,
+        "end_time": 321079,
+        "text": "The React Projects. "
     },
     {
-        "start_time": 548000,
-        "end_time": 553000,
-        "text": "If I confirm this, either through Enter or by clicking on it, it fills me accordingly. "
+        "start_time": 321079,
+        "end_time": 325959,
+        "text": "There are all my React projects in and this folder I choose now. "
     },
     {
-        "start_time": 554000,
-        "end_time": 557000,
-        "text": "A classic HTML document comes next. "
+        "start_time": 325959,
+        "end_time": 330759,
+        "text": "If I now press the terminal here above, I can open a new terminal below. "
     },
     {
-        "start_time": 557000,
-        "end_time": 563000,
-        "text": "We need a head or a head day in which we can then give a title. "
+        "start_time": 330759,
+        "end_time": 332719,
+        "text": "This is this entry invitation. "
     },
     {
-        "start_time": 563000,
-        "end_time": 566000,
-        "text": "Let’s put it in react. "
+        "start_time": 332720,
+        "end_time": 337240,
+        "text": "This is exactly the same as if you would enter CMD here to the left below in Windows. "
     },
     {
-        "start_time": 567000,
-        "end_time": 569000,
-        "text": "We need a Buddy. "
+        "start_time": 337240,
+        "end_time": 342400,
+        "text": "And this thing is opened here or entered in the Spotlight Search Terminal on Mac. "
     },
     {
-        "start_time": 570000,
-        "end_time": 575000,
-        "text": "And then we just want to start, as it is so usual, with a code example with Hello World. "
+        "start_time": 342400,
+        "end_time": 351440,
+        "text": "To set up a new React project now, you just need the command npx create-react app "
     },
     {
-        "start_time": 576000,
-        "end_time": 579000,
-        "text": "Not just save, not surprise. "
+        "start_time": 351440,
+        "end_time": 352440,
+        "text": "to enter. "
     },
     {
-        "start_time": 579000,
-        "end_time": 582000,
-        "text": "This is also a feature of Bishow Studio Code. "
+        "start_time": 352440,
+        "end_time": 358560,
+        "text": "This npx automatically starts a program from the Internet called create-react app, "
     },
     {
-        "start_time": 582000,
-        "end_time": 586000,
-        "text": "This is automatically formated for me according to certain criteria. "
+        "start_time": 358560,
+        "end_time": 361320,
+        "text": "This is our first React project. "
     },
     {
-        "start_time": 587000,
-        "end_time": 590000,
-        "text": "Consequently, it may be that there is sometimes a line break added here. "
+        "start_time": 361399,
+        "end_time": 365759,
+        "text": "If you’re working on Linux or Mac, you’ll need to write the word sudo here. "
     },
     {
-        "start_time": 590000,
-        "end_time": 594000,
-        "text": "This is simply very convenient that everything is always uniformly formated. "
+        "start_time": 365759,
+        "end_time": 368719,
+        "text": "You do this as an administrator. "
     },
     {
-        "start_time": 595000,
-        "end_time": 598000,
-        "text": "So, now we have created an index HTML. "
+        "start_time": 368719,
+        "end_time": 371759,
+        "text": "Before you click Enter, you will need another parameter. "
     },
     {
-        "start_time": 598000,
+        "start_time": 371759,
+        "end_time": 374480,
+        "text": "Enter the name of your project. "
+    },
+    {
+        "start_time": 374480,
+        "end_time": 382159,
+        "text": "I just call it my online shop and press Enter. "
+    },
+    {
+        "start_time": 382159,
+        "end_time": 386319,
+        "text": "After everything has gone through, we now see a new folder here on the page, "
+    },
+    {
+        "start_time": 386319,
+        "end_time": 387319,
+        "text": "which was created. "
+    },
+    {
+        "start_time": 387319,
+        "end_time": 392159,
+        "text": "This is my online shop and here is now our React project to find. "
+    },
+    {
+        "start_time": 392159,
+        "end_time": 394279,
+        "text": "It is also important how we can start it all. "
+    },
+    {
+        "start_time": 394279,
+        "end_time": 396879,
+        "text": "We need to switch to the folder first. "
+    },
+    {
+        "start_time": 396879,
+        "end_time": 400199,
+        "text": "That is, we have to switch from this terminal to this folder. "
+    },
+    {
+        "start_time": 400199,
+        "end_time": 405240,
+        "text": "This goes with the command cd, that is for Change Directory and here I now give my online shop "
+    },
+    {
+        "start_time": 405240,
+        "end_time": 411159,
+        "text": "I can start it all by entering the command npm start. "
+    },
+    {
+        "start_time": 411159,
+        "end_time": 417920,
+        "text": "In addition, I want to install an extra extension in the VS Code, so an extension. "
+    },
+    {
+        "start_time": 417920,
+        "end_time": 419920,
+        "text": "This is here. "
+    },
+    {
+        "start_time": 419920,
+        "end_time": 422280,
+        "text": "It is called Simple React Snippets. "
+    },
+    {
+        "start_time": 422280,
+        "end_time": 425160,
+        "text": "Just put it up here and press it up here. "
+    },
+    {
+        "start_time": 425160,
+        "end_time": 429160,
+        "text": "I have installed it all with me and with this extension you have the same "
+    },
+    {
+        "start_time": 429160,
+        "end_time": 434000,
+        "text": "You have the opportunity to program a lot more conveniently than you have already done. "
+    },
+    {
+        "start_time": 434000,
+        "end_time": 435400,
+        "text": "You can do it with React. "
+    },
+    {
+        "start_time": 435400,
+        "end_time": 440040,
+        "text": "By the command you entered here, now in my web browser this "
+    },
+    {
+        "start_time": 440040,
+        "end_time": 441040,
+        "text": "The thing up here. "
+    },
+    {
+        "start_time": 441040,
+        "end_time": 446040,
+        "text": "Here is our start app in React and with it we can either continue to work. "
+    },
+    {
+        "start_time": 446040,
+        "end_time": 449680,
+        "text": "Now we can just create a new app. "
+    },
+    {
+        "start_time": 449680,
+        "end_time": 453400,
+        "text": "When we look at the folder structure, we will see some files and "
+    },
+    {
+        "start_time": 453400,
+        "end_time": 454400,
+        "text": "Some of the Orders. "
+    },
+    {
+        "start_time": 454400,
+        "end_time": 456600,
+        "text": "This is for example package.json. "
+    },
+    {
+        "start_time": 456600,
+        "end_time": 461860,
+        "text": "Here are ultimately all the libraries, so all the extensions for JavaScript in it. "
+    },
+    {
+        "start_time": 461860,
+        "end_time": 465800,
+        "text": "They have been installed and they are located in the folder Notes Modules. "
+    },
+    {
+        "start_time": 465800,
+        "end_time": 468000,
+        "text": "We don’t have to look at it very much now. "
+    },
+    {
+        "start_time": 468079,
+        "end_time": 472920,
+        "text": "Readme.md is simply again a small documentation with a few information. "
+    },
+    {
+        "start_time": 472920,
+        "end_time": 474759,
+        "text": "Then there is package.log. "
+    },
+    {
+        "start_time": 474759,
+        "end_time": 479680,
+        "text": "Here is what has been installed since the last installation, so in this case "
+    },
+    {
+        "start_time": 479680,
+        "end_time": 483600,
+        "text": "We need everything and gitignore if we want to work with Git. "
+    },
+    {
+        "start_time": 483600,
+        "end_time": 485759,
+        "text": "But we do not do that now. "
+    },
+    {
+        "start_time": 485759,
+        "end_time": 489800,
+        "text": "Git is a version control, which means that we can use our code in all versions. "
+    },
+    {
+        "start_time": 489800,
+        "end_time": 491759,
+        "text": "Online storage in the cloud. "
+    },
+    {
+        "start_time": 491759,
+        "end_time": 493600,
+        "text": "Then there is the public order. "
+    },
+    {
+        "start_time": 493600,
+        "end_time": 497759,
+        "text": "There is our finished website inside and the folder source. "
+    },
+    {
+        "start_time": 497759,
+        "end_time": 499360,
+        "text": "This is the source code. "
+    },
+    {
+        "start_time": 499360,
+        "end_time": 502920,
+        "text": "Here is our source code and this is the folder in which we mainly "
+    },
+    {
+        "start_time": 502920,
+        "end_time": 507439,
+        "text": "This is because there is everything that has to do with programming. "
+    },
+    {
+        "start_time": 507439,
+        "end_time": 510159,
+        "text": "Here are some, some files. "
+    },
+    {
+        "start_time": 510159,
+        "end_time": 514519,
+        "text": "But what we want to do now is simply to completely delete everything here. "
+    },
+    {
+        "start_time": 514519,
+        "end_time": 516519,
+        "text": "We really want to start at zero. "
+    },
+    {
+        "start_time": 516519,
+        "end_time": 521360,
+        "text": "So I just press to remove, say move to recycle and now we have here "
+    },
+    {
+        "start_time": 521360,
+        "end_time": 524319,
+        "text": "A complete empty folder and start from zero. "
+    },
+    {
+        "start_time": 524400,
+        "end_time": 528879,
+        "text": "We place a new file here in the folder with the right click and new file and name "
+    },
+    {
+        "start_time": 528879,
+        "end_time": 531520,
+        "text": "This is the index.js file. "
+    },
+    {
+        "start_time": 531520,
+        "end_time": 534879,
+        "text": "Then we will press Enter and now have a completely empty file. "
+    },
+    {
+        "start_time": 534879,
+        "end_time": 537200,
+        "text": "This is the basis for our program. "
+    },
+    {
+        "start_time": 537200,
+        "end_time": 541400,
+        "text": "That is, everything we rewrite here will then automatically become the base for our "
+    },
+    {
+        "start_time": 541400,
+        "end_time": 542640,
+        "text": "to be website. "
+    },
+    {
+        "start_time": 542640,
+        "end_time": 547640,
+        "text": "The first thing we have to do here now is to import React. "
+    },
+    {
+        "start_time": 547640,
+        "end_time": 552280,
+        "text": "That is, I have to write something like import react from. "
+    },
+    {
+        "start_time": 552919,
+        "end_time": 555000,
+        "text": "Why do we write this exactly this way? "
+    },
+    {
+        "start_time": 555000,
+        "end_time": 558839,
+        "text": "The first is what we want to import and the second is from which library we "
+    },
+    {
+        "start_time": 558839,
+        "end_time": 559839,
+        "text": "They want to import it. "
+    },
+    {
+        "start_time": 559839,
+        "end_time": 564399,
+        "text": "The library is called React and the function we want to re-copy here or "
+    },
+    {
+        "start_time": 564399,
+        "end_time": 566399,
+        "text": "The element is also called React. "
+    },
+    {
+        "start_time": 566399,
+        "end_time": 570759,
+        "text": "The second thing we need is something that is called React Dom. "
+    },
+    {
+        "start_time": 570759,
+        "end_time": 574839,
+        "text": "For this we write import React Dom from. "
+    },
+    {
+        "start_time": 574839,
+        "end_time": 576439,
+        "text": "Now it becomes interesting. "
+    },
+    {
+        "start_time": 576439,
+        "end_time": 578919,
+        "text": "React minus Dom. "
+    },
+    {
+        "start_time": 579319,
+        "end_time": 582959,
+        "text": "That’s what we really say, and after we’ve written it all, we can now "
+    },
+    {
+        "start_time": 582959,
+        "end_time": 586199,
+        "text": "I have already started programming. "
+    },
+    {
+        "start_time": 586199,
+        "end_time": 589959,
+        "text": "Of course, what we always want to do on our side is the obligatory. "
+    },
+    {
+        "start_time": 589959,
+        "end_time": 590959,
+        "text": "Hello the world. "
+    },
+    {
+        "start_time": 590959,
+        "end_time": 594679,
+        "text": "With Hello World we can ultimately simply show on our site whether the whole "
+    },
+    {
+        "start_time": 594679,
+        "end_time": 595679,
+        "text": "It works. "
+    },
+    {
+        "start_time": 595679,
         "end_time": 600000,
-        "text": "This is what we want to do through a webinar. "
+        "text": "I can just make a variable, a variable. "
     },
     {
         "start_time": 600000,
-        "end_time": 606039,
-        "text": "deliver servers to complete our development environment. and as previously discussed, "
+        "end_time": 606000,
+        "text": "I call it the element and it is now attributed to HTML code. That is, I write here "
     },
     {
-        "start_time": 606039,
-        "end_time": 617759,
-        "text": "We take npx, give a npx server minus reload. This takes a short time and then gives us "
+        "start_time": 606000,
+        "end_time": 612840,
+        "text": "H1, Hello World. Many people will already see now, okay, here is now the HTML code inside, "
     },
     {
-        "start_time": 617759,
-        "end_time": 624639,
-        "text": "here also accordingly back that now under htp localhost 8080 the current website or the "
+        "start_time": 612840,
+        "end_time": 617799,
+        "text": "But it’s not all in the indication; in fact, it should always be like that. "
     },
     {
-        "start_time": 624639,
-        "end_time": 631000,
-        "text": "The current folder is delivered and standardly this index.html is delivered. "
+        "start_time": 617799,
+        "end_time": 623559,
+        "text": "This is not the case with React, but this is not the case with React. "
     },
     {
-        "start_time": 631000,
-        "end_time": 637240,
-        "text": "We also see by navigating to the browser and entering this URL accordingly. "
+        "start_time": 623559,
+        "end_time": 630639,
+        "text": "HTML code, but about pseudo-HTML code. The whole is later converted into real HTML code. "
     },
     {
-        "start_time": 637240,
-        "end_time": 644279,
-        "text": "Our Hello World index.html is delivered. A small discomfort we see here still, "
+        "start_time": 630639,
+        "end_time": 635679,
+        "text": "That is, we can actually write here without a reference sign. This H1 element "
     },
     {
-        "start_time": 644279,
-        "end_time": 651399,
-        "text": "Introduction to React, the U has somehow not recognized yet. for this we need in the HTML "
+        "start_time": 635679,
+        "end_time": 640879,
+        "text": "is now a very normal HTML element later and that we have to be on our side now "
     },
     {
-        "start_time": 651399,
-        "end_time": 658799,
-        "text": "Headpart still put the charset on UTF-8. It's also very easy by making neta charset here "
+        "start_time": 640879,
+        "end_time": 648240,
+        "text": "And for this we need this React DOM. DOM stands for Document Object Model and "
     },
     {
-        "start_time": 658799,
-        "end_time": 668159,
-        "text": "We press save and when we now navigate back to the site, "
+        "start_time": 648240,
+        "end_time": 654120,
+        "text": "It always represents our HTML code on our site. however we have here "
     },
     {
-        "start_time": 668159,
+        "start_time": 654120,
+        "end_time": 659960,
+        "text": "a private, a virtual DOM. That is, we have our own tree on HTML elements, "
+    },
+    {
+        "start_time": 659960,
+        "end_time": 666360,
+        "text": "which are not yet real, but in this fake HTML ultimately and React generates from it "
+    },
+    {
+        "start_time": 666360,
         "end_time": 673080,
-        "text": "we see that the Reload Flag of Server has already done its job. "
+        "text": "We can now simply say reactdom.render and say that we are the element, "
     },
     {
         "start_time": 673080,
-        "end_time": 679759,
-        "text": "It is now re-loaded and the U is presented correctly here. and thus we have essentially "
+        "end_time": 678080,
+        "text": "So our headline, want to render. now we have to say, of course, where all "
     },
     {
-        "start_time": 679759,
-        "end_time": 686200,
-        "text": "This is an ongoing development environment in which we can now develop React. "
+        "start_time": 678080,
+        "end_time": 683440,
+        "text": "and for that we have to look at the public folder once. a website starts "
     },
     {
-        "start_time": 686200,
-        "end_time": 693759,
-        "text": "There are several methods to install React now in our project "
+        "start_time": 683440,
+        "end_time": 688759,
+        "text": "There is a file called index.html, and there is a little bit of it. "
     },
     {
-        "start_time": 693759,
-        "end_time": 699680,
-        "text": "The simplest method is online playgrounds. "
+        "start_time": 688759,
+        "end_time": 694480,
+        "text": "In fact, it’s quite empty.At a HTML page we always say in the hot area "
     },
     {
-        "start_time": 699680,
-        "end_time": 706960,
-        "text": "Online playgrounds are in principle a development environment directly in the browser. and React offers itself "
+        "start_time": 694480,
+        "end_time": 701319,
+        "text": "only a lot of configuration and meta information through our site. that is, theme color to "
     },
     {
-        "start_time": 706960,
-        "end_time": 711080,
-        "text": "one page documentation to an online playground, for example CodePen. "
+        "start_time": 701319,
+        "end_time": 706600,
+        "text": "Example, something to an icon, what width the page should have, what title to have "
     },
     {
-        "start_time": 711080,
-        "end_time": 716879,
-        "text": "Let’s look at it by pressing on Get Started. Try React we’ll see online. "
+        "start_time": 706600,
+        "end_time": 712000,
+        "text": "and so on and so on. In Buddy, that really comes into interesting. "
     },
     {
-        "start_time": 716879,
-        "end_time": 722440,
-        "text": "If, for example, we navigate on CodePen, we will be directed immediately. "
+        "start_time": 712000,
+        "end_time": 717600,
+        "text": "Looking at Buddy, then we see here very interesting, namely two things. "
     },
     {
-        "start_time": 722440,
-        "end_time": 730759,
-        "text": "And now there is also a Hello World application from React, which we accordingly "
+        "start_time": 717600,
+        "end_time": 721919,
+        "text": "Run only if the web browser for any reason does not support JavaScript. "
     },
     {
-        "start_time": 730759,
-        "end_time": 736679,
-        "text": "can also edit. we simply enter a U. And through Command Enter the page is now "
+        "start_time": 721919,
+        "end_time": 727360,
+        "text": "simply said, hey, you need to enable JavaScript to run this app. "
     },
     {
-        "start_time": 736679,
-        "end_time": 743519,
-        "text": "It’s great, as I said, to try React, so maybe even when "
+        "start_time": 727360,
+        "end_time": 733879,
+        "text": "A DIV container simply has an ID name here. "
     },
     {
-        "start_time": 743519,
-        "end_time": 749200,
-        "text": "Something with you locally doesn’t work to restore. but if we long-term projects "
+        "start_time": 733879,
+        "end_time": 739600,
+        "text": "root and what we can do now is to access this container with JavaScript and "
     },
     {
-        "start_time": 749200,
-        "end_time": 753000,
-        "text": "To develop, of course, we want somehow the code we produce, also correctly. "
+        "start_time": 739600,
+        "end_time": 745279,
+        "text": "then add content to this container. and the whole now takes over React. "
     },
     {
-        "start_time": 753000,
-        "end_time": 759079,
-        "text": "and that is rather difficult possible in these online playgrounds. accordingly we want to "
+        "start_time": 745279,
+        "end_time": 750440,
+        "text": "We just have to access this container here and we have to access this item here as "
     },
     {
-        "start_time": 759080,
-        "end_time": 765639,
-        "text": "The code is somehow available at us. A second method would, of course, be the "
+        "start_time": 750440,
+        "end_time": 755799,
+        "text": "Add the second parameter to this method of React. That is, here comes into "
     },
     {
-        "start_time": 765639,
-        "end_time": 773080,
-        "text": "Source code from React download. if we could do, it is nowadays rather old fashion. "
+        "start_time": 755799,
+        "end_time": 762680,
+        "text": "document getElementByID root. And after we have done it all, of course comes the end "
     },
     {
-        "start_time": 773080,
-        "end_time": 777840,
-        "text": "For example, if we want to install a new version of React, we need to "
+        "start_time": 762680,
+        "end_time": 767960,
+        "text": "There is a semiconductor on each side and we’re already ready. "
     },
     {
-        "start_time": 777840,
-        "end_time": 781799,
-        "text": "We download the code back to the React website. so this is an action, "
+        "start_time": 767960,
+        "end_time": 773720,
+        "text": "that here now stands Webpack compiled successfully. the URL we can now open again, "
     },
     {
-        "start_time": 781799,
-        "end_time": 787600,
-        "text": "It is not recommended today. there are higher methods. the one is "
+        "start_time": 773720,
+        "end_time": 779000,
+        "text": "by simply pressing the control button or command here and then pressing it here and "
     },
     {
-        "start_time": 787600,
-        "end_time": 793600,
-        "text": "the use of a so-called CDN URL. CDN means Content Delivery Network. "
+        "start_time": 779000,
+        "end_time": 784440,
+        "text": "then it all goes up in my web browser and we now see the following here. "
     },
     {
-        "start_time": 793600,
-        "end_time": 799480,
-        "text": "just a website on which React has already uploaded the source code and "
+        "start_time": 784440,
+        "end_time": 789960,
+        "text": "Hello world. and when we look at it all once, I can always do it with one "
     },
     {
-        "start_time": 799480,
-        "end_time": 805000,
-        "text": "We can easily link through the URL into our index HTML. And this is ideal for fast "
+        "start_time": 789960,
+        "end_time": 796120,
+        "text": "Right-click and research, then I see here that this h1 element simply in our "
     },
     {
-        "start_time": 805000,
-        "end_time": 810399,
-        "text": "Tests or even for learning projects, as this year here is a learning project. "
+        "start_time": 796120,
+        "end_time": 802240,
+        "text": "The index page has been embedded. that is, we look at it all again here and split it "
     },
     {
-        "start_time": 810399,
-        "end_time": 817519,
-        "text": "We will also use this variant of the installation of React today. "
+        "start_time": 802240,
+        "end_time": 807360,
+        "text": "We have a page that looks like this, we have a page that looks like this. "
     },
     {
-        "start_time": 817519,
-        "end_time": 823680,
-        "text": "The variant that still exists, of course, is the installation with NPM. Because React is also available on "
+        "start_time": 807360,
+        "end_time": 813440,
+        "text": "Base for each individual page we have. and here on the left side in the JavaScript file "
     },
     {
-        "start_time": 823680,
-        "end_time": 831799,
-        "text": "NPM. I'm showing you here. no. React was also uploaded to NPM. "
+        "start_time": 813440,
+        "end_time": 818960,
+        "text": "We have now defined another HTML element. And this HTML element, that will be "
     },
     {
-        "start_time": 831799,
-        "end_time": 841000,
-        "text": "It is, however, that the installation through NPM or then the integration into your website "
+        "start_time": 818960,
+        "end_time": 824440,
+        "text": "Now here in this DIV container, so here, zack, used. and so we have it already "
     },
     {
-        "start_time": 841000,
-        "end_time": 847279,
-        "text": "It’s not easy to do so, but it’s a tool that you need to do. "
+        "start_time": 824440,
+        "end_time": 829519,
+        "text": "We were able to build Hello World and so we created our first home page. "
     },
     {
-        "start_time": 847279,
-        "end_time": 853319,
-        "text": "It makes the initial thing very complex. This runs in larger applications but absolutely, "
+        "start_time": 833519,
+        "end_time": 837360,
+        "text": "So now that we have set up our Hello World, it will be time for our next step. "
     },
     {
-        "start_time": 853319,
-        "end_time": 859120,
-        "text": "Because this innocently complex effort is then amortized over a lot of work that we have done. "
+        "start_time": 837360,
+        "end_time": 843480,
+        "text": "Online shop to shed together. and for that we naturally need components. we don't want everything "
     },
     {
-        "start_time": 859120,
-        "end_time": 865519,
-        "text": "The installation of React with NPM we will be in a later "
+        "start_time": 843480,
+        "end_time": 849120,
+        "text": "Write into a file as it is now here, but we want to set up several components. "
     },
     {
-        "start_time": 865519,
-        "end_time": 870200,
-        "text": "This is the second part of this video series, where everything will be done. "
+        "start_time": 849120,
+        "end_time": 854679,
+        "text": "Since we can have a lot of components in an app very quickly, "
     },
     {
-        "start_time": 870200,
-        "end_time": 878399,
-        "text": "For today, as I said, but we use the CDL URL link. "
+        "start_time": 854679,
+        "end_time": 859839,
+        "text": "I always recommend adding a new suborder to this source folder and adding the component to "
     },
     {
-        "start_time": 878399,
-        "end_time": 886639,
-        "text": "Then we enter these two Script tags in our HTML index and thus React. "
+        "start_time": 859839,
+        "end_time": 864799,
+        "text": "Then we pack all our components out. that is, if I now for example "
     },
     {
-        "start_time": 886639,
-        "end_time": 892919,
-        "text": "You can also find these two scripts on our page. "
+        "start_time": 864799,
+        "end_time": 870120,
+        "text": "I would like to make our navigation bar first, then I would now have a new file here. "
     },
     {
-        "start_time": 892920,
-        "end_time": 900120,
-        "text": "React.js.org on the official site under CDN links. you will see that there are two "
+        "start_time": 870120,
+        "end_time": 876920,
+        "text": "Reinscribe and namely navbar.js. we can write with JavaScript, with TypeScript "
     },
     {
-        "start_time": 900120,
-        "end_time": 904160,
-        "text": "There are different variants that can be incorporated into the project. once in the development mode "
+        "start_time": 876920,
+        "end_time": 883039,
+        "text": "Writing or with something, that is JSX. I would recommend this first. "
     },
     {
-        "start_time": 904160,
-        "end_time": 910759,
-        "text": "The difference is quite simple that the development mode some "
+        "start_time": 883039,
+        "end_time": 888000,
+        "text": "with the completion of the car and the display often a little better. "
     },
     {
-        "start_time": 910759,
-        "end_time": 915400,
-        "text": "providing better errors and providing us with some tools, "
+        "start_time": 888000,
+        "end_time": 891879,
+        "text": "Now, of course, we have to rewrite this standard building for the first time. "
     },
     {
-        "start_time": 915400,
-        "end_time": 919480,
-        "text": "which make the development of React easier, but which at the same time make these JavaScript files "
+        "start_time": 891879,
+        "end_time": 896639,
+        "text": "That we have installed this extension called React Snippets. "
     },
     {
-        "start_time": 919720,
-        "end_time": 925039,
-        "text": "We have a lot of work and we have a lot of work and we have a lot of work and we have a lot of work and we have a lot of work. "
+        "start_time": 896639,
+        "end_time": 902039,
+        "text": "simply write imrc and then press Enter and then this standard import is "
     },
     {
-        "start_time": 925039,
-        "end_time": 929319,
-        "text": "as possible code on the page, because it must also be downloaded. "
+        "start_time": 902039,
+        "end_time": 906599,
+        "text": "The same thing I can do now to make the entire code for a "
     },
     {
-        "start_time": 929319,
-        "end_time": 933319,
-        "text": "But since we are still far away from a productive effort, "
+        "start_time": 906599,
+        "end_time": 911399,
+        "text": "For this I just write cc and press Enter and we see, "
     },
     {
-        "start_time": 933319,
-        "end_time": 938680,
-        "text": "Today we’re limiting ourselves to the development sources that I’m just copying here. "
+        "start_time": 911399,
+        "end_time": 916919,
+        "text": "that we have already set up a complete JavaScript class. we just have to say now, "
     },
     {
-        "start_time": 938680,
-        "end_time": 947360,
-        "text": "If we then incorporate the React sources into our project, "
+        "start_time": 916919,
+        "end_time": 922680,
+        "text": "I think it’s a good thing to say, and we see that when I start to write, "
     },
     {
-        "start_time": 947360,
-        "end_time": 954440,
-        "text": "The first code, the first block with React, "
+        "start_time": 922680,
+        "end_time": 927920,
+        "text": "automatic multiple lines are typed. because we work here with a so-called "
     },
     {
-        "start_time": 954440,
-        "end_time": 958000,
-        "text": "The product that we are going to use is, as previously announced, React Element. "
+        "start_time": 927920,
+        "end_time": 933799,
+        "text": "This means that our component is always created in such a class here and "
     },
     {
-        "start_time": 958000,
-        "end_time": 964039,
-        "text": "We create a React element or a React element through this function breakdown. "
+        "start_time": 933799,
+        "end_time": 939799,
+        "text": "that is then exported at the end of the file. in our index.js we can all now "
     },
     {
-        "start_time": 964039,
-        "end_time": 970039,
-        "text": "React Create Element and it consists of three parameters. The first parameter gives the HTML tag "
+        "start_time": 939799,
+        "end_time": 944960,
+        "text": "This means that there is still a bit of code coming into here, for example, nav and "
     },
     {
-        "start_time": 970039,
-        "end_time": 974879,
-        "text": "to what we want to generate. in this case, for example, a P-day. the second parameter "
+        "start_time": 944960,
+        "end_time": 949160,
+        "text": "I'm just going to get there.I'm just going to navigate. "
     },
     {
-        "start_time": 974879,
-        "end_time": 979600,
-        "text": "indicate what attributes we want to provide to this HTML tag. In this case, now a "
+        "start_time": 949279,
+        "end_time": 955440,
+        "text": "This is the HTML code, this is the HTML code, this is the HTML code. "
     },
     {
-        "start_time": 979600,
-        "end_time": 986440,
-        "text": "And the third parameter indicates which content we reinstall in this HTML tag or "
+        "start_time": 955440,
+        "end_time": 960120,
+        "text": "HTML code, which is actually not real and this navbar that we can now take place here "
     },
     {
-        "start_time": 986440,
-        "end_time": 992720,
-        "text": "In this case here is my content. This function call ultimately makes "
+        "start_time": 960120,
+        "end_time": 967640,
+        "text": "That is, I say here is just import navbar from and now say "
     },
     {
-        "start_time": 992720,
-        "end_time": 999639,
-        "text": "to create a simple JavaScript object, but this JavaScript object is "
+        "start_time": 967640,
+        "end_time": 974160,
+        "text": "I, from where I want to import it from the folder com-components and then slash navbar "
     },
     {
-        "start_time": 999639,
-        "end_time": 1005599,
-        "text": "React is understood and can then be implemented by React again in the Virtual DOM of React. "
+        "start_time": 974360,
+        "end_time": 978960,
+        "text": "and then we can use the thing now here. that is, I can now simply here "
     },
     {
-        "start_time": 1005599,
-        "end_time": 1010559,
-        "text": "Once it is embedded in the Virtual DOM, we remember, "
+        "start_time": 978960,
+        "end_time": 983680,
+        "text": "Zack navbar, that’s what you always write so clear. here above you have to say that point and "
     },
     {
-        "start_time": 1010559,
-        "end_time": 1016759,
-        "text": "React synchronizes the Virtual DOM so that the correct DOM, just this element becomes a "
+        "start_time": 983680,
+        "end_time": 989799,
+        "text": "slash before writing, very important and then now our navbar will be in our application "
     },
     {
-        "start_time": 1016759,
-        "end_time": 1020759,
-        "text": "real DOM object and accordingly the browser. so you can say, "
+        "start_time": 989799,
+        "end_time": 994360,
+        "text": "I’m going to see a very interesting thing, but I’m going to see a few more. "
     },
     {
-        "start_time": 1020759,
-        "end_time": 1028839,
-        "text": "that a React element represents a real DOM object. "
+        "start_time": 994360,
+        "end_time": 999120,
+        "text": "Step back, then we see that I just created the item here and "
     },
     {
-        "start_time": 1028839,
-        "end_time": 1034839,
-        "text": "Visualization again, so now we have next to the Virtual DOM of React in our "
+        "start_time": 999120,
+        "end_time": 1004879,
+        "text": "I have added. here, however, we have worked with a so-called class. "
     },
     {
-        "start_time": 1034839,
-        "end_time": 1040200,
-        "text": "JavaScript files this function call React Create Element, which is then here in the virtual "
+        "start_time": 1004879,
+        "end_time": 1009559,
+        "text": "It is possible in React, whether we are object-oriented, that is, or not object-oriented. "
     },
     {
-        "start_time": 1040200,
-        "end_time": 1044920,
-        "text": "DOM is embedded as an individual element, then synchronized with the DOM and then in our "
+        "start_time": 1009559,
+        "end_time": 1014720,
+        "text": "I want to work, but this is more industry standard here, so I would recommend, "
     },
     {
-        "start_time": 1044920,
-        "end_time": 1051960,
-        "text": "I also added this visualization to npm, which is just over the "
+        "start_time": 1014720,
+        "end_time": 1018480,
+        "text": "Even if it’s a little more code to always write like that. "
     },
     {
-        "start_time": 1051960,
-        "end_time": 1057759,
-        "text": "Package Chasing, which we have just seen, is initialized and installed. "
+        "start_time": 1018480,
+        "end_time": 1023120,
+        "text": "clearer, because you see here, you always have such a thing, that comes up here, "
     },
     {
-        "start_time": 1057759,
-        "end_time": 1066639,
-        "text": "NPX knows what the web server starts with us. Now we want to implement it again. "
+        "start_time": 1023120,
+        "end_time": 1027359,
+        "text": "This goes to here below and here is our entire code now recorded. "
     },
     {
-        "start_time": 1066639,
-        "end_time": 1073159,
-        "text": "We will copy the sources we need now as the first, go back to "
+        "start_time": 1027359,
+        "end_time": 1031559,
+        "text": "I would recommend that you always write this according to this formula and then just here so "
     },
     {
-        "start_time": 1073159,
-        "end_time": 1084000,
-        "text": "our Visual Studio and now simply add React at the end of the BodyTags. "
+        "start_time": 1031559,
+        "end_time": 1036839,
+        "text": "If I open our page now, then we also see that here our "
     },
     {
-        "start_time": 1084000,
-        "end_time": 1090720,
-        "text": "Now we have React on our side, but of course we do nothing with it. "
+        "start_time": 1036839,
+        "end_time": 1047960,
+        "text": "This is not a CSS tutorial, but a React tutorial. "
     },
     {
-        "start_time": 1090720,
+        "start_time": 1047960,
+        "end_time": 1051840,
+        "text": "That’s why we don’t build components together here, piece by piece. "
+    },
+    {
+        "start_time": 1052079,
+        "end_time": 1057400,
+        "text": "but we take finished components from the CSS Framework Bootstrap. "
+    },
+    {
+        "start_time": 1057400,
+        "end_time": 1062240,
+        "text": "the possibility of simply making such finished components, such as a navigation bar or "
+    },
+    {
+        "start_time": 1062240,
+        "end_time": 1066759,
+        "text": "If you’re sitting here for NAV or just join NAVBar. "
+    },
+    {
+        "start_time": 1066759,
+        "end_time": 1073039,
+        "text": "You already have a lot of different elements here on the left side and then you can "
+    },
+    {
+        "start_time": 1073039,
+        "end_time": 1078400,
+        "text": "Now just search here and just import into your project. here we have a relatively "
+    },
+    {
+        "start_time": 1078400,
+        "end_time": 1083599,
+        "text": "If we go down here, we still have a very light here and there is here "
+    },
+    {
+        "start_time": 1083599,
+        "end_time": 1089839,
+        "text": "Of course, HTML code with CSS classes. but at the same time, there is also natural "
+    },
+    {
+        "start_time": 1089839,
         "end_time": 1095039,
-        "text": "To do so, we still need some own JavaScript that we insert. "
+        "text": "JavaScript and a CSS file that needs to be imported here and that we can also in React "
     },
     {
         "start_time": 1095039,
-        "end_time": 1101839,
-        "text": "Let us first add a second or a third script day to us. "
+        "end_time": 1101759,
+        "text": "Now we first pack the NAVBar here.Zack. "
     },
     {
-        "start_time": 1101839,
-        "end_time": 1114480,
-        "text": "sourceapp.js will show. this file we then put on. first a folder source, which is simply a "
+        "start_time": 1101759,
+        "end_time": 1105799,
+        "text": "have done it all and have somewhat beautifully brought it here, we get now "
     },
     {
-        "start_time": 1114480,
-        "end_time": 1119880,
-        "text": "src is the source in which all the source files of a project are deposited. "
+        "start_time": 1105799,
+        "end_time": 1111200,
+        "text": "This is a small problem and it is not possible to use this class here. in normal HTML we can "
     },
     {
-        "start_time": 1119880,
-        "end_time": 1129319,
-        "text": "There we then place the file. App.js. Before we write JavaScript, we prepare to "
+        "start_time": 1111200,
+        "end_time": 1116519,
+        "text": "To tell how a HTML element should look with a CSS class. "
     },
     {
-        "start_time": 1129320,
-        "end_time": 1133880,
-        "text": "the index.html is another thing before. we may remember the last time "
+        "start_time": 1116519,
+        "end_time": 1122119,
+        "text": "Class here. however, the class exists also in JavaScript. This is why you need to "
     },
     {
-        "start_time": 1133880,
-        "end_time": 1139559,
-        "text": "ReactDomRenderFunction that we provide, on the one hand, a React component that we have reduced "
+        "start_time": 1122119,
+        "end_time": 1128480,
+        "text": "React the HTML classes not call class, but class name. "
     },
     {
-        "start_time": 1139559,
-        "end_time": 1144280,
-        "text": "I want, but on the other hand, to indicate where in our HTML we have this component. "
+        "start_time": 1128480,
+        "end_time": 1131880,
+        "text": "Wrong because there is such a root in it. here I just write such a slash in "
     },
     {
-        "start_time": 1144280,
-        "end_time": 1148960,
-        "text": "We want to have reduced. and this where we create now here. we make ourselves a simple "
+        "start_time": 1131880,
+        "end_time": 1137400,
+        "text": "and then we have no mistakes anymore. now we have to bootstrap still to our side or to our "
     },
     {
-        "start_time": 1148960,
-        "end_time": 1155440,
-        "text": "Div and give it an ID, by means of which we can then identify it later. "
+        "start_time": 1137400,
+        "end_time": 1142360,
+        "text": "Add project. for this we can take the Node Package Manager again and simply say npm "
     },
     {
-        "start_time": 1155440,
-        "end_time": 1169240,
-        "text": "then just React.js. if we look short again on the page, it has nothing changed, "
+        "start_time": 1142360,
+        "end_time": 1149240,
+        "text": "install minus save Bootstrap and then two things happen now. "
     },
     {
-        "start_time": 1169240,
-        "end_time": 1173720,
-        "text": "All with the old, because we have not yet generated the React element that we incorporate here. "
+        "start_time": 1149240,
+        "end_time": 1155119,
+        "text": "Bootstrap because it is now part of our project, here in this list with these dependencies "
     },
     {
-        "start_time": 1173720,
-        "end_time": 1182599,
-        "text": "We do this now. first we generate a React element. "
+        "start_time": 1155119,
+        "end_time": 1160559,
+        "text": "We see the whole and, in addition, everything that is here in dependencies, "
     },
     {
-        "start_time": 1182599,
-        "end_time": 1191000,
-        "text": "A variable, which we now simply call element, is now using React.CreateElement. "
+        "start_time": 1160559,
+        "end_time": 1165599,
+        "text": "automatically downloaded into the folder Node Modules. that is, here we now have a new "
     },
     {
-        "start_time": 1191000,
-        "end_time": 1197240,
-        "text": "React is a global variable that is now available to us because we are here. "
+        "start_time": 1165599,
+        "end_time": 1173239,
+        "text": "folder called Bootstrap. for that we scream a little down here and there he should be. "
     },
     {
-        "start_time": 1197240,
-        "end_time": 1199960,
-        "text": "In this script. "
+        "start_time": 1173239,
+        "end_time": 1179759,
+        "text": "We now have a folder called dist.css and here we now have a lot of CSS code. "
+    },
+    {
+        "start_time": 1179759,
+        "end_time": 1184359,
+        "text": "This is always a matter of mind. .min is always a matter of mind. .min is always a matter of mind. "
+    },
+    {
+        "start_time": 1184359,
+        "end_time": 1190119,
+        "text": "individual CSS files that exist here have become somewhat incomprehensible here in this .min file, "
+    },
+    {
+        "start_time": 1190119,
+        "end_time": 1193920,
+        "text": "but for our purposes perfectly simply summarized and minimized. "
+    },
+    {
+        "start_time": 1193920,
+        "end_time": 1199440,
+        "text": "We just need to import this file and all we can here simply in our Navbar "
     },
     {
         "start_time": 1200000,
-        "end_time": 1206240,
-        "text": "ultimately does nothing but provide the React sources under these variables and thus the CreateElement method. "
+        "end_time": 1205880,
+        "text": "or also simply in our index.js. that is, we write here simply import and "
     },
     {
-        "start_time": 1206240,
-        "end_time": 1212039,
-        "text": "As the first parameter is the day, in that case we always stay at the ptag. "
+        "start_time": 1205880,
+        "end_time": 1210039,
+        "text": "Now you have to indicate the path from this folder here. and the whole can already be a little bit "
     },
     {
-        "start_time": 1212039,
-        "end_time": 1216440,
-        "text": "As the second parameter the attributes, we leave it empty first. "
+        "start_time": 1210039,
+        "end_time": 1215640,
+        "text": "This is the reason why you can just right-click here and say copy relative path. "
     },
     {
-        "start_time": 1216440,
-        "end_time": 1222359,
-        "text": "And as the third parameter of the content, here we just write in, "
+        "start_time": 1215640,
+        "end_time": 1220680,
+        "text": "We have to put it in between the indicators so and so.Yes, now we have to be still minimal "
     },
     {
-        "start_time": 1222359,
-        "end_time": 1230359,
-        "text": "This is my first reaction element. "
+        "start_time": 1220680,
+        "end_time": 1225640,
+        "text": "This nod modules and so on we don’t need at the beginning. "
     },
     {
-        "start_time": 1230359,
-        "end_time": 1232359,
-        "text": "more correct. "
+        "start_time": 1225640,
+        "end_time": 1230079,
+        "text": "We want to have the forward-looking slashes that need to be entered here "
     },
     {
-        "start_time": 1234359,
-        "end_time": 1239960,
-        "text": "As mentioned, React-Create element generates for the first time only a simple JavaScript object. "
+        "start_time": 1230079,
+        "end_time": 1235160,
+        "text": "Now we can now say npm start, now we can now say npm start. "
     },
     {
-        "start_time": 1239960,
-        "end_time": 1250359,
-        "text": "With this object we have to do something now, we have to show React where it is going to send us this JavaScript object or this React element later in the browser. "
+        "start_time": 1235160,
+        "end_time": 1239200,
+        "text": "to start our project again. and as we see, we now have our "
     },
     {
-        "start_time": 1250359,
-        "end_time": 1253359,
-        "text": "We use React-DOM. "
+        "start_time": 1239200,
+        "end_time": 1244000,
+        "text": "Navigation bar here above has already been inserted. that is, we have a bootstrap component "
     },
     {
-        "start_time": 1253359,
-        "end_time": 1261359,
-        "text": "This is also a global variable that is available to us because we have embedded this second script for React-DOM here. "
+        "start_time": 1244000,
+        "end_time": 1250079,
+        "text": "taken and it is imported with this HTML code, at the same time here above now the whole styled, "
     },
     {
-        "start_time": 1261359,
-        "end_time": 1269359,
-        "text": "This provides us with the render function, in which we first put our element into. "
+        "start_time": 1250079,
+        "end_time": 1258759,
+        "text": "by the fact that we have imported the CSS file here. in the next step we will now "
     },
     {
-        "start_time": 1269359,
-        "end_time": 1273359,
-        "text": "And now we have to say where we wanted to move it. "
+        "start_time": 1258759,
+        "end_time": 1263519,
+        "text": "Of course, we need to add a few products to our online store and we need it first. "
     },
     {
-        "start_time": 1273359,
-        "end_time": 1277359,
-        "text": "And for this we started the DIV before and missed an ID. "
+        "start_time": 1263519,
+        "end_time": 1268279,
+        "text": "so a map where the whole is shown. And the good thing is if we go through the bootstrap "
     },
     {
-        "start_time": 1277359,
-        "end_time": 1287359,
-        "text": "And that we can now find out or filter out here with a selector, saying, Document, Get Element by ID. "
+        "start_time": 1268279,
+        "end_time": 1272240,
+        "text": "Components go, then we see something very good here, and I just have here. "
     },
     {
-        "start_time": 1287359,
-        "end_time": 1294359,
-        "text": "And here the ID we have given before, in the case Reakt App, copy and insert. "
+        "start_time": 1272240,
+        "end_time": 1276519,
+        "text": "left on the cart and then found this thing here. here we can just now "
     },
     {
-        "start_time": 1296359,
-        "end_time": 1305359,
-        "text": "And if we save it all and go to the site, then we see, juhu, we have our first reakt component, "
+        "start_time": 1276519,
+        "end_time": 1280640,
+        "text": "Add a few pictures and then actually take this map completely here. "
     },
     {
-        "start_time": 1305359,
-        "end_time": 1309359,
-        "text": "No, our first React element on the website. "
+        "start_time": 1280640,
+        "end_time": 1285920,
+        "text": "Well, what the HTML device should look like. that is, we just go into our code and "
     },
     {
-        "start_time": 1309359,
-        "end_time": 1313359,
-        "text": "We used React for the first time to manipulate our DOM. "
+        "start_time": 1285920,
+        "end_time": 1291240,
+        "text": "I'm just adding these note modules here again and tell you "
     },
     {
-        "start_time": 1313359,
-        "end_time": 1320359,
-        "text": "This is still a bit statistic, but it’s a great first step. "
+        "start_time": 1291240,
+        "end_time": 1298000,
+        "text": "Now here in the folder Components that I want to create a new component called product. "
     },
     {
-        "start_time": 1322359,
-        "end_time": 1327359,
-        "text": "Now you’ll ask yourself, I’ve told you last time about declarative programming and JSX, "
+        "start_time": 1298000,
+        "end_time": 1303599,
+        "text": "I’m going to have JSX, and then I can say that I’m going to have JSX. "
     },
     {
-        "start_time": 1327359,
-        "end_time": 1332360,
-        "text": "that it allows us to write HTML in JavaScript files. "
+        "start_time": 1303599,
+        "end_time": 1311200,
+        "text": "write CC to add my standard component here. product I call it all and as "
     },
     {
-        "start_time": 1332360,
-        "end_time": 1338360,
-        "text": "You would now expect that we do not actually make the whole call here with the reactory element, "
+        "start_time": 1311200,
+        "end_time": 1317680,
+        "text": "HTML code you just get it here. it's important that we everywhere class is the whole "
     },
     {
-        "start_time": 1338360,
-        "end_time": 1348360,
-        "text": "But rather you can write something like that, i.e. a HTML element with the ID, directly in the JavaScript file. "
+        "start_time": 1317680,
+        "end_time": 1325200,
+        "text": "So here, here, here, here and here in Class Name. "
     },
     {
-        "start_time": 1354360,
-        "end_time": 1359360,
-        "text": "If we do that, we will get a mistake. "
+        "start_time": 1325200,
+        "end_time": 1330240,
+        "text": "We also need to import React, that is, EMRC, then to Enter and then we have here the "
     },
     {
-        "start_time": 1359360,
-        "end_time": 1366360,
-        "text": "When we navigate back into the browser, on the one hand, we see that our item has not been reduced anymore. "
+        "start_time": 1330240,
+        "end_time": 1336640,
+        "text": "React or React and Component are imported here. "
     },
     {
-        "start_time": 1366360,
-        "end_time": 1373360,
-        "text": "To find out what's just going wrong here, we can develop the tools from Chrome or even from any other browser, "
+        "start_time": 1336640,
+        "end_time": 1340640,
+        "text": "But here we still see that something is red and that’s very likely that there’s something here. "
     },
     {
-        "start_time": 1373360,
-        "end_time": 1376360,
-        "text": "Every browser brings developer tools with us, take us to hand. "
+        "start_time": 1340640,
+        "end_time": 1345240,
+        "text": "There are three comic points in it, and we have to add a picture. "
     },
     {
-        "start_time": 1376360,
-        "end_time": 1381360,
-        "text": "We can do this either through the F12 button or by right-click investigation. "
+        "start_time": 1345240,
+        "end_time": 1350039,
+        "text": "You can find free photos on pixabay.com, for example, just go there and we can "
     },
     {
-        "start_time": 1382360,
-        "end_time": 1390360,
-        "text": "In these surveys we then see our current DOM or our HTML, which we can navigate through here, "
+        "start_time": 1350039,
+        "end_time": 1354440,
+        "text": "Let us just download some vegetables here in the smallest solution. "
     },
     {
-        "start_time": 1390360,
-        "end_time": 1394360,
-        "text": "Our title, our Meta-Char set, just the Buddy. "
+        "start_time": 1354440,
+        "end_time": 1358599,
+        "text": "so that the page does not load so long. you should always take one so that it still looks sharp, "
     },
     {
-        "start_time": 1400360,
-        "end_time": 1403360,
-        "text": "And we also have the console that expects errors to us. "
+        "start_time": 1358599,
+        "end_time": 1363240,
+        "text": "However, the size of the image is not too large. for the images we need a new "
     },
     {
-        "start_time": 1403360,
-        "end_time": 1410360,
-        "text": "And in this case we see now, we have a Synthax error, an unexpected sign, Unexpected token, an open clamer. "
+        "start_time": 1363240,
+        "end_time": 1368079,
+        "text": "Folders, I just call the assets and pack in this folder another subordner named "
     },
     {
-        "start_time": 1410360,
-        "end_time": 1412360,
-        "text": "That is exactly that sign. "
+        "start_time": 1368079,
+        "end_time": 1374119,
+        "text": "I now draw the image out of my download folder and name it again and "
     },
     {
-        "start_time": 1413360,
-        "end_time": 1419360,
-        "text": "It’s because a browser at least doesn’t understand JSX today. "
+        "start_time": 1374119,
+        "end_time": 1380160,
+        "text": "The image can be added here at Source, but "
     },
     {
-        "start_time": 1419360,
-        "end_time": 1424360,
-        "text": "A browser only understands native JavaScript and this is not native JavaScript. "
+        "start_time": 1380160,
+        "end_time": 1383759,
+        "text": "We need to change a few things. if I go through here, for example, "
     },
     {
-        "start_time": 1424360,
-        "end_time": 1429360,
-        "text": "Consequently, the browser can simply not understand this code split either. "
+        "start_time": 1383759,
+        "end_time": 1390160,
+        "text": "Image has no corresponding closing day. We work here with a type of XML and accordingly "
     },
     {
-        "start_time": 1429360,
-        "end_time": 1432360,
-        "text": "First we have to do something so that he can. "
+        "start_time": 1390160,
+        "end_time": 1396839,
+        "text": "HTML elements that are not closed must always be closed at the end with such a slash. "
     },
     {
-        "start_time": 1432360,
-        "end_time": 1437360,
-        "text": "We need to convert this codesnippet back to a normal JavaScript. "
+        "start_time": 1396839,
+        "end_time": 1401440,
+        "text": "This means that an image does not rise again and therefore we have to say here at the end, "
     },
     {
-        "start_time": 1437360,
-        "end_time": 1439360,
-        "text": "Now there is a small clue. "
+        "start_time": 1401440,
+        "end_time": 1404799,
+        "text": "There’s a slash here, and there’s a class here. "
     },
     {
-        "start_time": 1439360,
-        "end_time": 1442360,
-        "text": "React-Create element is a very normal JavaScript. "
+        "start_time": 1404799,
+        "end_time": 1409799,
+        "text": "What does ClassName really have to be called and now we have to see it all somehow. "
     },
     {
-        "start_time": 1442360,
-        "end_time": 1444360,
-        "text": "We just saw that it works. "
+        "start_time": 1409799,
+        "end_time": 1415039,
+        "text": "I’m not writing here for the first time, but a product. "
     },
     {
-        "start_time": 1445360,
-        "end_time": 1451360,
-        "text": "To make this possible and to make this translation, we do not need to do that handy. "
+        "start_time": 1415039,
+        "end_time": 1419559,
+        "text": "Then we also see that it is already automatically imported by React. "
     },
     {
-        "start_time": 1451360,
-        "end_time": 1455360,
-        "text": "It would be hard, but there are tools. "
+        "start_time": 1419559,
+        "end_time": 1423960,
+        "text": "If we open our page now, however, we do not see anything yet and therefore we recommend "
     },
     {
-        "start_time": 1455360,
-        "end_time": 1459360,
-        "text": "And one of these tools, we go back to the theory, is Babel. "
+        "start_time": 1423960,
+        "end_time": 1427839,
+        "text": "I'm always going to search you in the Chrome browser here and then here this "
     },
     {
-        "start_time": 1460360,
-        "end_time": 1471360,
-        "text": "Babel is just a kind of assistant or a translator that translates features and features, such as JSX, back into native JavaScript that the browser understands. "
+        "start_time": 1427839,
+        "end_time": 1432920,
+        "text": "Choose console, because here the React always tells very exactly what the error is. "
     },
     {
-        "start_time": 1472360,
-        "end_time": 1477360,
-        "text": "Babylon is essentially made up of three core components that we will use today. "
+        "start_time": 1432920,
+        "end_time": 1439680,
+        "text": "The style prop expects a mapping from style properties to values. "
     },
     {
-        "start_time": 1477360,
-        "end_time": 1479360,
-        "text": "This is the core. "
+        "start_time": 1439680,
+        "end_time": 1444319,
+        "text": "It sounds complicated for the first time, but here below is that you just style. "
     },
     {
-        "start_time": 1479360,
-        "end_time": 1481360,
-        "text": "This is the whole logic of translation. "
+        "start_time": 1444319,
+        "end_time": 1449039,
+        "text": "I have to write a bit different. if we just copy this error and go to Google. "
     },
     {
-        "start_time": 1481360,
-        "end_time": 1484360,
-        "text": "The Command Line Interface or short CLI. "
+        "start_time": 1449039,
+        "end_time": 1453559,
+        "text": "Whatever I would recommend you as a beginner, then we will also see "
     },
     {
-        "start_time": 1484360,
-        "end_time": 1490360,
-        "text": "This allows us to communicate and speak with Babel and communicate with Babel what we actually wanted to translate. "
+        "start_time": 1453559,
+        "end_time": 1459319,
+        "text": "Here’s exactly what to do and that’s what we have to do at React now at once styles instead of style "
     },
     {
-        "start_time": 1490360,
-        "end_time": 1492360,
-        "text": "There are presets. "
+        "start_time": 1459319,
+        "end_time": 1464680,
+        "text": "write and have to write it a bit different from the syntax here. "
     },
     {
-        "start_time": 1492360,
-        "end_time": 1500360,
-        "text": "Presets can be imagined as words that we bring to Babel to allow Babel to translate JSX, for example, into normal JavaScript. "
+        "start_time": 1464680,
+        "end_time": 1469119,
+        "text": "I’m writing here, I’m writing here, I’m writing here, I’m writing here, I’m writing here. "
     },
     {
-        "start_time": 1501360,
-        "end_time": 1503360,
-        "text": "Today we are using Preset React. "
+        "start_time": 1469119,
+        "end_time": 1474400,
+        "text": "Clamps up, two twisted clamps up, the semicolon comes away and, in addition, we have to go here "
     },
     {
-        "start_time": 1503360,
-        "end_time": 1508360,
-        "text": "Preset React is exactly this dictionary that allows the use of JSX in our files. "
+        "start_time": 1474400,
+        "end_time": 1478799,
+        "text": "I'm writing all this in such individual signs. after I'm writing all this now "
     },
     {
-        "start_time": 1508360,
-        "end_time": 1513360,
-        "text": "And Babel will then convert this JSX to a completely normal JavaScript. "
+        "start_time": 1478799,
+        "end_time": 1483799,
+        "text": "There is no error, no warning, no error. "
     },
     {
-        "start_time": 1514360,
-        "end_time": 1517360,
-        "text": "Let’s look at this in our visualization. "
+        "start_time": 1483799,
+        "end_time": 1488599,
+        "text": "that we do not use our Navbar anymore, that we can still fix and if I now on our "
     },
     {
-        "start_time": 1517360,
-        "end_time": 1519360,
-        "text": "Currently we were here. "
+        "start_time": 1488599,
+        "end_time": 1494440,
+        "text": "Going page, then we see that here above now our map will be displayed. "
     },
     {
-        "start_time": 1519360,
-        "end_time": 1522360,
-        "text": "We use JavaScript React and Create Element. "
+        "start_time": 1494440,
+        "end_time": 1498599,
+        "text": "Not yet found, but otherwise we’ll see everything here. "
     },
     {
-        "start_time": 1522360,
-        "end_time": 1525360,
-        "text": "It worked, but now JSX has brought it with. "
+        "start_time": 1498599,
+        "end_time": 1503320,
+        "text": "Because we have made a little mistake here, we have this asset order one. "
     },
     {
-        "start_time": 1525360,
-        "end_time": 1527360,
-        "text": "This has no longer worked. "
+        "start_time": 1503320,
+        "end_time": 1508320,
+        "text": "This asset orderer should always be in this public folder, "
     },
     {
-        "start_time": 1527360,
-        "end_time": 1537360,
-        "text": "JSX, therefore, we must first go through Babel to convert it to a normal JavaScript, which can then be understood by React or our browsers. "
+        "start_time": 1508320,
+        "end_time": 1513160,
+        "text": "This is what our web server accesses at the end of the day. "
     },
     {
-        "start_time": 1537360,
-        "end_time": 1542360,
-        "text": "And at this point, it may already become aware slowly. "
+        "start_time": 1513160,
+        "end_time": 1519079,
+        "text": "Asset Order, press Control X and then I add it here after I press on Public "
     },
     {
-        "start_time": 1542360,
-        "end_time": 1555360,
-        "text": "Babel does nothing but from these JSX Snippets or from the HTML parts in JavaScript that we write in JSX to make React.CreateElement function requests. "
+        "start_time": 1519079,
+        "end_time": 1524320,
+        "text": "have, with control V. has not yet worked completely, then we pull it further. "
     },
     {
-        "start_time": 1556360,
-        "end_time": 1558360,
-        "text": "That’s all the magic behind it. "
+        "start_time": 1524440,
+        "end_time": 1531880,
+        "text": "We have my online shop Public Assets Image Tomatoes and here "
     },
     {
-        "start_time": 1558360,
-        "end_time": 1561360,
-        "text": "I will also show you hands-on. "
+        "start_time": 1531880,
+        "end_time": 1535920,
+        "text": "Now we get to it and when we look at our page now, we see here, "
     },
     {
-        "start_time": 1561360,
-        "end_time": 1564360,
-        "text": "But first, how do we install Babylon? "
+        "start_time": 1535920,
+        "end_time": 1542039,
+        "text": "that our map has this beautiful header with a picture. the next task is now "
     },
     {
-        "start_time": 1564360,
-        "end_time": 1572360,
-        "text": "We are now using npm and we will install Babel Core, Babel CLI and Preset React in our project. "
+        "start_time": 1542039,
+        "end_time": 1547000,
+        "text": "Of course, add several cards to our app and add the Navbar again. "
     },
     {
-        "start_time": 1573360,
-        "end_time": 1575360,
-        "text": "And that we do now. "
+        "start_time": 1547000,
+        "end_time": 1555599,
+        "text": "In this section, we now want to incorporate several components simultaneously into our app. "
     },
     {
-        "start_time": 1576360,
-        "end_time": 1578360,
-        "text": "Back to the Command Line. "
+        "start_time": 1555599,
+        "end_time": 1560799,
+        "text": "We have the Navbar and a component for our product, for the tomatoes. "
     },
     {
-        "start_time": 1578360,
-        "end_time": 1581360,
-        "text": "We will close our web server here. "
+        "start_time": 1560799,
+        "end_time": 1565240,
+        "text": "From the second component, of course, we want to add several and the first "
     },
     {
-        "start_time": 1581360,
-        "end_time": 1583360,
-        "text": "Now we are carrying out the command. "
+        "start_time": 1565240,
+        "end_time": 1569119,
+        "text": "We want to do it, and we need a component first. "
     },
     {
-        "start_time": 1583360,
-        "end_time": 1594360,
-        "text": "npm install add babel core add babel cli and add babel reset react "
+        "start_time": 1569119,
+        "end_time": 1574160,
+        "text": "We’ve always said that we’re at the lower level. "
     },
     {
-        "start_time": 1595360,
-        "end_time": 1600360,
-        "text": "We add another small parameter here, namely –save-def. "
+        "start_time": 1574160,
+        "end_time": 1579160,
+        "text": "They want to have a component called the app and that then binds everything we need, "
     },
     {
-        "start_time": 1600360,
-        "end_time": 1602360,
-        "text": "Why we do this, I will explain. "
+        "start_time": 1579160,
+        "end_time": 1583960,
+        "text": "For example, our Navbar and so on and so on. That is, I put here first "
     },
     {
-        "start_time": 1604360,
-        "end_time": 1606360,
-        "text": "Then press Enter. "
+        "start_time": 1583960,
+        "end_time": 1592079,
+        "text": "Enter a new component, call the app.jsx and press Enter. "
     },
     {
-        "start_time": 1607360,
-        "end_time": 1611360,
-        "text": "This takes a little time, because he must first download the whole packages. "
+        "start_time": 1592079,
+        "end_time": 1597360,
+        "text": "such as your EMRC to make this import statement and I put on a new component, "
     },
     {
-        "start_time": 1612360,
-        "end_time": 1614360,
-        "text": "You see an error here. "
+        "start_time": 1597559,
+        "end_time": 1604160,
+        "text": "Name the app and here I now want to export and import different things. "
     },
     {
-        "start_time": 1614360,
-        "end_time": 1615360,
-        "text": "This happens on Mac. "
+        "start_time": 1604160,
+        "end_time": 1609559,
+        "text": "That is, this product, that comes out here first and I just want here "
     },
     {
-        "start_time": 1615360,
-        "end_time": 1617360,
-        "text": "Don’t be surprised if you see this mistake. "
+        "start_time": 1609559,
+        "end_time": 1617160,
+        "text": "That is, I say here app, zack, that is also automatically imported. "
     },
     {
-        "start_time": 1617360,
-        "end_time": 1621360,
-        "text": "Don’t worry, it doesn’t matter for us first. "
+        "start_time": 1617160,
+        "end_time": 1622680,
+        "text": "Product I am now importing in the app myself, not here anymore. "
     },
     {
-        "start_time": 1621360,
-        "end_time": 1624360,
-        "text": "A few features of Babel will not work due to these errors. "
+        "start_time": 1623000,
+        "end_time": 1630960,
+        "text": "and here in the app I now want to have both my Navbar and my component with my "
     },
     {
-        "start_time": 1624360,
-        "end_time": 1627360,
-        "text": "But these are not the features we need now. "
+        "start_time": 1630960,
+        "end_time": 1636720,
+        "text": "If I write it all this way, then it all will not work. "
     },
     {
-        "start_time": 1627360,
-        "end_time": 1630360,
-        "text": "From that way, we can easily ignore this error. "
+        "start_time": 1636720,
+        "end_time": 1643400,
+        "text": "Here it is stated that in JSX expressions always a maximum of a parent element "
     },
     {
-        "start_time": 1630360,
-        "end_time": 1632360,
-        "text": "Installation is now completed. "
+        "start_time": 1643400,
+        "end_time": 1649039,
+        "text": "What does it mean? we can only have one element. we can only have one element. "
     },
     {
-        "start_time": 1632360,
-        "end_time": 1634360,
-        "text": "Let’s go back to Visual Studio Code. "
+        "start_time": 1649039,
+        "end_time": 1654279,
+        "text": "have where several sub-elements are inside, as we have done it here. "
     },
     {
-        "start_time": 1634360,
-        "end_time": 1636360,
-        "text": "Let’s look shortly, something has changed. "
+        "start_time": 1654279,
+        "end_time": 1660920,
+        "text": "Example a DIV and there are several sub-elements in it. "
     },
     {
-        "start_time": 1637360,
-        "end_time": 1643360,
-        "text": "First, a new field has been added to our package chases, namely these def dependencies. "
+        "start_time": 1660920,
+        "end_time": 1666320,
+        "text": "However, it is not possible that we should just have so many elements here. "
     },
     {
-        "start_time": 1643360,
-        "end_time": 1648360,
-        "text": "That’s what I’ve caused with the command –save-def. "
+        "start_time": 1666320,
+        "end_time": 1669840,
+        "text": "This is why we can do different things now. we can, for example, "
     },
     {
-        "start_time": 1648360,
-        "end_time": 1656360,
-        "text": "And that ultimately simply describes all the dependencies of our project or development dependencies here in these package chases. "
+        "start_time": 1669840,
+        "end_time": 1678400,
+        "text": "Add a DIV and then have several sub-elements in this DIV, so in about. "
     },
     {
-        "start_time": 1657360,
-        "end_time": 1661360,
-        "text": "I don’t want to go too much into the details now because this is a course about React and not about NPM. "
+        "start_time": 1678400,
+        "end_time": 1683039,
+        "text": "If you say now, but I don’t want to have an extra DIV, then you can write here. "
     },
     {
-        "start_time": 1661360,
-        "end_time": 1663360,
-        "text": "But just that you understand why I pointed out this error. "
+        "start_time": 1683039,
+        "end_time": 1691079,
+        "text": "React.fragment and after you’ve done it all, then you’ve just got it all this way "
     },
     {
-        "start_time": 1664360,
-        "end_time": 1667360,
-        "text": "It has also been generated a package log chases. "
+        "start_time": 1691079,
+        "end_time": 1695880,
+        "text": "If we look at our app now, I do it "
     },
     {
-        "start_time": 1667360,
-        "end_time": 1672360,
-        "text": "This is, to say, a logbook of all of those packages that we have installed with accurate features. "
+        "start_time": 1695880,
+        "end_time": 1699440,
+        "text": "A little bit smaller here, then we see that here is the Navbar and here is the Navbar. "
     },
     {
-        "start_time": 1672360,
-        "end_time": 1675360,
-        "text": "And finally, Node modules were created here. "
+        "start_time": 1699440,
+        "end_time": 1705440,
+        "text": "We can now also add several products here. if we do this now "
     },
     {
-        "start_time": 1675360,
-        "end_time": 1680360,
-        "text": "This is the folder in which the packages we installed were actually downloaded. "
+        "start_time": 1705440,
+        "end_time": 1712079,
+        "text": "Here we have, then we see that there are several products among each other. "
     },
     {
-        "start_time": 1680360,
-        "end_time": 1686360,
-        "text": "If we open this shortly, we will, of course, see much more here than we have installed. "
+        "start_time": 1712079,
+        "end_time": 1716440,
+        "text": "I would now put in an extra container again, because then we can say that this "
     },
     {
-        "start_time": 1686360,
-        "end_time": 1692360,
-        "text": "This is simply because Babel itself also has dependencies, which it defines through a package of chases. "
+        "start_time": 1716440,
+        "end_time": 1721880,
+        "text": "Products should also be displayed next to each other. that is, I can now "
     },
     {
-        "start_time": 1692360,
-        "end_time": 1699360,
-        "text": "And all these dependencies installed Babel or npm for us then just with that we don’t have to do it handy. "
+        "start_time": 1721880,
+        "end_time": 1727079,
+        "text": "Just say we have a DIV container that goes up here. There is a product inside, a product "
     },
     {
-        "start_time": 1700360,
-        "end_time": 1710360,
-        "text": "But we also see, add-babel-cli has been installed, add-babel-core has been installed and further below add-babel-preset-react is now also present in our project. "
+        "start_time": 1727079,
+        "end_time": 1734000,
+        "text": "Within, a product inside, a product inside, and everything goes back here. "
     },
     {
-        "start_time": 1717360,
-        "end_time": 1722360,
-        "text": "Now we have to configure or execute Babel a little more accordingly. "
+        "start_time": 1734000,
+        "end_time": 1738679,
+        "text": "If we want these products to be next to each other, then we need a CSS class. "
     },
     {
-        "start_time": 1722360,
-        "end_time": 1726360,
-        "text": "But Babel still doesn’t know what to do. "
+        "start_time": 1738679,
+        "end_time": 1745480,
+        "text": "That is, I just add a CSS class here, call the product container. "
     },
     {
-        "start_time": 1726360,
-        "end_time": 1729360,
-        "text": "But Babel still doesn’t know which vocabulary it should use. "
+        "start_time": 1745480,
+        "end_time": 1750759,
+        "text": "This means I need a CSS file that I call now "
     },
     {
-        "start_time": 1729360,
-        "end_time": 1731360,
-        "text": "Let’s start with the dictionary. "
+        "start_time": 1750759,
+        "end_time": 1757720,
+        "text": "I'm just going to index.css.Zack, that comes here and then I can now say that here "
     },
     {
-        "start_time": 1731360,
-        "end_time": 1738360,
-        "text": "We can easily configure Babel by creating a new file called .babel-rc. "
+        "start_time": 1757720,
+        "end_time": 1763320,
+        "text": "For example, the feature display flex is given, so all my elements are in one "
     },
     {
-        "start_time": 1739360,
-        "end_time": 1743360,
-        "text": "In this file we can write valid chases. "
+        "start_time": 1763320,
+        "end_time": 1770079,
+        "text": "Showing a series and that my elements should have a distance, for example, 32 pixels. "
     },
     {
-        "start_time": 1743360,
-        "end_time": 1746360,
-        "text": "This is actually just a chase file, even if it does not end on chase. "
+        "start_time": 1770079,
+        "end_time": 1776039,
+        "text": "This index.css I still have to import now, I just do it here. I say import.slash "
     },
     {
-        "start_time": 1746360,
-        "end_time": 1751360,
-        "text": "We can set up an object there and fill the field Presets. "
+        "start_time": 1776039,
+        "end_time": 1785400,
+        "text": "index.css and then I add a semicon here. and if I now look at our app here, "
     },
     {
-        "start_time": 1751360,
-        "end_time": 1756360,
-        "text": "And there now in one array all the presets that Babylon uses for us. "
+        "start_time": 1785400,
+        "end_time": 1790079,
+        "text": "I see that there are four different containers here and that these containers are also a distance "
     },
     {
-        "start_time": 1756360,
-        "end_time": 1759360,
-        "text": "So speak all these words that we want to translate. "
+        "start_time": 1790320,
+        "end_time": 1796840,
+        "text": "32 pixels. if all of you should not yet be displayed like this, "
     },
     {
-        "start_time": 1759360,
-        "end_time": 1764360,
-        "text": "In our case, this is just one, namely Babel-Preset-react. "
-    },
-    {
-        "start_time": 1764360,
-        "end_time": 1766360,
-        "text": "This is the first step. "
-    },
-    {
-        "start_time": 1766360,
-        "end_time": 1773360,
-        "text": "In the second step, we now have to make this App.js a App.jsx file. "
-    },
-    {
-        "start_time": 1773360,
-        "end_time": 1777360,
-        "text": "We have no more valid chavascript. "
-    },
-    {
-        "start_time": 1777360,
-        "end_time": 1784360,
-        "text": "That’s why it’s no longer a Chavascript file, but it’s now a .jsx file because we’ve inserted .jsx here. "
-    },
-    {
-        "start_time": 1784360,
-        "end_time": 1788360,
-        "text": "And now we have to let Babel translate this file for us. "
-    },
-    {
-        "start_time": 1788360,
-        "end_time": 1791360,
-        "text": "We can do this with Babel City events. "
-    },
-    {
-        "start_time": 1791360,
-        "end_time": 1793360,
-        "text": "Let’s get rid of the error shortly. "
+        "start_time": 1796840,
+        "end_time": 1799920,
+        "text": "Then always check two things. number one the consoles. "
     },
     {
         "start_time": 1800000,
-        "end_time": 1805720,
-        "text": "Now there are two options. we could also use NPX here again, "
+        "end_time": 1803599,
+        "text": "If there are any errors here. here we have another mistake, but that's not "
     },
     {
-        "start_time": 1805720,
-        "end_time": 1810680,
-        "text": "We have the Babel CLI, but we have the Babel CLI with us. "
+        "start_time": 1803599,
+        "end_time": 1807880,
+        "text": "This is bad because it is just a warning. then we can get into it later. and the other "
     },
     {
-        "start_time": 1810680,
-        "end_time": 1816319,
-        "text": "installed and all in node modules, the so-called binary or binary folder, "
+        "start_time": 1807880,
+        "end_time": 1813079,
+        "text": "It is that we must have stored here. that is, every file you modify "
     },
     {
-        "start_time": 1816319,
-        "end_time": 1824400,
-        "text": "There is the command of Babylon.This command expects three parameters. "
+        "start_time": 1813079,
+        "end_time": 1816839,
+        "text": "you have, go there again and just press control S. You can also see that here below "
     },
     {
-        "start_time": 1824400,
-        "end_time": 1828240,
-        "text": "Source directory or the directory that Babel is to translate for us. "
+        "start_time": 1816839,
+        "end_time": 1822359,
+        "text": "Then everything is always updated and you should have always stored every file. "
     },
     {
-        "start_time": 1828240,
-        "end_time": 1833519,
-        "text": "It expects the parameter minus minus out here. "
+        "start_time": 1822359,
+        "end_time": 1826720,
+        "text": "Here, of course, there are always exciting warnings. for example, here "
     },
     {
-        "start_time": 1833519,
-        "end_time": 1839279,
-        "text": "Place where Babel is to write the compiled or translated files. "
+        "start_time": 1826720,
+        "end_time": 1832240,
+        "text": "It is said that there is still a small error in our product file, and that is in line 11. "
     },
     {
-        "start_time": 1839279,
-        "end_time": 1844720,
-        "text": "Now we just go to a directory that we call lib. If we do this command now, "
+        "start_time": 1832240,
+        "end_time": 1836079,
+        "text": "And if we go there, then we will see what the problem is. "
     },
     {
-        "start_time": 1844720,
-        "end_time": 1851799,
-        "text": "Babel quotes us that with a successful message that it makes us a file successful "
+        "start_time": 1836079,
+        "end_time": 1840680,
+        "text": "I'm not sure if I'm just packing a slash or something like that. "
     },
     {
-        "start_time": 1851799,
-        "end_time": 1857599,
-        "text": "compiled or translated.When we jump back to the project directory, we also see, "
+        "start_time": 1840680,
+        "end_time": 1845400,
+        "text": "And then it works all. In the end, we want to go to the left and right, of course, also. "
     },
     {
-        "start_time": 1857599,
-        "end_time": 1862279,
-        "text": "that the lib folder has been created and here accordingly, analogous to our App.js, "
+        "start_time": 1845400,
+        "end_time": 1851400,
+        "text": "It means I go again into our CSS file and say here Padding "
     },
     {
-        "start_time": 1862279,
-        "end_time": 1868200,
-        "text": "a app.js file has been created. and that we can also look at. and see there, "
+        "start_time": 1851400,
+        "end_time": 1859160,
+        "text": "Left 32 pixels and Padding Right 32 pixels. The one is that the whole is drawn to the left and "
     },
     {
-        "start_time": 1868200,
-        "end_time": 1876039,
-        "text": "from our JSX has become nothing more than a React-Create element call, which is relative or "
+        "start_time": 1859160,
+        "end_time": 1863400,
+        "text": "So it is put on the right side. and now it all looks like this and I find, "
     },
     {
-        "start_time": 1876039,
-        "end_time": 1880480,
-        "text": "Not relatively yet, but it looks quite the same as what we have handmade before. "
+        "start_time": 1863400,
+        "end_time": 1867599,
+        "text": "I think it’s a good thing for most people now, and we’re going to find it on the mobile. "
     },
     {
-        "start_time": 1880480,
-        "end_time": 1887240,
-        "text": "This is actually the whole magic behind JSX and Babel. It does nothing but the parts, "
+        "start_time": 1867599,
+        "end_time": 1872359,
+        "text": "I can tell you how it is arranged to each other. it is easy to say. "
     },
     {
-        "start_time": 1887240,
-        "end_time": 1891200,
-        "text": "The HTML and our JSX are to translate into a React.Create element. "
+        "start_time": 1872359,
+        "end_time": 1880440,
+        "text": "For this we simply say Add Media, pack here. Maximum width should be 850 pixels to "
     },
     {
-        "start_time": 1891200,
-        "end_time": 1899119,
-        "text": "Now we need to make a small change in our index HTML. "
+        "start_time": 1880440,
+        "end_time": 1885839,
+        "text": "Example and then our product container should still have an extra feature, namely Flex. "
     },
     {
-        "start_time": 1899119,
-        "end_time": 1904160,
-        "text": "do because we no longer deliver the App.js from our source or the App.jsx, "
+        "start_time": 1885839,
+        "end_time": 1890839,
+        "text": "Direction column. This shows elements from each other. we see it now here. "
     },
     {
-        "start_time": 1904160,
-        "end_time": 1910240,
-        "text": "but we have to deliver the translated version of our app here. "
+        "start_time": 1890839,
+        "end_time": 1899519,
+        "text": "together and from a certain width to each other. now we have "
     },
     {
-        "start_time": 1910240,
-        "end_time": 1921079,
-        "text": "We’re going to start a web server again and then we’re going to start a web server again. "
+        "start_time": 1899519,
+        "end_time": 1904920,
+        "text": "Our online shop is still a problem. until now you can just buy tomatoes. "
     },
     {
-        "start_time": 1921079,
-        "end_time": 1932960,
-        "text": "navigate our site, we see, we still have the old element. I also know why. "
+        "start_time": 1904920,
+        "end_time": 1909039,
+        "text": "Make sure that there is always a different image on each component. "
     },
     {
-        "start_time": 1932960,
-        "end_time": 1936279,
-        "text": "We’ve got the old element here, but we’re really here. "
+        "start_time": 1909039,
+        "end_time": 1914160,
+        "text": "that there is a different title and a different text. and the whole is of course with "
     },
     {
-        "start_time": 1936279,
-        "end_time": 1940360,
-        "text": "that the first JSX components are connected. therefore we have to replace it here. "
+        "start_time": 1914160,
+        "end_time": 1919559,
+        "text": "This React component is also possible. for this we can simply jump in our code "
     },
     {
-        "start_time": 1940360,
-        "end_time": 1947920,
-        "text": "We now want to return my.jsx element. we need everything now of course from Babel "
+        "start_time": 1919559,
+        "end_time": 1924880,
+        "text": "and can change a thing here now. and that we have said in our app component so far, "
     },
     {
-        "start_time": 1947920,
-        "end_time": 1956079,
-        "text": "If we start the web server now, we should actually see, "
+        "start_time": 1924880,
+        "end_time": 1928839,
+        "text": "There are four different types of products, but here it is just "
     },
     {
-        "start_time": 1956079,
-        "end_time": 1964599,
-        "text": "that we have successfully returned our first JSX components in the browser. "
+        "start_time": 1928839,
+        "end_time": 1934400,
+        "text": "We now have the possibility in this component variables "
     },
     {
-        "start_time": 1966759,
-        "end_time": 1972200,
-        "text": "Before we get to the end, I would like to give you a little bit. "
+        "start_time": 1934400,
+        "end_time": 1938480,
+        "text": "This means that we can now, for example, change the title in which I "
     },
     {
-        "start_time": 1972200,
-        "end_time": 1978480,
-        "text": "For this command, which we have just seen here, not modules is Babel source, is difficult. "
+        "start_time": 1938480,
+        "end_time": 1944839,
+        "text": "The title is the same as tomatoes and the next, so the next product here below. "
     },
     {
-        "start_time": 1978480,
-        "end_time": 1983240,
-        "text": "I think it’s not a good thing to do, but it’s not a good thing to do, it’s a good thing to do, it’s a good thing to do, it’s a good thing to do, it’s a good thing to do. "
+        "start_time": 1944839,
+        "end_time": 1950640,
+        "text": "I can go here, I can go here, I can go here, I can go here, I can go here. "
     },
     {
-        "start_time": 1983240,
-        "end_time": 1990079,
-        "text": "npm-scripts provide a bit of failure. Scripts allow us to write script under a "
+        "start_time": 1950640,
+        "end_time": 1957400,
+        "text": "Let’s write something and can say here for example, okay, there’s here, let’s say, apples and "
     },
     {
-        "start_time": 1990079,
-        "end_time": 1994480,
-        "text": "so called Alias or under another name to predefinish. so if we now here such a thing "
+        "start_time": 1957400,
+        "end_time": 1964079,
+        "text": "So, and these variables that I can now in my product "
     },
     {
-        "start_time": 1994480,
-        "end_time": 2003799,
-        "text": "How to compile and there the command Babel source minus out here lip, "
+        "start_time": 1964079,
+        "end_time": 1970000,
+        "text": "Take components and simply insert where the card title stands. and I do it by "
     },
     {
-        "start_time": 2003799,
-        "end_time": 2010759,
-        "text": "followed by a comma rewrite, we can make this very expensive command significantly easier "
+        "start_time": 1970000,
+        "end_time": 1974079,
+        "text": "Here now just add a wiped clamer, add a wiped clamer, and then say, "
     },
     {
-        "start_time": 2010759,
-        "end_time": 2015480,
-        "text": "In short, we can save ourselves here the not modules are, "
+        "start_time": 1974079,
+        "end_time": 1982039,
+        "text": "this.probs.title. so that's here our variable and that's here, that's always you have to do before it "
     },
     {
-        "start_time": 2015480,
-        "end_time": 2021319,
-        "text": "because the scripts of npm by default connect this binary directory. "
+        "start_time": 1982039,
+        "end_time": 1986599,
+        "text": "writing, because this here says that we are on the properties that we have drawn from the outside, "
     },
     {
-        "start_time": 2021319,
-        "end_time": 2025639,
-        "text": "Here we can give up all this previous path and simply run Babel directly. "
+        "start_time": 1986599,
+        "end_time": 1992079,
+        "text": "And if we look at it now, then we see tomatoes, cakes, "
     },
     {
-        "start_time": 2025639,
-        "end_time": 2032480,
-        "text": "Now we can simply run through the command in our current directory npm every "
+        "start_time": 1992079,
+        "end_time": 1998880,
+        "text": "Apples and pearls. Now, of course, we have only changed a variable. "
     },
     {
-        "start_time": 2032480,
-        "end_time": 2037960,
-        "text": "Script that we have defined. in our case only compile. as we see, "
+        "start_time": 1998880,
+        "end_time": 2003279,
+        "text": "We are also changing the description and, of course, the picture of the tomatoes. "
     },
     {
-        "start_time": 2037960,
-        "end_time": 2043000,
-        "text": "Babel was executed again to translate our JSX files. "
+        "start_time": 2003279,
+        "end_time": 2007559,
+        "text": "Of course, we need to download more pictures first. that is, we just go here "
     },
     {
-        "start_time": 2045480,
-        "end_time": 2052320,
-        "text": "Finally, here in Scripts any valid CLI command can be inserted and we can "
+        "start_time": 2007559,
+        "end_time": 2011960,
+        "text": "on pixabay.com and now search for, for example, Gurken. you can do this in German or on "
     },
     {
-        "start_time": 2052320,
-        "end_time": 2058239,
-        "text": "for our project relevant CLI commands very simple and very transparent in the "
+        "start_time": 2011960,
+        "end_time": 2017360,
+        "text": "In English, it's absolutely no matter. And then I'm downloading it all. With apples and pears "
     },
     {
-        "start_time": 2058239,
-        "end_time": 2063518,
-        "text": "This is a small trick that is also used very massively in many projects. "
+        "start_time": 2017360,
+        "end_time": 2021799,
+        "text": "I have done the same now and all of these pictures we now pack in our image orders. "
     },
     {
-        "start_time": 2063518,
-        "end_time": 2072480,
-        "text": "This can be extended, for example, as the last by registering the ntx server here and "
+        "start_time": 2021799,
+        "end_time": 2026119,
+        "text": "I recommend you always change the whole, because then you can make it much easier. "
     },
     {
-        "start_time": 2072480,
-        "end_time": 2076400,
-        "text": "We no longer need to enter the ntx server, but now to start our web server and "
+        "start_time": 2026119,
+        "end_time": 2031400,
+        "text": "Apple is still coming here and now I just say right-click, rename and "
     },
     {
-        "start_time": 2076400,
-        "end_time": 2083599,
-        "text": "To deliver the site, you can enter npm run start. And now our web server is available again. "
+        "start_time": 2031400,
+        "end_time": 2041599,
+        "text": "Write here apples.jpg, cucumbers.jpg and so on and so on. "
     },
     {
-        "start_time": 2083599,
-        "end_time": 2094559,
-        "text": "And that's what we've done today. again a short review. "
+        "start_time": 2041599,
+        "end_time": 2045960,
+        "text": "Take this video for a short time and try this little exercise alone. "
     },
     {
-        "start_time": 2094559,
-        "end_time": 2099840,
-        "text": "We have prepared the local setup with Visual Studio Code and npm. I have a first "
+        "start_time": 2045960,
+        "end_time": 2051199,
+        "text": "multiple variables in a row, not only the title, but a variable named image, "
     },
     {
-        "start_time": 2100000,
-        "end_time": 2105440,
-        "text": "We have given insight into the tools npm, npx and babel and we have already used them live. "
+        "start_time": 2051199,
+        "end_time": 2057559,
+        "text": "a variable named Description and then you can all these variables in the other view "
     },
     {
-        "start_time": 2105440,
-        "end_time": 2112400,
-        "text": "We have React embedded with the CDN or Content Delivery Network URL and we have "
+        "start_time": 2057559,
+        "end_time": 2063119,
+        "text": "Let’s take it and let it announce. we will then do it all together again. are you ready? "
     },
     {
-        "start_time": 2112400,
-        "end_time": 2118559,
-        "text": "With React Element and JSX implemented a first Hello World application from React. "
+        "start_time": 2063119,
+        "end_time": 2067719,
+        "text": "If not, then we do everything together now. so we need two variables, "
     },
     {
-        "start_time": 2118559,
-        "end_time": 2122719,
-        "text": "We’ve made a big step. the next time it’s going to be even more exciting. "
+        "start_time": 2067719,
+        "end_time": 2071760,
+        "text": "This is a variable, which I now call an image. "
     },
     {
-        "start_time": 2122719,
-        "end_time": 2128199,
-        "text": "React Components present and use and with the React Components the render function, "
+        "start_time": 2071760,
+        "end_time": 2076159,
+        "text": "No matter how we call them, and then another variable, which I add behind the title, "
     },
     {
-        "start_time": 2128199,
-        "end_time": 2135639,
-        "text": "Props and then some more details of JSX. here I thank you "
+        "start_time": 2076159,
+        "end_time": 2082079,
+        "text": "because it simply makes sense of the order and that is description. and both variables must "
     },
     {
-        "start_time": 2135639,
-        "end_time": 2140199,
-        "text": "I am very happy that you have watched this video.I hope you could learn something. "
+        "start_time": 2082079,
+        "end_time": 2089760,
+        "text": "In the picture it is clear, in the tomatoes comes tomatoes.jpg "
     },
     {
-        "start_time": 2140199,
-        "end_time": 2146119,
-        "text": "For questions, feedback or other wishes and suggestions please contact us through this "
+        "start_time": 2089760,
+        "end_time": 2096679,
+        "text": "purely, in Gurks comes cucumbers.jpg purely and so on and so on. "
     },
     {
-        "start_time": 2146119,
-        "end_time": 2151760,
-        "text": "Channels hello at thenativefab.io by email or also on Twitter and GitHub and I wish you "
+        "start_time": 2096679,
+        "end_time": 2105599,
+        "text": "you add what you want, for example add tomatoes to your basket. "
     },
     {
-        "start_time": 2151760,
-        "end_time": 2155440,
-        "text": "A good day and until the next episode. "
+        "start_time": 2105599,
+        "end_time": 2108880,
+        "text": "I'm going to write it like this now. you'll have to write it like this later. "
+    },
+    {
+        "start_time": 2108880,
+        "end_time": 2113480,
+        "text": "Add better descriptions here to the respective products. I write here "
+    },
+    {
+        "start_time": 2113480,
+        "end_time": 2118360,
+        "text": "Now just apples and here I write pearls. and after I have done it all, "
+    },
+    {
+        "start_time": 2118360,
+        "end_time": 2123440,
+        "text": "We must, of course, let the whole thing be shown in the product with this logic here. "
+    },
+    {
+        "start_time": 2123440,
+        "end_time": 2129800,
+        "text": "The image here must also be a variable. we have called this variable image and then "
+    },
+    {
+        "start_time": 2129800,
+        "end_time": 2134719,
+        "text": "This description must also be a variable here. the description we have simply Description "
+    },
+    {
+        "start_time": 2134720,
+        "end_time": 2140400,
+        "text": "This means that here everything comes away and then comes here Description. "
+    },
+    {
+        "start_time": 2140400,
+        "end_time": 2144559,
+        "text": "I've done it all now so, then you'd think it's possible, but we've got a little more. "
+    },
+    {
+        "start_time": 2144559,
+        "end_time": 2148360,
+        "text": "errors and you may have noticed that. the images are no longer displayed and in "
+    },
+    {
+        "start_time": 2148360,
+        "end_time": 2153720,
+        "text": "Our source code is all in this way. that we must, of course, change. "
+    },
+    {
+        "start_time": 2153720,
+        "end_time": 2160679,
+        "text": "A variable is a variable, a variable is a variable, a variable is a variable, a variable is a variable. "
+    },
+    {
+        "start_time": 2160679,
+        "end_time": 2165159,
+        "text": "are inserted without these reference signs. The reference signs that come now simply "
+    },
+    {
+        "start_time": 2165159,
+        "end_time": 2170920,
+        "text": "Here we pack such a plus and ultimately link this text with this "
+    },
+    {
+        "start_time": 2170920,
+        "end_time": 2175199,
+        "text": "If we look at it now, then we will also see that it has worked. "
+    },
+    {
+        "start_time": 2175199,
+        "end_time": 2179639,
+        "text": "We’re going to see our pictures correctly. that’s, we’ve already had a small online shop, "
+    },
+    {
+        "start_time": 2179639,
+        "end_time": 2185840,
+        "text": "where there are four individual products now. instead of Go Somewhere it should still be here to "
+    },
+    {
+        "start_time": 2185920,
+        "end_time": 2191079,
+        "text": "Add a box or something like that. I just write here to add and then see it "
+    },
+    {
+        "start_time": 2191079,
+        "end_time": 2198800,
+        "text": "What our online shop needs, of course. "
+    },
+    {
+        "start_time": 2198800,
+        "end_time": 2203000,
+        "text": "This means that if we press to add on a product, "
+    },
+    {
+        "start_time": 2203000,
+        "end_time": 2207880,
+        "text": "Then, of course, it should also be displayed on the right side or so on our shopping cart. "
+    },
+    {
+        "start_time": 2207880,
+        "end_time": 2212360,
+        "text": "And we are building it all now. First of all, we must, you probably have it for you already "
+    },
+    {
+        "start_time": 2212440,
+        "end_time": 2222079,
+        "text": "I'm thinking about setting up a new component. I'm just calling it shopping-card.jsx and press "
+    },
+    {
+        "start_time": 2222079,
+        "end_time": 2229199,
+        "text": "We import again two different things. once of course React and Component and "
+    },
+    {
+        "start_time": 2229199,
+        "end_time": 2234039,
+        "text": "So we have to make the component ourselves. this time we take it in the so-called "
+    },
+    {
+        "start_time": 2234039,
+        "end_time": 2239519,
+        "text": "CamelCase, so written, shopping card. Then we must now, of course, in the next "
+    },
+    {
+        "start_time": 2239519,
+        "end_time": 2243480,
+        "text": "Step here to say what the whole thing is to look like. and then we are just building a "
+    },
+    {
+        "start_time": 2243480,
+        "end_time": 2249360,
+        "text": "DIV. There is now somehow a small title, namely a shopping card. "
+    },
+    {
+        "start_time": 2249360,
+        "end_time": 2255760,
+        "text": "We are in German goods basket. and much more is not seen here at first. "
+    },
+    {
+        "start_time": 2255760,
+        "end_time": 2260639,
+        "text": "We need to be connected to our app now. and it is important that all of it must, of course, be right from "
+    },
+    {
+        "start_time": 2260639,
+        "end_time": 2265039,
+        "text": "Our product container will be embedded. therefore I add this now here "
+    },
+    {
+        "start_time": 2265039,
+        "end_time": 2270000,
+        "text": "Zack, it's automatically always imported here. here I'm still making such a slash, "
+    },
+    {
+        "start_time": 2270000,
+        "end_time": 2274239,
+        "text": "so that we can simply pack it here. and after we have done it all now, "
+    },
+    {
+        "start_time": 2274239,
+        "end_time": 2278639,
+        "text": "We have to say somehow that the Naftbar comes up and these two things here. "
+    },
+    {
+        "start_time": 2278639,
+        "end_time": 2284280,
+        "text": "And for this, I pack the two lower elements again into a new container. "
+    },
+    {
+        "start_time": 2284280,
+        "end_time": 2290400,
+        "text": "For a container I can always say that the elements are arranged next to each other. "
+    },
+    {
+        "start_time": 2290400,
+        "end_time": 2296320,
+        "text": "For this reason, I just add a new class to the thing here and call this class now. "
+    },
+    {
+        "start_time": 2296320,
+        "end_time": 2301239,
+        "text": "Main containers. We can call them as we said, as we want. "
+    },
+    {
+        "start_time": 2301239,
+        "end_time": 2306199,
+        "text": "that we add it with a point here so in the CSS file and that we are here now "
+    },
+    {
+        "start_time": 2306199,
+        "end_time": 2311920,
+        "text": "simply say, display flex. Because with the command we can both elements in one "
+    },
+    {
+        "start_time": 2311920,
+        "end_time": 2316239,
+        "text": "I’m going to say that we’re going to have a distance from each other, and we’re going to have a distance. "
+    },
+    {
+        "start_time": 2316239,
+        "end_time": 2322119,
+        "text": "32 pixels. And if we look at it all now, then it looks like that. "
+    },
+    {
+        "start_time": 2322119,
+        "end_time": 2327000,
+        "text": "Yes, I would give a little distance to the right, so let’s say something like this. "
+    },
+    {
+        "start_time": 2327000,
+        "end_time": 2334840,
+        "text": "Padding minus right 32 pixels. and in fact we don’t even need this gap now "
+    },
+    {
+        "start_time": 2334840,
+        "end_time": 2339079,
+        "text": "We know that our product container is also right here. "
+    },
+    {
+        "start_time": 2339079,
+        "end_time": 2344199,
+        "text": "Input has 32 pixels. that is, if we look at the whole now, we have here after "
+    },
+    {
+        "start_time": 2344199,
+        "end_time": 2350559,
+        "text": "right 32 pixels, to the left to this box 32 pixels and anywhere exactly 32 pixels distance. "
+    },
+    {
+        "start_time": 2350559,
+        "end_time": 2355199,
+        "text": "After we have done it all, I would like to give our basket a minimum width, "
+    },
+    {
+        "start_time": 2355199,
+        "end_time": 2360280,
+        "text": "For example, at least 20 percent or so. means our shopping card gets here "
+    },
+    {
+        "start_time": 2360280,
+        "end_time": 2365440,
+        "text": "I just call it Shopping minus Card. "
+    },
+    {
+        "start_time": 2365440,
+        "end_time": 2371559,
+        "text": "I think it makes the most sense. and say here that our shopping card with a point "
+    },
+    {
+        "start_time": 2371559,
+        "end_time": 2379559,
+        "text": "Breadth gets from 20 or let’s say somehow 25. I think 20 is good. "
+    },
+    {
+        "start_time": 2379559,
+        "end_time": 2384440,
+        "text": "This is one percentage of our screen width, so it looks like this. "
+    },
+    {
+        "start_time": 2384440,
+        "end_time": 2391199,
+        "text": "For example, if you could say with 25 VW, then it would be so. "
+    },
+    {
+        "start_time": 2391199,
+        "end_time": 2396119,
+        "text": "Especially if we make it all very small here, then we will see it. "
+    },
+    {
+        "start_time": 2396119,
+        "end_time": 2399920,
+        "text": "I think something else, but let it first. "
+    },
+    {
+        "start_time": 2400000,
+        "end_time": 2405920,
+        "text": "The whole now so and now we have to make sure that the elements with a click on this "
+    },
+    {
+        "start_time": 2405920,
+        "end_time": 2414480,
+        "text": "Button can be added to our box. in this section we want our "
+    },
+    {
+        "start_time": 2414480,
+        "end_time": 2418880,
+        "text": "It means we need somehow a way, all the goods, "
+    },
+    {
+        "start_time": 2418880,
+        "end_time": 2423360,
+        "text": "which we will add to our basket later once, save and then all of this "
+    },
+    {
+        "start_time": 2423360,
+        "end_time": 2428519,
+        "text": "to show elements next to each other or to each other. for such a thing is appropriate "
+    },
+    {
+        "start_time": 2428920,
+        "end_time": 2434599,
+        "text": "a so-called array. an array gives us the possibility of making multiple information next to each other "
+    },
+    {
+        "start_time": 2434599,
+        "end_time": 2439039,
+        "text": "to store and all of it now we look together once. when we go to our shopping "
+    },
+    {
+        "start_time": 2439039,
+        "end_time": 2444360,
+        "text": "Card component look, then everything looks like this. we have a container and "
+    },
+    {
+        "start_time": 2444360,
+        "end_time": 2448760,
+        "text": "In this container a title is reduced. here we should now "
+    },
+    {
+        "start_time": 2448760,
+        "end_time": 2454639,
+        "text": "even more diffs, for example, show and these diffs, which should of course say, "
+    },
+    {
+        "start_time": 2454639,
+        "end_time": 2460280,
+        "text": "what product has been added, for example tomatoes and how much more, "
+    },
+    {
+        "start_time": 2460280,
+        "end_time": 2466159,
+        "text": "So, for example, twice tomatoes or something like that. Now, of course, we need to know what is all here "
+    },
+    {
+        "start_time": 2466159,
+        "end_time": 2470760,
+        "text": "added and for that we look at this state here for the first time. "
+    },
+    {
+        "start_time": 2470760,
+        "end_time": 2477079,
+        "text": "We will always store all the data from our component. meaning we can here "
+    },
+    {
+        "start_time": 2477079,
+        "end_time": 2483679,
+        "text": "For example, say something like items and can now simply add which items and how "
+    },
+    {
+        "start_time": 2483679,
+        "end_time": 2489519,
+        "text": "Many items have been added here. meaning, we can now say here for example a "
+    },
+    {
+        "start_time": 2489519,
+        "end_time": 2496840,
+        "text": "A lot, one, then a name, that is, tomatoes, and then somehow a price. "
+    },
+    {
+        "start_time": 2496840,
+        "end_time": 2503920,
+        "text": "I'm going to write a double score of 4.9 or so, and I've done it all. "
+    },
+    {
+        "start_time": 2503920,
+        "end_time": 2508360,
+        "text": "I can now show these data here. now assumed we have not just tomatoes, "
+    },
+    {
+        "start_time": 2508360,
+        "end_time": 2513920,
+        "text": "but also another element, then these things would just be like one after another. "
+    },
+    {
+        "start_time": 2513920,
+        "end_time": 2518920,
+        "text": "Here we have all the information about our tomatoes in the shopping cart, here we have "
+    },
+    {
+        "start_time": 2518920,
+        "end_time": 2524360,
+        "text": "All information about our apples, I'm writing. apples may cost a little more, "
+    },
+    {
+        "start_time": 2524360,
+        "end_time": 2529679,
+        "text": "Yes, these are kilo prices here or something like that, so it's a bit high, probably tomatoes "
+    },
+    {
+        "start_time": 2529679,
+        "end_time": 2535920,
+        "text": "Even a bit more expensive, let’s say 2.9 and 4.9, then I think it’s a bit more expensive. "
+    },
+    {
+        "start_time": 2535920,
+        "end_time": 2541639,
+        "text": "Apples are a huge box probably and after we’ve done it all, we can "
+    },
+    {
+        "start_time": 2541639,
+        "end_time": 2547760,
+        "text": "Now the elements here out somehow present here below. if you are with Angular already "
+    },
+    {
+        "start_time": 2547760,
+        "end_time": 2553360,
+        "text": "Once you have discussed, then you’ll know that there’s something in Angular, that’s NG4 and with "
+    },
+    {
+        "start_time": 2553360,
+        "end_time": 2558239,
+        "text": "to this NG4 we can say that we are here depending on how many items we have here above, "
+    },
+    {
+        "start_time": 2558239,
+        "end_time": 2563960,
+        "text": "That is, now with one item, two items, this section would be here twice "
+    },
+    {
+        "start_time": 2563960,
+        "end_time": 2570159,
+        "text": "The whole is not possible in React, instead you write the whole with "
+    },
+    {
+        "start_time": 2570159,
+        "end_time": 2576440,
+        "text": "the so-called Mapping Operator. that is, we now first access the items by "
+    },
+    {
+        "start_time": 2576440,
+        "end_time": 2585840,
+        "text": "say this.state.map and now we can say in this mapping function that we are on a "
+    },
+    {
+        "start_time": 2585840,
+        "end_time": 2592639,
+        "text": "we want to access each item, so we want to access one item here and for each item we want to "
+    },
+    {
+        "start_time": 2592639,
+        "end_time": 2597679,
+        "text": "This code is generated here. now we want to say that there are no tomatoes here, "
+    },
+    {
+        "start_time": 2597679,
+        "end_time": 2604760,
+        "text": "but the name of our respective item, i.e. item.name and now it would be easy here "
+    },
+    {
+        "start_time": 2604760,
+        "end_time": 2610000,
+        "text": "item.name screaming, therefore we have to here again a twisted clam and a "
+    },
+    {
+        "start_time": 2610000,
+        "end_time": 2615719,
+        "text": "We have a variable, we have a variable, we have a variable. "
+    },
+    {
+        "start_time": 2615719,
+        "end_time": 2620159,
+        "text": "I want to do this for both Xs. Here we want to access the Amount and accordingly "
+    },
+    {
+        "start_time": 2620159,
+        "end_time": 2629800,
+        "text": "let's say here just item.amount and then everything should work here. "
+    },
+    {
+        "start_time": 2629800,
+        "end_time": 2635599,
+        "text": "If you want to have the price now, then we will add item.price here and behind it. "
+    },
+    {
+        "start_time": 2635599,
+        "end_time": 2640880,
+        "text": "Maybe there’s a little bit of a bit of a bit of a bit of a bit of a bit of a bit of a bit of a bit of a bit. "
+    },
+    {
+        "start_time": 2640880,
+        "end_time": 2648519,
+        "text": "not this.state, but this.state.items.map, because we want from our state to the items "
+    },
+    {
+        "start_time": 2648519,
+        "end_time": 2654559,
+        "text": "This is what we want to do, and this is what we want to do, this is what we want to do, this is what we want to do, this is what we want to do. "
+    },
+    {
+        "start_time": 2654559,
+        "end_time": 2658599,
+        "text": "Now look at our web browser, once update, then we will see here as well, "
+    },
+    {
+        "start_time": 2658599,
+        "end_time": 2665639,
+        "text": "OK, here is a DIV now, we look at it all once, Zack and here is 1 X tomatoes "
+    },
+    {
+        "start_time": 2665639,
+        "end_time": 2673280,
+        "text": "2.9 euros and below is now one thing, a X apple 94 euros. "
+    },
+    {
+        "start_time": 2673400,
+        "end_time": 2678519,
+        "text": "We still get a warning displayed on our console. "
+    },
+    {
+        "start_time": 2678519,
+        "end_time": 2686159,
+        "text": "Every child in a list should have a unique keyprop. "
+    },
+    {
+        "start_time": 2686159,
+        "end_time": 2692360,
+        "text": "we need to react, so react the DOM, that is, the collection of all the HTML elements that are reduced "
+    },
+    {
+        "start_time": 2692360,
+        "end_time": 2697279,
+        "text": "will always be able to assign to add a keyproperty here. here we simply write "
+    },
+    {
+        "start_time": 2697279,
+        "end_time": 2706360,
+        "text": "key=\"item.id\", that should always be something clear. then, of course, we have to do the things here "
+    },
+    {
+        "start_time": 2706360,
+        "end_time": 2711360,
+        "text": "still add an ID, yes, we can also simply say something like item.name because tomatoes, "
+    },
+    {
+        "start_time": 2711360,
+        "end_time": 2716079,
+        "text": "Apples and so on, apples must stand here, even once it occurs, if in this case "
+    },
+    {
+        "start_time": 2716079,
+        "end_time": 2720559,
+        "text": "So that should always be something clear here. here is another writing "
+    },
+    {
+        "start_time": 2720559,
+        "end_time": 2726400,
+        "text": "Clammer before and here too, then these indications away and after we all "
+    },
+    {
+        "start_time": 2726400,
+        "end_time": 2730880,
+        "text": "have done and now update, we see that the error message is gone. "
+    },
+    {
+        "start_time": 2730880,
+        "end_time": 2734719,
+        "text": "other errors, which we can fix as well, for that we just have to "
+    },
+    {
+        "start_time": 2734719,
+        "end_time": 2742239,
+        "text": "go to the top level, to our index.js and here we say react-dom.render. "
+    },
+    {
+        "start_time": 2742239,
+        "end_time": 2748320,
+        "text": "But that is here to say, const root is the same react-dom.create-root element, yes, that has been "
+    },
+    {
+        "start_time": 2748320,
+        "end_time": 2753519,
+        "text": "Just on the last React version, I think after version 18 changed and now we have to here "
+    },
+    {
+        "start_time": 2753519,
+        "end_time": 2760800,
+        "text": "say root.render and take this part away here. react-dom here still small letters, so and now "
+    },
+    {
+        "start_time": 2760800,
+        "end_time": 2765000,
+        "text": "we have it and now we see that this mistake is gone. now we have another "
+    },
+    {
+        "start_time": 2765000,
+        "end_time": 2769679,
+        "text": "new error message, but that's not so bad, because we use React and the good "
+    },
+    {
+        "start_time": 2769679,
+        "end_time": 2773559,
+        "text": "in React is that it is very common. that is, any error message that suddenly new "
+    },
+    {
+        "start_time": 2773559,
+        "end_time": 2777519,
+        "text": "appear because the version has changed, you can just find Google with a second, "
+    },
+    {
+        "start_time": 2777519,
+        "end_time": 2782119,
+        "text": "Yes, I just entered it here once, then you go to Stack Overflow, then you find it mostly. "
+    },
+    {
+        "start_time": 2782119,
+        "end_time": 2787039,
+        "text": "the best solution and here is exactly what you have to do. we need something else now, "
+    },
+    {
+        "start_time": 2787039,
+        "end_time": 2793280,
+        "text": "not more react-dom, but react-dom-client to import and enter it here and then "
+    },
+    {
+        "start_time": 2793280,
+        "end_time": 2797599,
+        "text": "This error message has also disappeared and we have no error message. "
+    },
+    {
+        "start_time": 2797599,
+        "end_time": 2806360,
+        "text": "more and our shopping cart works perfectly. If we look at our application, then "
+    },
+    {
+        "start_time": 2806360,
+        "end_time": 2813000,
+        "text": "We have an app and this app contains three subelements, "
+    },
+    {
+        "start_time": 2813000,
+        "end_time": 2819599,
+        "text": "once a NAVBA, a DIV container and a shopping card. "
+    },
+    {
+        "start_time": 2819599,
+        "end_time": 2823720,
+        "text": "There are four products. in this product component we now have a "
+    },
+    {
+        "start_time": 2823720,
+        "end_time": 2829199,
+        "text": "Add button and when we press this button, then we have to somehow "
+    },
+    {
+        "start_time": 2829199,
+        "end_time": 2834960,
+        "text": "Information that we want to add the respective product to the top component, "
+    },
+    {
+        "start_time": 2834960,
+        "end_time": 2840960,
+        "text": "So give to the app, so there up and everything must then be transmitted to our "
+    },
+    {
+        "start_time": 2840960,
+        "end_time": 2846400,
+        "text": "When we look at our product, the whole thing is clear first. here is our "
+    },
+    {
+        "start_time": 2846400,
+        "end_time": 2851279,
+        "text": "The whole thing should now first be no link anymore, but a button, because "
+    },
+    {
+        "start_time": 2851279,
+        "end_time": 2856559,
+        "text": "a button can be triggered and then you can perform a function. "
+    },
+    {
+        "start_time": 2856559,
+        "end_time": 2861279,
+        "text": "Button to press our superior component, which connects the whole, that is, this "
+    },
+    {
+        "start_time": 2861279,
+        "end_time": 2868320,
+        "text": "App.jsx, a function will be triggered. and the whole one writes so. We say onClick and "
+    },
+    {
+        "start_time": 2868320,
+        "end_time": 2873039,
+        "text": "It is important that the C is written large here, unlike pure JavaScript, otherwise it works. "
+    },
+    {
+        "start_time": 2873039,
+        "end_time": 2884320,
+        "text": "all not and here we say now this.props.onAdd. and this onAdd here, that is now a "
+    },
+    {
+        "start_time": 2884320,
+        "end_time": 2891199,
+        "text": "Properties that are added to the component product-automatically. With these props we act "
+    },
+    {
+        "start_time": 2891199,
+        "end_time": 2897679,
+        "text": "always on all these things here, on this image, title, description. and now we have a "
+    },
+    {
+        "start_time": 2897679,
+        "end_time": 2903679,
+        "text": "new feature added and that is called onAdd. and here we can now quite simply a feature "
+    },
+    {
+        "start_time": 2903679,
+        "end_time": 2908960,
+        "text": "This means something like addItem and here we have to enter different things now, "
+    },
+    {
+        "start_time": 2908960,
+        "end_time": 2917000,
+        "text": "Of course, the number may be one, then what we want to add, that is, tomatoes and "
+    },
+    {
+        "start_time": 2917000,
+        "end_time": 2925400,
+        "text": "So what did we say? cost tomatoes 2.99. important is that here is a "
+    },
+    {
+        "start_time": 2925400,
+        "end_time": 2931519,
+        "text": "Number, so. And here no indication signs can be refined anymore, but in React we must always be here "
+    },
+    {
+        "start_time": 2931519,
+        "end_time": 2935679,
+        "text": "These doubts write things, for the indications would always stand for, "
+    },
+    {
+        "start_time": 2935679,
+        "end_time": 2941559,
+        "text": "that we have a string, that is, a text, and the whole should not be the case here above. "
+    },
+    {
+        "start_time": 2941559,
+        "end_time": 2946639,
+        "text": "Function addItem we now have to add our app here. we could do it all now so, "
+    },
+    {
+        "start_time": 2946760,
+        "end_time": 2951360,
+        "text": "by simply writing addItem here and so on. in React, however, you use almost always "
+    },
+    {
+        "start_time": 2951360,
+        "end_time": 2957279,
+        "text": "the so-called arrowNotation. that means we write the whole so. that has a benefit and "
+    },
+    {
+        "start_time": 2957279,
+        "end_time": 2962880,
+        "text": "Otherwise we cannot in React access this without further access and that is necessary. "
+    },
+    {
+        "start_time": 2962880,
+        "end_time": 2967639,
+        "text": "more often when programming, for example when we want to access the state. "
+    },
+    {
+        "start_time": 2967639,
+        "end_time": 2972559,
+        "text": "want to add different items to our state here above now. that means standard should "
+    },
+    {
+        "start_time": 2972559,
+        "end_time": 2979119,
+        "text": "This is here for the first time to be a empty array. And if we say this.setState now we can "
+    },
+    {
+        "start_time": 2979119,
+        "end_time": 2984119,
+        "text": "I can now say here which field I want to change, "
+    },
+    {
+        "start_time": 2984119,
+        "end_time": 2990359,
+        "text": "It is the item field and what I want to change it. and it is to the old items, so this.state.items "
+    },
+    {
+        "start_time": 2990359,
+        "end_time": 2999199,
+        "text": "I want to add something here.I say point push and can now here. "
+    },
+    {
+        "start_time": 3000000,
+        "end_time": 3003980,
+        "text": "Add a few elements. that means, of course, I want to add the amount, "
+    },
+    {
+        "start_time": 3003980,
+        "end_time": 3009719,
+        "text": "I also want to add the name and I want to "
+    },
+    {
+        "start_time": 3009719,
+        "end_time": 3014340,
+        "text": "Also add the price. this information that gives "
+    },
+    {
+        "start_time": 3014340,
+        "end_time": 3018119,
+        "text": "We are all here in this function. that is, we can here between the "
+    },
+    {
+        "start_time": 3018119,
+        "end_time": 3024400,
+        "text": "Amount, Name, Price. These three variables get "
+    },
+    {
+        "start_time": 3024400,
+        "end_time": 3030719,
+        "text": "Now the values 1, tomatoes 2,99. "
+    },
+    {
+        "start_time": 3030719,
+        "end_time": 3036280,
+        "text": "This means name, double point name, price, double point price, etc. "
+    },
+    {
+        "start_time": 3036280,
+        "end_time": 3039559,
+        "text": "The car completion has made a small mistake here below. "
+    },
+    {
+        "start_time": 3039559,
+        "end_time": 3044840,
+        "text": "a twisted clammer too much and a semi-colon too little. "
+    },
+    {
+        "start_time": 3044840,
+        "end_time": 3048400,
+        "text": "Here behind the double point we have to say now, "
+    },
+    {
+        "start_time": 3048400,
+        "end_time": 3052960,
+        "text": "What we put in here? that is, we must first get here the old state "
+    },
+    {
+        "start_time": 3053199,
+        "end_time": 3056559,
+        "text": "I have to add something new to it, I have to add something new to it. "
+    },
+    {
+        "start_time": 3056559,
+        "end_time": 3063679,
+        "text": "CurrentItems and say now this.state.items to the current items here "
+    },
+    {
+        "start_time": 3063679,
+        "end_time": 3067639,
+        "text": "I can get up here, I can get up here something new by saying "
+    },
+    {
+        "start_time": 3067639,
+        "end_time": 3074480,
+        "text": "CurrentItems.push and here I add a new JSON. "
+    },
+    {
+        "start_time": 3074480,
+        "end_time": 3078360,
+        "text": "Now the three parameters that we are here between the clamps in our "
+    },
+    {
+        "start_time": 3078360,
+        "end_time": 3083679,
+        "text": "That is, we call the whole once Amount, Name and Price and "
+    },
+    {
+        "start_time": 3083679,
+        "end_time": 3087920,
+        "text": "These three things that need to be wrapped here now. through this syntax "
+    },
+    {
+        "start_time": 3087920,
+        "end_time": 3091480,
+        "text": "Now a JSON is created, which has a field Amount with the value we "
+    },
+    {
+        "start_time": 3091480,
+        "end_time": 3095519,
+        "text": "A name has the value we enter here and a price we enter here. "
+    },
+    {
+        "start_time": 3095519,
+        "end_time": 3098840,
+        "text": "with the value we put here. and if I still have the whole "
+    },
+    {
+        "start_time": 3098840,
+        "end_time": 3102360,
+        "text": "a bit of formatting, for example by simply inserting an enter here and so, "
+    },
+    {
+        "start_time": 3102360,
+        "end_time": 3106679,
+        "text": "Then you can read it all very well and these CurrentItems that I put "
+    },
+    {
+        "start_time": 3106679,
+        "end_time": 3111599,
+        "text": "This means that the item field is now overwritten with the value, "
+    },
+    {
+        "start_time": 3111599,
+        "end_time": 3115280,
+        "text": "I have a little problem, but now we have a little problem. "
+    },
+    {
+        "start_time": 3115280,
+        "end_time": 3118960,
+        "text": "React is very specific and there are no parameters here. "
+    },
+    {
+        "start_time": 3118960,
+        "end_time": 3122519,
+        "text": "We have to put the function here directly without clammer on clammer "
+    },
+    {
+        "start_time": 3122519,
+        "end_time": 3127239,
+        "text": "What we can do, what we can do, what we can do, what we can do. "
+    },
+    {
+        "start_time": 3127239,
+        "end_time": 3130400,
+        "text": "Write and add it all here. "
+    },
+    {
+        "start_time": 3130400,
+        "end_time": 3133440,
+        "text": "Here below we get a little mistake, because here is AddItem. "
+    },
+    {
+        "start_time": 3133440,
+        "end_time": 3137559,
+        "text": "But the AddItem is part of our class, so we have to say here "
+    },
+    {
+        "start_time": 3137559,
+        "end_time": 3141679,
+        "text": "This.addItem. after we have done it all, we can do it now "
+    },
+    {
+        "start_time": 3141679,
+        "end_time": 3146400,
+        "text": "Add our other products, here, here and here. "
+    },
+    {
+        "start_time": 3146400,
+        "end_time": 3153440,
+        "text": "say here of course cakes, apples, pearls and can still enter the prices here "
+    },
+    {
+        "start_time": 3153440,
+        "end_time": 3158760,
+        "text": "Let’s say 1,99, 3,99, 4,99. "
+    },
+    {
+        "start_time": 3158760,
+        "end_time": 3162079,
+        "text": "This HeadState here is, by the way, extremely important, because there is no "
+    },
+    {
+        "start_time": 3162079,
+        "end_time": 3165679,
+        "text": "The data is only updated above, but at the same time it is also "
+    },
+    {
+        "start_time": 3165679,
+        "end_time": 3170440,
+        "text": "Render function is automatically re-executed only by this SetState. "
+    },
+    {
+        "start_time": 3170440,
+        "end_time": 3174639,
+        "text": "It works automatically, but it requires "
+    },
+    {
+        "start_time": 3174639,
+        "end_time": 3179480,
+        "text": "always this feature to say that we want to render our content. "
+    },
+    {
+        "start_time": 3179480,
+        "end_time": 3183159,
+        "text": "Now, of course, we’re going to look at whether our data is really "
+    },
+    {
+        "start_time": 3183159,
+        "end_time": 3186679,
+        "text": "I am changing and that’s why I’m logging it all now and tell you. "
+    },
+    {
+        "start_time": 3186679,
+        "end_time": 3191720,
+        "text": "this.state to see what happens to our state. that is, if I "
+    },
+    {
+        "start_time": 3191719,
+        "end_time": 3195920,
+        "text": "our app now open here and click here to add, then I see, "
+    },
+    {
+        "start_time": 3195920,
+        "end_time": 3200000,
+        "text": "to add a new item to our state here "
+    },
+    {
+        "start_time": 3200000,
+        "end_time": 3205199,
+        "text": "If I press on apples, then here is the amount. "
+    },
+    {
+        "start_time": 3205199,
+        "end_time": 3210440,
+        "text": "1 in apples and so on. that is, the elements that are added will be "
+    },
+    {
+        "start_time": 3210440,
+        "end_time": 3214280,
+        "text": "Now in our state always stored, but of course not yet in our state "
+    },
+    {
+        "start_time": 3214280,
+        "end_time": 3219960,
+        "text": "We should now have these items still on our shopping cart "
+    },
+    {
+        "start_time": 3219960,
+        "end_time": 3224000,
+        "text": "That is, we have to say in our shopping card here, "
+    },
+    {
+        "start_time": 3224000,
+        "end_time": 3229159,
+        "text": "OK, items the same and must here somehow on the data from here "
+    },
+    {
+        "start_time": 3229159,
+        "end_time": 3234800,
+        "text": "So you have to say something like this.state.items. "
+    },
+    {
+        "start_time": 3234800,
+        "end_time": 3238800,
+        "text": "After we have done it all, we can now in our shopping card "
+    },
+    {
+        "start_time": 3238800,
+        "end_time": 3243480,
+        "text": "access to our items. so now we no longer need the state here "
+    },
+    {
+        "start_time": 3243480,
+        "end_time": 3248239,
+        "text": "to get out, but from the variables that were put in "
+    },
+    {
+        "start_time": 3248239,
+        "end_time": 3256599,
+        "text": "This means we say here this.props.items and if we are now "
+    },
+    {
+        "start_time": 3256599,
+        "end_time": 3262519,
+        "text": "Click here to add, tomatoes, garlic, pearls, apples, we see that "
+    },
+    {
+        "start_time": 3262519,
+        "end_time": 3266880,
+        "text": "All here on the page has been added to our box. so our "
+    },
+    {
+        "start_time": 3266880,
+        "end_time": 3271960,
+        "text": "Customers now receive the data from our top app component and "
+    },
+    {
+        "start_time": 3271960,
+        "end_time": 3275960,
+        "text": "we have now stored an array with different elements, wherever in "
+    },
+    {
+        "start_time": 3275960,
+        "end_time": 3280320,
+        "text": "Mount stands, where curves stand, pearls stands, and so on. "
+    },
+    {
+        "start_time": 3280320,
+        "end_time": 3283159,
+        "text": "It is a challenge to say that if I repeat "
+    },
+    {
+        "start_time": 3283159,
+        "end_time": 3287559,
+        "text": "Birnen presses that here is a 2x and that we no longer have the problem, "
+    },
+    {
+        "start_time": 3287559,
+        "end_time": 3291000,
+        "text": "What we have now, that pearls will be added again and here therefore "
+    },
+    {
+        "start_time": 3291000,
+        "end_time": 3294880,
+        "text": "Even a mistake is shown. "
+    },
+    {
+        "start_time": 3296559,
+        "end_time": 3301039,
+        "text": "We are currently still having a problem in our shopping cart. If I have an item "
+    },
+    {
+        "start_time": 3301039,
+        "end_time": 3305199,
+        "text": "Add, let’s say tomatoes, and now add again. "
+    },
+    {
+        "start_time": 3305279,
+        "end_time": 3309519,
+        "text": "We get a problem. and here the items will be just twice. "
+    },
+    {
+        "start_time": 3309519,
+        "end_time": 3314000,
+        "text": "Instead, we want to say that if an element is "
+    },
+    {
+        "start_time": 3314000,
+        "end_time": 3319440,
+        "text": "Number 1 is already in our shopping cart, we don't get the item again "
+    },
+    {
+        "start_time": 3319440,
+        "end_time": 3324559,
+        "text": "I want to add, but rather this one here just about another one. "
+    },
+    {
+        "start_time": 3324559,
+        "end_time": 3328840,
+        "text": "To increase, then to the value 2 and now let’s look at the whole. "
+    },
+    {
+        "start_time": 3328840,
+        "end_time": 3332920,
+        "text": "For that we go in our code and we see here to the left above yes that we are here "
+    },
+    {
+        "start_time": 3332960,
+        "end_time": 3337400,
+        "text": "Get the current items and now just every time we click on the button "
+    },
+    {
+        "start_time": 3337400,
+        "end_time": 3342119,
+        "text": "press to add a new object here. instead we have to "
+    },
+    {
+        "start_time": 3342119,
+        "end_time": 3347000,
+        "text": "However, we say we’re looking at whether tomatoes are already in our "
+    },
+    {
+        "start_time": 3347000,
+        "end_time": 3352960,
+        "text": "We have goods, we have goods, we have goods first. "
+    },
+    {
+        "start_time": 3352960,
+        "end_time": 3360280,
+        "text": "That means I have to say something like let existing item or something like that. "
+    },
+    {
+        "start_time": 3360279,
+        "end_time": 3364800,
+        "text": "And here I just have to say now that I’m searching through my items. "
+    },
+    {
+        "start_time": 3364800,
+        "end_time": 3370679,
+        "text": "by saying this.state.items.find. and we are now just looking for if here already "
+    },
+    {
+        "start_time": 3370679,
+        "end_time": 3379119,
+        "text": "an item, an item with the name is present. that is, I say item.name "
+    },
+    {
+        "start_time": 3379119,
+        "end_time": 3386519,
+        "text": "The same name. and if this item already exists, then I want it "
+    },
+    {
+        "start_time": 3386519,
+        "end_time": 3393960,
+        "text": "This means that I say existing item.amount++. "
+    },
+    {
+        "start_time": 3393960,
+        "end_time": 3399599,
+        "text": "not exists, then I want to add it. That is, we now have two cases in "
+    },
+    {
+        "start_time": 3399599,
+        "end_time": 3404800,
+        "text": "Case number one, we say, the whole exists already and case "
+    },
+    {
+        "start_time": 3404800,
+        "end_time": 3409079,
+        "text": "Number two is here below, it does not exist yet. "
+    },
+    {
+        "start_time": 3409079,
+        "end_time": 3414039,
+        "text": "Add it to the basket. otherwise we have the element in this variable, "
+    },
+    {
+        "start_time": 3414039,
+        "end_time": 3419920,
+        "text": "what is stored in our basket and then we use it and increase the "
+    },
+    {
+        "start_time": 3419920,
+        "end_time": 3426000,
+        "text": "This item from our shopping cart here this amounts about one. let’s look at it all. "
+    },
+    {
+        "start_time": 3426000,
+        "end_time": 3431599,
+        "text": "I press to add and then again to add and then again to add. "
+    },
+    {
+        "start_time": 3431599,
+        "end_time": 3436599,
+        "text": "See that there is still only one element here, but the amounts are on two. "
+    },
+    {
+        "start_time": 3436599,
+        "end_time": 3443000,
+        "text": "This means that every time we have a different state here, we can also have a different state here. "
+    },
+    {
+        "start_time": 3443000,
+        "end_time": 3448079,
+        "text": "Add a so-called Debugger. I do it in the line before. "
+    },
+    {
+        "start_time": 3448079,
+        "end_time": 3453079,
+        "text": "just debugger and then you can understand the whole a little better, "
+    },
+    {
+        "start_time": 3453079,
+        "end_time": 3457880,
+        "text": "If I now press the button, then our code keeps here "
+    },
+    {
+        "start_time": 3457880,
+        "end_time": 3464519,
+        "text": "in this line, as we see here. if I continue a line now, I press for it "
+    },
+    {
+        "start_time": 3464519,
+        "end_time": 3469639,
+        "text": "Just go down on this step, then on this track and then a line further. "
+    },
+    {
+        "start_time": 3469639,
+        "end_time": 3474159,
+        "text": "Then we will see it in existing item, if I go there now or if I just go here "
+    },
+    {
+        "start_time": 3474159,
+        "end_time": 3478559,
+        "text": "The thing is a bit bigger here, then we see here below on the side always our "
+    },
+    {
+        "start_time": 3478559,
+        "end_time": 3486679,
+        "text": "Variable and there we see, existing item has the value undefined. "
+    },
+    {
+        "start_time": 3486679,
+        "end_time": 3493199,
+        "text": "not with this value in our basket. the first case is therefore not fulfilled and accordingly "
+    },
+    {
+        "start_time": 3493199,
+        "end_time": 3497679,
+        "text": "Now let’s jump directly to the second case. so it’s going through. we’re jumping right here "
+    },
+    {
+        "start_time": 3497679,
+        "end_time": 3503480,
+        "text": "down, we carry out the whole and carry it into our basket and add it there. "
+    },
+    {
+        "start_time": 3503480,
+        "end_time": 3509440,
+        "text": "I just go on and say to add and now have "
+    },
+    {
+        "start_time": 3509440,
+        "end_time": 3514760,
+        "text": "we have a similar situation, but this item already exists. "
+    },
+    {
+        "start_time": 3514760,
+        "end_time": 3518599,
+        "text": "the page goes to existing item, then we see that here now suddenly no longer undefined "
+    },
+    {
+        "start_time": 3518599,
+        "end_time": 3524599,
+        "text": "but that here the element from our basket is inside with amount1, name, tomatoes, "
+    },
+    {
+        "start_time": 3524599,
+        "end_time": 3530880,
+        "text": "Accordingly, we have now fulfilled this first case and we are now going here "
+    },
+    {
+        "start_time": 3530880,
+        "end_time": 3536480,
+        "text": "and increase the amount and then we just go down here, quite normal, updating the state and so on "
+    },
+    {
+        "start_time": 3536480,
+        "end_time": 3540400,
+        "text": "What has happened here is any reaction logic that interests us "
+    },
+    {
+        "start_time": 3540400,
+        "end_time": 3544880,
+        "text": "Now we know at all that I can click here. the Debugger we can "
+    },
+    {
+        "start_time": 3544880,
+        "end_time": 3549680,
+        "text": "Now also throw it out again, you will always just try it out and after we "
+    },
+    {
+        "start_time": 3549679,
+        "end_time": 3554199,
+        "text": "have done all, we can now here different items in our basket "
+    },
+    {
+        "start_time": 3554199,
+        "end_time": 3559400,
+        "text": "add and can increase it. If you have watched the video until here, then you have now "
+    },
+    {
+        "start_time": 3559400,
+        "end_time": 3564480,
+        "text": "Your first React app was written. Congratulations! but there’s still a lot to do. "
+    },
+    {
+        "start_time": 3564480,
+        "end_time": 3569400,
+        "text": "As you have noticed, a single project, of course, helps to find the start, but still "
+    },
+    {
+        "start_time": 3569400,
+        "end_time": 3574159,
+        "text": "long not to become a React project developer. accordingly, you have to do a thing now "
+    },
+    {
+        "start_time": 3574360,
+        "end_time": 3579679,
+        "text": "I have shown you a few simple examples, but you have to "
+    },
+    {
+        "start_time": 3579679,
+        "end_time": 3584440,
+        "text": "attempt to build as many projects as possible and to create more functions "
+    },
+    {
+        "start_time": 3584440,
+        "end_time": 3589360,
+        "text": "For example, you can try to continue this project here and in the shopping cart. "
+    },
+    {
+        "start_time": 3589360,
+        "end_time": 3594599,
+        "text": "to remove elements or, for example, the number with two buttons, a plus and "
+    },
+    {
+        "start_time": 3594599,
+        "end_time": 3599599,
+        "text": "to increase or decrease a minus button. and if you say now, hey, the whole thing makes me "
+    },
+    {
+        "start_time": 3599599,
+        "end_time": 3600099,
+        "text": "Super sh- "
+    },
+    {
+        "start_time": 3600000,
+        "end_time": 3604119,
+        "text": "Have fun and I need support and I want to work as a developer. "
+    },
+    {
+        "start_time": 3604119,
+        "end_time": 3608559,
+        "text": "But maybe you’re still at the very beginning, then you’ll be happy to find out about our further education. "
+    },
+    {
+        "start_time": 3608559,
+        "end_time": 3613440,
+        "text": "informing, because we form software developers, including source investors, i.e. people, "
+    },
+    {
+        "start_time": 3613440,
+        "end_time": 3616480,
+        "text": "They may have never, or just, coded very little before. "
+    },
+    {
+        "start_time": 3616480,
+        "end_time": 3620000,
+        "text": "If you are interested in this, click on the link at the top. "
+    },
+    {
+        "start_time": 3620000,
+        "end_time": 3621000,
+        "text": "The YouTube description. "
+    },
+    {
+        "start_time": 3621000,
+        "end_time": 3625239,
+        "text": "You can not only inform yourself, but you can also have a free consultation. "
+    },
+    {
+        "start_time": 3625239,
+        "end_time": 3627079,
+        "text": "agree with me and my team. "
+    },
+    {
+        "start_time": 3627079,
+        "end_time": 3630760,
+        "text": "We can just talk to each other completely unbindingly and see if we "
+    },
+    {
+        "start_time": 3630760,
+        "end_time": 3634559,
+        "text": "We can help you and in what situation we can help you best. "
+    },
+    {
+        "start_time": 3634559,
+        "end_time": 3638920,
+        "text": "Maybe we’ll see each other personally, otherwise we’ll see each other here on this channel. "
+    },
+    {
+        "start_time": 3638920,
+        "end_time": 3640480,
+        "text": "in one of the next videos. "
+    },
+    {
+        "start_time": 3640480,
+        "end_time": 3642480,
+        "text": "Do it well, your Junus, Ciao. "
     }
 ]

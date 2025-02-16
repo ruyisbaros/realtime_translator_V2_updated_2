@@ -40,6 +40,7 @@ const UploadPopup = () => {
         "video/avi",
         "video/mkv",
         "video/mov",
+        "video/mp4.mkv",
       ];
       if (!validFileTypes.includes(the_video.type)) {
         toast.error("Unsupported file type. Please upload a valid video file.");

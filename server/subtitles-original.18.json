@@ -1,0 +1,4127 @@
+[
+    {
+        "start_time": 0,
+        "end_time": 4120,
+        "text": "Hallo und herzlich willkommen zu diesem React.js Crashkurs. Wenn du schon immer "
+    },
+    {
+        "start_time": 4120,
+        "end_time": 7799,
+        "text": "einen Einblick in die JavaScript Library React bekommen wolltest, bist du hier "
+    },
+    {
+        "start_time": 7799,
+        "end_time": 11720,
+        "text": "genau richtig. Wir bauen mit React zusammen eine klassische To-Do-App. Für "
+    },
+    {
+        "start_time": 11720,
+        "end_time": 15280,
+        "text": "das Styling integrieren wir das beliebte CSS Framework Tailwind in unser Projekt. "
+    },
+    {
+        "start_time": 15280,
+        "end_time": 18760,
+        "text": "Die App ist von den Funktionalitäten erstmal ziemlich leicht zu verstehen, "
+    },
+    {
+        "start_time": 18760,
+        "end_time": 22120,
+        "text": "bietet aber alles, was man auch in komplexeren Projekten nutzen kann. Es "
+    },
+    {
+        "start_time": 22120,
+        "end_time": 26120,
+        "text": "handelt sich nämlich um eine sogenannte Crud-Applikation, also eine App, in der wir "
+    },
+    {
+        "start_time": 26120,
+        "end_time": 28960,
+        "text": "Elemente anlegen, lesen, updaten und löschen können. "
+    },
+    {
+        "start_time": 29280,
+        "end_time": 32240,
+        "text": "Ich zeige einfach mal, wie das Ganze hier aussieht und zwar aktuell haben wir jetzt "
+    },
+    {
+        "start_time": 32240,
+        "end_time": 35520,
+        "text": "hier eine To-Do-Liste, in der wir keine To-Dos haben. Wir können jetzt hier ein To-Do "
+    },
+    {
+        "start_time": 35520,
+        "end_time": 39560,
+        "text": "schreiben, zum Beispiel einkaufen und das dann hinzufügen. Da sehen wir, wir haben "
+    },
+    {
+        "start_time": 39560,
+        "end_time": 43640,
+        "text": "jetzt hier noch ein To-Do übrig, eins davon ist eben offen und was können wir "
+    },
+    {
+        "start_time": 43640,
+        "end_time": 47159,
+        "text": "jetzt noch machen? Wir können sagen, wir müssen Sport machen, das ist ein "
+    },
+    {
+        "start_time": 47159,
+        "end_time": 52000,
+        "text": "weiteres To-Do und jetzt haben wir das hier eben auch in unserer Liste und wir "
+    },
+    {
+        "start_time": 52000,
+        "end_time": 56880,
+        "text": "können diese abhaken. Dann sehen wir, wir haben jetzt hier noch zwei To-Dos übrig, "
+    },
+    {
+        "start_time": 56880,
+        "end_time": 60600,
+        "text": "eins davon ist offen und können noch das zweite abhaken und auch wieder hier "
+    },
+    {
+        "start_time": 60600,
+        "end_time": 64239,
+        "text": "aufnehmen, aber wir können auch ein To-Do, wenn wir es fertig haben, zum "
+    },
+    {
+        "start_time": 64239,
+        "end_time": 68159,
+        "text": "Beispiel komplett entfernen. Eine weitere Funktionalität, die wir noch haben, ist, "
+    },
+    {
+        "start_time": 68159,
+        "end_time": 72120,
+        "text": "wenn wir hier auf F5 drücken, also die Seite Refreshen, dann bleibt uns unsere "
+    },
+    {
+        "start_time": 72120,
+        "end_time": 76240,
+        "text": "Liste halten, das heißt wir speichern hier unsere To-Do-List in Local Storage und "
+    },
+    {
+        "start_time": 76240,
+        "end_time": 82158,
+        "text": "holen sie uns beim Reload der Seite wieder in React App zurück. Also wie gesagt, an "
+    },
+    {
+        "start_time": 82158,
+        "end_time": 85760,
+        "text": "sich ein relativ einfach zu verstehenes Projekt, aber es bietet eben eine ganze "
+    },
+    {
+        "start_time": 85760,
+        "end_time": 89600,
+        "text": "Menge an Themen, die wir hier schon lernen können. Und du wirst in diesem "
+    },
+    {
+        "start_time": 89600,
+        "end_time": 93080,
+        "text": "Crash-Kurs Folgendes lernen können. Erstmal, wie installiere ich eigentlich "
+    },
+    {
+        "start_time": 93080,
+        "end_time": 98520,
+        "text": "React und wie erstelle ich ein React Projekt? Wie sind React und JS Projekte "
+    },
+    {
+        "start_time": 98520,
+        "end_time": 103000,
+        "text": "aufgebaut, also wie ist die Folder-Struktur? Was sind Components? Was ist eigentlich "
+    },
+    {
+        "start_time": 103000,
+        "end_time": 109600,
+        "text": "dieses JSX? Wie stylt man Components in React? Was sind Props, also Properties? "
+    },
+    {
+        "start_time": 109600,
+        "end_time": 114880,
+        "text": "Was ist Date? Und wir lernen auch React Hooks wie useState und useEffect. "
+    },
+    {
+        "start_time": 114878,
+        "end_time": 118959,
+        "text": "Außerdem lernen wir auch wie Components miteinander kommunizieren können. So, "
+    },
+    {
+        "start_time": 118959,
+        "end_time": 122039,
+        "text": "genug der Einführung, ich würde sagen wir starten einfach mal direkt mit dem "
+    },
+    {
+        "start_time": 122039,
+        "end_time": 125920,
+        "text": "Erstellen eines neuen Projekts. So eine wichtige Voraussetzung, die du auf jeden "
+    },
+    {
+        "start_time": 125920,
+        "end_time": 130560,
+        "text": "Fall brauchst, um React JS überhaupt installieren zu können, ist Node.js. "
+    },
+    {
+        "start_time": 130560,
+        "end_time": 135319,
+        "text": "Solltest du das nicht haben, einfach auf nodejs.org gehen und hier für dein "
+    },
+    {
+        "start_time": 135319,
+        "end_time": 139519,
+        "text": "Betriebssystem Node.js herunterladen und in Installationsanweisungen folgen. "
+    },
+    {
+        "start_time": 139519,
+        "end_time": 144199,
+        "text": "Solltest du dir nicht sicher sein, ob du Node hast, einfach eine Command-Line in "
+    },
+    {
+        "start_time": 144199,
+        "end_time": 149239,
+        "text": "deiner Wahl öffnen und hier Node minus minus Version eingeben und hier solltest "
+    },
+    {
+        "start_time": 149239,
+        "end_time": 152959,
+        "text": "du dann eine Version angezeigt bekommen und wenn dem so ist und die unterscheidet "
+    },
+    {
+        "start_time": 152959,
+        "end_time": 157000,
+        "text": "sich jetzt nicht großartig von der, die ich habe, dann bist du hier bereit. "
+    },
+    {
+        "start_time": 157000,
+        "end_time": 161478,
+        "text": "Solltest du hier eine ältere haben, im Idealfall einfach mal updaten, damit wir "
+    },
+    {
+        "start_time": 161478,
+        "end_time": 165719,
+        "text": "auf einem ähnlichen oder im Idealfall gleichen Stand sind. Okay, wenn das alles "
+    },
+    {
+        "start_time": 165719,
+        "end_time": 169439,
+        "text": "passt, dann können wir jetzt hier einen neuen Follower erstellen. Ich habe den mal "
+    },
+    {
+        "start_time": 169439,
+        "end_time": 173159,
+        "text": "React-To-Do-App genannt und wir navigieren jetzt hier einfach mal in "
+    },
+    {
+        "start_time": 173159,
+        "end_time": 178000,
+        "text": "diesen Follower rein, in der Command-Line, weil wir hier über Node, eben über die "
+    },
+    {
+        "start_time": 178000,
+        "end_time": 185719,
+        "text": "Command-Line, uns ein Projekt erstellen. npx create minus react minus app, dann "
+    },
+    {
+        "start_time": 185719,
+        "end_time": 189840,
+        "text": "den Namen von der App, wir nennen sie einfach mal jetzt hier To-Do-App und ich "
+    },
+    {
+        "start_time": 189840,
+        "end_time": 194840,
+        "text": "gebe jetzt hier noch an, dass ich hier npm verwenden möchte mit minus minus use npm. "
+    },
+    {
+        "start_time": 194840,
+        "end_time": 199960,
+        "text": "Ich habe nämlich auch noch den Paketmanager ian installiert. Dann einfach "
+    },
+    {
+        "start_time": 199960,
+        "end_time": 205240,
+        "text": "Enter drücken und jetzt dauert das Ganze ein bisschen, jetzt wird jetzt hier eben ein paar "
+    },
+    {
+        "start_time": 205240,
+        "end_time": 209879,
+        "text": "Pakete installiert und das Projekt aufgesetzt. "
+    },
+    {
+        "start_time": 212640,
+        "end_time": 216240,
+        "text": "Okay, wenn das durchgelaufen ist, dann sieht man hier auch direkt, was man hier "
+    },
+    {
+        "start_time": 216240,
+        "end_time": 219760,
+        "text": "alles machen kann. Und zwar müssen wir erstmal in das directory To-Do-App rein. "
+    },
+    {
+        "start_time": 219760,
+        "end_time": 223840,
+        "text": "Das geht einfach über CD und dann Tab, dann kommen wir auch direkt hier in den "
+    },
+    {
+        "start_time": 223840,
+        "end_time": 230879,
+        "text": "Ordner und jetzt können wir über npm start den development server starten. "
+    },
+    {
+        "start_time": 230879,
+        "end_time": 235680,
+        "text": "Okay und jetzt sehen wir hier, haben wir hier so eine basis app mit einem "
+    },
+    {
+        "start_time": 235680,
+        "end_time": 241480,
+        "text": "background und einem rotierenden react logo. Das machen wir jetzt erstmal zu, weil "
+    },
+    {
+        "start_time": 241480,
+        "end_time": 245120,
+        "text": "wir jetzt erstmal direkt in die folder struktur wechseln. Dafür einfach hier "
+    },
+    {
+        "start_time": 245120,
+        "end_time": 250879,
+        "text": "dann die Übersteuerung zählt, diesen Vorgang abbrechen und in das Projekt "
+    },
+    {
+        "start_time": 250879,
+        "end_time": 255319,
+        "text": "reingehen. Ich mache das Ganze mit Visual Studio Code und deswegen kann ich jetzt "
+    },
+    {
+        "start_time": 255319,
+        "end_time": 260759,
+        "text": "hier Code Punkt eingeben und damit öffnen wir dann den Projekt folder. Ich "
+    },
+    {
+        "start_time": 260759,
+        "end_time": 264399,
+        "text": "kann Visual Studio Code dir nur sehr ans Herz legen, weil es die Entwicklung sehr "
+    },
+    {
+        "start_time": 264399,
+        "end_time": 267959,
+        "text": "vereinfacht. Solltest du das Ganze allerdings nicht nutzen, dann ist es auch "
+    },
+    {
+        "start_time": 267959,
+        "end_time": 270959,
+        "text": "nicht weiter schlimm. Ich werde hier allerdings auch ein paar Spezialitäten von "
+    },
+    {
+        "start_time": 270959,
+        "end_time": 275279,
+        "text": "VS Code nutzen, also ein paar extensions für React. Wie gesagt, kannst du nur ans "
+    },
+    {
+        "start_time": 275279,
+        "end_time": 278719,
+        "text": "Herz legen, es ist ein toller Editor mit Abstand der beste meiner Meinung nach "
+    },
+    {
+        "start_time": 278720,
+        "end_time": 283120,
+        "text": "auf dem Markt. Aber ich würde sagen, gucken wir uns jetzt einfach mal das ganze an. "
+    },
+    {
+        "start_time": 283120,
+        "end_time": 288720,
+        "text": "Und zwar sehen wir jetzt hier, ich mache das Ganze noch ein bisschen größer, dass wir "
+    },
+    {
+        "start_time": 288720,
+        "end_time": 291800,
+        "text": "jetzt hier verschiedene folder haben. Und zwar sehen wir jetzt hier Node Modules. "
+    },
+    {
+        "start_time": 291800,
+        "end_time": 295920,
+        "text": "Diesen im Idealfall einfach gar nicht erst öffnen. Hier drin ist alles mögliche "
+    },
+    {
+        "start_time": 295920,
+        "end_time": 299760,
+        "text": "installiert und hier sollte man auch nichts ändern, rauslöschen oder "
+    },
+    {
+        "start_time": 299760,
+        "end_time": 305000,
+        "text": "irgendwas verändern. Das ist das, was eben unser npm manager für uns eben "
+    },
+    {
+        "start_time": 305000,
+        "end_time": 309800,
+        "text": "handelt. Und was wir außerdem haben, ist wir haben jetzt hier einen public folder. "
+    },
+    {
+        "start_time": 309800,
+        "end_time": 315079,
+        "text": "Dort haben wir eine index.html, ein paar Logos und so weiter. Hier ist interessant "
+    },
+    {
+        "start_time": 315079,
+        "end_time": 319639,
+        "text": "in dieser index.html, das ist letztlich das, was wir hier über React rauskriegen. "
+    },
+    {
+        "start_time": 319639,
+        "end_time": 325600,
+        "text": "Und zwar wird alles, was hier in diesem Source-Folder gebaut wird, hier letztlich "
+    },
+    {
+        "start_time": 325600,
+        "end_time": 332800,
+        "text": "in diese id-root reingeschrieben. Das heißt, unsere React-App lebt genau hier "
+    },
+    {
+        "start_time": 332800,
+        "end_time": 337759,
+        "text": "drin. Auch hier drin sollten wir oder müssten wir in der Regel erstmal nichts "
+    },
+    {
+        "start_time": 337759,
+        "end_time": 341639,
+        "text": "anpassen, deswegen einfach hier noch mal zumachen. Wir arbeiten in der Regel "
+    },
+    {
+        "start_time": 341639,
+        "end_time": 345960,
+        "text": "einfach immer in diesem Source-Folder bzw. in diesem package.json-file. "
+    },
+    {
+        "start_time": 345960,
+        "end_time": 351120,
+        "text": "Und zwar sehen wir hier, haben wir hier in diesem Source-Folder verschiedene "
+    },
+    {
+        "start_time": 351120,
+        "end_time": 355920,
+        "text": "Files. Hier sehen wir, haben wir einen Styling-File, also eine CSS-File. Wir haben "
+    },
+    {
+        "start_time": 355920,
+        "end_time": 360560,
+        "text": "hier ein JS-File, das genauso heißt wie das hier, also die gehören auch zusammen. "
+    },
+    {
+        "start_time": 360560,
+        "end_time": 366639,
+        "text": "Das gleiche haben wir hier nochmal index.css und index.js. Und ich würde sagen, wir gucken "
+    },
+    {
+        "start_time": 366639,
+        "end_time": 372319,
+        "text": "uns erstmal hier diese index.js an. Und hier sehen wir auch, das ist unser root- "
+    },
+    {
+        "start_time": 372319,
+        "end_time": 376800,
+        "text": "component. Das heißt, hier drin wird alles, was wir in anderen Files machen, "
+    },
+    {
+        "start_time": 376800,
+        "end_time": 380680,
+        "text": "zusammengeführt. Und dann können wir hier auch sehen, haben wir hier ein "
+    },
+    {
+        "start_time": 380680,
+        "end_time": 387199,
+        "text": "document.getElementById.root. Das ist die id, die wir hier in diesem public-folder haben. "
+    },
+    {
+        "start_time": 387199,
+        "end_time": 392959,
+        "text": "Und das hier, damit spricht React dieses root, dieses div-element hier an. Und hier "
+    },
+    {
+        "start_time": 392959,
+        "end_time": 396879,
+        "text": "drin werden dann eben alle Sachen eingefügt, das React uns eben erstellt. "
+    },
+    {
+        "start_time": 396879,
+        "end_time": 401240,
+        "text": "Was können wir hier drin sehen? Hier drin werden ein paar Sachen importiert. Also "
+    },
+    {
+        "start_time": 401240,
+        "end_time": 405879,
+        "text": "hier drin importieren wir React. Wir importieren React-DOM und wir importieren "
+    },
+    {
+        "start_time": 405879,
+        "end_time": 412039,
+        "text": "jetzt hier ein index.css-styling. Das stylt eben unsere App und hier drin unter "
+    },
+    {
+        "start_time": 412039,
+        "end_time": 416639,
+        "text": "React-DOM-Render, hier wird eben dann unsere React-App gerendert. Und wir sehen "
+    },
+    {
+        "start_time": 416639,
+        "end_time": 420959,
+        "text": "jetzt hier, wir haben hier React-Strict-Mode. Hier ändern wir auch nichts. Was wir hier "
+    },
+    {
+        "start_time": 420959,
+        "end_time": 424879,
+        "text": "letztlich haben, ist wir haben jetzt hier so ein App-Component. Das heißt, das sieht "
+    },
+    {
+        "start_time": 424879,
+        "end_time": 431000,
+        "text": "aus wie ein HTML-Tag, hat allerdings einen eigenen Namen und kein HTML-Tag, wie man "
+    },
+    {
+        "start_time": 431000,
+        "end_time": 434639,
+        "text": "ihn vielleicht jetzt irgendwie kennt über Input oder so was oder ein div, sondern "
+    },
+    {
+        "start_time": 434639,
+        "end_time": 438479,
+        "text": "das ist eben ein eigener Name. Und dieser Name hier, der kommt aus diesem File "
+    },
+    {
+        "start_time": 438479,
+        "end_time": 443360,
+        "text": "app.js. Und das hier ist jetzt dieser App-Component. Der kriegt eben auch ein "
+    },
+    {
+        "start_time": 443360,
+        "end_time": 448280,
+        "text": "Styling über diese app.css. Wir importieren hier noch ein Logo und hier "
+    },
+    {
+        "start_time": 448280,
+        "end_time": 452280,
+        "text": "drin passiert jetzt letztlich die ganze Magie. Also was wir jetzt hier sehen, ist, wir haben "
+    },
+    {
+        "start_time": 452280,
+        "end_time": 456759,
+        "text": "jetzt hier eine Funktion mit dem Namen App und diese Funktion returnt hier "
+    },
+    {
+        "start_time": 456759,
+        "end_time": 461960,
+        "text": "etwas. Und wie man hier sehen kann, die returnt kein JavaScript-Objekt, sondern "
+    },
+    {
+        "start_time": 461960,
+        "end_time": 468600,
+        "text": "sie returnt ja irgendwie HTML. Aber eigentlich kann JavaScript kein HTML "
+    },
+    {
+        "start_time": 468600,
+        "end_time": 473560,
+        "text": "returnen. Und jetzt sind wir hier schon beim Thema JSX. JSX ist eine Erweiterung "
+    },
+    {
+        "start_time": 473560,
+        "end_time": 479680,
+        "text": "von JavaScript, die es eben erlaubt auch HTML-Text zu returnen. Und dadurch fühlt "
+    },
+    {
+        "start_time": 479680,
+        "end_time": 483960,
+        "text": "sich React oder das Programmieren mit React eben an, wie so eine Kombination "
+    },
+    {
+        "start_time": 483960,
+        "end_time": 490320,
+        "text": "aus JavaScript-Programmierung und eben einfaches HTML und Styling mit CSS. "
+    },
+    {
+        "start_time": 490320,
+        "end_time": 493720,
+        "text": "Also es wird alles irgendwie miteinander verwurstelt und miteinander kombiniert "
+    },
+    {
+        "start_time": 493720,
+        "end_time": 496920,
+        "text": "und am Ende kriegt man dann eben eine Applikation heraus. "
+    },
+    {
+        "start_time": 497319,
+        "end_time": 502680,
+        "text": "Wir haben jetzt hier einen div mit der Klasse App. Hier sieht man auch schon eine "
+    },
+    {
+        "start_time": 502680,
+        "end_time": 508560,
+        "text": "Spezialität von React. Und zwar haben wir jetzt hier einen div, der normalerweise "
+    },
+    {
+        "start_time": 508560,
+        "end_time": 515120,
+        "text": "hier das class Attribut für eine Klasse hat. Wir haben allerdings eben hier das Ganze. "
+    },
+    {
+        "start_time": 515120,
+        "end_time": 519840,
+        "text": "Hier drin steht allerdings class name und das liegt daran, da class ja ein "
+    },
+    {
+        "start_time": 519840,
+        "end_time": 523759,
+        "text": "reserviertes Keyword in JavaScript ist. Und deswegen brauchen wir für Styling "
+    },
+    {
+        "start_time": 523759,
+        "end_time": 526759,
+        "text": "eben einen anderen Namen als eben class, weil der ist sehr reserviert. "
+    },
+    {
+        "start_time": 526759,
+        "end_time": 531840,
+        "text": "Deswegen haben wir jetzt hier in JSX eben das Wort class name für das Styling. "
+    },
+    {
+        "start_time": 531840,
+        "end_time": 535559,
+        "text": "Ansonsten nichts besonderes. Wir haben hier einen Header, der hat eben auch eine Klasse. "
+    },
+    {
+        "start_time": 535559,
+        "end_time": 541439,
+        "text": "Wir haben hier ein Image, das ist das, was rotiert und hier drin dann noch ein paar Links. "
+    },
+    {
+        "start_time": 541439,
+        "end_time": 544399,
+        "text": "Mehr ist es erstmal nicht, was wir jetzt hier standardmäßig in React haben. "
+    },
+    {
+        "start_time": 544399,
+        "end_time": 549399,
+        "text": "Über so eine Funktion einen Komponent zu schreiben ist eine und die auch aktuell "
+    },
+    {
+        "start_time": 549399,
+        "end_time": 553279,
+        "text": "favorisierte Möglichkeit. Man könnte das Ganze auch über Klassen schreiben, aber "
+    },
+    {
+        "start_time": 553279,
+        "end_time": 557720,
+        "text": "das ist eher nicht mehr so state of the art. Diese Funktion wird am Ende exportiert "
+    },
+    {
+        "start_time": 557720,
+        "end_time": 563600,
+        "text": "über eben ein Modul und hier dann in einem anderen Komponent, in dem Fall ist es "
+    },
+    {
+        "start_time": 563600,
+        "end_time": 567360,
+        "text": "jetzt hier dieses index.js-File, wieder importiert. Und dann kann man das einfach "
+    },
+    {
+        "start_time": 567360,
+        "end_time": 571959,
+        "text": "wie semantische HTML-Tags hier drin nutzen. Dafür muss man sie einfach nur "
+    },
+    {
+        "start_time": 571959,
+        "end_time": 574879,
+        "text": "ganz normal wie ein normales Skript eben importieren. "
+    },
+    {
+        "start_time": 574879,
+        "end_time": 579959,
+        "text": "Okay, ich würde sagen, wir starten einfach mal die App nochmal über npm start. "
+    },
+    {
+        "start_time": 580440,
+        "end_time": 584639,
+        "text": "Und jetzt löschen wir einfach mal alles hier aus diesem Projekt heraus, was wir "
+    },
+    {
+        "start_time": 584639,
+        "end_time": 590440,
+        "text": "nicht mehr brauchen. Also, machen wir das mal hier ein bisschen kleiner und das auch. "
+    },
+    {
+        "start_time": 590440,
+        "end_time": 596400,
+        "text": "Okay, also hier drin brauchen wir folgende Sachen nicht. Und zwar brauchen wir "
+    },
+    {
+        "start_time": 596400,
+        "end_time": 600440,
+        "text": "erstmal hier in dem Fall dieses Styling nicht mehr. "
+    },
+    {
+        "start_time": 600000,
+        "end_time": 603000,
+        "text": "Stylen machen wir hier nicht über CSS in dem Fall. "
+    },
+    {
+        "start_time": 603000,
+        "end_time": 605000,
+        "text": "Sonst fassen wir hier drin erstmal nix an. "
+    },
+    {
+        "start_time": 605000,
+        "end_time": 609000,
+        "text": "Dann gehen wir jetzt mal in diese App.js und hier drin können wir eigentlich alles löschen, "
+    },
+    {
+        "start_time": 609000,
+        "end_time": 614000,
+        "text": "außer diesen ersten div. Und den entfernen wir mal so. "
+    },
+    {
+        "start_time": 614000,
+        "end_time": 620000,
+        "text": "Dann entfernen wir hier noch das ClassName und hier schreiben wir einfach mal ein HTML-Tag rein "
+    },
+    {
+        "start_time": 620000,
+        "end_time": 625000,
+        "text": "und das ganze Hello World. Dann löschen wir außerdem noch das Logo, "
+    },
+    {
+        "start_time": 625000,
+        "end_time": 633000,
+        "text": "sowie hier das ImportApp.css und wir löschen auch noch das komplette, "
+    },
+    {
+        "start_time": 633000,
+        "end_time": 640000,
+        "text": "wichtig, Inex.css braucht man nachher noch, aber dieses App.css, das können wir hier komplett aus dem Projekt entfernen. "
+    },
+    {
+        "start_time": 640000,
+        "end_time": 647000,
+        "text": "Wenn wir das ganze dann speichern, dann sehen wir jetzt hier, haben wir jetzt hier noch unser Hello World. "
+    },
+    {
+        "start_time": 647000,
+        "end_time": 652000,
+        "text": "Okay, und damit sind wir jetzt auch hier auf einem Stand, wo wir dann unser eigenes Projekt eben aufsetzen können. "
+    },
+    {
+        "start_time": 653000,
+        "end_time": 659000,
+        "text": "Ein paar Kleinigkeiten werden wir noch machen und zwar werden wir jetzt hier auch eine Extension für React installieren. "
+    },
+    {
+        "start_time": 659000,
+        "end_time": 661000,
+        "text": "Wie gesagt, das geht nur, wenn du auch VS Code benutzt. "
+    },
+    {
+        "start_time": 661000,
+        "end_time": 664000,
+        "text": "Außerdem wollen wir auch noch Tailwind in das Projekt integrieren. "
+    },
+    {
+        "start_time": 664000,
+        "end_time": 669000,
+        "text": "Dafür erstmal in VS Code, in Erweiterungen und hier nach React suchen. "
+    },
+    {
+        "start_time": 669000,
+        "end_time": 675000,
+        "text": "Und hier drin dann einfach das allererste, was du hier findest, ES7, React Redux, GraphQL und so weiter, "
+    },
+    {
+        "start_time": 675000,
+        "end_time": 678000,
+        "text": "hier einfach installieren und dann aktivieren. "
+    },
+    {
+        "start_time": 678000,
+        "end_time": 682000,
+        "text": "Und damit haben wir dann ein paar React Snippets zur Verfügung, die uns das Ganze eben erleichtern, "
+    },
+    {
+        "start_time": 682000,
+        "end_time": 686000,
+        "text": "dass wir hier dann einfach Funktionale Components bauen können. "
+    },
+    {
+        "start_time": 686000,
+        "end_time": 689000,
+        "text": "Tailwind hat eine ganz gute Anleitung zur Installation. "
+    },
+    {
+        "start_time": 689000,
+        "end_time": 692000,
+        "text": "Dafür einfach auf tailwind.css.com. "
+    },
+    {
+        "start_time": 696000,
+        "end_time": 702000,
+        "text": "Und hier drin dann immer erstmal in unsere Kommandozeile und stoppen wir mal den Development Server. "
+    },
+    {
+        "start_time": 702000,
+        "end_time": 708000,
+        "text": "Hier müssen wir dann erstmal Tailwind installieren und außerdem noch ein Post, CSS und ein Auto-Prefixer. "
+    },
+    {
+        "start_time": 708000,
+        "end_time": 715000,
+        "text": "Das hier einfach kopieren, installieren und dann ist das Ganze auch in unser Projekt integriert. "
+    },
+    {
+        "start_time": 715000,
+        "end_time": 721000,
+        "text": "Und für Tailwind brauchen wir außerdem noch ein Override für unser Create React App. "
+    },
+    {
+        "start_time": 721000,
+        "end_time": 728000,
+        "text": "Und das Ganze, hier steht es noch im Detail erklärt, also wir brauchen wie Post, CSS und deswegen brauchen wir hier KRAKO. "
+    },
+    {
+        "start_time": 728000,
+        "end_time": 734000,
+        "text": "KRAKO steht eben für Create React App Configuration Override und das müssen wir installieren. "
+    },
+    {
+        "start_time": 739000,
+        "end_time": 746000,
+        "text": "Und jetzt überschreiben wir eben diese Standardkonfiguration, also dieses React Scripts Start durch KRAKO Start. "
+    },
+    {
+        "start_time": 746000,
+        "end_time": 748000,
+        "text": "Dafür einfach das hier kopieren. "
+    },
+    {
+        "start_time": 748000,
+        "end_time": 755000,
+        "text": "Hier müssen wir dann in das Package der JSON dann einfach nach Start, Bild und Test hier suchen. "
+    },
+    {
+        "start_time": 755000,
+        "end_time": 760000,
+        "text": "Und dieses Create Scripts Start einfach überschreiben durch KRAKO. "
+    },
+    {
+        "start_time": 760000,
+        "end_time": 764000,
+        "text": "Einfach hier reinkopieren und jetzt sind wir hier ready to go. "
+    },
+    {
+        "start_time": 764000,
+        "end_time": 769000,
+        "text": "Und jetzt können wir auch hier noch weitermachen und zwar brauchen wir hier noch eine KRAKO config.js. "
+    },
+    {
+        "start_time": 769000,
+        "end_time": 772000,
+        "text": "Dafür einfach hier eine neue Datei erlegen. "
+    },
+    {
+        "start_time": 772000,
+        "end_time": 775000,
+        "text": "KRAKO.config.js. "
+    },
+    {
+        "start_time": 775000,
+        "end_time": 780000,
+        "text": "Ganz wichtig, die muss hier im root-Folder liegen, das heißt auf der Ebene von dem Package.json-File. "
+    },
+    {
+        "start_time": 780000,
+        "end_time": 783000,
+        "text": "Und hier drin kopieren wir einfach das aus der Doku einfach rein. "
+    },
+    {
+        "start_time": 786000,
+        "end_time": 788000,
+        "text": "Dann speichern. "
+    },
+    {
+        "start_time": 788000,
+        "end_time": 794000,
+        "text": "Dann weiter in der Doku und zwar brauchen wir dann noch einen tailwind.config.js-File. "
+    },
+    {
+        "start_time": 794000,
+        "end_time": 798000,
+        "text": "Und hier kopieren wir einfach den CLI-Befehl. "
+    },
+    {
+        "start_time": 798000,
+        "end_time": 807000,
+        "text": "Dann gehen wir wieder in unsere Commandline und installieren jetzt hier einfach mal unser tailwind.config.js. "
+    },
+    {
+        "start_time": 807000,
+        "end_time": 811000,
+        "text": "Jetzt sehen wir das hier, das ist auch direkt hier vorinstalliert. "
+    },
+    {
+        "start_time": 811000,
+        "end_time": 813000,
+        "text": "Und ja, hier drin müssen wir erstmal nichts verändern. "
+    },
+    {
+        "start_time": 813000,
+        "end_time": 816000,
+        "text": "Das müssten wir erst machen, wenn wir dann in Produktion gehen. "
+    },
+    {
+        "start_time": 816000,
+        "end_time": 822000,
+        "text": "Also das heißt ein Projekt bauen, was wir allerdings hier in diesem Crash Course eben nicht machen werden. "
+    },
+    {
+        "start_time": 822000,
+        "end_time": 829000,
+        "text": "Dann müssen wir jetzt hier noch unsere Styling einfügen und zwar in die index.css. "
+    },
+    {
+        "start_time": 829000,
+        "end_time": 831000,
+        "text": "Hier einfach das kopieren. "
+    },
+    {
+        "start_time": 831000,
+        "end_time": 835000,
+        "text": "Das sind eben Utility Klassen, die wir hier in tailwind importieren. "
+    },
+    {
+        "start_time": 835000,
+        "end_time": 840000,
+        "text": "Wenn du hier mehr wissen willst, wie tailwind eigentlich funktioniert, ich habe auch einen kleinen Crash Course zu tailwind gemacht. "
+    },
+    {
+        "start_time": 840000,
+        "end_time": 845000,
+        "text": "Wenn dich das nicht so interessiert, hier einfach folgen oder eben ein eigenes CSS schreiben. "
+    },
+    {
+        "start_time": 845000,
+        "end_time": 851000,
+        "text": "Wie gesagt, ich gehe jetzt hier mal in index.css und überschreibe jetzt hier mal die Standardkonfiguration. "
+    },
+    {
+        "start_time": 851000,
+        "end_time": 856000,
+        "text": "Wichtig, ich habe vorher das Ganze hier aus dem index.css eben gelöscht. "
+    },
+    {
+        "start_time": 856000,
+        "end_time": 858000,
+        "text": "Hier müssen wir das Ganze nochmal importieren. "
+    },
+    {
+        "start_time": 858000,
+        "end_time": 863000,
+        "text": "Punkt für den aktuellen Folder und dann einfach index.css. "
+    },
+    {
+        "start_time": 863000,
+        "end_time": 866000,
+        "text": "Und damit importieren wir jetzt hier unser Styling. "
+    },
+    {
+        "start_time": 866000,
+        "end_time": 872000,
+        "text": "Und wenn wir jetzt ausführen, npm run start, dann startet jetzt hier die App. "
+    },
+    {
+        "start_time": 872000,
+        "end_time": 875000,
+        "text": "Und jetzt sollten wir auch gleich hier ein leicht anderes Styling sehen. "
+    },
+    {
+        "start_time": 875000,
+        "end_time": 879000,
+        "text": "Okay, und wie man sehen kann, ja, also das ist nicht mehr so fett, sondern eben sehr klein. "
+    },
+    {
+        "start_time": 879000,
+        "end_time": 889000,
+        "text": "Das liegt daran, dass eben tailwind einen CSS Reset macht und wir hier von Null auf starten können, unsere eigene, ja, unsere eigenes CSS zu entwickeln. "
+    },
+    {
+        "start_time": 889000,
+        "end_time": 895000,
+        "text": "So, jetzt können wir uns aber mal wirklich um React kümmern und unsere ersten Components bauen. "
+    },
+    {
+        "start_time": 895000,
+        "end_time": 905000,
+        "text": "Wenn wir eigene Components bauen, dann ist es eigentlich best practice hier in diesem Source-Folder einen neuen Folder zu erstellen und diesen Folder einfach Components zu nennen. "
+    },
+    {
+        "start_time": 905000,
+        "end_time": 909000,
+        "text": "Hier drin wissen wir dann, dass hier unsere, ja, Components leben. "
+    },
+    {
+        "start_time": 909000,
+        "end_time": 913000,
+        "text": "Und was wir letztlich brauchen ist, wir wollen eine To-Do-List erstellen. "
+    },
+    {
+        "start_time": 913000,
+        "end_time": 918000,
+        "text": "Das heißt, wir haben ein Gerüst für die To-Dos und wir haben natürlich auch noch das To-Do selbst. "
+    },
+    {
+        "start_time": 918000,
+        "end_time": 924000,
+        "text": "Das heißt, wir bauen zwei Components und ich würde sagen, wir fangen einfach mal an mit dem To-Do-List-Component. "
+    },
+    {
+        "start_time": 924000,
+        "end_time": 929000,
+        "text": "Dafür einfach ein neues Filer stellen und nennen das Ganze mal To-Do-List.js. "
+    },
+    {
+        "start_time": 929000,
+        "end_time": 937000,
+        "text": "Ganz wichtig, wenn man eigene Components schreibt, sollten diese immer mit einem Großbuchstaben anfangen, damit man eben nicht mit dem Standard HTML-Text sich irgendwie berührt "
+    },
+    {
+        "start_time": 937000,
+        "end_time": 942000,
+        "text": "und diese sich, ja, gegenseitig überschreiben oder ein ungewünschtes Verhalten auslösen. "
+    },
+    {
+        "start_time": 942000,
+        "end_time": 948000,
+        "text": "So, jetzt haben wir hier ein leeres File. Ich habe am Anfang hier dieses Create React App Snippets runtergeladen "
+    },
+    {
+        "start_time": 948000,
+        "end_time": 954000,
+        "text": "und über RAFCE können wir jetzt hier einen Functional Component erstellen. "
+    },
+    {
+        "start_time": 954000,
+        "end_time": 963000,
+        "text": "Und hier kriegen wir dann direkt eine Funktion, die dann eben auch To-Do-List heißt, das heißt wie unser File, und diese wird auch direkt exportiert. "
+    },
+    {
+        "start_time": 963000,
+        "end_time": 967000,
+        "text": "Das ist sehr praktisch, um eben, ja, schnell hier zu entwickeln. "
+    },
+    {
+        "start_time": 968000,
+        "end_time": 975000,
+        "text": "Hier in diesem Diff-Container schreiben wir erstmal einen Platzhalter rein und nennen den einfach mal To-Do-List. "
+    },
+    {
+        "start_time": 975000,
+        "end_time": 981000,
+        "text": "So, ok, passt. Ok, das wird hier mal ein Template für unsere To-Do-List. "
+    },
+    {
+        "start_time": 981000,
+        "end_time": 990000,
+        "text": "Dann erstellen wir noch einen To-Do und auch hierfür einen neuen Component und den nennen wir einfach mal To-Do.js. "
+    },
+    {
+        "start_time": 990000,
+        "end_time": 1002000,
+        "text": "So, und hier drin das gleiche Spiel RAFCE für ein Functional Component und hier drin schreiben wir eben auch eine H1 und schreiben einfach ein To-Do. "
+    },
+    {
+        "start_time": 1002000,
+        "end_time": 1010000,
+        "text": "Ok, jetzt haben wir hier unsere Components und was wir ja letztlich machen wollen, ist wir wollen ja irgendwie diese To-Do-List auch anzeigen. "
+    },
+    {
+        "start_time": 1010000,
+        "end_time": 1017000,
+        "text": "Das heißt, wir können jetzt hier, weil in dieser App gesetzt ist, und hier drin importieren wir jetzt einfach mal unsere To-Do-List. "
+    },
+    {
+        "start_time": 1017000,
+        "end_time": 1022000,
+        "text": "Wichtig, die To-Do's importieren wir nicht direkt, weil wir so eine Art Baumstruktur haben werden. "
+    },
+    {
+        "start_time": 1022000,
+        "end_time": 1028000,
+        "text": "Das heißt, wir importieren das To-Do in die To-Do-List und die To-Do-List importieren wir dann in App.js. "
+    },
+    {
+        "start_time": 1028000,
+        "end_time": 1037000,
+        "text": "Das heißt, hier importieren wir nur eben To-Do-List und hier ist VS Code auch schlau genug, um uns direkt hier den Pfad anzugeben. "
+    },
+    {
+        "start_time": 1037000,
+        "end_time": 1040000,
+        "text": "Hier einfach To-Do-List, from Components, To-Do-List. "
+    },
+    {
+        "start_time": 1040000,
+        "end_time": 1047000,
+        "text": "Und jetzt können wir statt diesem Hello World, was wir vorher hatten, unsere eigene semantische HTML eben schreiben. "
+    },
+    {
+        "start_time": 1047000,
+        "end_time": 1054000,
+        "text": "Und das Ganze ist auch ein Self-Contained Component, also wir können uns den Teil hier auch sparen und das einfach so schreiben. "
+    },
+    {
+        "start_time": 1054000,
+        "end_time": 1058000,
+        "text": "Und jetzt sehen wir hier, haben wir unsere To-Do-List hier oben stehen. "
+    },
+    {
+        "start_time": 1058000,
+        "end_time": 1061000,
+        "text": "Das heißt, das Importieren hat hier schon mal funktioniert. "
+    },
+    {
+        "start_time": 1061000,
+        "end_time": 1063000,
+        "text": "Und das Gleiche machen wir hier nochmal. "
+    },
+    {
+        "start_time": 1063000,
+        "end_time": 1066000,
+        "text": "Hier importieren wir dann auch direkt mal unsere To-Do. "
+    },
+    {
+        "start_time": 1066000,
+        "end_time": 1070000,
+        "text": "Und das nutzen wir dann einfach mal hier drin. "
+    },
+    {
+        "start_time": 1070000,
+        "end_time": 1077000,
+        "text": "Das machen wir jetzt mal so, dass wir es eben nicht nur einmal schreiben, sondern dass wir das Ganze dann eben mehrmals schreiben. "
+    },
+    {
+        "start_time": 1077000,
+        "end_time": 1080000,
+        "text": "Das heißt, wir haben jetzt hier einfach mal drei To-Do's drin. "
+    },
+    {
+        "start_time": 1080000,
+        "end_time": 1083000,
+        "text": "Und wenn wir das speichern, sehen wir dann hier To-Do, To-Do, To-Do. "
+    },
+    {
+        "start_time": 1083000,
+        "end_time": 1087000,
+        "text": "Vielleicht hier nochmal eine Überschrift oder sowas. "
+    },
+    {
+        "start_time": 1087000,
+        "end_time": 1090000,
+        "text": "Und dann haben wir hier unsere To-Do-List. "
+    },
+    {
+        "start_time": 1090000,
+        "end_time": 1094000,
+        "text": "Und wenn wir das Ganze jetzt mal so machen, sehen wir mal eine Überschrift oder sowas. "
+    },
+    {
+        "start_time": 1094000,
+        "end_time": 1098000,
+        "text": "Das ist auch nicht perfekt sein. "
+    },
+    {
+        "start_time": 1098000,
+        "end_time": 1104000,
+        "text": "Heißt, es ist mal unsere To-Do's und hier drunter dann eben unsere To-Do-Components. "
+    },
+    {
+        "start_time": 1104000,
+        "end_time": 1107000,
+        "text": "So, hier drin erstellen wir dann noch ein Beispiel-Daten-Objekt. "
+    },
+    {
+        "start_time": 1107000,
+        "end_time": 1110000,
+        "text": "Eben mit unseren To-Do's, die wir am Anfang haben. "
+    },
+    {
+        "start_time": 1110000,
+        "end_time": 1113000,
+        "text": "Ist einfach dazu da, um eben Daten zu simulieren. "
+    },
+    {
+        "start_time": 1113000,
+        "end_time": 1117000,
+        "text": "Und hier nennen wir das Ganze nochmal Const To-Do's. "
+    },
+    {
+        "start_time": 1117000,
+        "end_time": 1122000,
+        "text": "Und erstellen wir mal ein Array und hier drin ein Objekt. "
+    },
+    {
+        "start_time": 1122000,
+        "end_time": 1127000,
+        "text": "Und als Key nennen wir das Ganze mal Distribution. "
+    },
+    {
+        "start_time": 1127000,
+        "end_time": 1130000,
+        "text": "Und als To-Do machen wir hier einkaufen. "
+    },
+    {
+        "start_time": 1133000,
+        "end_time": 1137000,
+        "text": "Und als zweiten Parameter haben wir dann Done. "
+    },
+    {
+        "start_time": 1137000,
+        "end_time": 1140000,
+        "text": "Und das ist in dem Fall dann mal False. "
+    },
+    {
+        "start_time": 1140000,
+        "end_time": 1143000,
+        "text": "Dann erstellen wir hier noch ein weiteres To-Do. "
+    },
+    {
+        "start_time": 1143000,
+        "end_time": 1146000,
+        "text": "Dann erstellen wir mal insgesamt drei. "
+    },
+    {
+        "start_time": 1146000,
+        "end_time": 1152000,
+        "text": "Hier noch Sport und Programmieren. "
+    },
+    {
+        "start_time": 1152000,
+        "end_time": 1158000,
+        "text": "Und sagen wir mal, wir haben heute Morgen schon fleißig und haben bereits das Einkaufen erledigt. "
+    },
+    {
+        "start_time": 1158000,
+        "end_time": 1162000,
+        "text": "So, das sind unsere To-Do's und die wollen wir jetzt mal hier drin darstellen. "
+    },
+    {
+        "start_time": 1162000,
+        "end_time": 1169000,
+        "text": "Und jetzt ist die Frage, wie kriegen wir die Daten, die wir hier in diesem Component To-Do-List erstellt haben, hier rein? "
+    },
+    {
+        "start_time": 1169000,
+        "end_time": 1172000,
+        "text": "Und dafür gibt es sogenannte Properties. "
+    },
+    {
+        "start_time": 1172000,
+        "end_time": 1176000,
+        "text": "Und diese Properties, die können wir eben hier drin definieren. "
+    },
+    {
+        "start_time": 1176000,
+        "end_time": 1183000,
+        "text": "Und zwar wollen wir sagen, dass unser To-Do hier eben gewisse Werte entgegennehmen kann, also Daten entgegennehmen kann. "
+    },
+    {
+        "start_time": 1183000,
+        "end_time": 1188000,
+        "text": "Und was wollen wir hier? Wir wollen Distribution und den Status dann eben weitergeben. "
+    },
+    {
+        "start_time": 1188000,
+        "end_time": 1192000,
+        "text": "Und dafür schreiben wir dann auch einfach hier Distribution rein. "
+    },
+    {
+        "start_time": 1192000,
+        "end_time": 1197000,
+        "text": "Und das ist in dem Fall dann eben ein Objekt. "
+    },
+    {
+        "start_time": 1197000,
+        "end_time": 1200000,
+        "text": "Und hier brauchen wir dann Curly Braces auf und zu. "
+    },
+    {
+        "start_time": 1200000,
+        "end_time": 1204720,
+        "text": "weil wir jetzt hier eine JavaScript Expression haben. Das heißt, wir wollen aus diesem Datenobjekt "
+    },
+    {
+        "start_time": 1204720,
+        "end_time": 1209279,
+        "text": "dann eben etwas extrahieren und hier an diesen Component übergeben. Und wir wollen in dem Fall "
+    },
+    {
+        "start_time": 1209279,
+        "end_time": 1214960,
+        "text": "mal To Do's. Und zwar wollen wir das erste To Do haben und hier drin wollen wir dann die "
+    },
+    {
+        "start_time": 1214960,
+        "end_time": 1220039,
+        "text": "Description übergeben. Außerdem wollen wir hier noch den Status übergeben. Hier braucht man kein "
+    },
+    {
+        "start_time": 1220039,
+        "end_time": 1223799,
+        "text": "comma oder irgendwas, sondern einfach das ganze hintereinander packen und wir wollen dann eben "
+    },
+    {
+        "start_time": 1223799,
+        "end_time": 1231240,
+        "text": "dann und dann ist von den To Do's. Hier holen wir über den Index das erste Element, einfach dann "
+    },
+    {
+        "start_time": 1231240,
+        "end_time": 1240079,
+        "text": "das dann hier raus. Jetzt passt's. Das kopiere ich jetzt mal und wir wollen jetzt hier einfach nur den "
+    },
+    {
+        "start_time": 1240079,
+        "end_time": 1247599,
+        "text": "Index verändern, dass wir einfach hier eben das erste To Do und das zweite To Do haben. Und ja, "
+    },
+    {
+        "start_time": 1247599,
+        "end_time": 1251279,
+        "text": "jetzt sehen wir, passiert erstmal gar nichts. Wir übergeben es bei unseren To Do's hier an "
+    },
+    {
+        "start_time": 1251279,
+        "end_time": 1256680,
+        "text": "diesem To Do Component. Allerdings weiß dieser Component damit noch nichts anzufangen. Der "
+    },
+    {
+        "start_time": 1256680,
+        "end_time": 1265880,
+        "text": "braucht jetzt hier bei dieser Funktion erstmal hier props. Und diese props können wir dann einfach "
+    },
+    {
+        "start_time": 1265880,
+        "end_time": 1270720,
+        "text": "hier drin verwenden. Und statt jetzt hier To Do reinzuschreiben, können wir jetzt hier dann eben "
+    },
+    {
+        "start_time": 1270720,
+        "end_time": 1275039,
+        "text": "unsere props verwenden. Auch hier brauchen wir dann, weil wir jetzt wieder eine JavaScript "
+    },
+    {
+        "start_time": 1275039,
+        "end_time": 1281920,
+        "text": "Expression haben, curly braces und hier können wir dann sagen, wir wollen props.description zum "
+    },
+    {
+        "start_time": 1281920,
+        "end_time": 1289279,
+        "text": "Beispiel haben. Und jetzt sehen wir, haben wir hier einkaufen, sport und programmieren drin stehen. "
+    },
+    {
+        "start_time": 1289279,
+        "end_time": 1294920,
+        "text": "Hier drin könnten wir jetzt einfach mal beispielsweise noch ein weiteres Property verwenden und zwar eben "
+    },
+    {
+        "start_time": 1294920,
+        "end_time": 1300200,
+        "text": "das Done Property. Und wenn wir jetzt hier das so machen würden, würden wir sehen, okay, passiert "
+    },
+    {
+        "start_time": 1300200,
+        "end_time": 1304920,
+        "text": "gar nichts. Es liegt daran, dass wir hier ja keinen String haben, den wir irgendwie darstellen können, "
+    },
+    {
+        "start_time": 1304920,
+        "end_time": 1310480,
+        "text": "sondern wir haben jetzt hier True und False und das wird uns nicht als Text dargestellt. Aber wenn "
+    },
+    {
+        "start_time": 1310480,
+        "end_time": 1314079,
+        "text": "wir damit arbeiten wollen, können wir hier einen Trick verwenden und zwar eignen sich sehr gut "
+    },
+    {
+        "start_time": 1314079,
+        "end_time": 1319240,
+        "text": "Ternary Operators für eine Darstellung und das muss man einfach so lesen. Also wir haben jetzt hier, "
+    },
+    {
+        "start_time": 1319240,
+        "end_time": 1325880,
+        "text": "das ist unsere If-Bedingung. Wenn die erfüllt ist, dann kommt dahinter ein Fragezeichen und wenn das "
+    },
+    {
+        "start_time": 1325880,
+        "end_time": 1332880,
+        "text": "eben passiert, dann wollen wir jetzt in dem Fall haben, ja es ist erledigt und wenn eben nicht so ist, "
+    },
+    {
+        "start_time": 1332880,
+        "end_time": 1338000,
+        "text": "haben wir unsere Erzbedingungen. Dann können wir hier zum Beispiel reinschreiben noch zu erledigen. "
+    },
+    {
+        "start_time": 1338000,
+        "end_time": 1344599,
+        "text": "Und ja, jetzt sieht es ein bisschen unsauber aus. Wir werden uns auch gleich um das Styling "
+    },
+    {
+        "start_time": 1344599,
+        "end_time": 1349599,
+        "text": "kümmern, aber hier sehen wir dann einkaufen, es erledigt, weil wir hier ja ein True haben und "
+    },
+    {
+        "start_time": 1349599,
+        "end_time": 1353759,
+        "text": "der Rest ist eben noch zu erledigen. Also das wäre mal ein Beispiel, wie man hier so eine "
+    },
+    {
+        "start_time": 1353759,
+        "end_time": 1360480,
+        "text": "JavaScript-Expression nutzen kann, um eben auch bedingt Text darzustellen. Hier können wir "
+    },
+    {
+        "start_time": 1360480,
+        "end_time": 1365400,
+        "text": "allerdings noch ein bisschen sauberer arbeiten und zwar können wir diese Props, die wir haben, "
+    },
+    {
+        "start_time": 1365400,
+        "end_time": 1371359,
+        "text": "statt hier mal Props Punkt zu schreiben, das ist ja ein Objekt, auf das wir hier zugreifen und "
+    },
+    {
+        "start_time": 1371359,
+        "end_time": 1376639,
+        "text": "dieses Objekt können wir direkt hier drin destructuren und dann schreiben wir einfach nur den Namen, "
+    },
+    {
+        "start_time": 1376639,
+        "end_time": 1382400,
+        "text": "den wir eben haben wollen, also description und dann und damit können wir auch direkt hier "
+    },
+    {
+        "start_time": 1382400,
+        "end_time": 1388279,
+        "text": "dieses Props hier rauswerfen. Das ist auf jeden Fall die saubere Schreibweise. So und funktioniert "
+    },
+    {
+        "start_time": 1388279,
+        "end_time": 1393440,
+        "text": "genauso wie vorher. Okay, eine Sache stört mich hier noch und zwar haben wir jetzt hier dreimal "
+    },
+    {
+        "start_time": 1393440,
+        "end_time": 1397720,
+        "text": "diese To-Do untereinander geschrieben und das ist natürlich nicht gut, nehmen wir an, wir hätten "
+    },
+    {
+        "start_time": 1397720,
+        "end_time": 1403240,
+        "text": "hier ein viertes To-Do, das ist ja hier statisch reingeschrieben und nehmen wir an, wir adden eins, "
+    },
+    {
+        "start_time": 1403240,
+        "end_time": 1408480,
+        "text": "dann wollen wir nicht den Code editieren, sondern wollen, dass wir hier unsere Elemente eben dynamisch "
+    },
+    {
+        "start_time": 1408480,
+        "end_time": 1413119,
+        "text": "erinnern. Das heißt, wenn die Liste eben aus vier To-Do besteht, dann soll der Code trotzdem nur "
+    },
+    {
+        "start_time": 1413119,
+        "end_time": 1418759,
+        "text": "einmal ausgeführt werden, ohne dass wir händlich ein To-Do hinzufügen müssen und dafür verwenden "
+    },
+    {
+        "start_time": 1418759,
+        "end_time": 1422640,
+        "text": "wir hier wieder eben JavaScript und da wir JavaScript verwenden, brauchen wir wieder diese "
+    },
+    {
+        "start_time": 1422640,
+        "end_time": 1428880,
+        "text": "curly braces, eben damit React weiß, dass wir hier eben eine JavaScript Expression verwenden und wir "
+    },
+    {
+        "start_time": 1428880,
+        "end_time": 1434759,
+        "text": "können hier ganz normale Array Methods ausführen und zwar To-Do's Punkt Map, das wird auch sehr, "
+    },
+    {
+        "start_time": 1434759,
+        "end_time": 1443480,
+        "text": "sehr oft benutzt und zwar wollen wir mappen über diesen To-Do Array und was wir da haben wollen, "
+    },
+    {
+        "start_time": 1443480,
+        "end_time": 1448319,
+        "text": "wir wollen von jedem Element, das heißt ich nenne das hier mal item, das hier nochmal ein bisschen "
+    },
+    {
+        "start_time": 1448319,
+        "end_time": 1454759,
+        "text": "sauberer, nehmen wir jetzt hier mal eine arrow Funktion, also wir wollen ein item haben und "
+    },
+    {
+        "start_time": 1454759,
+        "end_time": 1462319,
+        "text": "dieses item ist dann in dem Fall war das hier und wir wollen dann ein To-Do hier darstellen und zwar "
+    },
+    {
+        "start_time": 1462319,
+        "end_time": 1469639,
+        "text": "wollen wir dann, das lösche ich auch mal direkt, wir wollen von diesem item dann eben die Description "
+    },
+    {
+        "start_time": 1469639,
+        "end_time": 1474599,
+        "text": "haben und da wir jetzt hier nur noch ein Objekt haben, da wir jetzt hier drüber loopen, brauchen "
+    },
+    {
+        "start_time": 1474599,
+        "end_time": 1479440,
+        "text": "wir auch hier diesen Index nicht mehr, das heißt wir können hier direkt über item Punkt Description "
+    },
+    {
+        "start_time": 1479440,
+        "end_time": 1485400,
+        "text": "hier die Description eben rausziehen und das gleiche können wir auch für hier machen, also dann ist "
+    },
+    {
+        "start_time": 1485400,
+        "end_time": 1491599,
+        "text": "dann eben item done und ganz wichtig, map muss ein Objekt returnen, das heißt wir müssen hier auch "
+    },
+    {
+        "start_time": 1491599,
+        "end_time": 1495599,
+        "text": "returnen reinschreiben, weil sonst wird uns hier nichts angezeigt und ja wie wir sehen können, "
+    },
+    {
+        "start_time": 1495599,
+        "end_time": 1502880,
+        "text": "das funktioniert und wie man sehen kann, ja alles dynamisch, also soweit so gut, eine Kleinigkeit "
+    },
+    {
+        "start_time": 1502880,
+        "end_time": 1506640,
+        "text": "haben wir allerdings noch und zwar wenn wir das ganze hier untersuchen, dann sehen wir jetzt hier "
+    },
+    {
+        "start_time": 1506640,
+        "end_time": 1514200,
+        "text": "einen Error bzw. eine Fehlermeldung und zwar kriegen wir eine Warnung, dass jedes Schaltelement in "
+    },
+    {
+        "start_time": 1514200,
+        "end_time": 1521320,
+        "text": "dieser List einen Uniken Key Property haben soll und auch hierfür ist eben map sehr gut geeignet, "
+    },
+    {
+        "start_time": 1521319,
+        "end_time": 1526000,
+        "text": "da wir hier als zweiten Parameter einen Index eben definieren können und hier können wir sagen, "
+    },
+    {
+        "start_time": 1526000,
+        "end_time": 1532480,
+        "text": "wir wollen diesen Index auch verwenden als weiteres Property und zwar einfach dann key ist index, "
+    },
+    {
+        "start_time": 1532480,
+        "end_time": 1539159,
+        "text": "ja und damit wenn wir jetzt hier refreshen, ist dieser Fehler verschwunden und wir haben jetzt "
+    },
+    {
+        "start_time": 1539159,
+        "end_time": 1544839,
+        "text": "hier sauber und dynamisch hier unsere ersten Do-Elemente dargestellt. Ok, da das jetzt hier "
+    },
+    {
+        "start_time": 1544839,
+        "end_time": 1548639,
+        "text": "technisch schon mal funktioniert, würde ich sagen gucken wir uns jetzt mal an, wie wir das ganze hier "
+    },
+    {
+        "start_time": 1548639,
+        "end_time": 1552440,
+        "text": "auch stylen können, das werfe ich hier noch mal komplett raus, das werden wir ein bisschen anders "
+    },
+    {
+        "start_time": 1552440,
+        "end_time": 1557639,
+        "text": "darstellen, das heißt wir haben jetzt hier nur noch unsere To-Do's, aber stylen wir erstmal hier "
+    },
+    {
+        "start_time": 1557639,
+        "end_time": 1565000,
+        "text": "unsere To-Do-List. Ok, dafür stylen wir jetzt hier erstmal nicht direkt in der To-Do-List, sondern "
+    },
+    {
+        "start_time": 1565000,
+        "end_time": 1571680,
+        "text": "wir gehen erstmal in AppJS, weil wir hier eben das Alignment von dieser To-Do-List hier definieren "
+    },
+    {
+        "start_time": 1571680,
+        "end_time": 1577799,
+        "text": "wollen, hier drin nutzen wir dann ClassName eben für die Tailwind Syntax und dann werden wir hier "
+    },
+    {
+        "start_time": 1577799,
+        "end_time": 1585319,
+        "text": "eine Max-Width von Large darstellen, das heißt hier haben wir dann insgesamt eine maximale Breite "
+    },
+    {
+        "start_time": 1585319,
+        "end_time": 1592039,
+        "text": "von 576 Pixel hier für diese To-Do-List und jetzt geben wir den noch ein bisschen Styling, das heißt "
+    },
+    {
+        "start_time": 1592039,
+        "end_time": 1595799,
+        "text": "wir werden jetzt hier erstmal das ganze in die Mitte packen, ich glaube jetzt muss ich es doch ein "
+    },
+    {
+        "start_time": 1595799,
+        "end_time": 1601079,
+        "text": "bisschen größer machen, also jetzt haben wir aktuell dieses Element eben, ich hoffe das ist da noch gut "
+    },
+    {
+        "start_time": 1601079,
+        "end_time": 1609440,
+        "text": "lesbar. So jetzt ist es hier in der Mitte, ist allerdings noch alles linksbündig und hier können "
+    },
+    {
+        "start_time": 1609440,
+        "end_time": 1614519,
+        "text": "wir zum Beispiel auch mal einen Background rein machen über BG Gray 200, damit kriegen wir jetzt hier "
+    },
+    {
+        "start_time": 1614519,
+        "end_time": 1619319,
+        "text": "für diese To-Do-List eben so einen grauen Background und vielleicht noch eine Margin Top, dass das hier "
+    },
+    {
+        "start_time": 1619319,
+        "end_time": 1627000,
+        "text": "nicht so oben klebt von 80 Pixel und ja, damit hätten wir jetzt erstmal hier das ganze soweit "
+    },
+    {
+        "start_time": 1627000,
+        "end_time": 1632000,
+        "text": "gestylt, dass wir eben hier das ganze auch als HTML Element erkennen können. Dann kommen wir jetzt mal "
+    },
+    {
+        "start_time": 1632000,
+        "end_time": 1637200,
+        "text": "in die To-Do-List, JS rein gehen und werden jetzt hier weiter stylen. Ich würde hier nochmal einen "
+    },
+    {
+        "start_time": 1637200,
+        "end_time": 1642440,
+        "text": "DIV-Container um dieses H1 Element bauen, da wir das centern wollen, das geht einfach mit Text-Center "
+    },
+    {
+        "start_time": 1642440,
+        "end_time": 1649279,
+        "text": "ganz gut. Dafür einfach hier den DIV erstellen, hier reinpacken, dass hier nochmal die Schrift "
+    },
+    {
+        "start_time": 1649279,
+        "end_time": 1652839,
+        "text": "ein bisschen größer. So jetzt sollten wir es eigentlich auch wieder ganz gut sehen können. "
+    },
+    {
+        "start_time": 1652839,
+        "end_time": 1659319,
+        "text": "Hier drin dann einfach ein Class Name definieren und wir centern mal hier die Überschrift und "
+    },
+    {
+        "start_time": 1659319,
+        "end_time": 1666359,
+        "text": "außerdem geben wir der hier noch einen anderen Background, zum Beispiel BG Gray 900 und dann "
+    },
+    {
+        "start_time": 1666359,
+        "end_time": 1672279,
+        "text": "ein Text White, dass man den Text auch wieder lesen kann und dann noch ein Text 3XL, dass wir hier "
+    },
+    {
+        "start_time": 1672279,
+        "end_time": 1677359,
+        "text": "einen etwas größeren Text haben. Außerdem, es ist jetzt sehr gedrängt, geben wir dem ganzen noch ein "
+    },
+    {
+        "start_time": 1677360,
+        "end_time": 1682559,
+        "text": "bisschen Padding nach oben und nach unten und ja reicht das mal denke ich mal hierfür. "
+    },
+    {
+        "start_time": 1682559,
+        "end_time": 1687840,
+        "text": "Obwohl hier können wir dem ganzen noch ein Font Semi-Bolt geben, dass es auch noch ein bisschen "
+    },
+    {
+        "start_time": 1687840,
+        "end_time": 1693720,
+        "text": "dicker aussieht. So jetzt sieht es schon ganz gut aus und ja was können wir jetzt noch machen? Wir "
+    },
+    {
+        "start_time": 1693720,
+        "end_time": 1698319,
+        "text": "können außerdem vielleicht hier dem ganzen noch so ein Shadow geben dieser ganzen To-Do-List, "
+    },
+    {
+        "start_time": 1698319,
+        "end_time": 1703200,
+        "text": "das heißt wir können den DIV drüber anpacken und wenn wir hier drüber hovern, dann würden wir "
+    },
+    {
+        "start_time": 1703200,
+        "end_time": 1708079,
+        "text": "zum Beispiel etwas größeren Shadow sehen, das heißt ein Standard Shadow können wir hier so kriegen "
+    },
+    {
+        "start_time": 1708079,
+        "end_time": 1713599,
+        "text": "über Shadow SM, den sieht man jetzt nicht so wirklich, aber wenn wir drüber hovern, dann sehen "
+    },
+    {
+        "start_time": 1713599,
+        "end_time": 1719039,
+        "text": "wir jetzt hier einen größeren Shadow und zwar Shadow minus LG und damit kriegen wir eben hier "
+    },
+    {
+        "start_time": 1719039,
+        "end_time": 1725159,
+        "text": "visuelles Feedback von unserer To-Do-List. Okay, damit werden wir jetzt hier erstmal in der To-Do-List "
+    },
+    {
+        "start_time": 1725159,
+        "end_time": 1730599,
+        "text": "fertig, jetzt können wir mal uns um die To-Do's an sich kümmern und zwar haben wir jetzt hier ja nur "
+    },
+    {
+        "start_time": 1730599,
+        "end_time": 1735519,
+        "text": "die Description drin stehen und was wir außerdem noch brauchen ist ein Button, damit wir die To-Do "
+    },
+    {
+        "start_time": 1735519,
+        "end_time": 1740200,
+        "text": "löschen können und wenn wir hier auf die Description draufklicken soll auch etwas passieren, "
+    },
+    {
+        "start_time": 1740200,
+        "end_time": 1745400,
+        "text": "zwar wollen wir dann das To-Do von Done auf False und eben andersherum setzen, das heißt ich würde "
+    },
+    {
+        "start_time": 1745400,
+        "end_time": 1753880,
+        "text": "sagen erst einmal hier in den Button und in den Button schreiben einfach rein löschen und ja jetzt "
+    },
+    {
+        "start_time": 1753880,
+        "end_time": 1757720,
+        "text": "sieht das ganze hier erstmal ein bisschen doof aus, es ist untereinander und hier können wir einfach "
+    },
+    {
+        "start_time": 1757720,
+        "end_time": 1763559,
+        "text": "Flexbox nutzen, dafür einfach Class Name ist gleich Flex, hier können wir dann sagen wir wollen "
+    },
+    {
+        "start_time": 1763559,
+        "end_time": 1769800,
+        "text": "das ganze eben über Justify auch anordnen und hier bietet sich an Between, das heißt wir kriegen hier "
+    },
+    {
+        "start_time": 1769800,
+        "end_time": 1773960,
+        "text": "links das erste Element und eben rechts das zweite, sieht jetzt auch noch sehr gedrängt aus, auch hier "
+    },
+    {
+        "start_time": 1773960,
+        "end_time": 1780519,
+        "text": "wollen wir vielleicht noch ein bisschen Padding reinkriegen, sagen wir mal ein Padding von zwei und "
+    },
+    {
+        "start_time": 1780519,
+        "end_time": 1786680,
+        "text": "dann haben wir jetzt hier schon etwas mehr, vielleicht noch ein bisschen Padding, hier nach links und "
+    },
+    {
+        "start_time": 1786679,
+        "end_time": 1792519,
+        "text": "rechts, dann haben wir eigentlich nur P2 und dann haben wir auch nach links hier noch Padding "
+    },
+    {
+        "start_time": 1792519,
+        "end_time": 1796559,
+        "text": "drin und ja würde ich sagen den Button stylen wir noch und machen hier die Schrift vielleicht "
+    },
+    {
+        "start_time": 1796559,
+        "end_time": 1799920,
+        "text": "auch ein bisschen größer, dann Class Name, sagen wir mal. "
+    },
+    {
+        "start_time": 1800000,
+        "end_time": 1808019,
+        "text": "hier text xl schon relativ groß machen wir vielleicht text lg und das ganze "
+    },
+    {
+        "start_time": 1808019,
+        "end_time": 1814079,
+        "text": "auch hier für den button und den button wollen wir außerdem hier noch andere "
+    },
+    {
+        "start_time": 1814079,
+        "end_time": 1820079,
+        "text": "styling geben das heißt zum beispiel text a biggie gray machen wir hier mal 400 "
+    },
+    {
+        "start_time": 1820079,
+        "end_time": 1828799,
+        "text": "und geben dem auch noch ein bisschen padding nach rechts p2 ok jetzt sieht "
+    },
+    {
+        "start_time": 1828799,
+        "end_time": 1834240,
+        "text": "ganz schön besser aus wird sagen hier geben wir noch einen text white und ja "
+    },
+    {
+        "start_time": 1834240,
+        "end_time": 1837920,
+        "text": "sieht jetzt erstmal gar nicht so schlecht aus was mir noch auffällt ist "
+    },
+    {
+        "start_time": 1837920,
+        "end_time": 1844079,
+        "text": "dass hier die items hier nicht in der mitte sind das können wir über items "
+    },
+    {
+        "start_time": 1844079,
+        "end_time": 1848559,
+        "text": "center machen das heißt das ist das gleiche wie allein items bei flexbox und "
+    },
+    {
+        "start_time": 1848559,
+        "end_time": 1853599,
+        "text": "hier sendern wir dann eben unsere dupuse auch in der mitte und was außerdem hier "
+    },
+    {
+        "start_time": 1853599,
+        "end_time": 1857359,
+        "text": "immer noch gut ist wir wollen hier wenn wir hier drauf klicken dann das ganze "
+    },
+    {
+        "start_time": 1857359,
+        "end_time": 1863519,
+        "text": "eben auf dann oder eben nicht dann setzen dass wir ja ein cursor haben den "
+    },
+    {
+        "start_time": 1863519,
+        "end_time": 1871799,
+        "text": "kriegen einfach über hier bei der h1 ist das ja über cursor dann pointer damit "
+    },
+    {
+        "start_time": 1871799,
+        "end_time": 1874880,
+        "text": "kriegen wir hier ein pointer wo man dann auch eben erwarten kann dass man hier "
+    },
+    {
+        "start_time": 1874880,
+        "end_time": 1878839,
+        "text": "wenn man drauf klickt und was passiert in dem beispiel das ich am anfang "
+    },
+    {
+        "start_time": 1878839,
+        "end_time": 1882480,
+        "text": "gezeigt habe hatten wir es so gemacht dass wir hier wenn du erledigt ist dann "
+    },
+    {
+        "start_time": 1882480,
+        "end_time": 1885440,
+        "text": "haben wir das hier grün also den background und wenn dem nicht so ist "
+    },
+    {
+        "start_time": 1885440,
+        "end_time": 1890279,
+        "text": "dann haben wir den background rot und hierfür können wir dann statt das ganze "
+    },
+    {
+        "start_time": 1890279,
+        "end_time": 1895039,
+        "text": "hier einfach so zu schreiben also über ganz normale classname vergabe auch über "
+    },
+    {
+        "start_time": 1895039,
+        "end_time": 1899000,
+        "text": "javascript expressions zu machen und das heißt wir brauchen jetzt hier nicht "
+    },
+    {
+        "start_time": 1899000,
+        "end_time": 1902640,
+        "text": "diese diese statischen klassennamen sondern wir wollen hier dynamische "
+    },
+    {
+        "start_time": 1902640,
+        "end_time": 1907039,
+        "text": "klassennamen und dafür können wir dann das ganze hier über den string können "
+    },
+    {
+        "start_time": 1907039,
+        "end_time": 1910559,
+        "text": "wir dann hier eine javascript expression auch wieder verwenden das heißt ich "
+    },
+    {
+        "start_time": 1910559,
+        "end_time": 1915000,
+        "text": "schreibe hier drüber mal wie das ganze besser aussieht und vielleicht noch eine "
+    },
+    {
+        "start_time": 1915000,
+        "end_time": 1918400,
+        "text": "wichtige sache die ich gar nicht so erwähnt habe am anfang und zwar kriegen "
+    },
+    {
+        "start_time": 1918400,
+        "end_time": 1925319,
+        "text": "jetzt hier ein fehler und das liegt daran dass wir hier mehrere html elemente "
+    },
+    {
+        "start_time": 1925319,
+        "end_time": 1929039,
+        "text": "zurückgeben wollen und ganz wichtig in react kann man immer nur einzelnes "
+    },
+    {
+        "start_time": 1929039,
+        "end_time": 1933839,
+        "text": "element return das heißt hier mal ein diff und noch einen zweiten diff und um "
+    },
+    {
+        "start_time": 1933839,
+        "end_time": 1937839,
+        "text": "das hier zu beheben könnten wir hier noch mal einen anderen diff herum bauen "
+    },
+    {
+        "start_time": 1937839,
+        "end_time": 1942920,
+        "text": "und diese hier reinpacken und schon jetzt hätten wir keine fehler mehr das heißt "
+    },
+    {
+        "start_time": 1942920,
+        "end_time": 1948359,
+        "text": "man kann immer nur ein einzelnes html element return das ganz wichtig und ja "
+    },
+    {
+        "start_time": 1948359,
+        "end_time": 1953000,
+        "text": "kann sonst so verwirrungen führen aber noch mal zurück hier schreiben jetzt "
+    },
+    {
+        "start_time": 1953000,
+        "end_time": 1957559,
+        "text": "einfach mal das ganze dynamisch und zwar klassenname ist und dann eben nicht ein "
+    },
+    {
+        "start_time": 1957559,
+        "end_time": 1961920,
+        "text": "string sondern eben an den javascript expression und ich gehe mal auf mehrere "
+    },
+    {
+        "start_time": 1961920,
+        "end_time": 1967559,
+        "text": "zeilen und wenn das ganze eben dann ist also das ist hier ein true oder falsi "
+    },
+    {
+        "start_time": 1967559,
+        "end_time": 1973119,
+        "text": "das heißt hier im fall true oder false dann wollen wir hier wieder ein "
+    },
+    {
+        "start_time": 1973119,
+        "end_time": 1977720,
+        "text": "operator verwenden und hier wollen wir dann einfach eine normale klasse "
+    },
+    {
+        "start_time": 1977720,
+        "end_time": 1981640,
+        "text": "verwenden wir wollen einfach die klasse die wir hier auch haben also optisch "
+    },
+    {
+        "start_time": 1981640,
+        "end_time": 1985839,
+        "text": "ändert sich erstmal nichts dran kopiere ich mal hier rein und vielleicht auch "
+    },
+    {
+        "start_time": 1985839,
+        "end_time": 1990920,
+        "text": "direkt hier drunter schon mal für die andere bedingung dann wollen wir jetzt "
+    },
+    {
+        "start_time": 1990920,
+        "end_time": 1995400,
+        "text": "hier eben diese klasse auch haben was sich aber unterscheidet ist wir wollen "
+    },
+    {
+        "start_time": 1995400,
+        "end_time": 2001319,
+        "text": "hier wenn das ganze nicht erledigt ist ein roten background und wenn das ganze "
+    },
+    {
+        "start_time": 2001319,
+        "end_time": 2005240,
+        "text": "erledigt ist dann wollen wir einen grünen background mal ziel mal bg green "
+    },
+    {
+        "start_time": 2005240,
+        "end_time": 2011319,
+        "text": "mal 600 und ja jetzt müssen wir noch das ganze ein bisschen aufräumen das "
+    },
+    {
+        "start_time": 2011319,
+        "end_time": 2015119,
+        "text": "können wir mal komplett entfernen okay also diesen diff wir brauchen noch "
+    },
+    {
+        "start_time": 2015119,
+        "end_time": 2020720,
+        "text": "einen öffnen diff für diesen unteren diff das wird jetzt hier noch mal entfernt "
+    },
+    {
+        "start_time": 2020720,
+        "end_time": 2024480,
+        "text": "so jetzt kriegen wir auch hier keinen fehler mehr und jetzt sehen wir haben "
+    },
+    {
+        "start_time": 2024480,
+        "end_time": 2028440,
+        "text": "wir hier ein styling wir brauchen natürlich hier drin dann diese beiden "
+    },
+    {
+        "start_time": 2028440,
+        "end_time": 2033200,
+        "text": "elemente das heißt diesen button und dieses h1 das gehört hier dann in "
+    },
+    {
+        "start_time": 2033200,
+        "end_time": 2036119,
+        "text": "diesen diff rein dass sie eben auch diese stylings abkriegen so und jetzt "
+    },
+    {
+        "start_time": 2036119,
+        "end_time": 2040000,
+        "text": "immer hier haben wir einkaufen ist dann eben grün weil das war ja in unserer "
+    },
+    {
+        "start_time": 2040000,
+        "end_time": 2046279,
+        "text": "tute list hier als dann definiert und den rest haben wir dann eben in rot "
+    },
+    {
+        "start_time": 2046279,
+        "end_time": 2050440,
+        "text": "sagen geben ich auch noch text weit alles sieht dann einfach nicht besonders "
+    },
+    {
+        "start_time": 2050440,
+        "end_time": 2057159,
+        "text": "gut aus mit dem schwarz auf dunkelgrün okay und damit werden wir jetzt hier mit "
+    },
+    {
+        "start_time": 2057159,
+        "end_time": 2061279,
+        "text": "dem styling von der to do erstmal fertig jetzt können wir uns um das logische "
+    },
+    {
+        "start_time": 2061279,
+        "end_time": 2065840,
+        "text": "kümmern und zwar wenn wir hier draufklicken dann wollen wir hier das "
+    },
+    {
+        "start_time": 2065840,
+        "end_time": 2069599,
+        "text": "ganze verändern und zwar wenn wir jetzt hier auf einkaufen klicken dann wollen "
+    },
+    {
+        "start_time": 2069599,
+        "end_time": 2073320,
+        "text": "wir dass dieses dann in dem fall wieder zurückgesetzt wird auf falls oder wenn "
+    },
+    {
+        "start_time": 2073320,
+        "end_time": 2077880,
+        "text": "wir hier bei sport klicken würden dann wird es auf true gesetzt werden und "
+    },
+    {
+        "start_time": 2077880,
+        "end_time": 2080800,
+        "text": "dafür können wir jetzt hier mal eine funktion schreiben und zwar einfach mal "
+    },
+    {
+        "start_time": 2080800,
+        "end_time": 2086440,
+        "text": "die funktion die eben dann eben auf das gegenteil setzt ganz wichtig wenn man "
+    },
+    {
+        "start_time": 2086440,
+        "end_time": 2090880,
+        "text": "funktionen in dem component verwenden will muss man diese innerhalb von "
+    },
+    {
+        "start_time": 2090880,
+        "end_time": 2094360,
+        "text": "diesem component auch definieren das heißt nicht hier außen sondern hier "
+    },
+    {
+        "start_time": 2094360,
+        "end_time": 2098599,
+        "text": "drin und hier würde man dann zum beispiel schreiben konst irgendwie "
+    },
+    {
+        "start_time": 2098599,
+        "end_time": 2106159,
+        "text": "change dann nehmen wir jemanden normal function und wir setzen dann das zu "
+    },
+    {
+        "start_time": 2106159,
+        "end_time": 2110480,
+        "text": "also wenn es eben dann ist dann setzen wir es eben auf anderen das geht in "
+    },
+    {
+        "start_time": 2110480,
+        "end_time": 2115880,
+        "text": "javascript auch relativ einfach das heißt wir können hier dann ist dann "
+    },
+    {
+        "start_time": 2115880,
+        "end_time": 2119199,
+        "text": "eingeben und damit können wir hier relativ gut toggeln und das wollen wir "
+    },
+    {
+        "start_time": 2119199,
+        "end_time": 2125480,
+        "text": "auslösen wenn wir hier dieses das hier eben klicken also diesen text und um "
+    },
+    {
+        "start_time": 2125480,
+        "end_time": 2130400,
+        "text": "eine funktion anderen html element zu binden müssen wir hier ganz normales "
+    },
+    {
+        "start_time": 2130400,
+        "end_time": 2134159,
+        "text": "javascript verwenden und zwar wollen wir wissen was passiert bei welchem "
+    },
+    {
+        "start_time": 2134159,
+        "end_time": 2139800,
+        "text": "ereignis und wir können jetzt hier ein click event binden das ist ganz normales "
+    },
+    {
+        "start_time": 2139800,
+        "end_time": 2143400,
+        "text": "javascript hier hier mit on kriegen wir verschiedene sachen wo wir eben die "
+    },
+    {
+        "start_time": 2143400,
+        "end_time": 2147519,
+        "text": "elemente binden können und wir wollen hier ein on click hier drin können "
+    },
+    {
+        "start_time": 2147519,
+        "end_time": 2153039,
+        "text": "direkt diese curly braces und hier drin geben wir dann diese to do funktion "
+    },
+    {
+        "start_time": 2153039,
+        "end_time": 2157480,
+        "text": "ganz wichtig wir führen sie nicht aus wir pointen oder wir geben nur ein "
+    },
+    {
+        "start_time": 2157480,
+        "end_time": 2162000,
+        "text": "pointer hier weiter und diese funktion wird erst getriggert wenn wir auch "
+    },
+    {
+        "start_time": 2162000,
+        "end_time": 2166440,
+        "text": "wirklich drauf klicken das ganz wichtig ist man hier eben hier keine "
+    },
+    {
+        "start_time": 2166440,
+        "end_time": 2170599,
+        "text": "klammern schreibt und damit direkt die funktion called also so gehört das "
+    },
+    {
+        "start_time": 2170599,
+        "end_time": 2175440,
+        "text": "ganze und ich würde sagen wir loggen auch hier mal das ganze dann noch und zwar "
+    },
+    {
+        "start_time": 2175440,
+        "end_time": 2180400,
+        "text": "loggen wir jetzt hier mal dann und wenn wir jetzt hier mal draufklicken dann "
+    },
+    {
+        "start_time": 2180400,
+        "end_time": 2187800,
+        "text": "sehen wir falls true falls also hier togget das ganze aber das jetzt komisch "
+    },
+    {
+        "start_time": 2187800,
+        "end_time": 2191400,
+        "text": "oder weil wir haben wir gesagt wenn hier das ganze auf tru ist dann wird das "
+    },
+    {
+        "start_time": 2191400,
+        "end_time": 2195119,
+        "text": "ganze grün dargestellt wenn das ganze auf rot ist dann wird das ganze eben auf "
+    },
+    {
+        "start_time": 2195119,
+        "end_time": 2198679,
+        "text": "falls dargestellt aber wir ändern ja hier eigentlich die werte warum funktioniert "
+    },
+    {
+        "start_time": 2198679,
+        "end_time": 2203880,
+        "text": "das ganze nicht das liegt daran wie react eben unsere components rendert und "
+    },
+    {
+        "start_time": 2203880,
+        "end_time": 2209159,
+        "text": "react kennt diese werte jetzt hier erstmal nicht also recht rendert das "
+    },
+    {
+        "start_time": 2209159,
+        "end_time": 2213000,
+        "text": "ganze wieder von vorne die properties werden von der to do list übergeben und "
+    },
+    {
+        "start_time": 2213000,
+        "end_time": 2217840,
+        "text": "damit wird hier ein re-render von diesem element hier erzeugt das heißt wir sind "
+    },
+    {
+        "start_time": 2217840,
+        "end_time": 2223920,
+        "text": "wieder bei dem ausgangspunkt wo wir hier auf tru waren und damit react eben weiß "
+    },
+    {
+        "start_time": 2223920,
+        "end_time": 2228199,
+        "text": "dass hier ein component ändert müssen wir hier von anderen weg zurückgreifen "
+    },
+    {
+        "start_time": 2228199,
+        "end_time": 2232599,
+        "text": "zwar auf sogenannten state state erlaubt es uns eben solche änderungen auch in "
+    },
+    {
+        "start_time": 2232599,
+        "end_time": 2236119,
+        "text": "der jui dann eben darzustellen damit wirklich auch unser component hier von "
+    },
+    {
+        "start_time": 2236119,
+        "end_time": 2239400,
+        "text": "diesen änderungen erfährt weil aktuell haben wir zwar hier in true und false "
+    },
+    {
+        "start_time": 2239400,
+        "end_time": 2243279,
+        "text": "geändert aber der component weiß nichts davon weil er eben immer wieder neu "
+    },
+    {
+        "start_time": 2243279,
+        "end_time": 2246480,
+        "text": "gerendert wird und immer wieder diesen ausgang state kriegt also ihr kriegt "
+    },
+    {
+        "start_time": 2246480,
+        "end_time": 2250280,
+        "text": "immer wieder true und damit ist es auch immer wieder grün völlig egal wie oft "
+    },
+    {
+        "start_time": 2250280,
+        "end_time": 2254880,
+        "text": "hier draufklicken um in unseren components state zu benutzen gibt es "
+    },
+    {
+        "start_time": 2254880,
+        "end_time": 2261360,
+        "text": "herzeit ich glaube 16.8 sogenannte reakt hooks durch die wir eben ja state "
+    },
+    {
+        "start_time": 2261360,
+        "end_time": 2264679,
+        "text": "verwenden können oder class based component zu schreiben also wir hier "
+    },
+    {
+        "start_time": 2264679,
+        "end_time": 2268159,
+        "text": "funktionen wir könnten auch klassen schreiben aber mit react hooks brauchen "
+    },
+    {
+        "start_time": 2268159,
+        "end_time": 2272840,
+        "text": "wir das eben nicht mehr und react liefert die so hooks eben schon aus und diese "
+    },
+    {
+        "start_time": 2272840,
+        "end_time": 2276000,
+        "text": "können wir einfach ganz normal aus der react library importieren und zwar "
+    },
+    {
+        "start_time": 2276000,
+        "end_time": 2280079,
+        "text": "importieren wir in dem fall den use state hook hierfür destructuren wir bei "
+    },
+    {
+        "start_time": 2280079,
+        "end_time": 2284400,
+        "text": "dem import das ganz wichtig dass wir diese klammern verwenden eben das objekt "
+    },
+    {
+        "start_time": 2284400,
+        "end_time": 2290400,
+        "text": "und importieren im use state from react damit können wir jetzt use state "
+    },
+    {
+        "start_time": 2290400,
+        "end_time": 2295800,
+        "text": "bzw den new state hook hier in unserem component verwenden dieses use state "
+    },
+    {
+        "start_time": 2295800,
+        "end_time": 2299840,
+        "text": "müssen wir genauso wie hier diese funktion innerhalb von dem component "
+    },
+    {
+        "start_time": 2299840,
+        "end_time": 2305440,
+        "text": "verwenden wir müssen in use state zwei sachen definieren und zwar hier nutzen "
+    },
+    {
+        "start_time": 2305440,
+        "end_time": 2309760,
+        "text": "wir den array syntax und zwar wollen wir jetzt hier unseren ausgang state "
+    },
+    {
+        "start_time": 2309760,
+        "end_time": 2313519,
+        "text": "haben und die funktion mit der wir diesen state verändern können wenn wir "
+    },
+    {
+        "start_time": 2313519,
+        "end_time": 2318279,
+        "text": "das mal hier ist dann und hier die funktion in der regel schreibt man es "
+    },
+    {
+        "start_time": 2318279,
+        "end_time": 2322239,
+        "text": "irgendwie mit set set dann das werden jetzt hier in dem fall das wäre unser "
+    },
+    {
+        "start_time": 2322239,
+        "end_time": 2327199,
+        "text": "state und das für die funktion und den state zu ändern und das holen wir uns "
+    },
+    {
+        "start_time": 2327199,
+        "end_time": 2332239,
+        "text": "raus aus dieser use state funktion und hier brauchen wir dann noch ein start "
+    },
+    {
+        "start_time": 2332239,
+        "end_time": 2335760,
+        "text": "parameter hier können wir alles mögliche reinschreiben string können "
+    },
+    {
+        "start_time": 2335760,
+        "end_time": 2339559,
+        "text": "objekte noch definieren wir wollen hier dieses dann haben das kriegen wir hier "
+    },
+    {
+        "start_time": 2339559,
+        "end_time": 2343960,
+        "text": "aus den parametern mit das heißt hier einfach dann eintragen und je nachdem ob "
+    },
+    {
+        "start_time": 2343960,
+        "end_time": 2347239,
+        "text": "das nur eben erledigt ist oder nicht kriegen wir hier ein true oder false als "
+    },
+    {
+        "start_time": 2347239,
+        "end_time": 2352519,
+        "text": "startwert und hier drin können wir dann das ganze verändern ganz wichtig state "
+    },
+    {
+        "start_time": 2352519,
+        "end_time": 2356960,
+        "text": "niemals direkt überschreiben also in dem fall was wir hier gemacht haben dass wir "
+    },
+    {
+        "start_time": 2356960,
+        "end_time": 2359599,
+        "text": "hier so eine toccl funktion haben sondern hier müssen wir ein bisschen "
+    },
+    {
+        "start_time": 2359599,
+        "end_time": 2365760,
+        "text": "anders vorgehen und zwar können wir hier dann sagen ist dann ganz wichtig hier in "
+    },
+    {
+        "start_time": 2365760,
+        "end_time": 2369279,
+        "text": "dem fall dann nicht das dann verwenden weil das ist ja nur ein einziges mal "
+    },
+    {
+        "start_time": 2369279,
+        "end_time": 2372920,
+        "text": "definiert das kriegen wir über die properties das ist der wert der dann "
+    },
+    {
+        "start_time": 2372920,
+        "end_time": 2376440,
+        "text": "eben gespeichert wird dieser wert wird durch diese set dann funktion verändert "
+    },
+    {
+        "start_time": 2376440,
+        "end_time": 2381400,
+        "text": "initial ist es eben dieses falls oder true und je nachdem ob der jetzt eben "
+    },
+    {
+        "start_time": 2381400,
+        "end_time": 2385079,
+        "text": "falls oder true ist können wir dann hier drin sagen wir wollen das ganze "
+    },
+    {
+        "start_time": 2385400,
+        "end_time": 2390320,
+        "text": "verändern und zwar in dem fall jetzt hier true und wenn dem so ist dann setzen "
+    },
+    {
+        "start_time": 2390320,
+        "end_time": 2395840,
+        "text": "wir das ganze auf falls und wenn dem ganzen nicht so ist dann setzen wir das "
+    },
+    {
+        "start_time": 2395840,
+        "end_time": 2401840,
+        "text": "über als auf true und damit können wir jetzt "
+    },
+    {
+        "start_time": 2400000,
+        "end_time": 2405460,
+        "text": "hier den state verändern sonst müssen wir in der funktion nichts ändern aber wenn wir jetzt hier "
+    },
+    {
+        "start_time": 2405460,
+        "end_time": 2410500,
+        "text": "noch mal auf einkaufen drücken dann sehen wir ok passiert erstmal nix das liegt eben daran dass "
+    },
+    {
+        "start_time": 2410500,
+        "end_time": 2414139,
+        "text": "wir auch hier in dem klassen namen das ganze ändern das heißt wir dürfen nicht mehr das verwenden "
+    },
+    {
+        "start_time": 2414139,
+        "end_time": 2418179,
+        "text": "was wir hier aus den funktionsargumenten kriegen sondern müssen hier den state verwenden das heißt "
+    },
+    {
+        "start_time": 2418179,
+        "end_time": 2423139,
+        "text": "statt diesem dann nehmen wir jetzt hier die ist dann variable sondern wenn wir jetzt noch mal hier "
+    },
+    {
+        "start_time": 2423139,
+        "end_time": 2429579,
+        "text": "draufklicken dann sehen wir ok jetzt ändert sich auch die visualisierung das heißt jetzt erkennt "
+    },
+    {
+        "start_time": 2429579,
+        "end_time": 2435440,
+        "text": "hier dem fall react auch den state von unserem component und wir können diesen einfach hier dann "
+    },
+    {
+        "start_time": 2435440,
+        "end_time": 2439840,
+        "text": "eben verändern ok also dieser ansatz der funktioniert erst mal so ganz gut das heißt wir können hier "
+    },
+    {
+        "start_time": 2439840,
+        "end_time": 2445039,
+        "text": "eben du es auf erledigt setzen und auch nicht erledigt allerdings haben wir kleines problem und "
+    },
+    {
+        "start_time": 2445039,
+        "end_time": 2449880,
+        "text": "zwar dieses problem tritt auf wenn wir hier unsere du du zählen wollen das heißt wie viele von unseren "
+    },
+    {
+        "start_time": 2449880,
+        "end_time": 2455119,
+        "text": "du du sind noch offen warum das so ist lasse ich mal als kleinen pränt dieser hier offen wir werden "
+    },
+    {
+        "start_time": 2455119,
+        "end_time": 2460579,
+        "text": "das ganze zusammen direkt hier bearbeiten und zwar erstellen wir jetzt hier mal eine neue "
+    },
+    {
+        "start_time": 2460579,
+        "end_time": 2465380,
+        "text": "funktion die uns diese du du hier zählt dafür einfach ganz wichtig wieder innerhalb von diesem "
+    },
+    {
+        "start_time": 2465380,
+        "end_time": 2470980,
+        "text": "component hier eine neue funktion erstellen und die nennen einfach mal count open also für count "
+    },
+    {
+        "start_time": 2470980,
+        "end_time": 2476900,
+        "text": "offene du du das ganze wird wieder eine arrow function braucht jetzt hier keine argumente und "
+    },
+    {
+        "start_time": 2476900,
+        "end_time": 2484260,
+        "text": "was die jetzt letztlich macht ist zählt die offenen du du und auch hier wollen wir jetzt das ganze "
+    },
+    {
+        "start_time": 2484260,
+        "end_time": 2489400,
+        "text": "natürlich irgendwie persistieren das heißt wir brauchen wieder state hier importieren wir dann "
+    },
+    {
+        "start_time": 2489400,
+        "end_time": 2497800,
+        "text": "wieder use state from react und wer noch hier also hier machen wir jetzt einfach mal noch gar nichts "
+    },
+    {
+        "start_time": 2497800,
+        "end_time": 2504559,
+        "text": "werden jetzt hier mal den state initialisieren hier wird über diese array funktion also count "
+    },
+    {
+        "start_time": 2504559,
+        "end_time": 2514519,
+        "text": "er konnt open count wenn wir das ganze mal und dann hier in dem fall count open du du "
+    },
+    {
+        "start_time": 2514519,
+        "end_time": 2524659,
+        "text": "ist ist use state hier brauchen wir wieder einen initialen wert der ist erstmal gar nicht so "
+    },
+    {
+        "start_time": 2524659,
+        "end_time": 2529099,
+        "text": "wichtig ich werde hier einfach null nehmen weil er wird sowieso beim ersten rennen hier direkt "
+    },
+    {
+        "start_time": 2529099,
+        "end_time": 2535340,
+        "text": "überschrieben und dann können wir jetzt hier die du du counten und das macht man besten indem wir "
+    },
+    {
+        "start_time": 2535340,
+        "end_time": 2539820,
+        "text": "hier eine array method verwenden und zwar die filter method hier können wir dann filtern nach "
+    },
+    {
+        "start_time": 2539820,
+        "end_time": 2546260,
+        "text": "den du du die hier noch auf vollstehen und dafür nehmen wir einfach hier du du punkt filter hier "
+    },
+    {
+        "start_time": 2546260,
+        "end_time": 2553019,
+        "text": "haben wir wieder eine arrow function und wir returnen dann wieder ein item und wir betonen "
+    },
+    {
+        "start_time": 2553019,
+        "end_time": 2560699,
+        "text": "von dem item wenn es hier eben dann ist bzw. nicht dann negieren können wir hier mit dem ausrufe "
+    },
+    {
+        "start_time": 2560699,
+        "end_time": 2565500,
+        "text": "zeichen dann returnen wir dieses element wenn ich dann wird nicht returned und das verweisen wir "
+    },
+    {
+        "start_time": 2565500,
+        "end_time": 2571139,
+        "text": "jetzt hier einer neuen variablen zu und diese variablen nennen wir dann einfach mal konst zum "
+    },
+    {
+        "start_time": 2571139,
+        "end_time": 2577539,
+        "text": "beispiel dann du es ist kein perfekter name aber ist erstmal nicht so wichtig und hier wollen wir "
+    },
+    {
+        "start_time": 2577539,
+        "end_time": 2585460,
+        "text": "dann eben zählen wie viele sind und mit dem ergebnis hier wollen wir dann diesen state "
+    },
+    {
+        "start_time": 2585460,
+        "end_time": 2589539,
+        "text": "verändern das heißt das hier soll die neue zahl werden und das machen wir hier mit dieser "
+    },
+    {
+        "start_time": 2589539,
+        "end_time": 2598380,
+        "text": "funktion das heißt wir setzen hier count also schreibe ich mal klein count open du du's count "
+    },
+    {
+        "start_time": 2598380,
+        "end_time": 2604739,
+        "text": "open du du's und wir setzen das dann auf dann du du's und zwar nicht das ganze objekt das wir "
+    },
+    {
+        "start_time": 2604739,
+        "end_time": 2608780,
+        "text": "zurück kriegen sondern die länge von diesem objekt ist er wieder ein array der eben reduziert "
+    },
+    {
+        "start_time": 2608780,
+        "end_time": 2613539,
+        "text": "ist und damit überschreiben wir diesen initialen wert von null jetzt haben wir hier ein kleines "
+    },
+    {
+        "start_time": 2613539,
+        "end_time": 2617980,
+        "text": "problem und zwar dieses open count dieses open count das werden wir auch direkt verwenden und "
+    },
+    {
+        "start_time": 2617980,
+        "end_time": 2622539,
+        "text": "zwar werden wir das einfach mal hier drunter verwenden schreibt mal hier eine neue h2 und "
+    },
+    {
+        "start_time": 2622539,
+        "end_time": 2628980,
+        "text": "dann einfach mal hier oft net to do's und dann hier brauchen wir wieder die curly braces und "
+    },
+    {
+        "start_time": 2628980,
+        "end_time": 2635659,
+        "text": "dann hier open count so jetzt sehen wir offene du du's null ja warum ist denn das ganze null "
+    },
+    {
+        "start_time": 2635659,
+        "end_time": 2641940,
+        "text": "und jetzt hier nicht eben zwei weil hier mal zwei false elemente liegt daran dass diese count open "
+    },
+    {
+        "start_time": 2641940,
+        "end_time": 2645579,
+        "text": "funktion einfach gar nicht ausgeführt wird das ist natürlich blöd wir wollen diese funktion "
+    },
+    {
+        "start_time": 2645579,
+        "end_time": 2650420,
+        "text": "natürlich ausführen wenn wir hier diesen component laden jetzt könnte man ja auf die "
+    },
+    {
+        "start_time": 2650420,
+        "end_time": 2656699,
+        "text": "idee kommen einfach hier drin count open auszuführen und was jetzt passiert ist folgendes und zwar wir "
+    },
+    {
+        "start_time": 2656699,
+        "end_time": 2661500,
+        "text": "kriegen hier er oder too many real das recht limiter number of renner zu prevent an infinitive "
+    },
+    {
+        "start_time": 2661500,
+        "end_time": 2667139,
+        "text": "loop ja also das funktioniert nicht und der grund warum wir hier too many real das kriegen ist da "
+    },
+    {
+        "start_time": 2667139,
+        "end_time": 2674019,
+        "text": "sobald hier eine dependency in diesem react component geändert wird dann rennt eben diese "
+    },
+    {
+        "start_time": 2674019,
+        "end_time": 2678739,
+        "text": "funktionen neue dann setzen wir hier wieder diese to do's wir setzen das ganze wieder auf null und "
+    },
+    {
+        "start_time": 2678739,
+        "end_time": 2683340,
+        "text": "das wird wieder gezählt und der ganze spaß beginnt vom neuen das heißt hier haben wir "
+    },
+    {
+        "start_time": 2683340,
+        "end_time": 2688019,
+        "text": "ein sonst infinite loop wenn es hier react nicht unterbrechen würde und deswegen können wir das "
+    },
+    {
+        "start_time": 2688019,
+        "end_time": 2692500,
+        "text": "hier nicht so lösen und dafür gibt es einen weiteren react hook der dafür sorgen kann dass "
+    },
+    {
+        "start_time": 2692500,
+        "end_time": 2699340,
+        "text": "wir eine funktion nur ein einziges mal oder eben an einer anderen festgelegten anzahl an aufrufen "
+    },
+    {
+        "start_time": 2699340,
+        "end_time": 2704699,
+        "text": "eben ausführen können und dieser hook heißt use effect den können wir hier auch importieren "
+    },
+    {
+        "start_time": 2704699,
+        "end_time": 2713260,
+        "text": "use effect und den können wir hier drin ganz normal nutzen also einfach use effect und auch "
+    },
+    {
+        "start_time": 2713260,
+        "end_time": 2719260,
+        "text": "hier verwenden wir eine arrow function und innerhalb von diesem use effect können wir dann unsere "
+    },
+    {
+        "start_time": 2719260,
+        "end_time": 2726940,
+        "text": "funktionen callen zum beispiel dieses count open und jetzt sehen wir haben wir hier zwei offene to "
+    },
+    {
+        "start_time": 2726940,
+        "end_time": 2731420,
+        "text": "do's und das liegt daran dass wir hier diese use effect haben und dieser infinite loop eben verändert "
+    },
+    {
+        "start_time": 2731420,
+        "end_time": 2736659,
+        "text": "wird wir können hier bei dem use effect auch noch ein parameter eingeben und zwar können wir hier "
+    },
+    {
+        "start_time": 2736659,
+        "end_time": 2743019,
+        "text": "sagen wir wollen in einem array die dependencies hier definieren und zwar wenn sich etwas ändert "
+    },
+    {
+        "start_time": 2743019,
+        "end_time": 2748420,
+        "text": "dann soll dieser use effect hook ausgeführt werden und das soll immer so sein wenn sich hier dieser "
+    },
+    {
+        "start_time": 2748420,
+        "end_time": 2753059,
+        "text": "open count ändert weil es soll ja nicht wenn wir irgendwie den button drücken oder zu dieser "
+    },
+    {
+        "start_time": 2753059,
+        "end_time": 2758539,
+        "text": "funktionen gekollt werden sondern wirklich nur wenn sich eine dependency hier ändert und das "
+    },
+    {
+        "start_time": 2758539,
+        "end_time": 2762980,
+        "text": "heißt wir können hier in dem array eben dieses open count rein packen und sobald sich das hier "
+    },
+    {
+        "start_time": 2762980,
+        "end_time": 2768420,
+        "text": "verändern würde dann hätten wir in dem fall dieses use effect beziehungsweise die count open "
+    },
+    {
+        "start_time": 2768420,
+        "end_time": 2774500,
+        "text": "funktion in innerhalb von dem ganzen hier getriggert so jetzt kommen wir auch zu unserem kleinen "
+    },
+    {
+        "start_time": 2774500,
+        "end_time": 2779019,
+        "text": "problem und zwar wenn wir sie sehen wir haben zwei offene to do's sport und programmieren das ist "
+    },
+    {
+        "start_time": 2779019,
+        "end_time": 2783300,
+        "text": "ja richtig das ist der initiales date wie unser component hier erinnert wird wenn wir allerdings "
+    },
+    {
+        "start_time": 2783300,
+        "end_time": 2789619,
+        "text": "hier draufklicken da müsste hier eigentlich eine 3 stehen aber das problem ist dieser component "
+    },
+    {
+        "start_time": 2789619,
+        "end_time": 2795820,
+        "text": "hier der weiß gar nicht dass wir hier in dem child component hier den state verändert haben "
+    },
+    {
+        "start_time": 2795820,
+        "end_time": 2801739,
+        "text": "der state ist nur innerhalb von diesem child component gültig aber eben nicht außerhalb und "
+    },
+    {
+        "start_time": 2801739,
+        "end_time": 2808179,
+        "text": "was wir eigentlich bräuchten ist dass diese to do list hier von diesem state hier weiß und mit "
+    },
+    {
+        "start_time": 2808179,
+        "end_time": 2812900,
+        "text": "diesem ansatz kommen wir hier leider nicht weiter das heißt das können wir nur machen wir wissen "
+    },
+    {
+        "start_time": 2812900,
+        "end_time": 2816739,
+        "text": "dass wir diesen state auch wirklich nur innerhalb von diesem component brauchen da wir aber den "
+    },
+    {
+        "start_time": 2816739,
+        "end_time": 2821420,
+        "text": "state von dem child component auch in dem parent component verwenden müssen müssen wir irgendwie "
+    },
+    {
+        "start_time": 2821420,
+        "end_time": 2826900,
+        "text": "dafür sorgen dass der child component diesen state mit dem parent component kommunizieren "
+    },
+    {
+        "start_time": 2826900,
+        "end_time": 2832500,
+        "text": "kann und das machen wir jetzt okay um das hier zu machen werden jetzt hier erst mal das ganze ein "
+    },
+    {
+        "start_time": 2832500,
+        "end_time": 2836219,
+        "text": "bisschen aufräumen also dieses use state brauchen wir hier drin nicht mehr weil wir hier keinen lokalen "
+    },
+    {
+        "start_time": 2836219,
+        "end_time": 2841500,
+        "text": "state mehr definieren werden das heißt wir können hier mal dieses change to do mal fast komplett "
+    },
+    {
+        "start_time": 2841500,
+        "end_time": 2846220,
+        "text": "raushauen werden jetzt hier nur noch mal etwas loggen wie zum beispiel hallo einfach damit wir "
+    },
+    {
+        "start_time": 2846220,
+        "end_time": 2851699,
+        "text": "sehen dass hier was gelockt wird hier haben wir natürlich auch kein ist dann mehr sondern eben "
+    },
+    {
+        "start_time": 2851699,
+        "end_time": 2857099,
+        "text": "nur noch das property dass wir hier mit kriegen so jetzt läuft das ganze wieder und wenn wir hier "
+    },
+    {
+        "start_time": 2857099,
+        "end_time": 2863579,
+        "text": "draufklicken dann sehen wir auch das hallo das kommt von dem to do js component so soweit so gut "
+    },
+    {
+        "start_time": 2863579,
+        "end_time": 2869300,
+        "text": "jetzt wollen wir allerdings dass das ganze von diesem component kommt und das können wir wie "
+    },
+    {
+        "start_time": 2869300,
+        "end_time": 2874500,
+        "text": "wir hier diesen daten auch über properties machen das heißt wir können nicht nur daten als properties "
+    },
+    {
+        "start_time": 2874500,
+        "end_time": 2880099,
+        "text": "weitergeben sondern auch funktionen und hier drin werden wir dann unsere funktionen eben definieren "
+    },
+    {
+        "start_time": 2880099,
+        "end_time": 2886179,
+        "text": "das heißt wir werden sie auch mal einen neuen state noch anlegen und den state nennen wir einfach "
+    },
+    {
+        "start_time": 2886179,
+        "end_time": 2893980,
+        "text": "mal jetzt hier to do's wenn wir hier das ganze mal all to do's einfach dass wir hier ein bisschen "
+    },
+    {
+        "start_time": 2893980,
+        "end_time": 2901179,
+        "text": "sauberer sind was die wörter angeht und hier werden wir dann das ganze set to do's nennen also das "
+    },
+    {
+        "start_time": 2901179,
+        "end_time": 2907900,
+        "text": "unsere funktion die diesen state hier verändert und hier drin werden wir dann die use state verwenden und "
+    },
+    {
+        "start_time": 2907900,
+        "end_time": 2914380,
+        "text": "unser initiale wert ist in dem fall all to do's so damit ändern sich jetzt hier erstmal nichts außer "
+    },
+    {
+        "start_time": 2914380,
+        "end_time": 2918460,
+        "text": "dass wir sehen dass wir das eben nicht benutzen diese set to do's funktion das werden wir aber "
+    },
+    {
+        "start_time": 2918460,
+        "end_time": 2924619,
+        "text": "jetzt gleich machen so hier drin schreiben wir jetzt eine neue funktion die nennen wir einfach mal "
+    },
+    {
+        "start_time": 2924619,
+        "end_time": 2931980,
+        "text": "change to do und das wird eine arrow function und hier drin definieren wir dann was wir da machen "
+    },
+    {
+        "start_time": 2931980,
+        "end_time": 2937059,
+        "text": "die geben wir dann hier als property weiter und was wir hier auf jeden fall brauchen ist wir wollen "
+    },
+    {
+        "start_time": 2937059,
+        "end_time": 2943739,
+        "text": "ja ein gewisses to do verändern und da wir hier ja ein array von to do's haben können wir hier oder "
+    },
+    {
+        "start_time": 2943739,
+        "end_time": 2947500,
+        "text": "brauchen wir hier besser gesagt ein index das heißt wir wollen ja wissen welches to do wir verändern "
+    },
+    {
+        "start_time": 2947500,
+        "end_time": 2951699,
+        "text": "das war vorher nicht notwendig da wir ja wirklich nur ein to do objekt hatten dass wir immer auf true "
+    },
+    {
+        "start_time": 2951699,
+        "end_time": 2956579,
+        "text": "oder false gesetzt haben in dem fall brauchen wir das und was wir außerdem brauchen ist wir brauchen "
+    },
+    {
+        "start_time": 2956579,
+        "end_time": 2963260,
+        "text": "eine kopie von unserem state state sollte man niemals direkt verändern und deswegen erzeugen wir "
+    },
+    {
+        "start_time": 2963260,
+        "end_time": 2969779,
+        "text": "jetzt hier erstmal eine kopie und das geht über den spread operator und hier erzeugen wir dann "
+    },
+    {
+        "start_time": 2969779,
+        "end_time": 2975860,
+        "text": "einfach eine neuen array mit to do's und das ist jetzt hier der alte state und das ist jetzt hier die "
+    },
+    {
+        "start_time": 2975860,
+        "end_time": 2980420,
+        "text": "kopie von dem state und diesen diese kopie die können wir verändern wie gesagt niemals direkt "
+    },
+    {
+        "start_time": 2980420,
+        "end_time": 2985019,
+        "text": "den state verändern und hier können wir ja einfach wieder über den index arbeiten das heißt wir können "
+    },
+    {
+        "start_time": 2985019,
+        "end_time": 2990739,
+        "text": "hier zum beispiel sagen if new to do's und dann den index in dem fall ist das hier dynamisch also "
+    },
+    {
+        "start_time": 2990739,
+        "end_time": 2999260,
+        "text": "index wird dynamisch sein dann wenn der hier auf wenn der auf true ist dann wollen wir hier das auf "
+    },
+    {
+        "start_time": 3000000,
+        "end_time": 3006699,
+        "text": "setzen ebenfalls von dem index hier. Dann setzen wir new to lose index auf false "
+    },
+    {
+        "start_time": 3006699,
+        "end_time": 3015800,
+        "text": "und wenn dem nicht so ist, dann setzen wir new to lose index auf true. "
+    },
+    {
+        "start_time": 3015800,
+        "end_time": 3020320,
+        "text": "Das heißt hier toggeln wir dann sozusagen über diese Funktion. Also wir "
+    },
+    {
+        "start_time": 3020320,
+        "end_time": 3024199,
+        "text": "wollen diesen state wieder überschreiben und das geht eben mit dieser "
+    },
+    {
+        "start_time": 3024199,
+        "end_time": 3027719,
+        "text": "Funktion die wir hier definiert haben. Wichtig diese Funktion schreibt immer "
+    },
+    {
+        "start_time": 3027719,
+        "end_time": 3033760,
+        "text": "einen neuen state. Also set to lose ist in dem Fall dann new to lose. Also unsere "
+    },
+    {
+        "start_time": 3033760,
+        "end_time": 3037760,
+        "text": "Kopie von dem alten state. Wichtig hier habe ich das const natürlich noch "
+    },
+    {
+        "start_time": 3037760,
+        "end_time": 3043119,
+        "text": "vergessen, deswegen haben wir jetzt hier einen Error bekommen und jetzt sehen wir auch, "
+    },
+    {
+        "start_time": 3043119,
+        "end_time": 3047000,
+        "text": "jetzt passt das ganze wieder. Und ja jetzt würde ich sagen übergeben wir das jetzt "
+    },
+    {
+        "start_time": 3047000,
+        "end_time": 3052199,
+        "text": "hier mal als property und zwar ist das so der der standard und dass man das mit "
+    },
+    {
+        "start_time": 3052199,
+        "end_time": 3057440,
+        "text": "einem gewissen naming übergibt und zwar on. Also so eine Art handler. On das heißt "
+    },
+    {
+        "start_time": 3057440,
+        "end_time": 3061559,
+        "text": "wenn etwas passiert on change to do, dann soll das hier ausgeführt werden und "
+    },
+    {
+        "start_time": 3061559,
+        "end_time": 3067360,
+        "text": "zwar change to do. So hier aus diesem on change machen wir noch einen on change to do "
+    },
+    {
+        "start_time": 3067360,
+        "end_time": 3072159,
+        "text": "und dann können wir jetzt hier in das schalt component. Oh ganz wichtig eine "
+    },
+    {
+        "start_time": 3072159,
+        "end_time": 3075960,
+        "text": "Sache habe ich hier noch vollkommen überschrieben und zwar wollen wir natürlich nicht das "
+    },
+    {
+        "start_time": 3075960,
+        "end_time": 3081079,
+        "text": "ganze to do hier auf false setzen, sondern natürlich nur das dann Attribut, weil sonst "
+    },
+    {
+        "start_time": 3081079,
+        "end_time": 3084280,
+        "text": "kriegen wir jetzt hier gleich einen Fehler, wenn wir versuchen das ganze da zu stellen. "
+    },
+    {
+        "start_time": 3084280,
+        "end_time": 3088599,
+        "text": "Also wichtig hier das richtige Attribut auf false setzen, nämlich das dann. Okay jetzt "
+    },
+    {
+        "start_time": 3088599,
+        "end_time": 3094840,
+        "text": "können wir in unser to do und hier drin werden wir dann das hier destructuren und "
+    },
+    {
+        "start_time": 3094840,
+        "end_time": 3099639,
+        "text": "zwar einfach indem wir das wieder hinten dran hängen. Also wir destructuren hier das ganze "
+    },
+    {
+        "start_time": 3099639,
+        "end_time": 3104880,
+        "text": "props element, ziehen uns hier die Funktionsnamen raus und so machen wir das eben auch mit der "
+    },
+    {
+        "start_time": 3104880,
+        "end_time": 3109559,
+        "text": "Funktion selbst. Dann brauchen wir außerdem, weil diese change to do Funktion ja noch ein "
+    },
+    {
+        "start_time": 3109559,
+        "end_time": 3114599,
+        "text": "Index braucht, auch hier ein Index. Der Index kommt ja bereits mit der map Funktion, das heißt "
+    },
+    {
+        "start_time": 3114599,
+        "end_time": 3118480,
+        "text": "den können wir hier einfach auch weiter nutzen. Eben hier haben wir den Index von dem ganzen, "
+    },
+    {
+        "start_time": 3118480,
+        "end_time": 3122599,
+        "text": "den nutzen wir auch schon als Key, können ihn auch noch mal als extra variable hier verwenden. "
+    },
+    {
+        "start_time": 3122599,
+        "end_time": 3130599,
+        "text": "So dann das gleich hier noch mal für den Index und jetzt können wir hier gucken, dass wir das "
+    },
+    {
+        "start_time": 3130599,
+        "end_time": 3138239,
+        "text": "bei dem Click eben nutzen. Ganz wichtig hier on change to do, das mache ich mal raus, das brauchen wir "
+    },
+    {
+        "start_time": 3138239,
+        "end_time": 3145039,
+        "text": "nämlich nicht mehr, machen wir hier on change to do. Wenn wir das so machen, haben wir das gleiche "
+    },
+    {
+        "start_time": 3145039,
+        "end_time": 3148559,
+        "text": "Problem wie vorher, nämlich dass wir jetzt ein infinite loop kriegen werden, weil die Funktion "
+    },
+    {
+        "start_time": 3148559,
+        "end_time": 3153480,
+        "text": "immer wieder gecalled wird, sobald hier etwas neu gerendert wird. Also ganz wichtig hier das Ganze, "
+    },
+    {
+        "start_time": 3153480,
+        "end_time": 3157280,
+        "text": "sobald man hier nämlich so ein Parameter braucht, muss man das über eine callback Funktion lösen. "
+    },
+    {
+        "start_time": 3157280,
+        "end_time": 3162679,
+        "text": "Das heißt hier Klammer, Runde Klammern, dann den Callback definieren und den Klammer dahinter die "
+    },
+    {
+        "start_time": 3162679,
+        "end_time": 3167280,
+        "text": "Funktion. Und wenn wir jetzt on change to do und den Index eingeben, dann wird die Funktion eben "
+    },
+    {
+        "start_time": 3167280,
+        "end_time": 3172639,
+        "text": "nur als Callback aufgerufen und hier nicht bei jedem rerender. Das heißt hier hört das Ganze "
+    },
+    {
+        "start_time": 3172639,
+        "end_time": 3181079,
+        "text": "wirklich nur auf den auf den Click. So jetzt sehen wir, okay das Ganze passiert offensichtlich ganz "
+    },
+    {
+        "start_time": 3181079,
+        "end_time": 3185719,
+        "text": "gut. Das heißt wir können jetzt hier den state ändern in unserem child component aus dem parent "
+    },
+    {
+        "start_time": 3185719,
+        "end_time": 3190639,
+        "text": "component aus. Ich mache vielleicht, um das noch ein bisschen klarer zu machen, logge ich einfach mal "
+    },
+    {
+        "start_time": 3190639,
+        "end_time": 3204800,
+        "text": "hier den Index und dann sehen wir auch console.log und zwar den Index und wenn wir das jetzt ausführen, "
+    },
+    {
+        "start_time": 3204800,
+        "end_time": 3210039,
+        "text": "dann sehen wir hier null und wir sehen vor allem woher der Funktionscall kommt. Das heißt der "
+    },
+    {
+        "start_time": 3210039,
+        "end_time": 3215480,
+        "text": "kommt aus dieser to do list und nicht mehr wie vorher aus dem to do. Also so weit funktioniert "
+    },
+    {
+        "start_time": 3215480,
+        "end_time": 3221280,
+        "text": "das ganze schon mal. Eine kleine Sache haben wir jetzt hier allerdings noch und zwar hier wird "
+    },
+    {
+        "start_time": 3221280,
+        "end_time": 3225320,
+        "text": "immer noch falsch gezählt. Das heißt das bleibt bei zwei und das liegt an dem initialen state, "
+    },
+    {
+        "start_time": 3225320,
+        "end_time": 3232760,
+        "text": "den wir hier drin haben und ich nehme an, dass es hier einfach dann eben, wo ist es denn, genau hier "
+    },
+    {
+        "start_time": 3232760,
+        "end_time": 3239360,
+        "text": "wird gezählt. Genau, hier haben wir ja open count und dieses use effect, das wird ja nur ausgeführt, "
+    },
+    {
+        "start_time": 3239360,
+        "end_time": 3243239,
+        "text": "wenn sich open count ändert, allerdings nicht, wenn sich hier die to do's ändern. Das heißt "
+    },
+    {
+        "start_time": 3243239,
+        "end_time": 3247639,
+        "text": "wir brauchen hier drin dann jetzt eigentlich auch nicht mehr das open count, sondern das ändert "
+    },
+    {
+        "start_time": 3247639,
+        "end_time": 3252079,
+        "text": "sich dann nur noch, also wir führen diese Funktion nur auf, wenn sich das to do an sich selbst "
+    },
+    {
+        "start_time": 3252079,
+        "end_time": 3258320,
+        "text": "verändert und das sehen wir jetzt hier, wenn wir draufklicken, dann funktioniert das ganze. Dann "
+    },
+    {
+        "start_time": 3258320,
+        "end_time": 3262840,
+        "text": "haben wir nur noch eine offene to do und als dependency eben diesen kompletten to do array, "
+    },
+    {
+        "start_time": 3262840,
+        "end_time": 3267079,
+        "text": "sobald wir den hier verändern und das machen wir bei jedem mal, wenn wir diese change to do "
+    },
+    {
+        "start_time": 3267079,
+        "end_time": 3272159,
+        "text": "Funktion aufrufen, dann wird diese use effect Funktion getriggert, diese ruft die count open "
+    },
+    {
+        "start_time": 3272159,
+        "end_time": 3278920,
+        "text": "Funktion aus und setzt den state eben auf den neuen Wert von dieser count to do Funktion, "
+    },
+    {
+        "start_time": 3278920,
+        "end_time": 3283679,
+        "text": "was wir hier rauskriegen. Das ist erstmal der workflow, den wir jetzt haben, das heißt wir "
+    },
+    {
+        "start_time": 3283679,
+        "end_time": 3289559,
+        "text": "passen unsere Funktion als Attribut hier an das child, das gibt das ganze wieder zurück, "
+    },
+    {
+        "start_time": 3289559,
+        "end_time": 3295960,
+        "text": "ändert den state und wir kriegen hier unsere to do App zurück. So, also damit sind wir schon "
+    },
+    {
+        "start_time": 3295960,
+        "end_time": 3300480,
+        "text": "ziemlich weit gekommen und wir können auch jetzt hier mal mit dieser delete Funktion arbeiten oder "
+    },
+    {
+        "start_time": 3300480,
+        "end_time": 3305239,
+        "text": "mal anfangen, weil bei löschen passiert aktuell noch gar nichts. Das ist auch gar nicht so schwierig, "
+    },
+    {
+        "start_time": 3305239,
+        "end_time": 3310679,
+        "text": "wir haben eigentlich das komplexere schon hier gemacht, aber ich würde sagen, das ersetzen wir "
+    },
+    {
+        "start_time": 3310679,
+        "end_time": 3316039,
+        "text": "jetzt hier mal ähnlich um und zwar nennen wir das ganze mal const delete to do, auch hier brauchen "
+    },
+    {
+        "start_time": 3316039,
+        "end_time": 3320639,
+        "text": "wir den index, damit wir das richtige Element entfernen und auch hier werden wir wie vorher "
+    },
+    {
+        "start_time": 3320639,
+        "end_time": 3326559,
+        "text": "erstmal den to do array, also den state kopieren, da wir wie gesagt den state nicht direkt ändern "
+    },
+    {
+        "start_time": 3326559,
+        "end_time": 3331519,
+        "text": "sollen und hier werden wir dann einfach sagen, dass wir aus diesem array etwas entfernen wollen, "
+    },
+    {
+        "start_time": 3331519,
+        "end_time": 3338039,
+        "text": "das geht ganz gut mit new to lose punkt splice, damit können wir einzelne Elemente aus diesem "
+    },
+    {
+        "start_time": 3338039,
+        "end_time": 3344279,
+        "text": "array entfernen und zwar wollen wir das element entfernen, das fängt an bei dem index und hier als "
+    },
+    {
+        "start_time": 3344279,
+        "end_time": 3348760,
+        "text": "zweiten Parameter können wir definieren, wie viele Elemente wir entfernen wollen und das ist in dem "
+    },
+    {
+        "start_time": 3348760,
+        "end_time": 3354360,
+        "text": "Fall dann eben ein einzelnes Element und dann wollen wir unsere set state Funktion kollen, "
+    },
+    {
+        "start_time": 3354360,
+        "end_time": 3364840,
+        "text": "weil wir ja ein set to lose Funktion natürlich, die den state hier dann eben setzt und das passiert "
+    },
+    {
+        "start_time": 3364840,
+        "end_time": 3371280,
+        "text": "genauso wie hier, das heißt wir setzen hier den neuen state und diese delete Funktion wird "
+    },
+    {
+        "start_time": 3371280,
+        "end_time": 3374679,
+        "text": "allerdings auch hier noch nicht ausgeführt. Hier ganz wichtig, müssen wir das gleiche machen wie "
+    },
+    {
+        "start_time": 3374679,
+        "end_time": 3384119,
+        "text": "vorher, das hier als property übergeben und sagen auch hier on delete to do ist und dann hier "
+    },
+    {
+        "start_time": 3384119,
+        "end_time": 3392440,
+        "text": "delete to do, dann wieder in das child component gehen und hier on delete to do, habe ich das so "
+    },
+    {
+        "start_time": 3392440,
+        "end_time": 3401159,
+        "text": "geschrieben, kopiere es lieber nochmal, wo wir irgendwie typos drin haben, aber das passt, ok und diese "
+    },
+    {
+        "start_time": 3401159,
+        "end_time": 3405239,
+        "text": "Funktion wollen wir aufrufen, wenn wir hier diesen löschen button klicken und auch hier können wir "
+    },
+    {
+        "start_time": 3405239,
+        "end_time": 3412679,
+        "text": "dann einfach sagen on click ist und zwar diese on delete Funktion, ebenfalls wie hier, da wir hier "
+    },
+    {
+        "start_time": 3412679,
+        "end_time": 3417079,
+        "text": "den index als Parameter haben, brauchen wir hier eine callback Funktion, das heißt runde Klammern, "
+    },
+    {
+        "start_time": 3417079,
+        "end_time": 3424760,
+        "text": "dann arrow Funktion und hier den callback definieren in geschweiften Klammern, so dann und delete to do "
+    },
+    {
+        "start_time": 3424760,
+        "end_time": 3432800,
+        "text": "und den index, ok jetzt sollten wir wenn wir drauf klicken ein to do entfernen können und wie wir "
+    },
+    {
+        "start_time": 3432800,
+        "end_time": 3438480,
+        "text": "sehen können das funktioniert, wenn wir die Seite refreshen sehen wir unsere to do wieder und ja "
+    },
+    {
+        "start_time": 3438480,
+        "end_time": 3444679,
+        "text": "also die Funktionalität haben wir jetzt auch schon mal. Was uns allerdings natürlich wie in jeder "
+    },
+    {
+        "start_time": 3444679,
+        "end_time": 3449719,
+        "text": "crud Applikation noch fehlt ist das create, das heißt das herstellen von dem to do, dafür werden "
+    },
+    {
+        "start_time": 3449720,
+        "end_time": 3455239,
+        "text": "wir hier in der to do List selbst ein weiteres Feld erstellen und zwar hier unter den offenen "
+    },
+    {
+        "start_time": 3455239,
+        "end_time": 3460880,
+        "text": "to do und hier werde ich einfach mal einen Form erstellen, da wir hier einen input Form haben werden "
+    },
+    {
+        "start_time": 3460880,
+        "end_time": 3470519,
+        "text": "und hier drin packen wir dann rein einen input vom type text, wir können hier mal ein placeholder "
+    },
+    {
+        "start_time": 3470519,
+        "end_time": 3478559,
+        "text": "definieren mit noise to do und jetzt sehen wir das hier schon, dann brauchen wir außerdem noch "
+    },
+    {
+        "start_time": 3478599,
+        "end_time": 3483840,
+        "text": "ein submit button und dafür werden wir einfach hier noch einen weiteren input erstellen und zwar "
+    },
+    {
+        "start_time": 3483840,
+        "end_time": 3493519,
+        "text": "input type ist submit und dann können wir hier noch sagen add true und jetzt müssen wir auch noch "
+    },
+    {
+        "start_time": 3493519,
+        "end_time": 3498559,
+        "text": "definieren wie viel davon denn das erste Element kriegt und wie viel davon das zweite, dafür hier "
+    },
+    {
+        "start_time": 3498559,
+        "end_time": 3511159,
+        "text": "ein input text Feld und hier und hier class name ist call minus span 2 und das andere input Feld "
+    },
+    {
+        "start_time": 3511159,
+        "end_time": 3519159,
+        "text": "kriegt eben noch eins, call span minus eins und damit haben wir jetzt das ganze hier so ausgerichtet "
+    },
+    {
+        "start_time": 3519159,
+        "end_time": 3524480,
+        "text": "dann würde ich sagen geben wir hier noch diesem Form hier ein bisschen Padding auch in alle "
+    },
+    {
+        "start_time": 3524480,
+        "end_time": 3531920,
+        "text": "Richtungen also nach beziehungsweise nach oben nach unten und geben wir hier auch dem input Feld "
+    },
+    {
+        "start_time": 3531920,
+        "end_time": 3537519,
+        "text": "ein Padding, damit das ein bisschen größer aussieht, geben wir hier dem text mal eine andere "
+    },
+    {
+        "start_time": 3537519,
+        "end_time": 3543519,
+        "text": "Farbe, ich würde sagen geben wir mal text gray 900 für noise to do, so jetzt können wir hier dann "
+    },
+    {
+        "start_time": 3543519,
+        "end_time": 3547039,
+        "text": "eben reinschreiben wenn wir wollen, hier sehen wir auch der text ist hier weiß, das heißt auch hier "
+    },
+    {
+        "start_time": 3547039,
+        "end_time": 3552519,
+        "text": "müssen wir den text noch ändern, dann geben wir dem ganzen auch ein dunkles grau in dem fall auch "
+    },
+    {
+        "start_time": 3552519,
+        "end_time": 3558239,
+        "text": "dann einfach text gray 900 und jetzt haben wir hier den text drin, so also aber wie kriegen wir "
+    },
+    {
+        "start_time": 3558239,
+        "end_time": 3562599,
+        "text": "jetzt hier diesen text den wir hier schreiben in dieses to do rein und dafür werden wir jetzt hier "
+    },
+    {
+        "start_time": 3562599,
+        "end_time": 3570800,
+        "text": "ebenfalls einen neuen state definieren und zwar const, nehmen wir das einfach mal jetzt hier text input "
+    },
+    {
+        "start_time": 3570800,
+        "end_time": 3581800,
+        "text": "und set text input, hier use state und wir fangen hier an mit einem Leerzeichen, das heißt wir fangen "
+    },
+    {
+        "start_time": 3581800,
+        "end_time": 3587480,
+        "text": "hier an einfach mit keinem text als Anfang state, so irgendwie müssen wir jetzt hier diesen text aber "
+    },
+    {
+        "start_time": 3587480,
+        "end_time": 3594359,
+        "text": "auch tracken und das geht indem wir hier sogenanntes input binding machen und dafür gibt es eine "
+    },
+    {
+        "start_time": 3594359,
+        "end_time": 3598079,
+        "text": "funktion auch in JavaScript die wir auch hier direkt verwenden können und dafür schreiben wir "
+    },
+    {
+        "start_time": 3598079,
+        "end_time": 3599519,
+        "text": "hier mal eine neue funktion const "
+    },
+    {
+        "start_time": 3600000,
+        "end_time": 3608059,
+        "text": "changeText ist in dem Fall dann einfach wieder eine arrow-function und diesmal "
+    },
+    {
+        "start_time": 3608059,
+        "end_time": 3612780,
+        "text": "ist er nicht leer, sondern wir können, wenn wir hier in so einem input-element, "
+    },
+    {
+        "start_time": 3612780,
+        "end_time": 3616860,
+        "text": "in einem text-element bewegen, können wir diverse Sachen einfach so mit tracken und "
+    },
+    {
+        "start_time": 3616860,
+        "end_time": 3619820,
+        "text": "wir können ein event tracken, das ist in der standard normalerweise immer mit "
+    },
+    {
+        "start_time": 3619820,
+        "end_time": 3626019,
+        "text": "event abgekürzt und wir tracken i.target.value. Das ist dann der "
+    },
+    {
+        "start_time": 3626019,
+        "end_time": 3630639,
+        "text": "wert, der hier drin eben geschrieben wird und den können wir einfach auch mal "
+    },
+    {
+        "start_time": 3630639,
+        "end_time": 3637780,
+        "text": "loggen, damit wir sehen, was da so abgeht und diese funktion, die binden wir jetzt "
+    },
+    {
+        "start_time": 3637780,
+        "end_time": 3643159,
+        "text": "an dieses input-feld und zwar einfach, indem wir sagen diesmal nicht onClick, "
+    },
+    {
+        "start_time": 3643159,
+        "end_time": 3650159,
+        "text": "sondern hier haben wir das input-feld onChange und hier dann die funktion "
+    },
+    {
+        "start_time": 3650159,
+        "end_time": 3654219,
+        "text": "changeText. Wenn wir jetzt wieder die konsole öffnen, dann sehen wir auch hier "
+    },
+    {
+        "start_time": 3654219,
+        "end_time": 3661539,
+        "text": "drin, wenn wir jetzt hier etwas tippen, dann wird bei jedem change in "
+    },
+    {
+        "start_time": 3661539,
+        "end_time": 3666059,
+        "text": "diesem input-text auch hier diese funktion getriggert und wir loggen jetzt "
+    },
+    {
+        "start_time": 3666059,
+        "end_time": 3670619,
+        "text": "hier in dem fall einfach dann diesen wert und wir können auch ganz einfach so "
+    },
+    {
+        "start_time": 3670619,
+        "end_time": 3675260,
+        "text": "den state verändern. Und zwar können wir dann sagen, wir wollen dieses setTextInput, "
+    },
+    {
+        "start_time": 3675260,
+        "end_time": 3682300,
+        "text": "das ist die funktion, die eben den state verändert, wir wollen damit einfach hier "
+    },
+    {
+        "start_time": 3682300,
+        "end_time": 3685380,
+        "text": "das verändern und damit haben wir jetzt hier diesen textInput, den können wir "
+    },
+    {
+        "start_time": 3685380,
+        "end_time": 3690699,
+        "text": "theoretisch dann auch weiterhin in einer variable nutzen und damit haben wir jetzt "
+    },
+    {
+        "start_time": 3690699,
+        "end_time": 3695539,
+        "text": "hier schon eben diesen state verändert und diesen state können wir zum "
+    },
+    {
+        "start_time": 3695539,
+        "end_time": 3700780,
+        "text": "Beispiel nutzen, wenn wir dann bei addToDo draufklicken, um eben noiseToDo "
+    },
+    {
+        "start_time": 3700780,
+        "end_time": 3705260,
+        "text": "anzulegen. Hier werde ich auch noch mal ein cursor kurz hinzufügen, das stört "
+    },
+    {
+        "start_time": 3705260,
+        "end_time": 3713019,
+        "text": "mich bei buttons immer wenn da kein cursor ist. Also cursor pointer, so damit haben wir jetzt hier "
+    },
+    {
+        "start_time": 3713019,
+        "end_time": 3719659,
+        "text": "einen cursor, also einen pointer oder so einen daumen drüber. Okay, jetzt können wir hier "
+    },
+    {
+        "start_time": 3719659,
+        "end_time": 3723739,
+        "text": "weitermachen und zwar wollen wir hier das neue element hinzufügen, wenn wir "
+    },
+    {
+        "start_time": 3723739,
+        "end_time": 3727139,
+        "text": "draufklicken. Aktuell passiert da noch gar nichts und wie wir sehen können, es "
+    },
+    {
+        "start_time": 3727139,
+        "end_time": 3729780,
+        "text": "passiert sogar etwas sehr ungünstiges, wenn wir draufklicken und zwar wird die "
+    },
+    {
+        "start_time": 3729780,
+        "end_time": 3733340,
+        "text": "Seite refreshed. Normalerweise ist nämlich so, wenn wir hier eine Form "
+    },
+    {
+        "start_time": 3733340,
+        "end_time": 3739219,
+        "text": "submitten, dann wird eben uns vom Server eine neue Seite geschickt. Da wir "
+    },
+    {
+        "start_time": 3739219,
+        "end_time": 3742579,
+        "text": "allerdings solche Sachen, also so ein Refreshing, alles in React handeln wollen, "
+    },
+    {
+        "start_time": 3742579,
+        "end_time": 3746579,
+        "text": "wollen wir so ein Verhalten vermeiden und das machen wir jetzt hier mal, indem "
+    },
+    {
+        "start_time": 3746579,
+        "end_time": 3750739,
+        "text": "wir hier eine funktion für diesen SubmitButton schreiben. Dafür schreiben "
+    },
+    {
+        "start_time": 3750739,
+        "end_time": 3755900,
+        "text": "wir hier eine funktion, einfach mal const submit und hier ein arrow function und "
+    },
+    {
+        "start_time": 3755900,
+        "end_time": 3759059,
+        "text": "hier brauchen wir auch das event und das event brauchen wir nämlich, weil wir hier "
+    },
+    {
+        "start_time": 3759059,
+        "end_time": 3766019,
+        "text": "ein event prevent default ausführen wollen und dieses event prevent default "
+    },
+    {
+        "start_time": 3766019,
+        "end_time": 3769699,
+        "text": "sorgt dafür, dass der Standard Event in dem Fall, wenn wir auf den Button klicken, "
+    },
+    {
+        "start_time": 3769699,
+        "end_time": 3774139,
+        "text": "nicht ausgeführt wird. Also wir verhindern dieses Event und diese "
+    },
+    {
+        "start_time": 3774139,
+        "end_time": 3776780,
+        "text": "Funktion müssen wir jetzt hier noch, also ich zeige es mal kurz, wenn wir hier drauf "
+    },
+    {
+        "start_time": 3776780,
+        "end_time": 3780500,
+        "text": "klicken, dann sehen wir hier in refresh. Also das sieht man ganz deutlich, dass "
+    },
+    {
+        "start_time": 3780500,
+        "end_time": 3784139,
+        "text": "dann einfach das komplette Ding hier neu geladen wird. Wenn wir allerdings hier "
+    },
+    {
+        "start_time": 3784139,
+        "end_time": 3790659,
+        "text": "bei dem Button onClick das ganze hier diese Funktion hier binden, dann sehen wir jetzt, "
+    },
+    {
+        "start_time": 3790659,
+        "end_time": 3794539,
+        "text": "jetzt haben wir kein reload dieser Seite mehr. Das ist das erwartete und auch "
+    },
+    {
+        "start_time": 3794539,
+        "end_time": 3799099,
+        "text": "erwünschte Verhalten bei einer Single Page Application. So, dann schreiben wir mal "
+    },
+    {
+        "start_time": 3799099,
+        "end_time": 3803980,
+        "text": "hier die Funktion weiter und zwar was wir haben wollen ist, wir wollen dieses "
+    },
+    {
+        "start_time": 3803980,
+        "end_time": 3806539,
+        "text": "To Do, was hier drin steht, diesem Array hier hinzufügen. "
+    },
+    {
+        "start_time": 3806539,
+        "end_time": 3810739,
+        "text": "Hier erzeugen wir erstmal einen neuen Array, das machen wir genauso wie vorher "
+    },
+    {
+        "start_time": 3810739,
+        "end_time": 3816619,
+        "text": "und zwar einfach indem wir hier eine neue To Do Variable erzeugen und diesmal können "
+    },
+    {
+        "start_time": 3816619,
+        "end_time": 3819659,
+        "text": "wir allerdings hier statt einfach den kompletten Array einfach so abzubilden, "
+    },
+    {
+        "start_time": 3819659,
+        "end_time": 3824260,
+        "text": "auch direkt die neuen Werte reinpacken und das ist ja in dem Fall ein Objekt, "
+    },
+    {
+        "start_time": 3824260,
+        "end_time": 3828340,
+        "text": "das mit dem Key hier Description anfängt, das heißt wir haben jetzt eine Description "
+    },
+    {
+        "start_time": 3828340,
+        "end_time": 3833019,
+        "text": "und diese neue Description ist in dem Fall unser Text Input und dann haben wir "
+    },
+    {
+        "start_time": 3833019,
+        "end_time": 3839019,
+        "text": "außerdem hier drin noch, machen wir das mal ein bisschen sauberer, so und dann ist "
+    },
+    {
+        "start_time": 3839019,
+        "end_time": 3845260,
+        "text": "false To Do Beginn standardmäßig mit unerfüllt. So, jetzt können wir das was "
+    },
+    {
+        "start_time": 3845260,
+        "end_time": 3850179,
+        "text": "wir hier drin haben einfach als neuen State definieren und das geht wieder "
+    },
+    {
+        "start_time": 3850179,
+        "end_time": 3857739,
+        "text": "über Set To Do und dann New To Do. Okay, probieren wir das mal aus, schreiben wir mal hier "
+    },
+    {
+        "start_time": 3857739,
+        "end_time": 3861659,
+        "text": "irgendwas rein und jetzt sehen wir hier, haben wir jetzt hier neue To Do, die können "
+    },
+    {
+        "start_time": 3861659,
+        "end_time": 3865659,
+        "text": "wir auch abhaken und auch löschen. Also das funktioniert auch, das heißt wir haben "
+    },
+    {
+        "start_time": 3865659,
+        "end_time": 3871340,
+        "text": "jetzt hier unsere Applikation um das Create ergänzt. Also eine Sache stört "
+    },
+    {
+        "start_time": 3871340,
+        "end_time": 3874260,
+        "text": "mich hier ein bisschen und zwar das All To Do brauchen wir nämlich hier nicht mehr "
+    },
+    {
+        "start_time": 3874260,
+        "end_time": 3878260,
+        "text": "und jetzt kriegen wir natürlich einen Fehler, weil wir hier useState mit All To Do "
+    },
+    {
+        "start_time": 3878260,
+        "end_time": 3882940,
+        "text": "initialisieren, das heißt hier nehmen wir einfach ein Learn Array und jetzt sind "
+    },
+    {
+        "start_time": 3882940,
+        "end_time": 3886659,
+        "text": "wir hier bei Null und können neue To Do anlegen, können die abhaken, können die "
+    },
+    {
+        "start_time": 3886659,
+        "end_time": 3890460,
+        "text": "löschen, aber eine Funktionalität fehlt uns halt noch komplett und das ist das, "
+    },
+    {
+        "start_time": 3890460,
+        "end_time": 3894699,
+        "text": "wenn wir hier F5 drücken, dann sind nämlich alle To Do einfach direkt wieder weg und "
+    },
+    {
+        "start_time": 3894699,
+        "end_time": 3898219,
+        "text": "das wollen wir jetzt verhindern, indem wir jetzt hier unsere To Do in Local "
+    },
+    {
+        "start_time": 3898219,
+        "end_time": 3902260,
+        "text": "Storage setzen und das werden wir jedes Mal machen, sobald sich dieser To Do Array "
+    },
+    {
+        "start_time": 3902260,
+        "end_time": 3906260,
+        "text": "hier eben verändert. Das heißt wir können dieses Use Effect hier unten nutzen "
+    },
+    {
+        "start_time": 3906260,
+        "end_time": 3911019,
+        "text": "und hier drin können wir dann in Local Storage eben unsere To Do eintragen und "
+    },
+    {
+        "start_time": 3911019,
+        "end_time": 3915779,
+        "text": "das ist ziemlich einfach und zwar einfach über die Local Storage API und dann "
+    },
+    {
+        "start_time": 3915779,
+        "end_time": 3922219,
+        "text": "Local Storage Set Item, dann den Namen von unserem Key, den wir haben wollen, in dem "
+    },
+    {
+        "start_time": 3922220,
+        "end_time": 3927300,
+        "text": "Falle nennen wir es einfach mit Items und was wir dann brauchen ist einen weiteren Key, also wir "
+    },
+    {
+        "start_time": 3927300,
+        "end_time": 3930579,
+        "text": "brauchen jetzt hier nicht unsere To Do, sondern wir brauchen einen String, das heißt wir "
+    },
+    {
+        "start_time": 3930579,
+        "end_time": 3935420,
+        "text": "müssen aus unserem To Do Object einen String machen und das geht mit JSON "
+    },
+    {
+        "start_time": 3935420,
+        "end_time": 3943780,
+        "text": "Stringify und dann das Objekt To Do. So und jetzt wird bei jedem Mal, wo wir hier "
+    },
+    {
+        "start_time": 3943780,
+        "end_time": 3949940,
+        "text": "diesen To Do Array verändern, das ganze in Local Storage reingepackt. Das können "
+    },
+    {
+        "start_time": 3949940,
+        "end_time": 3958059,
+        "text": "wir uns auch mal angucken und zwar über Local Storage.getItem können wir hier "
+    },
+    {
+        "start_time": 3958059,
+        "end_time": 3964500,
+        "text": "über den Namen, also von Items, kriegen wir jetzt hier unsere To Do's zurück. Wie wir "
+    },
+    {
+        "start_time": 3964500,
+        "end_time": 3969059,
+        "text": "sehen können ist das ganze auch hier in Anführungszeichen, das heißt wir haben "
+    },
+    {
+        "start_time": 3969059,
+        "end_time": 3973500,
+        "text": "hier eben einen String. Während wir jetzt hier F5 drücken, dann sehen wir natürlich "
+    },
+    {
+        "start_time": 3973500,
+        "end_time": 3976820,
+        "text": "okay wir sind wieder bei Null. Das liegt einfach daran, dass wir zwar bei jedem "
+    },
+    {
+        "start_time": 3976820,
+        "end_time": 3980619,
+        "text": "Mal das ganze speichern, aber uns bei dem Restart das ganze nicht wieder aus "
+    },
+    {
+        "start_time": 3980619,
+        "end_time": 3986739,
+        "text": "Local Storage zurückziehen und dafür können wir sogenannten Lazy Initial State nutzen. "
+    },
+    {
+        "start_time": 3986739,
+        "end_time": 3991820,
+        "text": "Das ist ein State, der wird einmalig ausgeführt, sobald diese Seite hier lädt, aber kein zweites "
+    },
+    {
+        "start_time": 3991820,
+        "end_time": 3996900,
+        "text": "Mal verwendet und das können wir am besten machen, indem wir hier statt diesem Learn Array, den wir "
+    },
+    {
+        "start_time": 3996900,
+        "end_time": 4002860,
+        "text": "aktuell haben, hier eine Callback Funktion schreiben und zwar was wollen wir? Wollen aus "
+    },
+    {
+        "start_time": 4002860,
+        "end_time": 4009699,
+        "text": "Local Storage machen wir erstmal hier eine neue Variable und nennen wir mal const items und diese "
+    },
+    {
+        "start_time": 4009699,
+        "end_time": 4016500,
+        "text": "ist dann eben local storage.get also das was wir eben auch geschrieben haben getItem und dann den "
+    },
+    {
+        "start_time": 4016500,
+        "end_time": 4022739,
+        "text": "Namen. Das ist dann items hier kriegen wir dann eben ein String zurück und wir wollen diesen String "
+    },
+    {
+        "start_time": 4022739,
+        "end_time": 4025940,
+        "text": "auch wieder in ein JavaScript Objekt zurück verwandeln. Das geht auch ziemlich leicht. "
+    },
+    {
+        "start_time": 4025940,
+        "end_time": 4037300,
+        "text": "Nennen wir das ganze mal hier parsed und dann einfach json parse items. Also natürlich hier ist undefined, "
+    },
+    {
+        "start_time": 4037300,
+        "end_time": 4043460,
+        "text": "weil wir das ganze noch returnen müssen und wenn wir jetzt das ganze returnen, dann sehen wir, "
+    },
+    {
+        "start_time": 4043460,
+        "end_time": 4048940,
+        "text": "dann kriegen wir auch hier jetzt wieder unsere Null to lose. Okay, hier können wir jetzt Sachen "
+    },
+    {
+        "start_time": 4048940,
+        "end_time": 4053980,
+        "text": "eintragen und wenn wir jetzt refreshen, dann sind unsere items auch gespeichert. "
+    },
+    {
+        "start_time": 4053980,
+        "end_time": 4058019,
+        "text": "Einen kleinen Schönheitsfehler hat die Sache noch und zwar wenn wir auf local storage gehen "
+    },
+    {
+        "start_time": 4058019,
+        "end_time": 4067460,
+        "text": "und dann delete item eingeben. Sorry nicht delete sondern remove item und dann den Namen und dann "
+    },
+    {
+        "start_time": 4067460,
+        "end_time": 4074139,
+        "text": "hier einfach items und jetzt refreshen, dann kriegen wir hier ein Fehler. Das liegt daran, "
+    },
+    {
+        "start_time": 4074139,
+        "end_time": 4080780,
+        "text": "da hier versucht wird dieses item hier zu finden und hier versucht wird dann eben ein nicht gefundenes "
+    },
+    {
+        "start_time": 4080779,
+        "end_time": 4086300,
+        "text": "item hier zu passen. Das heißt hier wird dann ein Null returned und dieses Null ist ja der "
+    },
+    {
+        "start_time": 4086300,
+        "end_time": 4091219,
+        "text": "neue state. Also das ist dann Null. To lose ist eben kein leerer Array mehr, sondern einfach Null. "
+    },
+    {
+        "start_time": 4091219,
+        "end_time": 4097618,
+        "text": "Und Null hat keine Map Methode. Das heißt hier kriegen wir einfach einen Error. Und was wir hier "
+    },
+    {
+        "start_time": 4097618,
+        "end_time": 4104300,
+        "text": "machen können ist ziemlich leicht einfach hier ein Alternativwert definieren mit zwei Pipe Operators "
+    },
+    {
+        "start_time": 4104300,
+        "end_time": 4110020,
+        "text": "und dann den Alternativenwert, wenn wir hier nichts finden und das ist einfach ein leerer Array. Und "
+    },
+    {
+        "start_time": 4110020,
+        "end_time": 4114819,
+        "text": "jetzt haben wir hier eben nichts passen können und damit kriegen wir einen leeren Array und sehen "
+    },
+    {
+        "start_time": 4114819,
+        "end_time": 4119260,
+        "text": "jetzt hier Null offene to do's. Wenn wir das wieder eintragen, dann sehen wir kommen jetzt hier neue "
+    },
+    {
+        "start_time": 4119260,
+        "end_time": 4124698,
+        "text": "to do's. Wir können refreshen und sehen ja funktioniert wunderbar. Eine Sache die stört mich "
+    },
+    {
+        "start_time": 4124698,
+        "end_time": 4129819,
+        "text": "ja auch noch ein bisschen und das ist das hier. Wenn wir hier nämlich neue Werte eintragen, dann "
+    },
+    {
+        "start_time": 4129819,
+        "end_time": 4134618,
+        "text": "haben wir immer weiterhin noch den Text unseres alten to do's. Normalerweise würde man erwarten, "
+    },
+    {
+        "start_time": 4134618,
+        "end_time": 4138859,
+        "text": "wenn man eine Form submitet, dass das hier dann sozusagen auf einen leeren String zurückgesetzt "
+    },
+    {
+        "start_time": 4138859,
+        "end_time": 4143738,
+        "text": "wird. Das können wir auch machen, indem wir einfach hier wenn wir submit drücken, dann hier einfach "
+    },
+    {
+        "start_time": 4143738,
+        "end_time": 4151460,
+        "text": "noch mal die Funktion, die hier den State von diesem Item hier setzt. Das ist ja in dem Fall Text "
+    },
+    {
+        "start_time": 4151460,
+        "end_time": 4156380,
+        "text": "Input. Also dass wir das eben auf einen leeren String setzen, also was eben auch der Ursprungsstate "
+    },
+    {
+        "start_time": 4156380,
+        "end_time": 4161899,
+        "text": "war. Und das geht einfach hier dann über Set Text Input und den setzen wir dann auf einen leeren String. "
+    },
+    {
+        "start_time": 4161899,
+        "end_time": 4168819,
+        "text": "Okay, wenn wir jetzt hier was eingeben, ich lösche mal ein paar andere to do's wieder raus und "
+    },
+    {
+        "start_time": 4168819,
+        "end_time": 4174020,
+        "text": "sagen wir einfach mal sowas. Okay, dann sehen wir aber immer noch, dass wir hier diesen Wert hier "
+    },
+    {
+        "start_time": 4174020,
+        "end_time": 4179618,
+        "text": "drin haben. Das liegt daran, dass wir jetzt für den State zurücksetzen. Allerdings der State bzw. "
+    },
+    {
+        "start_time": 4179618,
+        "end_time": 4183979,
+        "text": "das Inputfeld weiß nichts von dem State. Und hier müssen wir jetzt Two Way Data Binding "
+    },
+    {
+        "start_time": 4183979,
+        "end_time": 4189779,
+        "text": "implementieren. Das geht indem wir hier runter gehen in den Input und hier dann als Value etwas "
+    },
+    {
+        "start_time": 4189779,
+        "end_time": 4194899,
+        "text": "definieren. Und zwar ist das hier wieder eine JavaScript Expression und was wir hier drin brauchen "
+    },
+    {
+        "start_time": 4194899,
+        "end_time": 4199500,
+        "text": "ist dieser State. Also in dem Fall ist das Text Input. "
+    },
+    {
+        "start_time": 4200000,
+        "end_time": 4204079,
+        "text": "packen jetzt hier als Value rein und damit haben wir jetzt True-Way-Data-Binding. "
+    },
+    {
+        "start_time": 4204079,
+        "end_time": 4208560,
+        "text": "Das heißt diese Werte hier oder dieses Input und der State updaten sich "
+    },
+    {
+        "start_time": 4208560,
+        "end_time": 4212039,
+        "text": "gegenseitig. Das heißt wenn wir etwas eintragen, wird der State geupdatet und "
+    },
+    {
+        "start_time": 4212039,
+        "end_time": 4215920,
+        "text": "wenn wir den State updaten, wird auch der Input geupdatet. So und jetzt sehen wir "
+    },
+    {
+        "start_time": 4215920,
+        "end_time": 4219359,
+        "text": "haben wir hier wieder ein leeres Feld und können ein neues To-Do anlegen. "
+    },
+    {
+        "start_time": 4219359,
+        "end_time": 4223039,
+        "text": "So das wäre es auch schon für den kleinen Crashkurs. Wir haben jetzt hier eine einfache, "
+    },
+    {
+        "start_time": 4223039,
+        "end_time": 4226319,
+        "text": "aber doch relativ umfangreiche App jetzt hier zusammen entwickelt. Mir ist "
+    },
+    {
+        "start_time": 4226319,
+        "end_time": 4229279,
+        "text": "definitiv bewusst, dass hier auch schon einiges reingeht, wo wahrscheinlich nicht "
+    },
+    {
+        "start_time": 4229279,
+        "end_time": 4232439,
+        "text": "alles von Anfang an klar ist. Deswegen nimm dir die Zeit, wenn du etwas nicht "
+    },
+    {
+        "start_time": 4232439,
+        "end_time": 4235560,
+        "text": "verstanden hast, guck dir es vielleicht noch mal an. Spiel ein bisschen mit dem Code. "
+    },
+    {
+        "start_time": 4235560,
+        "end_time": 4239399,
+        "text": "React hat eine leichte Lernkurve und es ist nicht normal, dass man das von "
+    },
+    {
+        "start_time": 4239399,
+        "end_time": 4243479,
+        "text": "Anfang an direkt 100% versteht. Von daher einfach mal ein bisschen üben. Wenn du "
+    },
+    {
+        "start_time": 4243479,
+        "end_time": 4245880,
+        "text": "Fragen hast natürlich weiterhin auch gerne in die Kommentare schreiben. Ich "
+    },
+    {
+        "start_time": 4245880,
+        "end_time": 4249520,
+        "text": "beantworte die gerne und ansonsten wenn dir das Video gefallen hat, dann gerne "
+    },
+    {
+        "start_time": 4249520,
+        "end_time": 4253079,
+        "text": "liken und mir ein Abo dalassen. Bis dann. "
+    }
+]

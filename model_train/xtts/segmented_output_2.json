@@ -26,13 +26,8 @@
     },
     {
         "start_time": 23440,
-        "end_time": 28400,
-        "text": "wie du eine Applikation damit erstellst und wie du das Ganze in Zukunft für dich nutzen kannst, "
-    },
-    {
-        "start_time": 28399,
         "end_time": 30679,
-        "text": "um diverse eigene Programme zu schreiben. "
+        "text": "wie du eine Applikation damit erstellst und wie du das Ganze in Zukunft für dich nutzen kannst, um diverse eigene Programme zu schreiben. "
     },
     {
         "start_time": 30679,
@@ -41,13 +36,8 @@
     },
     {
         "start_time": 34879,
-        "end_time": 38200,
-        "text": "Es gab einfach Dinge, die sehr kompliziert zu schreiben waren. "
-    },
-    {
-        "start_time": 38200,
         "end_time": 40960,
-        "text": "Mit React hat sich das grundlegend geändert. "
+        "text": "Es gab einfach Dinge, die sehr kompliziert zu schreiben waren. Mit React hat sich das grundlegend geändert. "
     },
     {
         "start_time": 40960,
@@ -56,23 +46,13 @@
     },
     {
         "start_time": 46359,
-        "end_time": 49320,
-        "text": "Und das Ganze kannst du sogar relativ schnell lernen. "
-    },
-    {
-        "start_time": 49320,
         "end_time": 53159,
-        "text": "Also würde ich sagen, gehen wir direkt an den Computer und legen los. "
+        "text": "Und das Ganze kannst du sogar relativ schnell lernen. Also würde ich sagen, gehen wir direkt an den Computer und legen los. "
     },
     {
         "start_time": 53159,
-        "end_time": 60359,
-        "text": "Klären wir erst einmal die Frage, was ist überhaupt React? "
-    },
-    {
-        "start_time": 60359,
         "end_time": 64679,
-        "text": "React ist eine JavaScript-Library und diese wurde von Facebook entwickelt. "
+        "text": "Klären wir erst einmal die Frage, was ist überhaupt React? React ist eine JavaScript-Library und diese wurde von Facebook entwickelt. "
     },
     {
         "start_time": 64679,
@@ -81,23 +61,13 @@
     },
     {
         "start_time": 70799,
-        "end_time": 74920,
-        "text": "React ist kein Framework, sondern eine sogenannte Library. "
-    },
-    {
-        "start_time": 74920,
         "end_time": 79239,
-        "text": "Also eine Bibliothek, die uns verschiedene JavaScript-Funktionen zur Verfügung stellt. "
+        "text": "React ist kein Framework, sondern eine sogenannte Library. Also eine Bibliothek, die uns verschiedene JavaScript-Funktionen zur Verfügung stellt. "
     },
     {
         "start_time": 79239,
-        "end_time": 82158,
-        "text": "React ist auf Komponenten aufgebaut. "
-    },
-    {
-        "start_time": 82399,
         "end_time": 87079,
-        "text": "Wir haben Komponenten, die wieder weitere Unterkomponenten besitzen. "
+        "text": "React ist auf Komponenten aufgebaut. Wir haben Komponenten, die wieder weitere Unterkomponenten besitzen. "
     },
     {
         "start_time": 87079,
@@ -106,53 +76,28 @@
     },
     {
         "start_time": 91359,
-        "end_time": 96158,
-        "text": "Das heißt, wenn wir beispielsweise solch eine Internetseite haben, dann wäre der Header, "
-    },
-    {
-        "start_time": 96158,
         "end_time": 100039,
-        "text": "also diese Navigationsleiste da oben, eine Komponente. "
+        "text": "Das heißt, wenn wir beispielsweise solch eine Internetseite haben, dann wäre der Header, also diese Navigationsleiste da oben, eine Komponente. "
     },
     {
         "start_time": 100039,
-        "end_time": 103959,
-        "text": "Genauso hätten wir auch eine Komponente, um die einzelnen Module hier darzustellen. "
-    },
-    {
-        "start_time": 103959,
         "end_time": 106598,
-        "text": "Also Modul 1, Modul 2, Modul 3. "
+        "text": "Genauso hätten wir auch eine Komponente, um die einzelnen Module hier darzustellen. Also Modul 1, Modul 2, Modul 3. "
     },
     {
         "start_time": 106598,
-        "end_time": 111519,
-        "text": "Das ist alles die gleiche Komponente, nur mit verschiedenen Parametern. "
-    },
-    {
-        "start_time": 111560,
         "end_time": 114759,
-        "text": "Deswegen hat sie immer ein anderes Bild und einen anderen Text. "
+        "text": "Das ist alles die gleiche Komponente, nur mit verschiedenen Parametern. Deswegen hat sie immer ein anderes Bild und einen anderen Text. "
     },
     {
         "start_time": 114759,
-        "end_time": 116878,
-        "text": "Komponenten sind meistens verschachtelt. "
-    },
-    {
-        "start_time": 116878,
         "end_time": 120280,
-        "text": "Bedeutet, ganz oben haben wir unsere App-Komponente. "
+        "text": "Komponenten sind meistens verschachtelt. Bedeutet, ganz oben haben wir unsere App-Komponente. "
     },
     {
         "start_time": 120280,
-        "end_time": 124479,
-        "text": "Unsere App besteht aus einer Navigationsleiste und einem Container, "
-    },
-    {
-        "start_time": 124479,
         "end_time": 128280,
-        "text": "wo wiederum weitere Unterkomponenten sind und zwar unsere Module. "
+        "text": "Unsere App besteht aus einer Navigationsleiste und einem Container, wo wiederum weitere Unterkomponenten sind und zwar unsere Module. "
     },
     {
         "start_time": 128280,
@@ -161,23 +106,13 @@
     },
     {
         "start_time": 133840,
-        "end_time": 137079,
-        "text": "Die Module bestehen wiederum aus weiteren Unterkomponenten, "
-    },
-    {
-        "start_time": 137079,
         "end_time": 142480,
-        "text": "beispielsweise einem Head, also dem oberen Teil, und einem Body, also dem unteren Teil. "
+        "text": "Die Module bestehen wiederum aus weiteren Unterkomponenten, beispielsweise einem Head, also dem oberen Teil, und einem Body, also dem unteren Teil. "
     },
     {
         "start_time": 142480,
-        "end_time": 145920,
-        "text": "Eine React-Komponente hat meistens mindestens zwei Elemente. "
-    },
-    {
-        "start_time": 145920,
         "end_time": 149680,
-        "text": "Einmal einen State und einmal eine Renderfunktion. "
+        "text": "Eine React-Komponente hat meistens mindestens zwei Elemente. Einmal einen State und einmal eine Renderfunktion. "
     },
     {
         "start_time": 149680,
@@ -186,23 +121,13 @@
     },
     {
         "start_time": 155160,
-        "end_time": 158360,
-        "text": "Und die Renderfunktion, die ist dafür verantwortlich zu sagen, "
-    },
-    {
-        "start_time": 158360,
         "end_time": 163160,
-        "text": "welche UI-Elemente jetzt angezeigt werden sollen in der Komponente. "
+        "text": "Und die Renderfunktion, die ist dafür verantwortlich zu sagen, welche UI-Elemente jetzt angezeigt werden sollen in der Komponente. "
     },
     {
         "start_time": 163160,
-        "end_time": 166400,
-        "text": "Beispielsweise ein Text, ein Button oder ein Link. "
-    },
-    {
-        "start_time": 166439,
         "end_time": 170159,
-        "text": "Wenn wir objektorientiert programmieren, wird das Ganze meistens so dargestellt. "
+        "text": "Beispielsweise ein Text, ein Button oder ein Link. Wenn wir objektorientiert programmieren, wird das Ganze meistens so dargestellt. "
     },
     {
         "start_time": 170159,
@@ -211,93 +136,48 @@
     },
     {
         "start_time": 175400,
-        "end_time": 179319,
-        "text": "Dort sind jetzt zwei Dinge drin, einmal der State, wo dann später die Daten drin sind, "
-    },
-    {
-        "start_time": 179319,
         "end_time": 181319,
-        "text": "und unsere Renderfunktion. "
+        "text": "Dort sind jetzt zwei Dinge drin, einmal der State, wo dann später die Daten drin sind, und unsere Renderfunktion. "
     },
     {
         "start_time": 181319,
-        "end_time": 185439,
-        "text": "Zwischen diese geschweiften Klammern kommt dann der Code, den wir brauchen, "
-    },
-    {
-        "start_time": 185439,
         "end_time": 187920,
-        "text": "um unsere UI-Elemente zu erstellen. "
+        "text": "Zwischen diese geschweiften Klammern kommt dann der Code, den wir brauchen, um unsere UI-Elemente zu erstellen. "
     },
     {
         "start_time": 187920,
-        "end_time": 190920,
-        "text": "React heißt auf Deutsch so viel wie reagieren. "
-    },
-    {
-        "start_time": 190920,
         "end_time": 195800,
-        "text": "Und das trifft es eigentlich schon ziemlich gut, denn wir reagieren auf Änderungen. "
+        "text": "React heißt auf Deutsch so viel wie reagieren. Und das trifft es eigentlich schon ziemlich gut, denn wir reagieren auf Änderungen. "
     },
     {
         "start_time": 195800,
-        "end_time": 199760,
-        "text": "Das heißt, wenn sich beispielsweise die Daten in unserem State ändern, "
-    },
-    {
-        "start_time": 199760,
         "end_time": 203320,
-        "text": "dann wollen wir darauf reagieren und etwas Neues anzeigen. "
+        "text": "Das heißt, wenn sich beispielsweise die Daten in unserem State ändern, dann wollen wir darauf reagieren und etwas Neues anzeigen. "
     },
     {
         "start_time": 203320,
-        "end_time": 206320,
-        "text": "Also, ich würde sagen, wir legen direkt los. "
-    },
-    {
-        "start_time": 210400,
         "end_time": 212960,
-        "text": "Um mit React arbeiten zu können, müssen wir natürlich erstmal "
+        "text": "Also, ich würde sagen, wir legen direkt los. Um mit React arbeiten zu können, müssen wir natürlich erstmal "
     },
     {
         "start_time": 212960,
-        "end_time": 215920,
-        "text": "etwas Software auf unserem Computer installieren. "
-    },
-    {
-        "start_time": 215920,
         "end_time": 218920,
-        "text": "Das erste, was wir benötigen, ist Node.js. "
+        "text": "etwas Software auf unserem Computer installieren. Das erste, was wir benötigen, ist Node.js. "
     },
     {
         "start_time": 218920,
-        "end_time": 223240,
-        "text": "Node.js ist eine sogenannte Laufzeitumgebung für JavaScript. "
-    },
-    {
-        "start_time": 223280,
         "end_time": 228280,
-        "text": "Bedeutet, mit anderen Worten, dass wir JavaScript auf unserem Computer ausführen können. "
+        "text": "Node.js ist eine sogenannte Laufzeitumgebung für JavaScript. Bedeutet, mit anderen Worten, dass wir JavaScript auf unserem Computer ausführen können. "
     },
     {
         "start_time": 228280,
-        "end_time": 232719,
-        "text": "Das heißt, man könnte zum Beispiel ein Backend oder so was oder Desktop-Programme erstellen "
-    },
-    {
-        "start_time": 232719,
         "end_time": 234040,
-        "text": "mit JavaScript. "
+        "text": "Das heißt, man könnte zum Beispiel ein Backend oder so was oder Desktop-Programme erstellen mit JavaScript. "
     },
     {
         "start_time": 234040,
-        "end_time": 237640,
-        "text": "Dafür brauchen wir Node.js jedoch nicht, denn ein React-Programm läuft ja einfach "
-    },
-    {
-        "start_time": 237640,
         "end_time": 239159,
-        "text": "in unserem Webbrowser. "
+        "text": "Dafür brauchen wir Node.js jedoch nicht, denn ein React-Programm läuft ja einfach in unserem Webbrowser. "
     },
     {
         "start_time": 239159,
@@ -311,18 +191,8 @@
     },
     {
         "start_time": 248080,
-        "end_time": 253200,
-        "text": "installieren, wie beispielsweise React oder Programme, die eine React App automatisch "
-    },
-    {
-        "start_time": 253200,
-        "end_time": 254400,
-        "text": "für uns erzeugen. "
-    },
-    {
-        "start_time": 254400,
         "end_time": 256680,
-        "text": "Deswegen müssen wir Node.js installieren. "
+        "text": "installieren, wie beispielsweise React oder Programme, die eine React App automatisch für uns erzeugen. Deswegen müssen wir Node.js installieren. "
     },
     {
         "start_time": 256680,
@@ -331,23 +201,13 @@
     },
     {
         "start_time": 261000,
-        "end_time": 264800,
-        "text": "oder für den Source Code, falls du beispielsweise Linux verwendest. "
-    },
-    {
-        "start_time": 264800,
         "end_time": 268199,
-        "text": "Anschließend müssen wir natürlich auch noch irgendwie unseren Code schreiben. "
+        "text": "oder für den Source Code, falls du beispielsweise Linux verwendest. Anschließend müssen wir natürlich auch noch irgendwie unseren Code schreiben. "
     },
     {
         "start_time": 268199,
-        "end_time": 270160,
-        "text": "Da brauchen wir einen Code Editor. "
-    },
-    {
-        "start_time": 270160,
         "end_time": 274400,
-        "text": "Da nehmen wir den Standard, den wir eigentlich immer nehmen und zwar Visual Studio Code, "
+        "text": "Da brauchen wir einen Code Editor. Da nehmen wir den Standard, den wir eigentlich immer nehmen und zwar Visual Studio Code, "
     },
     {
         "start_time": 274400,
@@ -361,18 +221,8 @@
     },
     {
         "start_time": 281759,
-        "end_time": 286159,
-        "text": "Anschließend öffnest du Visual Studio Code und das Ganze sieht dann so aus. "
-    },
-    {
-        "start_time": 286159,
-        "end_time": 287400,
-        "text": "Das ist unsere Base. "
-    },
-    {
-        "start_time": 287400,
         "end_time": 288680,
-        "text": "Hier können wir jetzt starten. "
+        "text": "Anschließend öffnest du Visual Studio Code und das Ganze sieht dann so aus. Das ist unsere Base. Hier können wir jetzt starten. "
     },
     {
         "start_time": 292520,
@@ -381,13 +231,8 @@
     },
     {
         "start_time": 295720,
-        "end_time": 300960,
-        "text": "Dafür müssen wir erst einmal einen Ordner erstellen und diesen dann mit Visual Studio "
-    },
-    {
-        "start_time": 300960,
         "end_time": 302160,
-        "text": "Code öffnen. "
+        "text": "Dafür müssen wir erst einmal einen Ordner erstellen und diesen dann mit Visual Studio Code öffnen. "
     },
     {
         "start_time": 302160,
@@ -406,13 +251,8 @@
     },
     {
         "start_time": 314839,
-        "end_time": 320079,
-        "text": "zu platzieren, sondern ich habe das Ganze zum Beispiel hier einfach auf C slash Dev slash "
-    },
-    {
-        "start_time": 320079,
         "end_time": 321079,
-        "text": "React Projects. "
+        "text": "zu platzieren, sondern ich habe das Ganze zum Beispiel hier einfach auf C slash Dev slash React Projects. "
     },
     {
         "start_time": 321079,
@@ -421,13 +261,8 @@
     },
     {
         "start_time": 325959,
-        "end_time": 330759,
-        "text": "Wenn ich jetzt hier oben auf Terminal drücke, kann ich unten ein neues Terminal öffnen. "
-    },
-    {
-        "start_time": 330759,
         "end_time": 332719,
-        "text": "Das hier ist diese Eingabeaufforderung. "
+        "text": "Wenn ich jetzt hier oben auf Terminal drücke, kann ich unten ein neues Terminal öffnen. Das hier ist diese Eingabeaufforderung. "
     },
     {
         "start_time": 332720,
@@ -441,43 +276,23 @@
     },
     {
         "start_time": 342400,
-        "end_time": 351440,
-        "text": "Um jetzt ein neues React Projekt anzulegen, musst du einfach den Befehl npx create-react-app "
-    },
-    {
-        "start_time": 351440,
         "end_time": 352440,
-        "text": "eingeben. "
+        "text": "Um jetzt ein neues React Projekt anzulegen, musst du einfach den Befehl npx create-react-app eingeben. "
     },
     {
         "start_time": 352440,
-        "end_time": 358560,
-        "text": "Dieses npx startet automatisch ein Programm aus dem Internet namens create-react-app, "
-    },
-    {
-        "start_time": 358560,
         "end_time": 361320,
-        "text": "was uns unser erstes React Projekt erstellt. "
+        "text": "Dieses npx startet automatisch ein Programm aus dem Internet namens create-react-app, was uns unser erstes React Projekt erstellt. "
     },
     {
         "start_time": 361399,
-        "end_time": 365759,
-        "text": "Wenn du unter Linux oder Mac arbeitest, musst du hier noch das Wort sudo davor schreiben. "
-    },
-    {
-        "start_time": 365759,
         "end_time": 368719,
-        "text": "Damit führst du das Ganze als Administrator aus. "
+        "text": "Wenn du unter Linux oder Mac arbeitest, musst du hier noch das Wort sudo davor schreiben. Damit führst du das Ganze als Administrator aus. "
     },
     {
         "start_time": 368719,
-        "end_time": 371759,
-        "text": "Bevor du jetzt auf Enter drückst, musst du hier hinter noch einen weiteren Parameter "
-    },
-    {
-        "start_time": 371759,
         "end_time": 374480,
-        "text": "eingeben und zwar den Namen deines Projektes. "
+        "text": "Bevor du jetzt auf Enter drückst, musst du hier hinter noch einen weiteren Parameter eingeben und zwar den Namen deines Projektes. "
     },
     {
         "start_time": 374480,
@@ -486,33 +301,18 @@
     },
     {
         "start_time": 382159,
-        "end_time": 386319,
-        "text": "Nachdem alles durchgelaufen ist, sehen wir jetzt hier an der Seite einen neuen Ordner, "
-    },
-    {
-        "start_time": 386319,
         "end_time": 387319,
-        "text": "der erstellt wurde. "
+        "text": "Nachdem alles durchgelaufen ist, sehen wir jetzt hier an der Seite einen neuen Ordner, der erstellt wurde. "
     },
     {
         "start_time": 387319,
-        "end_time": 392159,
-        "text": "Das heißt mein-online-shop und hier ist jetzt unser React Projekt zu finden. "
-    },
-    {
-        "start_time": 392159,
         "end_time": 394279,
-        "text": "Hier steht auch gleich, wie wir das Ganze starten können. "
+        "text": "Das heißt mein-online-shop und hier ist jetzt unser React Projekt zu finden. Hier steht auch gleich, wie wir das Ganze starten können. "
     },
     {
         "start_time": 394279,
-        "end_time": 396879,
-        "text": "Wir müssen erstmal in den Ordner wechseln. "
-    },
-    {
-        "start_time": 396879,
         "end_time": 400199,
-        "text": "Das heißt, wir müssen von diesem Terminal in diesen Ordner wechseln. "
+        "text": "Wir müssen erstmal in den Ordner wechseln. Das heißt, wir müssen von diesem Terminal in diesen Ordner wechseln. "
     },
     {
         "start_time": 400199,
@@ -526,73 +326,33 @@
     },
     {
         "start_time": 411159,
-        "end_time": 417920,
-        "text": "Außerdem möchte ich in VS Code noch eine extra Extension, also eine Erweiterung installieren "
-    },
-    {
-        "start_time": 417920,
-        "end_time": 419920,
-        "text": "und zwar diese hier. "
-    },
-    {
-        "start_time": 419920,
         "end_time": 422280,
-        "text": "Die heißt Simple React Snippets. "
+        "text": "Außerdem möchte ich in VS Code noch eine extra Extension, also eine Erweiterung installieren und zwar diese hier. Die heißt Simple React Snippets. "
     },
     {
         "start_time": 422280,
-        "end_time": 425160,
-        "text": "Das gibst du einfach hier oben ein und drückst hier drauf. "
-    },
-    {
-        "start_time": 425160,
         "end_time": 429160,
-        "text": "Ich habe das Ganze bei mir schon installiert und mit dieser Erweiterung hast du gleich "
+        "text": "Das gibst du einfach hier oben ein und drückst hier drauf. Ich habe das Ganze bei mir schon installiert und mit dieser Erweiterung hast du gleich "
     },
     {
         "start_time": 429160,
-        "end_time": 434000,
-        "text": "noch die Möglichkeit, um einiges komfortabler zu programmieren, als du das ohnehin schon "
-    },
-    {
-        "start_time": 434000,
         "end_time": 435400,
-        "text": "mit React machen kannst. "
+        "text": "noch die Möglichkeit, um einiges komfortabler zu programmieren, als du das ohnehin schon mit React machen kannst. "
     },
     {
         "start_time": 435400,
-        "end_time": 440040,
-        "text": "Durch den Befehl, den du hier eingegeben hast, geht jetzt in meinem Webbrowser dieses "
-    },
-    {
-        "start_time": 440040,
         "end_time": 441040,
-        "text": "Ding hier auf. "
+        "text": "Durch den Befehl, den du hier eingegeben hast, geht jetzt in meinem Webbrowser dieses Ding hier auf. "
     },
     {
         "start_time": 441040,
-        "end_time": 446040,
-        "text": "Hier ist unsere Start-App in React und damit können wir jetzt entweder weiterarbeiten "
-    },
-    {
-        "start_time": 446040,
         "end_time": 449680,
-        "text": "oder wir können jetzt einfach eine ganz neue App anlegen. "
+        "text": "Hier ist unsere Start-App in React und damit können wir jetzt entweder weiterarbeiten oder wir können jetzt einfach eine ganz neue App anlegen. "
     },
     {
         "start_time": 449680,
-        "end_time": 453400,
-        "text": "Wenn wir uns die Ordnerstruktur angucken, dann sehen wir hier auch schon einige Dateien und "
-    },
-    {
-        "start_time": 453400,
-        "end_time": 454400,
-        "text": "einige Ordner. "
-    },
-    {
-        "start_time": 454400,
         "end_time": 456600,
-        "text": "Hier steht zum Beispiel package.json. "
+        "text": "Wenn wir uns die Ordnerstruktur angucken, dann sehen wir hier auch schon einige Dateien und einige Ordner. Hier steht zum Beispiel package.json. "
     },
     {
         "start_time": 456600,
@@ -601,23 +361,13 @@
     },
     {
         "start_time": 461860,
-        "end_time": 465800,
-        "text": "installiert wurden und die befinden sich in dem Ordner Noten Modules. "
-    },
-    {
-        "start_time": 465800,
         "end_time": 468000,
-        "text": "Das müssen wir uns jetzt gar nicht groß angucken. "
+        "text": "installiert wurden und die befinden sich in dem Ordner Noten Modules. Das müssen wir uns jetzt gar nicht groß angucken. "
     },
     {
         "start_time": 468079,
-        "end_time": 472920,
-        "text": "Readme.md ist einfach nochmal eine kleine Dokumentation, wo ein paar Infos stehen. "
-    },
-    {
-        "start_time": 472920,
         "end_time": 474759,
-        "text": "Dann gibt es noch package.log. "
+        "text": "Readme.md ist einfach nochmal eine kleine Dokumentation, wo ein paar Infos stehen. Dann gibt es noch package.log. "
     },
     {
         "start_time": 474759,
@@ -626,38 +376,18 @@
     },
     {
         "start_time": 479680,
-        "end_time": 483600,
-        "text": "alles und gitignore brauchen wir, wenn wir mit Git arbeiten wollen. "
-    },
-    {
-        "start_time": 483600,
         "end_time": 485759,
-        "text": "Das machen wir jetzt erst einmal aber noch nicht. "
+        "text": "alles und gitignore brauchen wir, wenn wir mit Git arbeiten wollen. Das machen wir jetzt erst einmal aber noch nicht. "
     },
     {
         "start_time": 485759,
-        "end_time": 489800,
-        "text": "Git ist eine Versionskontrolle, das heißt, da können wir unseren Code in allen Versionen "
-    },
-    {
-        "start_time": 489800,
         "end_time": 491759,
-        "text": "online in der Cloud abspeichern. "
+        "text": "Git ist eine Versionskontrolle, das heißt, da können wir unseren Code in allen Versionen online in der Cloud abspeichern. "
     },
     {
         "start_time": 491759,
-        "end_time": 493600,
-        "text": "Dann gibt es noch den Ordner public. "
-    },
-    {
-        "start_time": 493600,
-        "end_time": 497759,
-        "text": "Da befindet sich unsere fertige Internetseite drin und den Ordner source. "
-    },
-    {
-        "start_time": 497759,
         "end_time": 499360,
-        "text": "Das steht für source code. "
+        "text": "Dann gibt es noch den Ordner public. Da befindet sich unsere fertige Internetseite drin und den Ordner source. Das steht für source code. "
     },
     {
         "start_time": 499360,
@@ -666,23 +396,13 @@
     },
     {
         "start_time": 502920,
-        "end_time": 507439,
-        "text": "bewegen werden, denn hier befindet sich alles, was mit der Programmierung zu tun hat. "
-    },
-    {
-        "start_time": 507439,
         "end_time": 510159,
-        "text": "Hier sind jetzt erst einmal einige, einige Dateien. "
+        "text": "bewegen werden, denn hier befindet sich alles, was mit der Programmierung zu tun hat. Hier sind jetzt erst einmal einige, einige Dateien. "
     },
     {
         "start_time": 510159,
-        "end_time": 514519,
-        "text": "Was wir aber jetzt erst einmal machen wollen, ist einfach alles hier komplett zu löschen, "
-    },
-    {
-        "start_time": 514519,
         "end_time": 516519,
-        "text": "denn wir wollen ja wirklich bei Null anfangen. "
+        "text": "Was wir aber jetzt erst einmal machen wollen, ist einfach alles hier komplett zu löschen, denn wir wollen ja wirklich bei Null anfangen. "
     },
     {
         "start_time": 516519,
@@ -696,33 +416,18 @@
     },
     {
         "start_time": 524400,
-        "end_time": 528879,
-        "text": "Wir legen hier eine neue Datei in dem Ordner an mit Rechtsklick und new file und nennen "
-    },
-    {
-        "start_time": 528879,
         "end_time": 531520,
-        "text": "diese Datei index.js. "
+        "text": "Wir legen hier eine neue Datei in dem Ordner an mit Rechtsklick und new file und nennen diese Datei index.js. "
     },
     {
         "start_time": 531520,
-        "end_time": 534879,
-        "text": "Dann drücken wir auf Enter und haben jetzt eine komplett leere Datei. "
-    },
-    {
-        "start_time": 534879,
         "end_time": 537200,
-        "text": "Und das hier ist die Base für unser Programm. "
+        "text": "Dann drücken wir auf Enter und haben jetzt eine komplett leere Datei. Und das hier ist die Base für unser Programm. "
     },
     {
         "start_time": 537200,
-        "end_time": 541400,
-        "text": "Das heißt, alles, was wir hier reinschreiben, wird dann automatisch die Base für unsere "
-    },
-    {
-        "start_time": 541400,
         "end_time": 542640,
-        "text": "Internetseite sein. "
+        "text": "Das heißt, alles, was wir hier reinschreiben, wird dann automatisch die Base für unsere Internetseite sein. "
     },
     {
         "start_time": 542640,
@@ -731,83 +436,38 @@
     },
     {
         "start_time": 547640,
-        "end_time": 552280,
-        "text": "Das heißt, ich muss jetzt hier sowas schreiben wie import React from. "
-    },
-    {
-        "start_time": 552919,
         "end_time": 555000,
-        "text": "Warum schreiben wir das genau so? "
+        "text": "Das heißt, ich muss jetzt hier sowas schreiben wie import React from. Warum schreiben wir das genau so? "
     },
     {
         "start_time": 555000,
-        "end_time": 558839,
-        "text": "Das erste ist, was wir importieren wollen und das zweite ist, aus welcher Library wir "
-    },
-    {
-        "start_time": 558839,
         "end_time": 559839,
-        "text": "das importieren wollen. "
+        "text": "Das erste ist, was wir importieren wollen und das zweite ist, aus welcher Library wir das importieren wollen. "
     },
     {
         "start_time": 559839,
-        "end_time": 564399,
-        "text": "Die Library heißt React und die Funktion, die wir jetzt hier reinkopieren wollen oder "
-    },
-    {
-        "start_time": 564399,
         "end_time": 566399,
-        "text": "das Element heißt ebenfalls React. "
+        "text": "Die Library heißt React und die Funktion, die wir jetzt hier reinkopieren wollen oder das Element heißt ebenfalls React. "
     },
     {
         "start_time": 566399,
-        "end_time": 570759,
-        "text": "Das zweite, was wir brauchen, ist etwas, das nennt sich React Dom. "
-    },
-    {
-        "start_time": 570759,
-        "end_time": 574839,
-        "text": "Dafür schreiben wir import React Dom from. "
-    },
-    {
-        "start_time": 574839,
         "end_time": 576439,
-        "text": "Jetzt wird es interessant. "
+        "text": "Das zweite, was wir brauchen, ist etwas, das nennt sich React Dom. Dafür schreiben wir import React Dom from. Jetzt wird es interessant. "
     },
     {
         "start_time": 576439,
-        "end_time": 578919,
-        "text": "React minus Dom. "
-    },
-    {
-        "start_time": 579319,
-        "end_time": 582959,
-        "text": "Heißt tatsächlich so und nachdem wir das ganze geschrieben haben, können wir jetzt "
-    },
-    {
-        "start_time": 582959,
         "end_time": 586199,
-        "text": "bereits anfangen zu programmieren. "
+        "text": "React minus Dom. Heißt tatsächlich so und nachdem wir das ganze geschrieben haben, können wir jetzt bereits anfangen zu programmieren. "
     },
     {
         "start_time": 586199,
-        "end_time": 589959,
-        "text": "Was wir natürlich auf unserer Seite immer als erstes machen wollen, ist das obligatorische "
-    },
-    {
-        "start_time": 589959,
         "end_time": 590959,
-        "text": "Hello World. "
+        "text": "Was wir natürlich auf unserer Seite immer als erstes machen wollen, ist das obligatorische Hello World. "
     },
     {
         "start_time": 590959,
-        "end_time": 594679,
-        "text": "Mit Hello World können wir auf unserer Seite letztendlich einfach anzeigen, ob das Ganze "
-    },
-    {
-        "start_time": 594679,
         "end_time": 595679,
-        "text": "funktioniert. "
+        "text": "Mit Hello World können wir auf unserer Seite letztendlich einfach anzeigen, ob das Ganze funktioniert. "
     },
     {
         "start_time": 595679,
@@ -1901,13 +1561,8 @@
     },
     {
         "start_time": 1796840,
-        "end_time": 1799920,
-        "text": "dann überprüfe immer zwei Sachen. Nummer eins die Konsolen. "
-    },
-    {
-        "start_time": 1800000,
         "end_time": 1803599,
-        "text": "ob es hier irgendwelche Fehler gibt. Hier haben wir noch ein Fehler, aber das ist nicht "
+        "text": "dann überprüfe immer zwei Sachen. Nummer eins die Konsolen. ob es hier irgendwelche Fehler gibt. Hier haben wir noch ein Fehler, aber das ist nicht "
     },
     {
         "start_time": 1803599,
@@ -2976,13 +2631,8 @@
     },
     {
         "start_time": 3003980,
-        "end_time": 3009719,
-        "text": "ich möchte gleichzeitig aber auch noch den Namen hinzufügen und ich möchte "
-    },
-    {
-        "start_time": 3009719,
         "end_time": 3014340,
-        "text": "zusätzlich auch noch den Price hinzufügen. Diese Informationen, die geben "
+        "text": "ich möchte gleichzeitig aber auch noch den Namen hinzufügen und ich möchte zusätzlich auch noch den Price hinzufügen. Diese Informationen, die geben "
     },
     {
         "start_time": 3014340,
@@ -3091,43 +2741,23 @@
     },
     {
         "start_time": 3111599,
-        "end_time": 3115280,
-        "text": "den ich hier neu reingebe. Jetzt haben wir noch ein kleines Problem, was leider "
-    },
-    {
-        "start_time": 3115280,
         "end_time": 3118960,
-        "text": "sehr React spezifisch ist und zwar können wir hier keine Parameter "
+        "text": "den ich hier neu reingebe. Jetzt haben wir noch ein kleines Problem, was leider sehr React spezifisch ist und zwar können wir hier keine Parameter "
     },
     {
         "start_time": 3118960,
-        "end_time": 3122519,
-        "text": "reingeben. Wir müssen die Funktion hier direkt ohne Klammer auf Klammer zu "
-    },
-    {
-        "start_time": 3122519,
         "end_time": 3127239,
-        "text": "aufrufen, so wie jetzt. Was wir aber machen können, ist das Ganze so zu "
+        "text": "reingeben. Wir müssen die Funktion hier direkt ohne Klammer auf Klammer zu aufrufen, so wie jetzt. Was wir aber machen können, ist das Ganze so zu "
     },
     {
         "start_time": 3127239,
-        "end_time": 3130400,
-        "text": "schreiben und jetzt hier das Ganze reinzugeben. "
-    },
-    {
-        "start_time": 3130400,
         "end_time": 3133440,
-        "text": "Hier unten kriegen wir jetzt noch einen kleinen Fehler, denn hier steht ja AddItem. "
+        "text": "schreiben und jetzt hier das Ganze reinzugeben. Hier unten kriegen wir jetzt noch einen kleinen Fehler, denn hier steht ja AddItem. "
     },
     {
         "start_time": 3133440,
-        "end_time": 3137559,
-        "text": "Das AddItem ist aber Teil von unserer Klasse, also müssen wir hier sagen "
-    },
-    {
-        "start_time": 3137559,
         "end_time": 3141679,
-        "text": "this.addItem. Nachdem wir das Ganze geschafft haben, können wir das jetzt "
+        "text": "Das AddItem ist aber Teil von unserer Klasse, also müssen wir hier sagen this.addItem. Nachdem wir das Ganze geschafft haben, können wir das jetzt "
     },
     {
         "start_time": 3141679,
@@ -3136,33 +2766,18 @@
     },
     {
         "start_time": 3146400,
-        "end_time": 3153440,
-        "text": "sagen hier natürlich Gurken, Äpfel, Birnen und können hier noch die Preise ein "
-    },
-    {
-        "start_time": 3153440,
         "end_time": 3158760,
-        "text": "bisschen ändern. Sagen wir 1,99, 3,99, 4,99. "
+        "text": "sagen hier natürlich Gurken, Äpfel, Birnen und können hier noch die Preise ein bisschen ändern. Sagen wir 1,99, 3,99, 4,99. "
     },
     {
         "start_time": 3158760,
-        "end_time": 3162079,
-        "text": "Dieses HeadState hier ist übrigens extrem wichtig, denn hier werden nicht "
-    },
-    {
-        "start_time": 3162079,
         "end_time": 3165679,
-        "text": "nur einfach Daten hier oben geupdatet, sondern gleichzeitig wird auch diese "
+        "text": "Dieses HeadState hier ist übrigens extrem wichtig, denn hier werden nicht nur einfach Daten hier oben geupdatet, sondern gleichzeitig wird auch diese "
     },
     {
         "start_time": 3165679,
-        "end_time": 3170440,
-        "text": "Renderfunktion nur durch dieses SetState automatisch neu ausgeführt. Bei Angular "
-    },
-    {
-        "start_time": 3170440,
         "end_time": 3174639,
-        "text": "funktioniert das beispielsweise automatisch. React hingegen braucht "
+        "text": "Renderfunktion nur durch dieses SetState automatisch neu ausgeführt. Bei Angular funktioniert das beispielsweise automatisch. React hingegen braucht "
     },
     {
         "start_time": 3174639,
@@ -3186,13 +2801,8 @@
     },
     {
         "start_time": 3191719,
-        "end_time": 3195920,
-        "text": "unsere App jetzt hier aufmache und hier auf hinzufügen drücke, dann sehe ich, "
-    },
-    {
-        "start_time": 3195920,
         "end_time": 3200000,
-        "text": "dass hier zu unserem State jetzt zu Items ein neues Element hinzugefügt "
+        "text": "unsere App jetzt hier aufmache und hier auf hinzufügen drücke, dann sehe ich, dass hier zu unserem State jetzt zu Items ein neues Element hinzugefügt "
     },
     {
         "start_time": 3200000,
@@ -3216,33 +2826,18 @@
     },
     {
         "start_time": 3219960,
-        "end_time": 3224000,
-        "text": "übergeben. Das heißt, wir müssen in unserem Shopping-Card hier noch sagen, "
-    },
-    {
-        "start_time": 3224000,
         "end_time": 3229159,
-        "text": "okay, Items gleich und müssten hier jetzt irgendwie auf die Daten von hier "
+        "text": "übergeben. Das heißt, wir müssen in unserem Shopping-Card hier noch sagen, okay, Items gleich und müssten hier jetzt irgendwie auf die Daten von hier "
     },
     {
         "start_time": 3229159,
-        "end_time": 3234800,
-        "text": "oben zugreifen. Also müssten so was sagen wie this.state.items. "
-    },
-    {
-        "start_time": 3234800,
         "end_time": 3238800,
-        "text": "Nachdem wir das Ganze gemacht haben, können wir jetzt in unserem Shopping-Card "
+        "text": "oben zugreifen. Also müssten so was sagen wie this.state.items. Nachdem wir das Ganze gemacht haben, können wir jetzt in unserem Shopping-Card "
     },
     {
         "start_time": 3238800,
-        "end_time": 3243480,
-        "text": "zugreifen auf unsere Items. Jetzt müssen wir also hier nicht mehr den State "
-    },
-    {
-        "start_time": 3243480,
         "end_time": 3248239,
-        "text": "oben rausholen, sondern aus den Variablen, die reingegeben wurden in "
+        "text": "zugreifen auf unsere Items. Jetzt müssen wir also hier nicht mehr den State oben rausholen, sondern aus den Variablen, die reingegeben wurden in "
     },
     {
         "start_time": 3248239,
@@ -3286,13 +2881,8 @@
     },
     {
         "start_time": 3287559,
-        "end_time": 3291000,
-        "text": "was wir jetzt haben, dass Birnen noch mal hinzugefügt werden und hier deswegen "
-    },
-    {
-        "start_time": 3291000,
         "end_time": 3294880,
-        "text": "auch sogar ein Fehler angezeigt wird. "
+        "text": "was wir jetzt haben, dass Birnen noch mal hinzugefügt werden und hier deswegen auch sogar ein Fehler angezeigt wird. "
     },
     {
         "start_time": 3296559,
@@ -3301,13 +2891,8 @@
     },
     {
         "start_time": 3301039,
-        "end_time": 3305199,
-        "text": "hinzufüge, sagen wir mal Tomaten, und jetzt noch mal auf hinzufüge, dann "
-    },
-    {
-        "start_time": 3305279,
         "end_time": 3309519,
-        "text": "kriegen wir ein Problem. Und zwar werden hier die Items einfach zweimal "
+        "text": "hinzufüge, sagen wir mal Tomaten, und jetzt noch mal auf hinzufüge, dann kriegen wir ein Problem. Und zwar werden hier die Items einfach zweimal "
     },
     {
         "start_time": 3309519,
@@ -3336,13 +2921,8 @@
     },
     {
         "start_time": 3332960,
-        "end_time": 3337400,
-        "text": "die aktuellen Items holen und jetzt einfach jedes Mal, wenn wir auf den Button "
-    },
-    {
-        "start_time": 3337400,
         "end_time": 3342119,
-        "text": "drücken, ein neues Objekt hier hinzufügen. Stattdessen müssen wir "
+        "text": "die aktuellen Items holen und jetzt einfach jedes Mal, wenn wir auf den Button drücken, ein neues Objekt hier hinzufügen. Stattdessen müssen wir "
     },
     {
         "start_time": 3342119,
@@ -3576,13 +3156,8 @@
     },
     {
         "start_time": 3594599,
-        "end_time": 3599599,
-        "text": "einem Minus-Button zu erhöhen oder zu verringern. Und wenn du jetzt sagst, hey, das Ganze macht mir "
-    },
-    {
-        "start_time": 3599599,
         "end_time": 3600099,
-        "text": "super sch- "
+        "text": "einem Minus-Button zu erhöhen oder zu verringern. Und wenn du jetzt sagst, hey, das Ganze macht mir super sch- "
     },
     {
         "start_time": 3600000,
@@ -3606,23 +3181,13 @@
     },
     {
         "start_time": 3616480,
-        "end_time": 3620000,
-        "text": "Wenn dich das Ganze interessiert, dann klick einfach mal auf den Link ganz oben in der "
-    },
-    {
-        "start_time": 3620000,
         "end_time": 3621000,
-        "text": "YouTube Beschreibung. "
+        "text": "Wenn dich das Ganze interessiert, dann klick einfach mal auf den Link ganz oben in der YouTube Beschreibung. "
     },
     {
         "start_time": 3621000,
-        "end_time": 3625239,
-        "text": "Da kannst du dich nicht nur informieren, sondern da kannst du auch ein kostenloses Beratungsgespräch "
-    },
-    {
-        "start_time": 3625239,
         "end_time": 3627079,
-        "text": "mit mir und meinem Team vereinbaren. "
+        "text": "Da kannst du dich nicht nur informieren, sondern da kannst du auch ein kostenloses Beratungsgespräch mit mir und meinem Team vereinbaren. "
     },
     {
         "start_time": 3627079,
@@ -3636,13 +3201,8 @@
     },
     {
         "start_time": 3634559,
-        "end_time": 3638920,
-        "text": "Vielleicht sehen wir uns ja schon bald persönlich, ansonsten sehen wir uns hier auf diesem Kanal "
-    },
-    {
-        "start_time": 3638920,
         "end_time": 3640480,
-        "text": "in einem der nächsten Videos. "
+        "text": "Vielleicht sehen wir uns ja schon bald persönlich, ansonsten sehen wir uns hier auf diesem Kanal in einem der nächsten Videos. "
     },
     {
         "start_time": 3640480,

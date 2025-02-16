@@ -1,1094 +1,2192 @@
 WEBVTT
 
-00:00:00.000 --> 00:00:06.000
-Hello and welcome to the second episode of the introduction in React with the theme React Setup.
+00:00:00.000 --> 00:00:04.719
+In this video I will show you how you can develop your own apps and websites with React.
 
-00:00:06.000 --> 00:00:15.000
-My name is David Losart, I’m a software engineer and I’ve been on the web for more than 10 years and I’ve been working with React for 4 years.
+00:00:04.719 --> 00:00:09.240
+Even if you’re still at the very beginning and maybe you’ve never written a line of code.
 
-00:00:15.000 --> 00:00:24.000
-In addition to React I like working with JavaScript, TypeScript, Node.js, Linux servers, Docker and AWS.
+00:00:09.240 --> 00:00:12.560
+The website we are going to develop today is as follows.
 
-00:00:24.000 --> 00:00:34.000
-Today’s result is to create a development environment and implement a first React Hello World App.
+00:00:12.560 --> 00:00:18.800
+A online store where you can see different vegetables and fruits and add them to your shopping cart.
 
-00:00:34.000 --> 00:00:45.000
-If we remember briefly, in the last edition I briefly presented the story and principles of React and gave a first theoretical insight into the Virtual Dom and in JSX.
+00:00:18.800 --> 00:00:23.440
+So in this video you will learn very concrete how to get React on your computer to run,
 
-00:00:46.000 --> 00:00:57.000
-We remember that the Virtual Dom is an abstraction that React uses to synchronize the Dom.
+00:00:23.440 --> 00:00:28.400
+how you create an application with it and how you can use it all for you in the future
 
-00:00:57.000 --> 00:01:05.000
-And the Virtual Dom allows us to declare programming on the one hand and on the other, it gives us some performance advantages.
+00:00:28.399 --> 00:00:30.679
+To write different programs.
 
-00:01:05.000 --> 00:01:13.000
-In this context, we want to set up a development environment.I use Visual Studio Code for this.
+00:00:30.679 --> 00:00:34.879
+When I started using JavaScript, the language was not very comfortable yet.
 
-00:01:13.000 --> 00:01:21.000
-We will look at a first toolkit with npm, npx and Babel, which will help us develop React applications.
+00:00:34.879 --> 00:00:38.200
+There were just things that were very complicated to write.
 
-00:01:21.000 --> 00:01:32.000
-And, of course, we will implement a first React application and use the React element, a nuclear formation block of React and JSX.
+00:00:38.200 --> 00:00:40.960
+With React, this has changed fundamentally.
 
-00:01:32.000 --> 00:01:39.000
-At this point you may notice briefly, the last time I talked a lot about React Components.
+00:00:40.960 --> 00:00:46.359
+We can write things with much less code, much more efficient and at the same time much more understandable.
 
-00:01:39.000 --> 00:01:52.000
-React components are not to be confused with React element. But now I first present React element, because it is, so to say, the foundation or the atomic building element, which is actually the atomic building element of React.
+00:00:46.359 --> 00:00:49.320
+And you can even learn all this relatively quickly.
 
-00:01:52.000 --> 00:02:04.000
-And React Element takes us from JSX also a bit of magic. For when you see JSX for the first time, you can quickly wonder how it actually works behind the scenes?
+00:00:49.320 --> 00:00:53.159
+So I would say, let’s go straight to the computer and go off.
 
-00:02:04.000 --> 00:02:11.000
-And React Element is ultimately what’s behind the scenes. that’s what we’ll just see at the end of the sequence.
+00:00:53.159 --> 00:01:00.359
+Let us first explain the question, what is React?
 
-00:02:11.000 --> 00:02:21.000
-Before we start, I would like to encourage you to reprogram all the code examples and hands-on practical parts we make in this sequence.
+00:01:00.359 --> 00:01:04.679
+React is a JavaScript library developed by Facebook.
 
-00:02:21.000 --> 00:02:26.000
-The practical application is simply the best to learn a new technology.
+00:01:04.679 --> 00:01:10.799
+At that time, the goal was simply to find from Facebook a way to write JavaScript much more efficiently.
 
-00:02:26.000 --> 00:02:38.000
-You can do this either by programming the next side and slowing the sequence again and again, or you look at the sequence once and again and programming the example in the next one alone.
+00:01:10.799 --> 00:01:14.920
+React is not a framework, but a so-called library.
 
-00:02:38.000 --> 00:02:45.000
-We will also provide the entire code on GitHub. That can then serve a little as a guidance.
+00:01:14.920 --> 00:01:19.239
+So a library that provides us with different JavaScript functions.
 
-00:02:45.000 --> 00:02:52.000
-Just go to GitHub and look for tech-lounge-reject there and you should find the corresponding repository.
+00:01:19.239 --> 00:01:22.159
+React is based on components.
 
-00:02:52.000 --> 00:02:57.000
-This is still empty here, because I will, of course, upload the code only after this sequence.
+00:01:22.399 --> 00:01:27.079
+We have components that again have other subcomponents.
 
-00:02:57.000 --> 00:03:04.000
-And I would say, let’s just go away.
+00:01:27.079 --> 00:01:31.359
+A subcomponent is usually part of our software.
 
-00:03:04.000 --> 00:03:11.000
-To prepare our environment, we need to take a few steps. They now have nothing to do with React for the first time.
+00:01:31.359 --> 00:01:36.159
+That is, if, for example, we have such a website, then the header would be,
 
-00:03:11.000 --> 00:03:19.000
-First, you have to install Visual Studio Code, or you don’t have to. If you prefer another editor, it’s okay.
+00:01:36.159 --> 00:01:40.039
+So this navigation line there above, a component.
 
-00:03:19.000 --> 00:03:27.000
-I only work here with Visual Studio Code because I really like this idea.
+00:01:40.039 --> 00:01:43.959
+Similarly, we will also have a component to present the individual modules here.
 
-00:03:27.000 --> 00:03:32.000
-She asks me for some support, for example, code completion, which we will see later.
+00:01:43.959 --> 00:01:46.599
+Module 1, Module 2, Module 3
 
-00:03:32.000 --> 00:03:38.000
-In addition to a development environment for Visual Studio Code, we need Node.js and NPM.
+00:01:46.599 --> 00:01:51.519
+This is all the same component, only with different parameters.
 
-00:03:38.000 --> 00:03:48.000
-And, of course, we have to set up a project order and prepare our environment with a few commands in the command line.
+00:01:51.560 --> 00:01:54.759
+It always has a different picture and a different text.
 
-00:03:48.000 --> 00:03:53.000
-A few words about NPM, if you haven’t heard it yet.
+00:01:54.759 --> 00:01:56.879
+The components are mostly packed.
 
-00:03:53.000 --> 00:04:06.000
-NPM is a package manager for JavaScript tools, libraries and frameworks and allows us to install and pack NPM comments through a simple Command Line interface.
+00:01:56.879 --> 00:02:00.280
+This means that at the top we have our app components.
 
-00:04:06.000 --> 00:04:15.000
-This is a simple command like npm install babel, which we will still run today, which installs us dependencies in our project.
+00:02:00.280 --> 00:02:04.479
+Our app consists of a navigation bar and a container.
 
-00:04:15.000 --> 00:04:24.000
-PackageJSON is a file that we will generally create in our project order, in the boot folder.
+00:02:04.479 --> 00:02:08.280
+There are other subcomponents, our modules.
 
-00:04:24.000 --> 00:04:30.000
-And in this packageJSON are dependencies described, scripts and also project metadata.
+00:02:08.280 --> 00:02:13.840
+Here a component is now multiplied, but always with different parameters.
 
-00:04:30.000 --> 00:04:36.000
-Another tool that NPM brings is npx or np execute.
+00:02:13.840 --> 00:02:17.079
+The modules are made up of other subcomponents.
 
-00:04:36.000 --> 00:04:44.000
-And this allows us to run all of these JavaScript tools, libraries and frameworks without any installation.
+00:02:17.080 --> 00:02:22.480
+For example, a head, that is, the upper part, and a body, that is, the lower part.
 
-00:04:44.000 --> 00:04:50.000
-And we can use this, for example, to launch a local web server that provides our test project.
+00:02:22.480 --> 00:02:25.920
+A React component usually has at least two elements.
 
-00:04:50.000 --> 00:04:56.000
-And we will do that, and we will offer the NPM comments.
+00:02:25.920 --> 00:02:29.680
+Once a state and once a render function.
 
-00:04:56.000 --> 00:05:00.000
-This is not a writing error. this package is really so.
+00:02:29.680 --> 00:02:35.160
+The state is ultimately the data we want to display when our component is reduced.
 
-00:05:00.000 --> 00:05:07.000
-npx server starts with this command a local web server in the current directory.
+00:02:35.160 --> 00:02:38.360
+And the render function, which is responsible for saying,
 
-00:05:07.000 --> 00:05:12.000
-We have the argument – reload.
+00:02:38.360 --> 00:02:43.160
+which UI elements are now to be displayed in the component.
 
-00:05:12.000 --> 00:05:19.000
-This allows us or that allows the server to monitor all the files that are immersed in our project.
+00:02:43.160 --> 00:02:46.400
+For example, a text, a button or a link.
 
-00:05:19.000 --> 00:05:22.000
-And in case of a change our browser automatically recharge.
+00:02:46.439 --> 00:02:50.159
+When we program object-oriented, the whole is mostly presented in this way.
 
-00:05:22.000 --> 00:05:27.000
-This is very convenient during the development because it saves us the re-loading of the page handfully,
+00:02:50.159 --> 00:02:55.400
+We have a class and this class is called as the component should be called.
 
-00:05:27.000 --> 00:05:33.000
-by either pressing F5 or recharge the page here via the Reload button.
+00:02:55.400 --> 00:02:59.319
+There are now two things inside, once the state, then the data are inside.
 
-00:05:33.000 --> 00:05:39.000
-If we execute this command by default, it will provide an index HTML that we will also create at the same time.
+00:02:59.319 --> 00:03:01.319
+and our Render function.
 
-00:05:39.000 --> 00:05:45.000
-in the current folder under the address http://local.html.
+00:03:01.319 --> 00:03:05.439
+Between these doubts comes the code that we need.
 
-00:05:45.000 --> 00:05:50.000
-And now to show you how a npm package looks on the registry,
+00:03:05.439 --> 00:03:07.920
+to create our UI elements.
 
-00:05:50.000 --> 00:05:57.000
-here at npm.js.com you have a search in which you can search for all the packages that there are.
+00:03:07.920 --> 00:03:10.920
+React means in German as much as reacting.
 
-00:05:57.000 --> 00:06:03.000
-And for each package there is also a page with a description and installation instructions.
+00:03:10.920 --> 00:03:15.800
+This is quite good because we are reacting to the changes.
 
-00:06:03.000 --> 00:06:08.000
-Everything you need to know about this package.
+00:03:15.800 --> 00:03:19.760
+This means, for example, if the data changes in our state,
 
-00:06:09.000 --> 00:06:12.000
-Do we just want to do it all?
+00:03:19.760 --> 00:03:23.320
+Then we want to respond to it and announce something new.
 
-00:06:12.000 --> 00:06:20.000
-So we go to our commandline and put a folder first.
+00:03:23.320 --> 00:03:26.320
+So, I would say we go straight away.
 
-00:06:20.000 --> 00:06:24.000
-I call it introduction reject.
+00:03:30.400 --> 00:03:32.960
+To be able to work with React, we must first
 
-00:06:24.000 --> 00:06:28.000
-Now you see that I’ve already set it before, so it makes me a mistake here.
+00:03:32.960 --> 00:03:35.920
+Install some software on our computer.
 
-00:06:28.000 --> 00:06:32.000
-It is a mistake for you if you have already set it before.
+00:03:35.920 --> 00:03:38.920
+The first thing we need is Node.js.
 
-00:06:32.000 --> 00:06:37.000
-Now you see that I’ve already set it before, so it makes me a mistake here.
+00:03:38.920 --> 00:03:43.240
+Node.js is a so-called work-time environment for JavaScript.
 
-00:06:37.000 --> 00:06:41.000
-This will work with you. we can simply reimigate into this folder.
+00:03:43.280 --> 00:03:48.280
+In other words, it means that we can run JavaScript on our computer.
 
-00:06:41.000 --> 00:06:45.000
-And we will execute the command npm init.
+00:03:48.280 --> 00:03:52.719
+This means you could, for example, create a backend or something or desktop programs.
 
-00:06:45.000 --> 00:06:49.000
-NPM init generates a JSON package, an initial.
+00:03:52.719 --> 00:03:54.040
+with JavaScript.
 
-00:06:49.000 --> 00:06:55.000
-And that saves us so a little to do that by hand by asking us a few questions over the command line.
+00:03:54.040 --> 00:03:57.640
+But we don’t need Node.js for this, because a React program is easy to do.
 
-00:06:55.000 --> 00:07:00.000
-First of all, it wants to know the package name from us, which it simply extract from the current folder by default.
+00:03:57.640 --> 00:03:59.159
+in our web browser.
 
-00:07:00.000 --> 00:07:04.000
-Introduction Reject is OK in this case.
+00:03:59.159 --> 00:04:03.640
+What Node.js still has is the so-called Node Package Manager.
 
-00:07:04.000 --> 00:07:07.000
-The version is OK for us for the first time.
+00:04:03.640 --> 00:04:08.080
+In addition, software can be used on our computer via the command line.
 
-00:07:07.000 --> 00:07:13.000
-Semper, semantic version, comes very strongly in use at npm.
+00:04:08.080 --> 00:04:13.200
+Install, such as React or programs that automatically install a React App
 
-00:07:13.000 --> 00:07:19.000
-A description, then we can simply consider some free text.
+00:04:13.200 --> 00:04:14.400
+to produce for us.
 
-00:07:19.000 --> 00:07:24.000
-This is an introduction in Reject for example.
+00:04:14.400 --> 00:04:16.680
+Therefore, we need to install Node.js.
 
-00:07:24.000 --> 00:07:30.000
-The entry point we will see later is at us source-app.js.
+00:04:16.680 --> 00:04:21.000
+Just go here to download and then stay here for Windows, Mac
 
-00:07:30.000 --> 00:07:34.000
-Test command, we have no automated test, so we leave it empty.
+00:04:21.000 --> 00:04:24.800
+or for the source code, for example, if you use Linux.
 
-00:07:34.000 --> 00:07:38.000
-We have also not set up a Git repository. we also don’t want to give keywords first.
+00:04:24.800 --> 00:04:28.199
+Then, of course, we also have to write our code somehow.
 
-00:07:38.000 --> 00:07:41.000
-The author, there we can rewrite ourselves.
+00:04:28.199 --> 00:04:30.160
+We need a code editor.
 
-00:07:41.000 --> 00:07:47.000
-A license is not as important for private testing projects as well.
+00:04:30.160 --> 00:04:34.400
+This is the standard that we always take, Visual Studio Code.
 
-00:07:47.000 --> 00:07:53.000
-I usually take here with me, but you can also leave it on ILC in principle.
+00:04:34.400 --> 00:04:37.800
+Just click here to download if you shouldn’t have it yet.
 
-00:07:53.000 --> 00:08:01.000
-Npm asks us again if all our entries were correct and will just put this JSON file as a JSON package in the current directory.
+00:04:37.840 --> 00:04:41.759
+After you have installed everything, you need to reboot your computer.
 
-00:08:01.000 --> 00:08:05.000
-In our case, it is OK, so yes.
+00:04:41.759 --> 00:04:46.160
+Then you open the Visual Studio Code and the whole looks like that.
 
-00:08:05.000 --> 00:08:10.000
-Next, we will now open this folder in our development environment.
+00:04:46.160 --> 00:04:47.400
+This is our base.
 
-00:08:10.000 --> 00:08:13.000
-In my case, it is Bishow Studio Code.
+00:04:47.400 --> 00:04:48.680
+Here we can start now.
 
-00:08:13.000 --> 00:08:20.000
-We can do this very easily by going to File Open here, navigating to the corresponding folder and then pressing Open.
+00:04:52.520 --> 00:04:55.720
+At the next step, we are now making our first project.
 
-00:08:23.000 --> 00:08:32.000
-And now we see that we have just generated a JSON package in which all the fields we have answered by question before are recorded accordingly.
+00:04:55.720 --> 00:05:00.960
+First we need to create a folder and then create it with Visual Studio.
 
-00:08:34.000 --> 00:08:42.000
-The next step is to create an index of HTML, which is an initial HTML page to be delivered.
+00:05:00.960 --> 00:05:02.160
+Open the code.
 
-00:08:42.000 --> 00:08:46.000
-This is done through the new file, index.html.
+00:05:02.160 --> 00:05:06.319
+For this, we can simply go to the top left to File and then to Open Folder.
 
-00:08:47.000 --> 00:08:52.000
-And there we simply write a standard HTML file, starting with the Doctype.
+00:05:06.319 --> 00:05:11.000
+After we have gone here, we can now go to the folder where your projects are located.
 
-00:08:52.000 --> 00:08:57.000
-And here we have already seen a great feature of Bishow Studio Code, the car completion.
+00:05:11.000 --> 00:05:14.839
+To keep everything clear, I don’t recommend it all on your desktop.
 
-00:08:57.000 --> 00:08:58.000
-I will delete it again.
+00:05:14.839 --> 00:05:20.079
+to place but I have everything, for example, here just on C slash Dev slash
 
-00:08:58.000 --> 00:09:08.000
-So by entering only the first few characters of the code that I want to create here, Bishow Studio Code offers me a pre-selection.
+00:05:20.079 --> 00:05:21.079
+The React Projects.
 
-00:09:08.000 --> 00:09:13.000
-If I confirm this, either through Enter or by clicking on it, it fills me accordingly.
+00:05:21.079 --> 00:05:25.959
+There are all my React projects in and this folder I choose now.
 
-00:09:14.000 --> 00:09:17.000
-A classic HTML document comes next.
+00:05:25.959 --> 00:05:30.759
+If I now press the terminal here above, I can open a new terminal below.
 
-00:09:17.000 --> 00:09:23.000
-We need a head or a head day in which we can then give a title.
+00:05:30.759 --> 00:05:32.719
+This is this entry invitation.
 
-00:09:23.000 --> 00:09:26.000
-Let’s put it in react.
+00:05:32.720 --> 00:05:37.240
+This is exactly the same as if you would enter CMD here to the left below in Windows.
 
-00:09:27.000 --> 00:09:29.000
-We need a Buddy.
+00:05:37.240 --> 00:05:42.400
+And this thing is opened here or entered in the Spotlight Search Terminal on Mac.
 
-00:09:30.000 --> 00:09:35.000
-And then we just want to start, as it is so usual, with a code example with Hello World.
+00:05:42.400 --> 00:05:51.440
+To set up a new React project now, you just need the command npx create-react app
 
-00:09:36.000 --> 00:09:39.000
-Not just save, not surprise.
+00:05:51.440 --> 00:05:52.440
+to enter.
 
-00:09:39.000 --> 00:09:42.000
-This is also a feature of Bishow Studio Code.
+00:05:52.440 --> 00:05:58.560
+This npx automatically starts a program from the Internet called create-react app,
 
-00:09:42.000 --> 00:09:46.000
-This is automatically formated for me according to certain criteria.
+00:05:58.560 --> 00:06:01.320
+This is our first React project.
 
-00:09:47.000 --> 00:09:50.000
-Consequently, it may be that there is sometimes a line break added here.
+00:06:01.399 --> 00:06:05.759
+If you’re working on Linux or Mac, you’ll need to write the word sudo here.
 
-00:09:50.000 --> 00:09:54.000
-This is simply very convenient that everything is always uniformly formated.
+00:06:05.759 --> 00:06:08.719
+You do this as an administrator.
 
-00:09:55.000 --> 00:09:58.000
-So, now we have created an index HTML.
+00:06:08.719 --> 00:06:11.759
+Before you click Enter, you will need another parameter.
 
-00:09:58.000 --> 00:10:00.000
-This is what we want to do through a webinar.
+00:06:11.759 --> 00:06:14.480
+Enter the name of your project.
 
-00:10:00.000 --> 00:10:06.039
-deliver servers to complete our development environment. and as previously discussed,
+00:06:14.480 --> 00:06:22.159
+I just call it my online shop and press Enter.
 
-00:10:06.039 --> 00:10:17.759
-We take npx, give a npx server minus reload. This takes a short time and then gives us
+00:06:22.159 --> 00:06:26.319
+After everything has gone through, we now see a new folder here on the page,
 
-00:10:17.759 --> 00:10:24.639
-here also accordingly back that now under htp localhost 8080 the current website or the
+00:06:26.319 --> 00:06:27.319
+which was created.
 
-00:10:24.639 --> 00:10:31.000
-The current folder is delivered and standardly this index.html is delivered.
+00:06:27.319 --> 00:06:32.159
+This is my online shop and here is now our React project to find.
 
-00:10:31.000 --> 00:10:37.240
-We also see by navigating to the browser and entering this URL accordingly.
+00:06:32.159 --> 00:06:34.279
+It is also important how we can start it all.
 
-00:10:37.240 --> 00:10:44.279
-Our Hello World index.html is delivered. A small discomfort we see here still,
+00:06:34.279 --> 00:06:36.879
+We need to switch to the folder first.
 
-00:10:44.279 --> 00:10:51.399
-Introduction to React, the U has somehow not recognized yet. for this we need in the HTML
+00:06:36.879 --> 00:06:40.199
+That is, we have to switch from this terminal to this folder.
 
-00:10:51.399 --> 00:10:58.799
-Headpart still put the charset on UTF-8. It's also very easy by making neta charset here
+00:06:40.199 --> 00:06:45.240
+This goes with the command cd, that is for Change Directory and here I now give my online shop
 
-00:10:58.799 --> 00:11:08.159
-We press save and when we now navigate back to the site,
+00:06:45.240 --> 00:06:51.159
+I can start it all by entering the command npm start.
 
-00:11:08.159 --> 00:11:13.080
-we see that the Reload Flag of Server has already done its job.
+00:06:51.160 --> 00:06:57.920
+In addition, I want to install an extra extension in the VS Code, so an extension.
 
-00:11:13.080 --> 00:11:19.759
-It is now re-loaded and the U is presented correctly here. and thus we have essentially
+00:06:57.920 --> 00:06:59.920
+This is here.
 
-00:11:19.759 --> 00:11:26.200
-This is an ongoing development environment in which we can now develop React.
+00:06:59.920 --> 00:07:02.280
+It is called Simple React Snippets.
 
-00:11:26.200 --> 00:11:33.759
-There are several methods to install React now in our project
+00:07:02.280 --> 00:07:05.160
+Just put it up here and press it up here.
 
-00:11:33.759 --> 00:11:39.680
-The simplest method is online playgrounds.
+00:07:05.160 --> 00:07:09.160
+I have installed it all with me and with this extension you have the same
 
-00:11:39.680 --> 00:11:46.960
-Online playgrounds are in principle a development environment directly in the browser. and React offers itself
+00:07:09.160 --> 00:07:14.000
+You have the opportunity to program a lot more conveniently than you have already done.
 
-00:11:46.960 --> 00:11:51.080
-one page documentation to an online playground, for example CodePen.
+00:07:14.000 --> 00:07:15.400
+You can do it with React.
 
-00:11:51.080 --> 00:11:56.879
-Let’s look at it by pressing on Get Started. Try React we’ll see online.
+00:07:15.400 --> 00:07:20.040
+By the command you entered here, now in my web browser this
 
-00:11:56.879 --> 00:12:02.440
-If, for example, we navigate on CodePen, we will be directed immediately.
+00:07:20.040 --> 00:07:21.040
+The thing up here.
 
-00:12:02.440 --> 00:12:10.759
-And now there is also a Hello World application from React, which we accordingly
+00:07:21.040 --> 00:07:26.040
+Here is our start app in React and with it we can either continue to work.
 
-00:12:10.759 --> 00:12:16.679
-can also edit. we simply enter a U. And through Command Enter the page is now
+00:07:26.040 --> 00:07:29.680
+Now we can just create a new app.
 
-00:12:16.679 --> 00:12:23.519
-It’s great, as I said, to try React, so maybe even when
+00:07:29.680 --> 00:07:33.400
+When we look at the folder structure, we will see some files and
 
-00:12:23.519 --> 00:12:29.200
-Something with you locally doesn’t work to restore. but if we long-term projects
+00:07:33.400 --> 00:07:34.400
+Some of the Orders.
 
-00:12:29.200 --> 00:12:33.000
-To develop, of course, we want somehow the code we produce, also correctly.
+00:07:34.400 --> 00:07:36.600
+This is for example package.json.
 
-00:12:33.000 --> 00:12:39.079
-and that is rather difficult possible in these online playgrounds. accordingly we want to
+00:07:36.600 --> 00:07:41.860
+Here are ultimately all the libraries, so all the extensions for JavaScript in it.
 
-00:12:39.080 --> 00:12:45.639
-The code is somehow available at us. A second method would, of course, be the
+00:07:41.860 --> 00:07:45.800
+They have been installed and they are located in the folder Notes Modules.
 
-00:12:45.639 --> 00:12:53.080
-Source code from React download. if we could do, it is nowadays rather old fashion.
+00:07:45.800 --> 00:07:48.000
+We don’t have to look at it very much now.
 
-00:12:53.080 --> 00:12:57.840
-For example, if we want to install a new version of React, we need to
+00:07:48.079 --> 00:07:52.920
+Readme.md is simply again a small documentation with a few information.
 
-00:12:57.840 --> 00:13:01.799
-We download the code back to the React website. so this is an action,
+00:07:52.920 --> 00:07:54.759
+Then there is package.log.
 
-00:13:01.799 --> 00:13:07.600
-It is not recommended today. there are higher methods. the one is
+00:07:54.759 --> 00:07:59.680
+Here is what has been installed since the last installation, so in this case
 
-00:13:07.600 --> 00:13:13.600
-the use of a so-called CDN URL. CDN means Content Delivery Network.
+00:07:59.680 --> 00:08:03.600
+We need everything and gitignore if we want to work with Git.
 
-00:13:13.600 --> 00:13:19.480
-just a website on which React has already uploaded the source code and
+00:08:03.600 --> 00:08:05.759
+But we do not do that now.
 
-00:13:19.480 --> 00:13:25.000
-We can easily link through the URL into our index HTML. And this is ideal for fast
+00:08:05.759 --> 00:08:09.800
+Git is a version control, which means that we can use our code in all versions.
 
-00:13:25.000 --> 00:13:30.399
-Tests or even for learning projects, as this year here is a learning project.
+00:08:09.800 --> 00:08:11.759
+Online storage in the cloud.
 
-00:13:30.399 --> 00:13:37.519
-We will also use this variant of the installation of React today.
+00:08:11.759 --> 00:08:13.600
+Then there is the public order.
 
-00:13:37.519 --> 00:13:43.680
-The variant that still exists, of course, is the installation with NPM. Because React is also available on
+00:08:13.600 --> 00:08:17.759
+There is our finished website inside and the folder source.
 
-00:13:43.680 --> 00:13:51.799
-NPM. I'm showing you here. no. React was also uploaded to NPM.
+00:08:17.759 --> 00:08:19.360
+This is the source code.
 
-00:13:51.799 --> 00:14:01.000
-It is, however, that the installation through NPM or then the integration into your website
+00:08:19.360 --> 00:08:22.920
+Here is our source code and this is the folder in which we mainly
 
-00:14:01.000 --> 00:14:07.279
-It’s not easy to do so, but it’s a tool that you need to do.
+00:08:22.920 --> 00:08:27.439
+This is because there is everything that has to do with programming.
 
-00:14:07.279 --> 00:14:13.319
-It makes the initial thing very complex. This runs in larger applications but absolutely,
+00:08:27.439 --> 00:08:30.159
+Here are some, some files.
 
-00:14:13.319 --> 00:14:19.120
-Because this innocently complex effort is then amortized over a lot of work that we have done.
+00:08:30.159 --> 00:08:34.519
+But what we want to do now is simply to completely delete everything here.
 
-00:14:19.120 --> 00:14:25.519
-The installation of React with NPM we will be in a later
+00:08:34.519 --> 00:08:36.519
+We really want to start at zero.
 
-00:14:25.519 --> 00:14:30.200
-This is the second part of this video series, where everything will be done.
+00:08:36.519 --> 00:08:41.360
+So I just press to remove, say move to recycle and now we have here
 
-00:14:30.200 --> 00:14:38.399
-For today, as I said, but we use the CDL URL link.
+00:08:41.360 --> 00:08:44.319
+A complete empty folder and start from zero.
 
-00:14:38.399 --> 00:14:46.639
-Then we enter these two Script tags in our HTML index and thus React.
+00:08:44.400 --> 00:08:48.879
+We place a new file here in the folder with the right click and new file and name
 
-00:14:46.639 --> 00:14:52.919
-You can also find these two scripts on our page.
+00:08:48.879 --> 00:08:51.520
+This is the index.js file.
 
-00:14:52.920 --> 00:15:00.120
-React.js.org on the official site under CDN links. you will see that there are two
+00:08:51.520 --> 00:08:54.879
+Then we will press Enter and now have a completely empty file.
 
-00:15:00.120 --> 00:15:04.160
-There are different variants that can be incorporated into the project. once in the development mode
+00:08:54.879 --> 00:08:57.200
+This is the basis for our program.
 
-00:15:04.160 --> 00:15:10.759
-The difference is quite simple that the development mode some
+00:08:57.200 --> 00:09:01.400
+That is, everything we rewrite here will then automatically become the base for our
 
-00:15:10.759 --> 00:15:15.400
-providing better errors and providing us with some tools,
+00:09:01.400 --> 00:09:02.640
+to be website.
 
-00:15:15.400 --> 00:15:19.480
-which make the development of React easier, but which at the same time make these JavaScript files
+00:09:02.640 --> 00:09:07.640
+The first thing we have to do here now is to import React.
 
-00:15:19.720 --> 00:15:25.039
-We have a lot of work and we have a lot of work and we have a lot of work and we have a lot of work and we have a lot of work.
+00:09:07.640 --> 00:09:12.280
+That is, I have to write something like import react from.
 
-00:15:25.039 --> 00:15:29.319
-as possible code on the page, because it must also be downloaded.
+00:09:12.919 --> 00:09:15.000
+Why do we write this exactly this way?
 
-00:15:29.319 --> 00:15:33.319
-But since we are still far away from a productive effort,
+00:09:15.000 --> 00:09:18.839
+The first is what we want to import and the second is from which library we
 
-00:15:33.319 --> 00:15:38.680
-Today we’re limiting ourselves to the development sources that I’m just copying here.
+00:09:18.839 --> 00:09:19.839
+They want to import it.
 
-00:15:38.680 --> 00:15:47.360
-If we then incorporate the React sources into our project,
+00:09:19.839 --> 00:09:24.399
+The library is called React and the function we want to re-copy here or
 
-00:15:47.360 --> 00:15:54.440
-The first code, the first block with React,
+00:09:24.399 --> 00:09:26.399
+The element is also called React.
 
-00:15:54.440 --> 00:15:58.000
-The product that we are going to use is, as previously announced, React Element.
+00:09:26.399 --> 00:09:30.759
+The second thing we need is something that is called React Dom.
 
-00:15:58.000 --> 00:16:04.039
-We create a React element or a React element through this function breakdown.
+00:09:30.759 --> 00:09:34.839
+For this we write import React Dom from.
 
-00:16:04.039 --> 00:16:10.039
-React Create Element and it consists of three parameters. The first parameter gives the HTML tag
+00:09:34.839 --> 00:09:36.439
+Now it becomes interesting.
 
-00:16:10.039 --> 00:16:14.879
-to what we want to generate. in this case, for example, a P-day. the second parameter
+00:09:36.439 --> 00:09:38.919
+React minus Dom.
 
-00:16:14.879 --> 00:16:19.600
-indicate what attributes we want to provide to this HTML tag. In this case, now a
+00:09:39.319 --> 00:09:42.959
+That’s what we really say, and after we’ve written it all, we can now
 
-00:16:19.600 --> 00:16:26.440
-And the third parameter indicates which content we reinstall in this HTML tag or
+00:09:42.959 --> 00:09:46.199
+I have already started programming.
 
-00:16:26.440 --> 00:16:32.720
-In this case here is my content. This function call ultimately makes
+00:09:46.199 --> 00:09:49.959
+Of course, what we always want to do on our side is the obligatory.
 
-00:16:32.720 --> 00:16:39.639
-to create a simple JavaScript object, but this JavaScript object is
+00:09:49.959 --> 00:09:50.959
+Hello the world.
 
-00:16:39.639 --> 00:16:45.599
-React is understood and can then be implemented by React again in the Virtual DOM of React.
+00:09:50.959 --> 00:09:54.679
+With Hello World we can ultimately simply show on our site whether the whole
 
-00:16:45.599 --> 00:16:50.559
-Once it is embedded in the Virtual DOM, we remember,
+00:09:54.679 --> 00:09:55.679
+It works.
 
-00:16:50.559 --> 00:16:56.759
-React synchronizes the Virtual DOM so that the correct DOM, just this element becomes a
+00:09:55.679 --> 00:10:00.000
+I can just make a variable, a variable.
 
-00:16:56.759 --> 00:17:00.759
-real DOM object and accordingly the browser. so you can say,
+00:10:00.000 --> 00:10:06.000
+I call it the element and it is now attributed to HTML code. That is, I write here
 
-00:17:00.759 --> 00:17:08.839
-that a React element represents a real DOM object.
+00:10:06.000 --> 00:10:12.840
+H1, Hello World. Many people will already see now, okay, here is now the HTML code inside,
 
-00:17:08.839 --> 00:17:14.839
-Visualization again, so now we have next to the Virtual DOM of React in our
+00:10:12.840 --> 00:10:17.799
+But it’s not all in the indication; in fact, it should always be like that.
 
-00:17:14.839 --> 00:17:20.200
-JavaScript files this function call React Create Element, which is then here in the virtual
+00:10:17.799 --> 00:10:23.559
+This is not the case with React, but this is not the case with React.
 
-00:17:20.200 --> 00:17:24.920
-DOM is embedded as an individual element, then synchronized with the DOM and then in our
+00:10:23.559 --> 00:10:30.639
+HTML code, but about pseudo-HTML code. The whole is later converted into real HTML code.
 
-00:17:24.920 --> 00:17:31.960
-I also added this visualization to npm, which is just over the
+00:10:30.639 --> 00:10:35.679
+That is, we can actually write here without a reference sign. This H1 element
 
-00:17:31.960 --> 00:17:37.759
-Package Chasing, which we have just seen, is initialized and installed.
+00:10:35.679 --> 00:10:40.879
+is now a very normal HTML element later and that we have to be on our side now
 
-00:17:37.759 --> 00:17:46.639
-NPX knows what the web server starts with us. Now we want to implement it again.
+00:10:40.879 --> 00:10:48.240
+And for this we need this React DOM. DOM stands for Document Object Model and
 
-00:17:46.639 --> 00:17:53.159
-We will copy the sources we need now as the first, go back to
+00:10:48.240 --> 00:10:54.120
+It always represents our HTML code on our site. however we have here
 
-00:17:53.159 --> 00:18:04.000
-our Visual Studio and now simply add React at the end of the BodyTags.
+00:10:54.120 --> 00:10:59.960
+a private, a virtual DOM. That is, we have our own tree on HTML elements,
 
-00:18:04.000 --> 00:18:10.720
-Now we have React on our side, but of course we do nothing with it.
+00:10:59.960 --> 00:11:06.360
+which are not yet real, but in this fake HTML ultimately and React generates from it
 
-00:18:10.720 --> 00:18:15.039
-To do so, we still need some own JavaScript that we insert.
+00:11:06.360 --> 00:11:13.080
+We can now simply say reactdom.render and say that we are the element,
 
-00:18:15.039 --> 00:18:21.839
-Let us first add a second or a third script day to us.
+00:11:13.080 --> 00:11:18.080
+So our headline, want to render. now we have to say, of course, where all
 
-00:18:21.839 --> 00:18:34.480
-sourceapp.js will show. this file we then put on. first a folder source, which is simply a
+00:11:18.080 --> 00:11:23.440
+and for that we have to look at the public folder once. a website starts
 
-00:18:34.480 --> 00:18:39.880
-src is the source in which all the source files of a project are deposited.
+00:11:23.440 --> 00:11:28.759
+There is a file called index.html, and there is a little bit of it.
 
-00:18:39.880 --> 00:18:49.319
-There we then place the file. App.js. Before we write JavaScript, we prepare to
+00:11:28.759 --> 00:11:34.480
+In fact, it’s quite empty.At a HTML page we always say in the hot area
 
-00:18:49.320 --> 00:18:53.880
-the index.html is another thing before. we may remember the last time
+00:11:34.480 --> 00:11:41.319
+only a lot of configuration and meta information through our site. that is, theme color to
 
-00:18:53.880 --> 00:18:59.559
-ReactDomRenderFunction that we provide, on the one hand, a React component that we have reduced
+00:11:41.319 --> 00:11:46.600
+Example, something to an icon, what width the page should have, what title to have
 
-00:18:59.559 --> 00:19:04.280
-I want, but on the other hand, to indicate where in our HTML we have this component.
+00:11:46.600 --> 00:11:52.000
+and so on and so on. In Buddy, that really comes into interesting.
 
-00:19:04.280 --> 00:19:08.960
-We want to have reduced. and this where we create now here. we make ourselves a simple
+00:11:52.000 --> 00:11:57.600
+Looking at Buddy, then we see here very interesting, namely two things.
 
-00:19:08.960 --> 00:19:15.440
-Div and give it an ID, by means of which we can then identify it later.
+00:11:57.600 --> 00:12:01.919
+Run only if the web browser for any reason does not support JavaScript.
 
-00:19:15.440 --> 00:19:29.240
-then just React.js. if we look short again on the page, it has nothing changed,
+00:12:01.919 --> 00:12:07.360
+simply said, hey, you need to enable JavaScript to run this app.
 
-00:19:29.240 --> 00:19:33.720
-All with the old, because we have not yet generated the React element that we incorporate here.
+00:12:07.360 --> 00:12:13.879
+A DIV container simply has an ID name here.
 
-00:19:33.720 --> 00:19:42.599
-We do this now. first we generate a React element.
+00:12:13.879 --> 00:12:19.600
+root and what we can do now is to access this container with JavaScript and
 
-00:19:42.599 --> 00:19:51.000
-A variable, which we now simply call element, is now using React.CreateElement.
+00:12:19.600 --> 00:12:25.279
+then add content to this container. and the whole now takes over React.
 
-00:19:51.000 --> 00:19:57.240
-React is a global variable that is now available to us because we are here.
+00:12:25.279 --> 00:12:30.440
+We just have to access this container here and we have to access this item here as
 
-00:19:57.240 --> 00:19:59.960
-In this script.
+00:12:30.440 --> 00:12:35.799
+Add the second parameter to this method of React. That is, here comes into
 
-00:20:00.000 --> 00:20:06.240
-ultimately does nothing but provide the React sources under these variables and thus the CreateElement method.
+00:12:35.799 --> 00:12:42.680
+document getElementByID root. And after we have done it all, of course comes the end
 
-00:20:06.240 --> 00:20:12.039
-As the first parameter is the day, in that case we always stay at the ptag.
+00:12:42.680 --> 00:12:47.960
+There is a semiconductor on each side and we’re already ready.
 
-00:20:12.039 --> 00:20:16.440
-As the second parameter the attributes, we leave it empty first.
+00:12:47.960 --> 00:12:53.720
+that here now stands Webpack compiled successfully. the URL we can now open again,
 
-00:20:16.440 --> 00:20:22.359
-And as the third parameter of the content, here we just write in,
+00:12:53.720 --> 00:12:59.000
+by simply pressing the control button or command here and then pressing it here and
 
-00:20:22.359 --> 00:20:30.359
-This is my first reaction element.
+00:12:59.000 --> 00:13:04.440
+then it all goes up in my web browser and we now see the following here.
 
-00:20:30.359 --> 00:20:32.359
-more correct.
+00:13:04.440 --> 00:13:09.960
+Hello world. and when we look at it all once, I can always do it with one
 
-00:20:34.359 --> 00:20:39.960
-As mentioned, React-Create element generates for the first time only a simple JavaScript object.
+00:13:09.960 --> 00:13:16.120
+Right-click and research, then I see here that this h1 element simply in our
 
-00:20:39.960 --> 00:20:50.359
-With this object we have to do something now, we have to show React where it is going to send us this JavaScript object or this React element later in the browser.
+00:13:16.120 --> 00:13:22.240
+The index page has been embedded. that is, we look at it all again here and split it
 
-00:20:50.359 --> 00:20:53.359
-We use React-DOM.
+00:13:22.240 --> 00:13:27.360
+We have a page that looks like this, we have a page that looks like this.
 
-00:20:53.359 --> 00:21:01.359
-This is also a global variable that is available to us because we have embedded this second script for React-DOM here.
+00:13:27.360 --> 00:13:33.440
+Base for each individual page we have. and here on the left side in the JavaScript file
 
-00:21:01.359 --> 00:21:09.359
-This provides us with the render function, in which we first put our element into.
+00:13:33.440 --> 00:13:38.960
+We have now defined another HTML element. And this HTML element, that will be
 
-00:21:09.359 --> 00:21:13.359
-And now we have to say where we wanted to move it.
+00:13:38.960 --> 00:13:44.440
+Now here in this DIV container, so here, zack, used. and so we have it already
 
-00:21:13.359 --> 00:21:17.359
-And for this we started the DIV before and missed an ID.
+00:13:44.440 --> 00:13:49.519
+We were able to build Hello World and so we created our first home page.
 
-00:21:17.359 --> 00:21:27.359
-And that we can now find out or filter out here with a selector, saying, Document, Get Element by ID.
+00:13:53.519 --> 00:13:57.360
+So now that we have set up our Hello World, it will be time for our next step.
 
-00:21:27.359 --> 00:21:34.359
-And here the ID we have given before, in the case Reakt App, copy and insert.
+00:13:57.360 --> 00:14:03.480
+Online shop to shed together. and for that we naturally need components. we don't want everything
 
-00:21:36.359 --> 00:21:45.359
-And if we save it all and go to the site, then we see, juhu, we have our first reakt component,
+00:14:03.480 --> 00:14:09.120
+Write into a file as it is now here, but we want to set up several components.
 
-00:21:45.359 --> 00:21:49.359
-No, our first React element on the website.
+00:14:09.120 --> 00:14:14.679
+Since we can have a lot of components in an app very quickly,
 
-00:21:49.359 --> 00:21:53.359
-We used React for the first time to manipulate our DOM.
+00:14:14.679 --> 00:14:19.839
+I always recommend adding a new suborder to this source folder and adding the component to
 
-00:21:53.359 --> 00:22:00.359
-This is still a bit statistic, but it’s a great first step.
+00:14:19.839 --> 00:14:24.799
+Then we pack all our components out. that is, if I now for example
 
-00:22:02.359 --> 00:22:07.359
-Now you’ll ask yourself, I’ve told you last time about declarative programming and JSX,
+00:14:24.799 --> 00:14:30.120
+I would like to make our navigation bar first, then I would now have a new file here.
 
-00:22:07.359 --> 00:22:12.360
-that it allows us to write HTML in JavaScript files.
+00:14:30.120 --> 00:14:36.920
+Reinscribe and namely navbar.js. we can write with JavaScript, with TypeScript
 
-00:22:12.360 --> 00:22:18.360
-You would now expect that we do not actually make the whole call here with the reactory element,
+00:14:36.920 --> 00:14:43.039
+Writing or with something, that is JSX. I would recommend this first.
 
-00:22:18.360 --> 00:22:28.360
-But rather you can write something like that, i.e. a HTML element with the ID, directly in the JavaScript file.
+00:14:43.039 --> 00:14:48.000
+with the completion of the car and the display often a little better.
 
-00:22:34.360 --> 00:22:39.360
-If we do that, we will get a mistake.
+00:14:48.000 --> 00:14:51.879
+Now, of course, we have to rewrite this standard building for the first time.
 
-00:22:39.360 --> 00:22:46.360
-When we navigate back into the browser, on the one hand, we see that our item has not been reduced anymore.
+00:14:51.879 --> 00:14:56.639
+That we have installed this extension called React Snippets.
 
-00:22:46.360 --> 00:22:53.360
-To find out what's just going wrong here, we can develop the tools from Chrome or even from any other browser,
+00:14:56.639 --> 00:15:02.039
+simply write imrc and then press Enter and then this standard import is
 
-00:22:53.360 --> 00:22:56.360
-Every browser brings developer tools with us, take us to hand.
+00:15:02.039 --> 00:15:06.599
+The same thing I can do now to make the entire code for a
 
-00:22:56.360 --> 00:23:01.360
-We can do this either through the F12 button or by right-click investigation.
+00:15:06.599 --> 00:15:11.399
+For this I just write cc and press Enter and we see,
 
-00:23:02.360 --> 00:23:10.360
-In these surveys we then see our current DOM or our HTML, which we can navigate through here,
+00:15:11.399 --> 00:15:16.919
+that we have already set up a complete JavaScript class. we just have to say now,
 
-00:23:10.360 --> 00:23:14.360
-Our title, our Meta-Char set, just the Buddy.
+00:15:16.919 --> 00:15:22.680
+I think it’s a good thing to say, and we see that when I start to write,
 
-00:23:20.360 --> 00:23:23.360
-And we also have the console that expects errors to us.
+00:15:22.680 --> 00:15:27.920
+automatic multiple lines are typed. because we work here with a so-called
 
-00:23:23.360 --> 00:23:30.360
-And in this case we see now, we have a Synthax error, an unexpected sign, Unexpected token, an open clamer.
+00:15:27.920 --> 00:15:33.799
+This means that our component is always created in such a class here and
 
-00:23:30.360 --> 00:23:32.360
-That is exactly that sign.
+00:15:33.799 --> 00:15:39.799
+that is then exported at the end of the file. in our index.js we can all now
 
-00:23:33.360 --> 00:23:39.360
-It’s because a browser at least doesn’t understand JSX today.
+00:15:39.799 --> 00:15:44.960
+This means that there is still a bit of code coming into here, for example, nav and
 
-00:23:39.360 --> 00:23:44.360
-A browser only understands native JavaScript and this is not native JavaScript.
+00:15:44.960 --> 00:15:49.160
+I'm just going to get there.I'm just going to navigate.
 
-00:23:44.360 --> 00:23:49.360
-Consequently, the browser can simply not understand this code split either.
+00:15:49.279 --> 00:15:55.440
+This is the HTML code, this is the HTML code, this is the HTML code.
 
-00:23:49.360 --> 00:23:52.360
-First we have to do something so that he can.
+00:15:55.440 --> 00:16:00.120
+HTML code, which is actually not real and this navbar that we can now take place here
 
-00:23:52.360 --> 00:23:57.360
-We need to convert this codesnippet back to a normal JavaScript.
+00:16:00.120 --> 00:16:07.640
+That is, I say here is just import navbar from and now say
 
-00:23:57.360 --> 00:23:59.360
-Now there is a small clue.
+00:16:07.640 --> 00:16:14.160
+I, from where I want to import it from the folder com-components and then slash navbar
 
-00:23:59.360 --> 00:24:02.360
-React-Create element is a very normal JavaScript.
+00:16:14.360 --> 00:16:18.960
+and then we can use the thing now here. that is, I can now simply here
 
-00:24:02.360 --> 00:24:04.360
-We just saw that it works.
+00:16:18.960 --> 00:16:23.680
+Zack navbar, that’s what you always write so clear. here above you have to say that point and
 
-00:24:05.360 --> 00:24:11.360
-To make this possible and to make this translation, we do not need to do that handy.
+00:16:23.680 --> 00:16:29.799
+slash before writing, very important and then now our navbar will be in our application
 
-00:24:11.360 --> 00:24:15.360
-It would be hard, but there are tools.
+00:16:29.799 --> 00:16:34.360
+I’m going to see a very interesting thing, but I’m going to see a few more.
 
-00:24:15.360 --> 00:24:19.360
-And one of these tools, we go back to the theory, is Babel.
+00:16:34.360 --> 00:16:39.120
+Step back, then we see that I just created the item here and
 
-00:24:20.360 --> 00:24:31.360
-Babel is just a kind of assistant or a translator that translates features and features, such as JSX, back into native JavaScript that the browser understands.
+00:16:39.120 --> 00:16:44.879
+I have added. here, however, we have worked with a so-called class.
 
-00:24:32.360 --> 00:24:37.360
-Babylon is essentially made up of three core components that we will use today.
+00:16:44.879 --> 00:16:49.559
+It is possible in React, whether we are object-oriented, that is, or not object-oriented.
 
-00:24:37.360 --> 00:24:39.360
-This is the core.
+00:16:49.559 --> 00:16:54.720
+I want to work, but this is more industry standard here, so I would recommend,
 
-00:24:39.360 --> 00:24:41.360
-This is the whole logic of translation.
+00:16:54.720 --> 00:16:58.480
+Even if it’s a little more code to always write like that.
 
-00:24:41.360 --> 00:24:44.360
-The Command Line Interface or short CLI.
+00:16:58.480 --> 00:17:03.120
+clearer, because you see here, you always have such a thing, that comes up here,
 
-00:24:44.360 --> 00:24:50.360
-This allows us to communicate and speak with Babel and communicate with Babel what we actually wanted to translate.
+00:17:03.120 --> 00:17:07.360
+This goes to here below and here is our entire code now recorded.
 
-00:24:50.360 --> 00:24:52.360
-There are presets.
+00:17:07.360 --> 00:17:11.559
+I would recommend that you always write this according to this formula and then just here so
 
-00:24:52.360 --> 00:25:00.360
-Presets can be imagined as words that we bring to Babel to allow Babel to translate JSX, for example, into normal JavaScript.
+00:17:11.559 --> 00:17:16.840
+If I open our page now, then we also see that here our
 
-00:25:01.360 --> 00:25:03.360
-Today we are using Preset React.
+00:17:16.840 --> 00:17:27.960
+This is not a CSS tutorial, but a React tutorial.
 
-00:25:03.360 --> 00:25:08.360
-Preset React is exactly this dictionary that allows the use of JSX in our files.
+00:17:27.960 --> 00:17:31.840
+That’s why we don’t build components together here, piece by piece.
 
-00:25:08.360 --> 00:25:13.360
-And Babel will then convert this JSX to a completely normal JavaScript.
+00:17:32.079 --> 00:17:37.400
+but we take finished components from the CSS Framework Bootstrap.
 
-00:25:14.360 --> 00:25:17.360
-Let’s look at this in our visualization.
+00:17:37.400 --> 00:17:42.240
+the possibility of simply making such finished components, such as a navigation bar or
 
-00:25:17.360 --> 00:25:19.360
-Currently we were here.
+00:17:42.240 --> 00:17:46.759
+If you’re sitting here for NAV or just join NAVBar.
 
-00:25:19.360 --> 00:25:22.360
-We use JavaScript React and Create Element.
+00:17:46.759 --> 00:17:53.039
+You already have a lot of different elements here on the left side and then you can
 
-00:25:22.360 --> 00:25:25.360
-It worked, but now JSX has brought it with.
+00:17:53.039 --> 00:17:58.400
+Now just search here and just import into your project. here we have a relatively
 
-00:25:25.360 --> 00:25:27.360
-This has no longer worked.
+00:17:58.400 --> 00:18:03.599
+If we go down here, we still have a very light here and there is here
 
-00:25:27.360 --> 00:25:37.360
-JSX, therefore, we must first go through Babel to convert it to a normal JavaScript, which can then be understood by React or our browsers.
+00:18:03.599 --> 00:18:09.839
+Of course, HTML code with CSS classes. but at the same time, there is also natural
 
-00:25:37.360 --> 00:25:42.360
-And at this point, it may already become aware slowly.
+00:18:09.839 --> 00:18:15.039
+JavaScript and a CSS file that needs to be imported here and that we can also in React
 
-00:25:42.360 --> 00:25:55.360
-Babel does nothing but from these JSX Snippets or from the HTML parts in JavaScript that we write in JSX to make React.CreateElement function requests.
+00:18:15.039 --> 00:18:21.759
+Now we first pack the NAVBar here.Zack.
 
-00:25:56.360 --> 00:25:58.360
-That’s all the magic behind it.
+00:18:21.759 --> 00:18:25.799
+have done it all and have somewhat beautifully brought it here, we get now
 
-00:25:58.360 --> 00:26:01.360
-I will also show you hands-on.
+00:18:25.799 --> 00:18:31.200
+This is a small problem and it is not possible to use this class here. in normal HTML we can
 
-00:26:01.360 --> 00:26:04.360
-But first, how do we install Babylon?
+00:18:31.200 --> 00:18:36.519
+To tell how a HTML element should look with a CSS class.
 
-00:26:04.360 --> 00:26:12.360
-We are now using npm and we will install Babel Core, Babel CLI and Preset React in our project.
+00:18:36.519 --> 00:18:42.119
+Class here. however, the class exists also in JavaScript. This is why you need to
 
-00:26:13.360 --> 00:26:15.360
-And that we do now.
+00:18:42.119 --> 00:18:48.480
+React the HTML classes not call class, but class name.
 
-00:26:16.360 --> 00:26:18.360
-Back to the Command Line.
+00:18:48.480 --> 00:18:51.880
+Wrong because there is such a root in it. here I just write such a slash in
 
-00:26:18.360 --> 00:26:21.360
-We will close our web server here.
+00:18:51.880 --> 00:18:57.400
+and then we have no mistakes anymore. now we have to bootstrap still to our side or to our
 
-00:26:21.360 --> 00:26:23.360
-Now we are carrying out the command.
+00:18:57.400 --> 00:19:02.360
+Add project. for this we can take the Node Package Manager again and simply say npm
 
-00:26:23.360 --> 00:26:34.360
-npm install add babel core add babel cli and add babel reset react
+00:19:02.360 --> 00:19:09.240
+install minus save Bootstrap and then two things happen now.
 
-00:26:35.360 --> 00:26:40.360
-We add another small parameter here, namely –save-def.
+00:19:09.240 --> 00:19:15.119
+Bootstrap because it is now part of our project, here in this list with these dependencies
 
-00:26:40.360 --> 00:26:42.360
-Why we do this, I will explain.
+00:19:15.119 --> 00:19:20.559
+We see the whole and, in addition, everything that is here in dependencies,
 
-00:26:44.360 --> 00:26:46.360
-Then press Enter.
+00:19:20.559 --> 00:19:25.599
+automatically downloaded into the folder Node Modules. that is, here we now have a new
 
-00:26:47.360 --> 00:26:51.360
-This takes a little time, because he must first download the whole packages.
+00:19:25.599 --> 00:19:33.239
+folder called Bootstrap. for that we scream a little down here and there he should be.
 
-00:26:52.360 --> 00:26:54.360
-You see an error here.
+00:19:33.239 --> 00:19:39.759
+We now have a folder called dist.css and here we now have a lot of CSS code.
 
-00:26:54.360 --> 00:26:55.360
-This happens on Mac.
+00:19:39.759 --> 00:19:44.359
+This is always a matter of mind. .min is always a matter of mind. .min is always a matter of mind.
 
-00:26:55.360 --> 00:26:57.360
-Don’t be surprised if you see this mistake.
+00:19:44.359 --> 00:19:50.119
+individual CSS files that exist here have become somewhat incomprehensible here in this .min file,
 
-00:26:57.360 --> 00:27:01.360
-Don’t worry, it doesn’t matter for us first.
+00:19:50.119 --> 00:19:53.920
+but for our purposes perfectly simply summarized and minimized.
 
-00:27:01.360 --> 00:27:04.360
-A few features of Babel will not work due to these errors.
+00:19:53.920 --> 00:19:59.440
+We just need to import this file and all we can here simply in our Navbar
 
-00:27:04.360 --> 00:27:07.360
-But these are not the features we need now.
+00:20:00.000 --> 00:20:05.880
+or also simply in our index.js. that is, we write here simply import and
 
-00:27:07.360 --> 00:27:10.360
-From that way, we can easily ignore this error.
+00:20:05.880 --> 00:20:10.039
+Now you have to indicate the path from this folder here. and the whole can already be a little bit
 
-00:27:10.360 --> 00:27:12.360
-Installation is now completed.
+00:20:10.039 --> 00:20:15.640
+This is the reason why you can just right-click here and say copy relative path.
 
-00:27:12.360 --> 00:27:14.360
-Let’s go back to Visual Studio Code.
+00:20:15.640 --> 00:20:20.680
+We have to put it in between the indicators so and so.Yes, now we have to be still minimal
 
-00:27:14.360 --> 00:27:16.360
-Let’s look shortly, something has changed.
+00:20:20.680 --> 00:20:25.640
+This nod modules and so on we don’t need at the beginning.
 
-00:27:17.360 --> 00:27:23.360
-First, a new field has been added to our package chases, namely these def dependencies.
+00:20:25.640 --> 00:20:30.079
+We want to have the forward-looking slashes that need to be entered here
 
-00:27:23.360 --> 00:27:28.360
-That’s what I’ve caused with the command –save-def.
+00:20:30.079 --> 00:20:35.160
+Now we can now say npm start, now we can now say npm start.
 
-00:27:28.360 --> 00:27:36.360
-And that ultimately simply describes all the dependencies of our project or development dependencies here in these package chases.
+00:20:35.160 --> 00:20:39.200
+to start our project again. and as we see, we now have our
 
-00:27:37.360 --> 00:27:41.360
-I don’t want to go too much into the details now because this is a course about React and not about NPM.
+00:20:39.200 --> 00:20:44.000
+Navigation bar here above has already been inserted. that is, we have a bootstrap component
 
-00:27:41.360 --> 00:27:43.360
-But just that you understand why I pointed out this error.
+00:20:44.000 --> 00:20:50.079
+taken and it is imported with this HTML code, at the same time here above now the whole styled,
 
-00:27:44.360 --> 00:27:47.360
-It has also been generated a package log chases.
+00:20:50.079 --> 00:20:58.759
+by the fact that we have imported the CSS file here. in the next step we will now
 
-00:27:47.360 --> 00:27:52.360
-This is, to say, a logbook of all of those packages that we have installed with accurate features.
+00:20:58.759 --> 00:21:03.519
+Of course, we need to add a few products to our online store and we need it first.
 
-00:27:52.360 --> 00:27:55.360
-And finally, Node modules were created here.
+00:21:03.519 --> 00:21:08.279
+so a map where the whole is shown. And the good thing is if we go through the bootstrap
 
-00:27:55.360 --> 00:28:00.360
-This is the folder in which the packages we installed were actually downloaded.
+00:21:08.279 --> 00:21:12.240
+Components go, then we see something very good here, and I just have here.
 
-00:28:00.360 --> 00:28:06.360
-If we open this shortly, we will, of course, see much more here than we have installed.
+00:21:12.240 --> 00:21:16.519
+left on the cart and then found this thing here. here we can just now
 
-00:28:06.360 --> 00:28:12.360
-This is simply because Babel itself also has dependencies, which it defines through a package of chases.
+00:21:16.519 --> 00:21:20.640
+Add a few pictures and then actually take this map completely here.
 
-00:28:12.360 --> 00:28:19.360
-And all these dependencies installed Babel or npm for us then just with that we don’t have to do it handy.
+00:21:20.640 --> 00:21:25.920
+Well, what the HTML device should look like. that is, we just go into our code and
 
-00:28:20.360 --> 00:28:30.360
-But we also see, add-babel-cli has been installed, add-babel-core has been installed and further below add-babel-preset-react is now also present in our project.
+00:21:25.920 --> 00:21:31.240
+I'm just adding these note modules here again and tell you
 
-00:28:37.360 --> 00:28:42.360
-Now we have to configure or execute Babel a little more accordingly.
+00:21:31.240 --> 00:21:38.000
+Now here in the folder Components that I want to create a new component called product.
 
-00:28:42.360 --> 00:28:46.360
-But Babel still doesn’t know what to do.
+00:21:38.000 --> 00:21:43.599
+I’m going to have JSX, and then I can say that I’m going to have JSX.
 
-00:28:46.360 --> 00:28:49.360
-But Babel still doesn’t know which vocabulary it should use.
+00:21:43.599 --> 00:21:51.200
+write CC to add my standard component here. product I call it all and as
 
-00:28:49.360 --> 00:28:51.360
-Let’s start with the dictionary.
+00:21:51.200 --> 00:21:57.680
+HTML code you just get it here. it's important that we everywhere class is the whole
 
-00:28:51.360 --> 00:28:58.360
-We can easily configure Babel by creating a new file called .babel-rc.
+00:21:57.680 --> 00:22:05.200
+So here, here, here, here and here in Class Name.
 
-00:28:59.360 --> 00:29:03.360
-In this file we can write valid chases.
+00:22:05.200 --> 00:22:10.240
+We also need to import React, that is, EMRC, then to Enter and then we have here the
 
-00:29:03.360 --> 00:29:06.360
-This is actually just a chase file, even if it does not end on chase.
+00:22:10.240 --> 00:22:16.640
+React or React and Component are imported here.
 
-00:29:06.360 --> 00:29:11.360
-We can set up an object there and fill the field Presets.
+00:22:16.640 --> 00:22:20.640
+But here we still see that something is red and that’s very likely that there’s something here.
 
-00:29:11.360 --> 00:29:16.360
-And there now in one array all the presets that Babylon uses for us.
+00:22:20.640 --> 00:22:25.240
+There are three comic points in it, and we have to add a picture.
 
-00:29:16.360 --> 00:29:19.360
-So speak all these words that we want to translate.
+00:22:25.240 --> 00:22:30.039
+You can find free photos on pixabay.com, for example, just go there and we can
 
-00:29:19.360 --> 00:29:24.360
-In our case, this is just one, namely Babel-Preset-react.
+00:22:30.039 --> 00:22:34.440
+Let us just download some vegetables here in the smallest solution.
 
-00:29:24.360 --> 00:29:26.360
-This is the first step.
+00:22:34.440 --> 00:22:38.599
+so that the page does not load so long. you should always take one so that it still looks sharp,
 
-00:29:26.360 --> 00:29:33.360
-In the second step, we now have to make this App.js a App.jsx file.
+00:22:38.599 --> 00:22:43.240
+However, the size of the image is not too large. for the images we need a new
 
-00:29:33.360 --> 00:29:37.360
-We have no more valid chavascript.
+00:22:43.240 --> 00:22:48.079
+Folders, I just call the assets and pack in this folder another subordner named
 
-00:29:37.360 --> 00:29:44.360
-That’s why it’s no longer a Chavascript file, but it’s now a .jsx file because we’ve inserted .jsx here.
+00:22:48.079 --> 00:22:54.119
+I now draw the image out of my download folder and name it again and
 
-00:29:44.360 --> 00:29:48.360
-And now we have to let Babel translate this file for us.
+00:22:54.119 --> 00:23:00.160
+The image can be added here at Source, but
 
-00:29:48.360 --> 00:29:51.360
-We can do this with Babel City events.
+00:23:00.160 --> 00:23:03.759
+We need to change a few things. if I go through here, for example,
 
-00:29:51.360 --> 00:29:53.360
-Let’s get rid of the error shortly.
+00:23:03.759 --> 00:23:10.160
+Image has no corresponding closing day. We work here with a type of XML and accordingly
 
-00:30:00.000 --> 00:30:05.720
-Now there are two options. we could also use NPX here again,
+00:23:10.160 --> 00:23:16.839
+HTML elements that are not closed must always be closed at the end with such a slash.
 
-00:30:05.720 --> 00:30:10.680
-We have the Babel CLI, but we have the Babel CLI with us.
+00:23:16.839 --> 00:23:21.440
+This means that an image does not rise again and therefore we have to say here at the end,
 
-00:30:10.680 --> 00:30:16.319
-installed and all in node modules, the so-called binary or binary folder,
+00:23:21.440 --> 00:23:24.799
+There’s a slash here, and there’s a class here.
 
-00:30:16.319 --> 00:30:24.400
-There is the command of Babylon.This command expects three parameters.
+00:23:24.799 --> 00:23:29.799
+What does ClassName really have to be called and now we have to see it all somehow.
 
-00:30:24.400 --> 00:30:28.240
-Source directory or the directory that Babel is to translate for us.
+00:23:29.799 --> 00:23:35.039
+I’m not writing here for the first time, but a product.
 
-00:30:28.240 --> 00:30:33.519
-It expects the parameter minus minus out here.
+00:23:35.039 --> 00:23:39.559
+Then we also see that it is already automatically imported by React.
 
-00:30:33.519 --> 00:30:39.279
-Place where Babel is to write the compiled or translated files.
+00:23:39.559 --> 00:23:43.960
+If we open our page now, however, we do not see anything yet and therefore we recommend
 
-00:30:39.279 --> 00:30:44.720
-Now we just go to a directory that we call lib. If we do this command now,
+00:23:43.960 --> 00:23:47.839
+I'm always going to search you in the Chrome browser here and then here this
 
-00:30:44.720 --> 00:30:51.799
-Babel quotes us that with a successful message that it makes us a file successful
+00:23:47.839 --> 00:23:52.920
+Choose console, because here the React always tells very exactly what the error is.
 
-00:30:51.799 --> 00:30:57.599
-compiled or translated.When we jump back to the project directory, we also see,
+00:23:52.920 --> 00:23:59.680
+The style prop expects a mapping from style properties to values.
 
-00:30:57.599 --> 00:31:02.279
-that the lib folder has been created and here accordingly, analogous to our App.js,
+00:23:59.680 --> 00:24:04.319
+It sounds complicated for the first time, but here below is that you just style.
 
-00:31:02.279 --> 00:31:08.200
-a app.js file has been created. and that we can also look at. and see there,
+00:24:04.319 --> 00:24:09.039
+I have to write a bit different. if we just copy this error and go to Google.
 
-00:31:08.200 --> 00:31:16.039
-from our JSX has become nothing more than a React-Create element call, which is relative or
+00:24:09.039 --> 00:24:13.559
+Whatever I would recommend you as a beginner, then we will also see
 
-00:31:16.039 --> 00:31:20.480
-Not relatively yet, but it looks quite the same as what we have handmade before.
+00:24:13.559 --> 00:24:19.319
+Here’s exactly what to do and that’s what we have to do at React now at once styles instead of style
 
-00:31:20.480 --> 00:31:27.240
-This is actually the whole magic behind JSX and Babel. It does nothing but the parts,
+00:24:19.319 --> 00:24:24.680
+write and have to write it a bit different from the syntax here.
 
-00:31:27.240 --> 00:31:31.200
-The HTML and our JSX are to translate into a React.Create element.
+00:24:24.680 --> 00:24:29.119
+I’m writing here, I’m writing here, I’m writing here, I’m writing here, I’m writing here.
 
-00:31:31.200 --> 00:31:39.119
-Now we need to make a small change in our index HTML.
+00:24:29.119 --> 00:24:34.400
+Clamps up, two twisted clamps up, the semicolon comes away and, in addition, we have to go here
 
-00:31:39.119 --> 00:31:44.160
-do because we no longer deliver the App.js from our source or the App.jsx,
+00:24:34.400 --> 00:24:38.799
+I'm writing all this in such individual signs. after I'm writing all this now
 
-00:31:44.160 --> 00:31:50.240
-but we have to deliver the translated version of our app here.
+00:24:38.799 --> 00:24:43.799
+There is no error, no warning, no error.
 
-00:31:50.240 --> 00:32:01.079
-We’re going to start a web server again and then we’re going to start a web server again.
+00:24:43.799 --> 00:24:48.599
+that we do not use our Navbar anymore, that we can still fix and if I now on our
 
-00:32:01.079 --> 00:32:12.960
-navigate our site, we see, we still have the old element. I also know why.
+00:24:48.599 --> 00:24:54.440
+Going page, then we see that here above now our map will be displayed.
 
-00:32:12.960 --> 00:32:16.279
-We’ve got the old element here, but we’re really here.
+00:24:54.440 --> 00:24:58.599
+Not yet found, but otherwise we’ll see everything here.
 
-00:32:16.279 --> 00:32:20.360
-that the first JSX components are connected. therefore we have to replace it here.
+00:24:58.599 --> 00:25:03.320
+Because we have made a little mistake here, we have this asset order one.
 
-00:32:20.360 --> 00:32:27.920
-We now want to return my.jsx element. we need everything now of course from Babel
+00:25:03.320 --> 00:25:08.320
+This asset orderer should always be in this public folder,
 
-00:32:27.920 --> 00:32:36.079
-If we start the web server now, we should actually see,
+00:25:08.320 --> 00:25:13.160
+This is what our web server accesses at the end of the day.
 
-00:32:36.079 --> 00:32:44.599
-that we have successfully returned our first JSX components in the browser.
+00:25:13.160 --> 00:25:19.079
+Asset Order, press Control X and then I add it here after I press on Public
 
-00:32:46.759 --> 00:32:52.200
-Before we get to the end, I would like to give you a little bit.
+00:25:19.079 --> 00:25:24.320
+have, with control V. has not yet worked completely, then we pull it further.
 
-00:32:52.200 --> 00:32:58.480
-For this command, which we have just seen here, not modules is Babel source, is difficult.
+00:25:24.440 --> 00:25:31.880
+We have my online shop Public Assets Image Tomatoes and here
 
-00:32:58.480 --> 00:33:03.240
-I think it’s not a good thing to do, but it’s not a good thing to do, it’s a good thing to do, it’s a good thing to do, it’s a good thing to do, it’s a good thing to do.
+00:25:31.880 --> 00:25:35.920
+Now we get to it and when we look at our page now, we see here,
 
-00:33:03.240 --> 00:33:10.079
-npm-scripts provide a bit of failure. Scripts allow us to write script under a
+00:25:35.920 --> 00:25:42.039
+that our map has this beautiful header with a picture. the next task is now
 
-00:33:10.079 --> 00:33:14.480
-so called Alias or under another name to predefinish. so if we now here such a thing
+00:25:42.039 --> 00:25:47.000
+Of course, add several cards to our app and add the Navbar again.
 
-00:33:14.480 --> 00:33:23.799
-How to compile and there the command Babel source minus out here lip,
+00:25:47.000 --> 00:25:55.599
+In this section, we now want to incorporate several components simultaneously into our app.
 
-00:33:23.799 --> 00:33:30.759
-followed by a comma rewrite, we can make this very expensive command significantly easier
+00:25:55.599 --> 00:26:00.799
+We have the Navbar and a component for our product, for the tomatoes.
 
-00:33:30.759 --> 00:33:35.480
-In short, we can save ourselves here the not modules are,
+00:26:00.799 --> 00:26:05.240
+From the second component, of course, we want to add several and the first
 
-00:33:35.480 --> 00:33:41.319
-because the scripts of npm by default connect this binary directory.
+00:26:05.240 --> 00:26:09.119
+We want to do it, and we need a component first.
 
-00:33:41.319 --> 00:33:45.639
-Here we can give up all this previous path and simply run Babel directly.
+00:26:09.119 --> 00:26:14.160
+We’ve always said that we’re at the lower level.
 
-00:33:45.639 --> 00:33:52.480
-Now we can simply run through the command in our current directory npm every
+00:26:14.160 --> 00:26:19.160
+They want to have a component called the app and that then binds everything we need,
 
-00:33:52.480 --> 00:33:57.960
-Script that we have defined. in our case only compile. as we see,
+00:26:19.160 --> 00:26:23.960
+For example, our Navbar and so on and so on. That is, I put here first
 
-00:33:57.960 --> 00:34:03.000
-Babel was executed again to translate our JSX files.
+00:26:23.960 --> 00:26:32.079
+Enter a new component, call the app.jsx and press Enter.
 
-00:34:05.480 --> 00:34:12.320
-Finally, here in Scripts any valid CLI command can be inserted and we can
+00:26:32.079 --> 00:26:37.360
+such as your EMRC to make this import statement and I put on a new component,
 
-00:34:12.320 --> 00:34:18.239
-for our project relevant CLI commands very simple and very transparent in the
+00:26:37.559 --> 00:26:44.160
+Name the app and here I now want to export and import different things.
 
-00:34:18.239 --> 00:34:23.519
-This is a small trick that is also used very massively in many projects.
+00:26:44.160 --> 00:26:49.559
+That is, this product, that comes out here first and I just want here
 
-00:34:23.519 --> 00:34:32.480
-This can be extended, for example, as the last by registering the ntx server here and
+00:26:49.559 --> 00:26:57.160
+That is, I say here app, zack, that is also automatically imported.
 
-00:34:32.480 --> 00:34:36.400
-We no longer need to enter the ntx server, but now to start our web server and
+00:26:57.160 --> 00:27:02.680
+Product I am now importing in the app myself, not here anymore.
 
-00:34:36.400 --> 00:34:43.599
-To deliver the site, you can enter npm run start. And now our web server is available again.
+00:27:03.000 --> 00:27:10.960
+and here in the app I now want to have both my Navbar and my component with my
 
-00:34:43.599 --> 00:34:54.559
-And that's what we've done today. again a short review.
+00:27:10.960 --> 00:27:16.720
+If I write it all this way, then it all will not work.
 
-00:34:54.559 --> 00:34:59.840
-We have prepared the local setup with Visual Studio Code and npm. I have a first
+00:27:16.720 --> 00:27:23.400
+Here it is stated that in JSX expressions always a maximum of a parent element
 
-00:35:00.000 --> 00:35:05.440
-We have given insight into the tools npm, npx and babel and we have already used them live.
+00:27:23.400 --> 00:27:29.039
+What does it mean? we can only have one element. we can only have one element.
 
-00:35:05.440 --> 00:35:12.400
-We have React embedded with the CDN or Content Delivery Network URL and we have
+00:27:29.039 --> 00:27:34.279
+have where several sub-elements are inside, as we have done it here.
 
-00:35:12.400 --> 00:35:18.559
-With React Element and JSX implemented a first Hello World application from React.
+00:27:34.279 --> 00:27:40.920
+Example a DIV and there are several sub-elements in it.
 
-00:35:18.559 --> 00:35:22.719
-We’ve made a big step. the next time it’s going to be even more exciting.
+00:27:40.920 --> 00:27:46.320
+However, it is not possible that we should just have so many elements here.
 
-00:35:22.719 --> 00:35:28.199
-React Components present and use and with the React Components the render function,
+00:27:46.320 --> 00:27:49.840
+This is why we can do different things now. we can, for example,
 
-00:35:28.199 --> 00:35:35.639
-Props and then some more details of JSX. here I thank you
+00:27:49.840 --> 00:27:58.400
+Add a DIV and then have several sub-elements in this DIV, so in about.
 
-00:35:35.639 --> 00:35:40.199
-I am very happy that you have watched this video.I hope you could learn something.
+00:27:58.400 --> 00:28:03.039
+If you say now, but I don’t want to have an extra DIV, then you can write here.
 
-00:35:40.199 --> 00:35:46.119
-For questions, feedback or other wishes and suggestions please contact us through this
+00:28:03.039 --> 00:28:11.079
+React.fragment and after you’ve done it all, then you’ve just got it all this way
 
-00:35:46.119 --> 00:35:51.760
-Channels hello at thenativefab.io by email or also on Twitter and GitHub and I wish you
+00:28:11.079 --> 00:28:15.880
+If we look at our app now, I do it
 
-00:35:51.760 --> 00:35:55.440
-A good day and until the next episode.
+00:28:15.880 --> 00:28:19.440
+A little bit smaller here, then we see that here is the Navbar and here is the Navbar.
+
+00:28:19.440 --> 00:28:25.440
+We can now also add several products here. if we do this now
+
+00:28:25.440 --> 00:28:32.079
+Here we have, then we see that there are several products among each other.
+
+00:28:32.079 --> 00:28:36.440
+I would now put in an extra container again, because then we can say that this
+
+00:28:36.440 --> 00:28:41.880
+Products should also be displayed next to each other. that is, I can now
+
+00:28:41.880 --> 00:28:47.079
+Just say we have a DIV container that goes up here. There is a product inside, a product
+
+00:28:47.079 --> 00:28:54.000
+Within, a product inside, a product inside, and everything goes back here.
+
+00:28:54.000 --> 00:28:58.679
+If we want these products to be next to each other, then we need a CSS class.
+
+00:28:58.679 --> 00:29:05.480
+That is, I just add a CSS class here, call the product container.
+
+00:29:05.480 --> 00:29:10.759
+This means I need a CSS file that I call now
+
+00:29:10.759 --> 00:29:17.720
+I'm just going to index.css.Zack, that comes here and then I can now say that here
+
+00:29:17.720 --> 00:29:23.320
+For example, the feature display flex is given, so all my elements are in one
+
+00:29:23.320 --> 00:29:30.079
+Showing a series and that my elements should have a distance, for example, 32 pixels.
+
+00:29:30.079 --> 00:29:36.039
+This index.css I still have to import now, I just do it here. I say import.slash
+
+00:29:36.039 --> 00:29:45.400
+index.css and then I add a semicon here. and if I now look at our app here,
+
+00:29:45.400 --> 00:29:50.079
+I see that there are four different containers here and that these containers are also a distance
+
+00:29:50.320 --> 00:29:56.840
+32 pixels. if all of you should not yet be displayed like this,
+
+00:29:56.840 --> 00:29:59.920
+Then always check two things. number one the consoles.
+
+00:30:00.000 --> 00:30:03.599
+If there are any errors here. here we have another mistake, but that's not
+
+00:30:03.599 --> 00:30:07.880
+This is bad because it is just a warning. then we can get into it later. and the other
+
+00:30:07.880 --> 00:30:13.079
+It is that we must have stored here. that is, every file you modify
+
+00:30:13.079 --> 00:30:16.839
+you have, go there again and just press control S. You can also see that here below
+
+00:30:16.839 --> 00:30:22.359
+Then everything is always updated and you should have always stored every file.
+
+00:30:22.359 --> 00:30:26.720
+Here, of course, there are always exciting warnings. for example, here
+
+00:30:26.720 --> 00:30:32.240
+It is said that there is still a small error in our product file, and that is in line 11.
+
+00:30:32.240 --> 00:30:36.079
+And if we go there, then we will see what the problem is.
+
+00:30:36.079 --> 00:30:40.680
+I'm not sure if I'm just packing a slash or something like that.
+
+00:30:40.680 --> 00:30:45.400
+And then it works all. In the end, we want to go to the left and right, of course, also.
+
+00:30:45.400 --> 00:30:51.400
+It means I go again into our CSS file and say here Padding
+
+00:30:51.400 --> 00:30:59.160
+Left 32 pixels and Padding Right 32 pixels. The one is that the whole is drawn to the left and
+
+00:30:59.160 --> 00:31:03.400
+So it is put on the right side. and now it all looks like this and I find,
+
+00:31:03.400 --> 00:31:07.599
+I think it’s a good thing for most people now, and we’re going to find it on the mobile.
+
+00:31:07.599 --> 00:31:12.359
+I can tell you how it is arranged to each other. it is easy to say.
+
+00:31:12.359 --> 00:31:20.440
+For this we simply say Add Media, pack here. Maximum width should be 850 pixels to
+
+00:31:20.440 --> 00:31:25.839
+Example and then our product container should still have an extra feature, namely Flex.
+
+00:31:25.839 --> 00:31:30.839
+Direction column. This shows elements from each other. we see it now here.
+
+00:31:30.839 --> 00:31:39.519
+together and from a certain width to each other. now we have
+
+00:31:39.519 --> 00:31:44.920
+Our online shop is still a problem. until now you can just buy tomatoes.
+
+00:31:44.920 --> 00:31:49.039
+Make sure that there is always a different image on each component.
+
+00:31:49.039 --> 00:31:54.160
+that there is a different title and a different text. and the whole is of course with
+
+00:31:54.160 --> 00:31:59.559
+This React component is also possible. for this we can simply jump in our code
+
+00:31:59.559 --> 00:32:04.880
+and can change a thing here now. and that we have said in our app component so far,
+
+00:32:04.880 --> 00:32:08.839
+There are four different types of products, but here it is just
+
+00:32:08.839 --> 00:32:14.400
+We now have the possibility in this component variables
+
+00:32:14.400 --> 00:32:18.480
+This means that we can now, for example, change the title in which I
+
+00:32:18.480 --> 00:32:24.839
+The title is the same as tomatoes and the next, so the next product here below.
+
+00:32:24.839 --> 00:32:30.640
+I can go here, I can go here, I can go here, I can go here, I can go here.
+
+00:32:30.640 --> 00:32:37.400
+Let’s write something and can say here for example, okay, there’s here, let’s say, apples and
+
+00:32:37.400 --> 00:32:44.079
+So, and these variables that I can now in my product
+
+00:32:44.079 --> 00:32:50.000
+Take components and simply insert where the card title stands. and I do it by
+
+00:32:50.000 --> 00:32:54.079
+Here now just add a wiped clamer, add a wiped clamer, and then say,
+
+00:32:54.079 --> 00:33:02.039
+this.probs.title. so that's here our variable and that's here, that's always you have to do before it
+
+00:33:02.039 --> 00:33:06.599
+writing, because this here says that we are on the properties that we have drawn from the outside,
+
+00:33:06.599 --> 00:33:12.079
+And if we look at it now, then we see tomatoes, cakes,
+
+00:33:12.079 --> 00:33:18.880
+Apples and pearls. Now, of course, we have only changed a variable.
+
+00:33:18.880 --> 00:33:23.279
+We are also changing the description and, of course, the picture of the tomatoes.
+
+00:33:23.279 --> 00:33:27.559
+Of course, we need to download more pictures first. that is, we just go here
+
+00:33:27.559 --> 00:33:31.960
+on pixabay.com and now search for, for example, Gurken. you can do this in German or on
+
+00:33:31.960 --> 00:33:37.360
+In English, it's absolutely no matter. And then I'm downloading it all. With apples and pears
+
+00:33:37.360 --> 00:33:41.799
+I have done the same now and all of these pictures we now pack in our image orders.
+
+00:33:41.799 --> 00:33:46.119
+I recommend you always change the whole, because then you can make it much easier.
+
+00:33:46.119 --> 00:33:51.400
+Apple is still coming here and now I just say right-click, rename and
+
+00:33:51.400 --> 00:34:01.599
+Write here apples.jpg, cucumbers.jpg and so on and so on.
+
+00:34:01.599 --> 00:34:05.960
+Take this video for a short time and try this little exercise alone.
+
+00:34:05.960 --> 00:34:11.199
+multiple variables in a row, not only the title, but a variable named image,
+
+00:34:11.199 --> 00:34:17.559
+a variable named Description and then you can all these variables in the other view
+
+00:34:17.559 --> 00:34:23.119
+Let’s take it and let it announce. we will then do it all together again. are you ready?
+
+00:34:23.119 --> 00:34:27.720
+If not, then we do everything together now. so we need two variables,
+
+00:34:27.720 --> 00:34:31.760
+This is a variable, which I now call an image.
+
+00:34:31.760 --> 00:34:36.159
+No matter how we call them, and then another variable, which I add behind the title,
+
+00:34:36.159 --> 00:34:42.079
+because it simply makes sense of the order and that is description. and both variables must
+
+00:34:42.079 --> 00:34:49.760
+In the picture it is clear, in the tomatoes comes tomatoes.jpg
+
+00:34:49.760 --> 00:34:56.679
+purely, in Gurks comes cucumbers.jpg purely and so on and so on.
+
+00:34:56.679 --> 00:35:05.599
+you add what you want, for example add tomatoes to your basket.
+
+00:35:05.599 --> 00:35:08.880
+I'm going to write it like this now. you'll have to write it like this later.
+
+00:35:08.880 --> 00:35:13.480
+Add better descriptions here to the respective products. I write here
+
+00:35:13.480 --> 00:35:18.360
+Now just apples and here I write pearls. and after I have done it all,
+
+00:35:18.360 --> 00:35:23.440
+We must, of course, let the whole thing be shown in the product with this logic here.
+
+00:35:23.440 --> 00:35:29.800
+The image here must also be a variable. we have called this variable image and then
+
+00:35:29.800 --> 00:35:34.719
+This description must also be a variable here. the description we have simply Description
+
+00:35:34.720 --> 00:35:40.400
+This means that here everything comes away and then comes here Description.
+
+00:35:40.400 --> 00:35:44.559
+I've done it all now so, then you'd think it's possible, but we've got a little more.
+
+00:35:44.559 --> 00:35:48.360
+errors and you may have noticed that. the images are no longer displayed and in
+
+00:35:48.360 --> 00:35:53.720
+Our source code is all in this way. that we must, of course, change.
+
+00:35:53.720 --> 00:36:00.679
+A variable is a variable, a variable is a variable, a variable is a variable, a variable is a variable.
+
+00:36:00.679 --> 00:36:05.159
+are inserted without these reference signs. The reference signs that come now simply
+
+00:36:05.159 --> 00:36:10.920
+Here we pack such a plus and ultimately link this text with this
+
+00:36:10.920 --> 00:36:15.199
+If we look at it now, then we will also see that it has worked.
+
+00:36:15.199 --> 00:36:19.639
+We’re going to see our pictures correctly. that’s, we’ve already had a small online shop,
+
+00:36:19.639 --> 00:36:25.840
+where there are four individual products now. instead of Go Somewhere it should still be here to
+
+00:36:25.920 --> 00:36:31.079
+Add a box or something like that. I just write here to add and then see it
+
+00:36:31.079 --> 00:36:38.800
+What our online shop needs, of course.
+
+00:36:38.800 --> 00:36:43.000
+This means that if we press to add on a product,
+
+00:36:43.000 --> 00:36:47.880
+Then, of course, it should also be displayed on the right side or so on our shopping cart.
+
+00:36:47.880 --> 00:36:52.360
+And we are building it all now. First of all, we must, you probably have it for you already
+
+00:36:52.440 --> 00:37:02.079
+I'm thinking about setting up a new component. I'm just calling it shopping-card.jsx and press
+
+00:37:02.079 --> 00:37:09.199
+We import again two different things. once of course React and Component and
+
+00:37:09.199 --> 00:37:14.039
+So we have to make the component ourselves. this time we take it in the so-called
+
+00:37:14.039 --> 00:37:19.519
+CamelCase, so written, shopping card. Then we must now, of course, in the next
+
+00:37:19.519 --> 00:37:23.480
+Step here to say what the whole thing is to look like. and then we are just building a
+
+00:37:23.480 --> 00:37:29.360
+DIV. There is now somehow a small title, namely a shopping card.
+
+00:37:29.360 --> 00:37:35.760
+We are in German goods basket. and much more is not seen here at first.
+
+00:37:35.760 --> 00:37:40.639
+We need to be connected to our app now. and it is important that all of it must, of course, be right from
+
+00:37:40.639 --> 00:37:45.039
+Our product container will be embedded. therefore I add this now here
+
+00:37:45.039 --> 00:37:50.000
+Zack, it's automatically always imported here. here I'm still making such a slash,
+
+00:37:50.000 --> 00:37:54.239
+so that we can simply pack it here. and after we have done it all now,
+
+00:37:54.239 --> 00:37:58.639
+We have to say somehow that the Naftbar comes up and these two things here.
+
+00:37:58.639 --> 00:38:04.280
+And for this, I pack the two lower elements again into a new container.
+
+00:38:04.280 --> 00:38:10.400
+For a container I can always say that the elements are arranged next to each other.
+
+00:38:10.400 --> 00:38:16.320
+For this reason, I just add a new class to the thing here and call this class now.
+
+00:38:16.320 --> 00:38:21.239
+Main containers. We can call them as we said, as we want.
+
+00:38:21.239 --> 00:38:26.199
+that we add it with a point here so in the CSS file and that we are here now
+
+00:38:26.199 --> 00:38:31.920
+simply say, display flex. Because with the command we can both elements in one
+
+00:38:31.920 --> 00:38:36.239
+I’m going to say that we’re going to have a distance from each other, and we’re going to have a distance.
+
+00:38:36.239 --> 00:38:42.119
+32 pixels. And if we look at it all now, then it looks like that.
+
+00:38:42.119 --> 00:38:47.000
+Yes, I would give a little distance to the right, so let’s say something like this.
+
+00:38:47.000 --> 00:38:54.840
+Padding minus right 32 pixels. and in fact we don’t even need this gap now
+
+00:38:54.840 --> 00:38:59.079
+We know that our product container is also right here.
+
+00:38:59.079 --> 00:39:04.199
+Input has 32 pixels. that is, if we look at the whole now, we have here after
+
+00:39:04.199 --> 00:39:10.559
+right 32 pixels, to the left to this box 32 pixels and anywhere exactly 32 pixels distance.
+
+00:39:10.559 --> 00:39:15.199
+After we have done it all, I would like to give our basket a minimum width,
+
+00:39:15.199 --> 00:39:20.280
+For example, at least 20 percent or so. means our shopping card gets here
+
+00:39:20.280 --> 00:39:25.440
+I just call it Shopping minus Card.
+
+00:39:25.440 --> 00:39:31.559
+I think it makes the most sense. and say here that our shopping card with a point
+
+00:39:31.559 --> 00:39:39.559
+Breadth gets from 20 or let’s say somehow 25. I think 20 is good.
+
+00:39:39.559 --> 00:39:44.440
+This is one percentage of our screen width, so it looks like this.
+
+00:39:44.440 --> 00:39:51.199
+For example, if you could say with 25 VW, then it would be so.
+
+00:39:51.199 --> 00:39:56.119
+Especially if we make it all very small here, then we will see it.
+
+00:39:56.119 --> 00:39:59.920
+I think something else, but let it first.
+
+00:40:00.000 --> 00:40:05.920
+The whole now so and now we have to make sure that the elements with a click on this
+
+00:40:05.920 --> 00:40:14.480
+Button can be added to our box. in this section we want our
+
+00:40:14.480 --> 00:40:18.880
+It means we need somehow a way, all the goods,
+
+00:40:18.880 --> 00:40:23.360
+which we will add to our basket later once, save and then all of this
+
+00:40:23.360 --> 00:40:28.519
+to show elements next to each other or to each other. for such a thing is appropriate
+
+00:40:28.920 --> 00:40:34.599
+a so-called array. an array gives us the possibility of making multiple information next to each other
+
+00:40:34.599 --> 00:40:39.039
+to store and all of it now we look together once. when we go to our shopping
+
+00:40:39.039 --> 00:40:44.360
+Card component look, then everything looks like this. we have a container and
+
+00:40:44.360 --> 00:40:48.760
+In this container a title is reduced. here we should now
+
+00:40:48.760 --> 00:40:54.639
+even more diffs, for example, show and these diffs, which should of course say,
+
+00:40:54.639 --> 00:41:00.280
+what product has been added, for example tomatoes and how much more,
+
+00:41:00.280 --> 00:41:06.159
+So, for example, twice tomatoes or something like that. Now, of course, we need to know what is all here
+
+00:41:06.159 --> 00:41:10.760
+added and for that we look at this state here for the first time.
+
+00:41:10.760 --> 00:41:17.079
+We will always store all the data from our component. meaning we can here
+
+00:41:17.079 --> 00:41:23.679
+For example, say something like items and can now simply add which items and how
+
+00:41:23.679 --> 00:41:29.519
+Many items have been added here. meaning, we can now say here for example a
+
+00:41:29.519 --> 00:41:36.840
+A lot, one, then a name, that is, tomatoes, and then somehow a price.
+
+00:41:36.840 --> 00:41:43.920
+I'm going to write a double score of 4.9 or so, and I've done it all.
+
+00:41:43.920 --> 00:41:48.360
+I can now show these data here. now assumed we have not just tomatoes,
+
+00:41:48.360 --> 00:41:53.920
+but also another element, then these things would just be like one after another.
+
+00:41:53.920 --> 00:41:58.920
+Here we have all the information about our tomatoes in the shopping cart, here we have
+
+00:41:58.920 --> 00:42:04.360
+All information about our apples, I'm writing. apples may cost a little more,
+
+00:42:04.360 --> 00:42:09.679
+Yes, these are kilo prices here or something like that, so it's a bit high, probably tomatoes
+
+00:42:09.679 --> 00:42:15.920
+Even a bit more expensive, let’s say 2.9 and 4.9, then I think it’s a bit more expensive.
+
+00:42:15.920 --> 00:42:21.639
+Apples are a huge box probably and after we’ve done it all, we can
+
+00:42:21.639 --> 00:42:27.760
+Now the elements here out somehow present here below. if you are with Angular already
+
+00:42:27.760 --> 00:42:33.360
+Once you have discussed, then you’ll know that there’s something in Angular, that’s NG4 and with
+
+00:42:33.360 --> 00:42:38.239
+to this NG4 we can say that we are here depending on how many items we have here above,
+
+00:42:38.239 --> 00:42:43.960
+That is, now with one item, two items, this section would be here twice
+
+00:42:43.960 --> 00:42:50.159
+The whole is not possible in React, instead you write the whole with
+
+00:42:50.159 --> 00:42:56.440
+the so-called Mapping Operator. that is, we now first access the items by
+
+00:42:56.440 --> 00:43:05.840
+say this.state.map and now we can say in this mapping function that we are on a
+
+00:43:05.840 --> 00:43:12.639
+we want to access each item, so we want to access one item here and for each item we want to
+
+00:43:12.639 --> 00:43:17.679
+This code is generated here. now we want to say that there are no tomatoes here,
+
+00:43:17.679 --> 00:43:24.760
+but the name of our respective item, i.e. item.name and now it would be easy here
+
+00:43:24.760 --> 00:43:30.000
+item.name screaming, therefore we have to here again a twisted clam and a
+
+00:43:30.000 --> 00:43:35.719
+We have a variable, we have a variable, we have a variable.
+
+00:43:35.719 --> 00:43:40.159
+I want to do this for both Xs. Here we want to access the Amount and accordingly
+
+00:43:40.159 --> 00:43:49.800
+let's say here just item.amount and then everything should work here.
+
+00:43:49.800 --> 00:43:55.599
+If you want to have the price now, then we will add item.price here and behind it.
+
+00:43:55.599 --> 00:44:00.880
+Maybe there’s a little bit of a bit of a bit of a bit of a bit of a bit of a bit of a bit of a bit of a bit.
+
+00:44:00.880 --> 00:44:08.519
+not this.state, but this.state.items.map, because we want from our state to the items
+
+00:44:08.519 --> 00:44:14.559
+This is what we want to do, and this is what we want to do, this is what we want to do, this is what we want to do, this is what we want to do.
+
+00:44:14.559 --> 00:44:18.599
+Now look at our web browser, once update, then we will see here as well,
+
+00:44:18.599 --> 00:44:25.639
+OK, here is a DIV now, we look at it all once, Zack and here is 1 X tomatoes
+
+00:44:25.639 --> 00:44:33.280
+2.9 euros and below is now one thing, a X apple 94 euros.
+
+00:44:33.400 --> 00:44:38.519
+We still get a warning displayed on our console.
+
+00:44:38.519 --> 00:44:46.159
+Every child in a list should have a unique keyprop.
+
+00:44:46.159 --> 00:44:52.360
+we need to react, so react the DOM, that is, the collection of all the HTML elements that are reduced
+
+00:44:52.360 --> 00:44:57.279
+will always be able to assign to add a keyproperty here. here we simply write
+
+00:44:57.279 --> 00:45:06.360
+key="item.id", that should always be something clear. then, of course, we have to do the things here
+
+00:45:06.360 --> 00:45:11.360
+still add an ID, yes, we can also simply say something like item.name because tomatoes,
+
+00:45:11.360 --> 00:45:16.079
+Apples and so on, apples must stand here, even once it occurs, if in this case
+
+00:45:16.079 --> 00:45:20.559
+So that should always be something clear here. here is another writing
+
+00:45:20.559 --> 00:45:26.400
+Clammer before and here too, then these indications away and after we all
+
+00:45:26.400 --> 00:45:30.880
+have done and now update, we see that the error message is gone.
+
+00:45:30.880 --> 00:45:34.719
+other errors, which we can fix as well, for that we just have to
+
+00:45:34.719 --> 00:45:42.239
+go to the top level, to our index.js and here we say react-dom.render.
+
+00:45:42.239 --> 00:45:48.320
+But that is here to say, const root is the same react-dom.create-root element, yes, that has been
+
+00:45:48.320 --> 00:45:53.519
+Just on the last React version, I think after version 18 changed and now we have to here
+
+00:45:53.519 --> 00:46:00.800
+say root.render and take this part away here. react-dom here still small letters, so and now
+
+00:46:00.800 --> 00:46:05.000
+we have it and now we see that this mistake is gone. now we have another
+
+00:46:05.000 --> 00:46:09.679
+new error message, but that's not so bad, because we use React and the good
+
+00:46:09.679 --> 00:46:13.559
+in React is that it is very common. that is, any error message that suddenly new
+
+00:46:13.559 --> 00:46:17.519
+appear because the version has changed, you can just find Google with a second,
+
+00:46:17.519 --> 00:46:22.119
+Yes, I just entered it here once, then you go to Stack Overflow, then you find it mostly.
+
+00:46:22.119 --> 00:46:27.039
+the best solution and here is exactly what you have to do. we need something else now,
+
+00:46:27.039 --> 00:46:33.280
+not more react-dom, but react-dom-client to import and enter it here and then
+
+00:46:33.280 --> 00:46:37.599
+This error message has also disappeared and we have no error message.
+
+00:46:37.599 --> 00:46:46.360
+more and our shopping cart works perfectly. If we look at our application, then
+
+00:46:46.360 --> 00:46:53.000
+We have an app and this app contains three subelements,
+
+00:46:53.000 --> 00:46:59.599
+once a NAVBA, a DIV container and a shopping card.
+
+00:46:59.599 --> 00:47:03.720
+There are four products. in this product component we now have a
+
+00:47:03.720 --> 00:47:09.199
+Add button and when we press this button, then we have to somehow
+
+00:47:09.199 --> 00:47:14.960
+Information that we want to add the respective product to the top component,
+
+00:47:14.960 --> 00:47:20.960
+So give to the app, so there up and everything must then be transmitted to our
+
+00:47:20.960 --> 00:47:26.400
+When we look at our product, the whole thing is clear first. here is our
+
+00:47:26.400 --> 00:47:31.279
+The whole thing should now first be no link anymore, but a button, because
+
+00:47:31.279 --> 00:47:36.559
+a button can be triggered and then you can perform a function.
+
+00:47:36.559 --> 00:47:41.279
+Button to press our superior component, which connects the whole, that is, this
+
+00:47:41.279 --> 00:47:48.320
+App.jsx, a function will be triggered. and the whole one writes so. We say onClick and
+
+00:47:48.320 --> 00:47:53.039
+It is important that the C is written large here, unlike pure JavaScript, otherwise it works.
+
+00:47:53.039 --> 00:48:04.320
+all not and here we say now this.props.onAdd. and this onAdd here, that is now a
+
+00:48:04.320 --> 00:48:11.199
+Properties that are added to the component product-automatically. With these props we act
+
+00:48:11.199 --> 00:48:17.679
+always on all these things here, on this image, title, description. and now we have a
+
+00:48:17.679 --> 00:48:23.679
+new feature added and that is called onAdd. and here we can now quite simply a feature
+
+00:48:23.679 --> 00:48:28.960
+This means something like addItem and here we have to enter different things now,
+
+00:48:28.960 --> 00:48:37.000
+Of course, the number may be one, then what we want to add, that is, tomatoes and
+
+00:48:37.000 --> 00:48:45.400
+So what did we say? cost tomatoes 2.99. important is that here is a
+
+00:48:45.400 --> 00:48:51.519
+Number, so. And here no indication signs can be refined anymore, but in React we must always be here
+
+00:48:51.519 --> 00:48:55.679
+These doubts write things, for the indications would always stand for,
+
+00:48:55.679 --> 00:49:01.559
+that we have a string, that is, a text, and the whole should not be the case here above.
+
+00:49:01.559 --> 00:49:06.639
+Function addItem we now have to add our app here. we could do it all now so,
+
+00:49:06.760 --> 00:49:11.360
+by simply writing addItem here and so on. in React, however, you use almost always
+
+00:49:11.360 --> 00:49:17.279
+the so-called arrowNotation. that means we write the whole so. that has a benefit and
+
+00:49:17.279 --> 00:49:22.880
+Otherwise we cannot in React access this without further access and that is necessary.
+
+00:49:22.880 --> 00:49:27.639
+more often when programming, for example when we want to access the state.
+
+00:49:27.639 --> 00:49:32.559
+want to add different items to our state here above now. that means standard should
+
+00:49:32.559 --> 00:49:39.119
+This is here for the first time to be a empty array. And if we say this.setState now we can
+
+00:49:39.119 --> 00:49:44.119
+I can now say here which field I want to change,
+
+00:49:44.119 --> 00:49:50.359
+It is the item field and what I want to change it. and it is to the old items, so this.state.items
+
+00:49:50.359 --> 00:49:59.199
+I want to add something here.I say point push and can now here.
+
+00:50:00.000 --> 00:50:03.980
+Add a few elements. that means, of course, I want to add the amount,
+
+00:50:03.980 --> 00:50:09.719
+I also want to add the name and I want to
+
+00:50:09.719 --> 00:50:14.340
+Also add the price. this information that gives
+
+00:50:14.340 --> 00:50:18.119
+We are all here in this function. that is, we can here between the
+
+00:50:18.119 --> 00:50:24.400
+Amount, Name, Price. These three variables get
+
+00:50:24.400 --> 00:50:30.719
+Now the values 1, tomatoes 2,99.
+
+00:50:30.719 --> 00:50:36.280
+This means name, double point name, price, double point price, etc.
+
+00:50:36.280 --> 00:50:39.559
+The car completion has made a small mistake here below.
+
+00:50:39.559 --> 00:50:44.840
+a twisted clammer too much and a semi-colon too little.
+
+00:50:44.840 --> 00:50:48.400
+Here behind the double point we have to say now,
+
+00:50:48.400 --> 00:50:52.960
+What we put in here? that is, we must first get here the old state
+
+00:50:53.199 --> 00:50:56.559
+I have to add something new to it, I have to add something new to it.
+
+00:50:56.559 --> 00:51:03.679
+CurrentItems and say now this.state.items to the current items here
+
+00:51:03.679 --> 00:51:07.639
+I can get up here, I can get up here something new by saying
+
+00:51:07.639 --> 00:51:14.480
+CurrentItems.push and here I add a new JSON.
+
+00:51:14.480 --> 00:51:18.360
+Now the three parameters that we are here between the clamps in our
+
+00:51:18.360 --> 00:51:23.679
+That is, we call the whole once Amount, Name and Price and
+
+00:51:23.679 --> 00:51:27.920
+These three things that need to be wrapped here now. through this syntax
+
+00:51:27.920 --> 00:51:31.480
+Now a JSON is created, which has a field Amount with the value we
+
+00:51:31.480 --> 00:51:35.519
+A name has the value we enter here and a price we enter here.
+
+00:51:35.519 --> 00:51:38.840
+with the value we put here. and if I still have the whole
+
+00:51:38.840 --> 00:51:42.360
+a bit of formatting, for example by simply inserting an enter here and so,
+
+00:51:42.360 --> 00:51:46.679
+Then you can read it all very well and these CurrentItems that I put
+
+00:51:46.679 --> 00:51:51.599
+This means that the item field is now overwritten with the value,
+
+00:51:51.599 --> 00:51:55.280
+I have a little problem, but now we have a little problem.
+
+00:51:55.280 --> 00:51:58.960
+React is very specific and there are no parameters here.
+
+00:51:58.960 --> 00:52:02.519
+We have to put the function here directly without clammer on clammer
+
+00:52:02.519 --> 00:52:07.239
+What we can do, what we can do, what we can do, what we can do.
+
+00:52:07.239 --> 00:52:10.400
+Write and add it all here.
+
+00:52:10.400 --> 00:52:13.440
+Here below we get a little mistake, because here is AddItem.
+
+00:52:13.440 --> 00:52:17.559
+But the AddItem is part of our class, so we have to say here
+
+00:52:17.559 --> 00:52:21.679
+This.addItem. after we have done it all, we can do it now
+
+00:52:21.679 --> 00:52:26.400
+Add our other products, here, here and here.
+
+00:52:26.400 --> 00:52:33.440
+say here of course cakes, apples, pearls and can still enter the prices here
+
+00:52:33.440 --> 00:52:38.760
+Let’s say 1,99, 3,99, 4,99.
+
+00:52:38.760 --> 00:52:42.079
+This HeadState here is, by the way, extremely important, because there is no
+
+00:52:42.079 --> 00:52:45.679
+The data is only updated above, but at the same time it is also
+
+00:52:45.679 --> 00:52:50.440
+Render function is automatically re-executed only by this SetState.
+
+00:52:50.440 --> 00:52:54.639
+It works automatically, but it requires
+
+00:52:54.639 --> 00:52:59.480
+always this feature to say that we want to render our content.
+
+00:52:59.480 --> 00:53:03.159
+Now, of course, we’re going to look at whether our data is really
+
+00:53:03.159 --> 00:53:06.679
+I am changing and that’s why I’m logging it all now and tell you.
+
+00:53:06.679 --> 00:53:11.720
+this.state to see what happens to our state. that is, if I
+
+00:53:11.719 --> 00:53:15.920
+our app now open here and click here to add, then I see,
+
+00:53:15.920 --> 00:53:20.000
+to add a new item to our state here
+
+00:53:20.000 --> 00:53:25.199
+If I press on apples, then here is the amount.
+
+00:53:25.199 --> 00:53:30.440
+1 in apples and so on. that is, the elements that are added will be
+
+00:53:30.440 --> 00:53:34.280
+Now in our state always stored, but of course not yet in our state
+
+00:53:34.280 --> 00:53:39.960
+We should now have these items still on our shopping cart
+
+00:53:39.960 --> 00:53:44.000
+That is, we have to say in our shopping card here,
+
+00:53:44.000 --> 00:53:49.159
+OK, items the same and must here somehow on the data from here
+
+00:53:49.159 --> 00:53:54.800
+So you have to say something like this.state.items.
+
+00:53:54.800 --> 00:53:58.800
+After we have done it all, we can now in our shopping card
+
+00:53:58.800 --> 00:54:03.480
+access to our items. so now we no longer need the state here
+
+00:54:03.480 --> 00:54:08.239
+to get out, but from the variables that were put in
+
+00:54:08.239 --> 00:54:16.599
+This means we say here this.props.items and if we are now
+
+00:54:16.599 --> 00:54:22.519
+Click here to add, tomatoes, garlic, pearls, apples, we see that
+
+00:54:22.519 --> 00:54:26.880
+All here on the page has been added to our box. so our
+
+00:54:26.880 --> 00:54:31.960
+Customers now receive the data from our top app component and
+
+00:54:31.960 --> 00:54:35.960
+we have now stored an array with different elements, wherever in
+
+00:54:35.960 --> 00:54:40.320
+Mount stands, where curves stand, pearls stands, and so on.
+
+00:54:40.320 --> 00:54:43.159
+It is a challenge to say that if I repeat
+
+00:54:43.159 --> 00:54:47.559
+Birnen presses that here is a 2x and that we no longer have the problem,
+
+00:54:47.559 --> 00:54:51.000
+What we have now, that pearls will be added again and here therefore
+
+00:54:51.000 --> 00:54:54.880
+Even a mistake is shown.
+
+00:54:56.559 --> 00:55:01.039
+We are currently still having a problem in our shopping cart. If I have an item
+
+00:55:01.039 --> 00:55:05.199
+Add, let’s say tomatoes, and now add again.
+
+00:55:05.279 --> 00:55:09.519
+We get a problem. and here the items will be just twice.
+
+00:55:09.519 --> 00:55:14.000
+Instead, we want to say that if an element is
+
+00:55:14.000 --> 00:55:19.440
+Number 1 is already in our shopping cart, we don't get the item again
+
+00:55:19.440 --> 00:55:24.559
+I want to add, but rather this one here just about another one.
+
+00:55:24.559 --> 00:55:28.840
+To increase, then to the value 2 and now let’s look at the whole.
+
+00:55:28.840 --> 00:55:32.920
+For that we go in our code and we see here to the left above yes that we are here
+
+00:55:32.960 --> 00:55:37.400
+Get the current items and now just every time we click on the button
+
+00:55:37.400 --> 00:55:42.119
+press to add a new object here. instead we have to
+
+00:55:42.119 --> 00:55:47.000
+However, we say we’re looking at whether tomatoes are already in our
+
+00:55:47.000 --> 00:55:52.960
+We have goods, we have goods, we have goods first.
+
+00:55:52.960 --> 00:56:00.280
+That means I have to say something like let existing item or something like that.
+
+00:56:00.279 --> 00:56:04.800
+And here I just have to say now that I’m searching through my items.
+
+00:56:04.800 --> 00:56:10.679
+by saying this.state.items.find. and we are now just looking for if here already
+
+00:56:10.679 --> 00:56:19.119
+an item, an item with the name is present. that is, I say item.name
+
+00:56:19.119 --> 00:56:26.519
+The same name. and if this item already exists, then I want it
+
+00:56:26.519 --> 00:56:33.960
+This means that I say existing item.amount++.
+
+00:56:33.960 --> 00:56:39.599
+not exists, then I want to add it. That is, we now have two cases in
+
+00:56:39.599 --> 00:56:44.800
+Case number one, we say, the whole exists already and case
+
+00:56:44.800 --> 00:56:49.079
+Number two is here below, it does not exist yet.
+
+00:56:49.079 --> 00:56:54.039
+Add it to the basket. otherwise we have the element in this variable,
+
+00:56:54.039 --> 00:56:59.920
+what is stored in our basket and then we use it and increase the
+
+00:56:59.920 --> 00:57:06.000
+This item from our shopping cart here this amounts about one. let’s look at it all.
+
+00:57:06.000 --> 00:57:11.599
+I press to add and then again to add and then again to add.
+
+00:57:11.599 --> 00:57:16.599
+See that there is still only one element here, but the amounts are on two.
+
+00:57:16.599 --> 00:57:23.000
+This means that every time we have a different state here, we can also have a different state here.
+
+00:57:23.000 --> 00:57:28.079
+Add a so-called Debugger. I do it in the line before.
+
+00:57:28.079 --> 00:57:33.079
+just debugger and then you can understand the whole a little better,
+
+00:57:33.079 --> 00:57:37.880
+If I now press the button, then our code keeps here
+
+00:57:37.880 --> 00:57:44.519
+in this line, as we see here. if I continue a line now, I press for it
+
+00:57:44.519 --> 00:57:49.639
+Just go down on this step, then on this track and then a line further.
+
+00:57:49.639 --> 00:57:54.159
+Then we will see it in existing item, if I go there now or if I just go here
+
+00:57:54.159 --> 00:57:58.559
+The thing is a bit bigger here, then we see here below on the side always our
+
+00:57:58.559 --> 00:58:06.679
+Variable and there we see, existing item has the value undefined.
+
+00:58:06.679 --> 00:58:13.199
+not with this value in our basket. the first case is therefore not fulfilled and accordingly
+
+00:58:13.199 --> 00:58:17.679
+Now let’s jump directly to the second case. so it’s going through. we’re jumping right here
+
+00:58:17.679 --> 00:58:23.480
+down, we carry out the whole and carry it into our basket and add it there.
+
+00:58:23.480 --> 00:58:29.440
+I just go on and say to add and now have
+
+00:58:29.440 --> 00:58:34.760
+we have a similar situation, but this item already exists.
+
+00:58:34.760 --> 00:58:38.599
+the page goes to existing item, then we see that here now suddenly no longer undefined
+
+00:58:38.599 --> 00:58:44.599
+but that here the element from our basket is inside with amount1, name, tomatoes,
+
+00:58:44.599 --> 00:58:50.880
+Accordingly, we have now fulfilled this first case and we are now going here
+
+00:58:50.880 --> 00:58:56.480
+and increase the amount and then we just go down here, quite normal, updating the state and so on
+
+00:58:56.480 --> 00:59:00.400
+What has happened here is any reaction logic that interests us
+
+00:59:00.400 --> 00:59:04.880
+Now we know at all that I can click here. the Debugger we can
+
+00:59:04.880 --> 00:59:09.680
+Now also throw it out again, you will always just try it out and after we
+
+00:59:09.679 --> 00:59:14.199
+have done all, we can now here different items in our basket
+
+00:59:14.199 --> 00:59:19.400
+add and can increase it. If you have watched the video until here, then you have now
+
+00:59:19.400 --> 00:59:24.480
+Your first React app was written. Congratulations! but there’s still a lot to do.
+
+00:59:24.480 --> 00:59:29.400
+As you have noticed, a single project, of course, helps to find the start, but still
+
+00:59:29.400 --> 00:59:34.159
+long not to become a React project developer. accordingly, you have to do a thing now
+
+00:59:34.360 --> 00:59:39.679
+I have shown you a few simple examples, but you have to
+
+00:59:39.679 --> 00:59:44.440
+attempt to build as many projects as possible and to create more functions
+
+00:59:44.440 --> 00:59:49.360
+For example, you can try to continue this project here and in the shopping cart.
+
+00:59:49.360 --> 00:59:54.599
+to remove elements or, for example, the number with two buttons, a plus and
+
+00:59:54.599 --> 00:59:59.599
+to increase or decrease a minus button. and if you say now, hey, the whole thing makes me
+
+00:59:59.599 --> 01:00:00.099
+Super sh-
+
+01:00:00.000 --> 01:00:04.119
+Have fun and I need support and I want to work as a developer.
+
+01:00:04.119 --> 01:00:08.559
+But maybe you’re still at the very beginning, then you’ll be happy to find out about our further education.
+
+01:00:08.559 --> 01:00:13.440
+informing, because we form software developers, including source investors, i.e. people,
+
+01:00:13.440 --> 01:00:16.480
+They may have never, or just, coded very little before.
+
+01:00:16.480 --> 01:00:20.000
+If you are interested in this, click on the link at the top.
+
+01:00:20.000 --> 01:00:21.000
+The YouTube description.
+
+01:00:21.000 --> 01:00:25.239
+You can not only inform yourself, but you can also have a free consultation.
+
+01:00:25.239 --> 01:00:27.079
+agree with me and my team.
+
+01:00:27.079 --> 01:00:30.760
+We can just talk to each other completely unbindingly and see if we
+
+01:00:30.760 --> 01:00:34.559
+We can help you and in what situation we can help you best.
+
+01:00:34.559 --> 01:00:38.920
+Maybe we’ll see each other personally, otherwise we’ll see each other here on this channel.
+
+01:00:38.920 --> 01:00:40.480
+in one of the next videos.
+
+01:00:40.480 --> 01:00:42.480
+Do it well, your Junus, Ciao.
 
